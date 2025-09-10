@@ -1,10 +1,39 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useEffect, useState, useRef } from "react";
 
 const ContactSection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+
+      const rect = sectionRef.current.getBoundingClientRect();
+      const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+
+      if (isInView && !isVisible) {
+        setIsVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Initial call
+    
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isVisible]);
+
+  const getSectionStyle = () => {
+    return {
+      transform: isVisible ? 'translateX(0px)' : 'translateX(100px)',
+      opacity: isVisible ? 1 : 0,
+      transition: 'all 1s cubic-bezier(0.4, 0, 0.2, 1)',
+    };
+  };
   return (
-    <section className="w-full h-screen bg-secondary/30 flex items-center justify-center relative overflow-hidden">
+    <section ref={sectionRef} className="w-full h-screen bg-secondary/30 flex items-center justify-center relative overflow-hidden">
       {/* Contact grid background pattern */}
       <div className="absolute inset-0 opacity-5">
         <svg className="w-full h-full" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
@@ -18,7 +47,7 @@ const ContactSection = () => {
         </svg>
       </div>
       
-      <div className="max-w-4xl mx-auto text-center space-y-12 relative z-10 px-6 lg:px-12">
+      <div className="max-w-4xl mx-auto text-center space-y-12 relative z-10 px-6 lg:px-12" style={getSectionStyle()}>
         <h2 className="text-4xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-8">
           Get In Touch
         </h2>
