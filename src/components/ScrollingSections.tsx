@@ -52,7 +52,7 @@ const ScrollingSections = () => {
         };
       } else {
         // All cards shown, check if contact section should appear
-        const contactScrollTrigger = 2.8 * viewportHeight; // Trigger contact slightly earlier
+        const contactScrollTrigger = 2.7 * viewportHeight; // Earlier trigger
         if (scrollY >= contactScrollTrigger) {
           // Hide services section when contact appears
           return {
@@ -73,7 +73,7 @@ const ScrollingSections = () => {
     
     // Special handling for Contact section (index 3) - slide from right
     if (sectionIndex === 3) {
-      const contactScrollStart = 2.8 * viewportHeight; // Start slightly before section 3
+      const contactScrollStart = 2.7 * viewportHeight; // Start earlier
       const relativeScroll = scrollY - contactScrollStart;
       
       if (relativeScroll <= 0) {
@@ -84,15 +84,24 @@ const ScrollingSections = () => {
           transition: "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
         };
       } else {
-        // Contact section reached - slide in from right to center
-        const slideDistance = viewportHeight * 0.5; // Distance to complete the slide
+        // Contact section reached - slide in from right to fully visible
+        const slideDistance = viewportHeight * 0.8; // More scroll distance for complete slide
         const slideProgress = Math.min(relativeScroll / slideDistance, 1);
-        const translateX = (1 - slideProgress) * 100; // From 100% to 0%
+        const translateX = Math.max((1 - slideProgress) * 100, 0); // Ensure it reaches 0%
+        
+        // Force complete visibility when scroll progress is sufficient
+        if (slideProgress >= 0.8) {
+          return {
+            transform: 'translateX(0%)',
+            opacity: 1,
+            transition: "transform 0.3s ease-out",
+          };
+        }
         
         return {
           transform: `translateX(${translateX}%)`,
           opacity: 1,
-          transition: slideProgress === 1 ? "none" : "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
+          transition: "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
         };
       }
     }
