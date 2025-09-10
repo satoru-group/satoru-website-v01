@@ -9,10 +9,13 @@ const ScrollingSections = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      // Throttle scroll events for better performance
+      requestAnimationFrame(() => {
+        setScrollY(window.scrollY);
+      });
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll(); // Initial call
     
     return () => window.removeEventListener("scroll", handleScroll);
@@ -21,31 +24,52 @@ const ScrollingSections = () => {
   const getTransformStyle = (sectionIndex: number) => {
     const viewportHeight = window.innerHeight;
     const currentScrollSection = Math.floor(scrollY / viewportHeight);
+    const scrollProgress = (scrollY % viewportHeight) / viewportHeight;
     
     if (sectionIndex < currentScrollSection) {
-      // Sections that have been scrolled past - keep them hidden
+      // Sections that have been scrolled past - keep them hidden with smooth exit
       return {
         transform: `translateY(-${viewportHeight}px)`,
-        transition: "none",
+        opacity: 0,
+        transition: "opacity 0.3s ease-out",
       };
     }
     
     if (sectionIndex === currentScrollSection) {
-      // Current section being scrolled - move it up gradually
+      // Current section being scrolled - move it up gradually with easing
       const sectionScrollStart = sectionIndex * viewportHeight;
       const relativeScroll = scrollY - sectionScrollStart;
+      
+      // Apply smooth easing curve for professional feel
+      const easedProgress = relativeScroll / viewportHeight;
+      const smoothEasing = easedProgress < 0.5 
+        ? 2 * easedProgress * easedProgress 
+        : -1 + (4 - 2 * easedProgress) * easedProgress;
+      
       const translateY = -relativeScroll;
+      const opacity = 1 - (smoothEasing * 0.1); // Subtle fade as it scrolls
       
       return {
         transform: `translateY(${translateY}px)`,
-        transition: "none",
+        opacity: Math.max(opacity, 0.9),
+        transition: "opacity 0.2s ease-out",
       };
     }
     
-    // Sections below current one - stay in natural position
+    if (sectionIndex === currentScrollSection + 1) {
+      // Next section - prepare for entrance with subtle animation
+      return {
+        transform: 'translateY(0px)',
+        opacity: 1,
+        transition: "opacity 0.4s ease-in-out, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+      };
+    }
+    
+    // Sections further below - stay hidden but ready
     return {
       transform: 'translateY(0px)',
-      transition: "none",
+      opacity: 1,
+      transition: "opacity 0.3s ease-out",
     };
   };
 
