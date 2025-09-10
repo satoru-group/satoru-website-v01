@@ -61,10 +61,13 @@ export default {
       backgroundImage: {
         'gradient-primary': 'var(--gradient-primary)',
         'gradient-subtle': 'var(--gradient-subtle)',
+        'gradient-glow': 'var(--gradient-glow)',
       },
       boxShadow: {
         'elegant': 'var(--shadow-elegant)',
         'soft': 'var(--shadow-soft)',
+        'glow-cyan': 'var(--glow-cyan)',
+        'glow-purple': 'var(--glow-purple)',
       },
       transitionTimingFunction: {
         'smooth': 'var(--transition-smooth)',

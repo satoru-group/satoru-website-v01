@@ -5,29 +5,29 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 w-full py-6 px-6 lg:px-12 flex items-center justify-between bg-background/95 backdrop-blur-sm border-b border-border/50 z-50">
       <div className="flex items-center">
         <div className="text-2xl font-bold text-foreground">
-          SATORU<span className="text-primary">.</span>
+          SATORU<span className="text-primary glow">.</span>
         </div>
         <div className="ml-2 text-sm text-muted-foreground font-medium tracking-wide">
-          GROUP
+          AI
         </div>
       </div>
       
       <nav className="hidden md:flex items-center space-x-8">
-        <a href="#home" className="text-foreground hover:text-primary transition-smooth font-medium">
+        <a href="#home" className="text-foreground hover:text-primary transition-smooth font-medium hover:shadow-glow-cyan">
           Home
         </a>
-        <a href="#about" className="text-muted-foreground hover:text-primary transition-smooth font-medium">
-          About Us
+        <a href="#about" className="text-muted-foreground hover:text-primary transition-smooth font-medium hover:shadow-glow-cyan">
+          AI Solutions
         </a>
-        <a href="#services" className="text-muted-foreground hover:text-primary transition-smooth font-medium">
-          Services
+        <a href="#services" className="text-muted-foreground hover:text-primary transition-smooth font-medium hover:shadow-glow-cyan">
+          Technology
         </a>
-        <a href="#contact" className="text-muted-foreground hover:text-primary transition-smooth font-medium">
+        <a href="#contact" className="text-muted-foreground hover:text-primary transition-smooth font-medium hover:shadow-glow-cyan">
           Contact
         </a>
       </nav>
 
-      <Button variant="cta" size="default" className="hidden md:inline-flex">
+      <Button variant="ai" size="default" className="hidden md:inline-flex">
         Get Started
       </Button>
 

@@ -8,41 +8,45 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 213 20% 15%;
+    /* AI Dark Theme */
+    --background: 220 27% 4%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 213 20% 15%;
+    --card: 220 23% 6%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 213 20% 15%;
+    --popover: 220 23% 6%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 263 70% 50%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 195 100% 50%;
+    --primary-foreground: 220 27% 4%;
 
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 213 20% 15%;
+    --secondary: 217 19% 12%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 213 16% 65%;
+    --muted: 217 19% 8%;
+    --muted-foreground: 215 25% 65%;
 
-    --accent: 263 50% 96%;
-    --accent-foreground: 213 20% 15%;
+    --accent: 195 100% 50%;
+    --accent-foreground: 220 27% 4%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 73% 58%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 263 70% 50%;
+    --border: 217 19% 12%;
+    --input: 217 19% 12%;
+    --ring: 195 100% 50%;
 
-    /* Professional gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(263 70% 50%), hsl(280 60% 45%));
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 20% 98%));
+    /* AI-themed gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(195 100% 50%), hsl(220 100% 60%), hsl(270 100% 60%));
+    --gradient-subtle: linear-gradient(180deg, hsl(220 27% 4%), hsl(220 23% 6%));
+    --gradient-glow: linear-gradient(135deg, hsl(195 100% 50% / 0.1), hsl(270 100% 60% / 0.1));
     
-    /* Professional shadows */
-    --shadow-elegant: 0 10px 40px -12px hsl(263 70% 50% / 0.25);
-    --shadow-soft: 0 4px 20px -4px hsl(213 20% 15% / 0.1);
+    /* AI-themed shadows and glows */
+    --shadow-elegant: 0 10px 40px -12px hsl(195 100% 50% / 0.4);
+    --shadow-soft: 0 4px 20px -4px hsl(195 100% 50% / 0.2);
+    --glow-cyan: 0 0 20px hsl(195 100% 50% / 0.5);
+    --glow-purple: 0 0 20px hsl(270 100% 60% / 0.5);
     
     /* Smooth transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -112,5 +116,14 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* AI-themed utility classes */
+  .glow {
+    filter: drop-shadow(0 0 10px hsl(var(--primary)));
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
   }
 }

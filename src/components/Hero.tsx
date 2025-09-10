@@ -1,23 +1,23 @@
 import { Button } from "@/components/ui/button";
-import businessMeeting from "@/assets/business-meeting.jpg";
+import aiTechnology from "@/assets/ai-technology.jpg";
 
 const Hero = () => {
   const stats = [
     {
-      number: "95%",
-      label: "Client Satisfaction",
+      number: "99.9%",
+      label: "AI Accuracy",
     },
     {
-      number: "30%",
-      label: "Efficiency Increase",
+      number: "10x",
+      label: "Processing Speed",
     },
     {
-      number: "70+ Years",
-      label: "Consulting Experience",
+      number: "24/7",
+      label: "Autonomous Operations",
     },
     {
-      number: "20+",
-      label: "Projects Completed",
+      number: "1M+",
+      label: "Data Points Analyzed",
     },
   ];
 
@@ -29,55 +29,55 @@ const Hero = () => {
           {/* Left Content */}
           <div className="space-y-8">
             <div className="relative">
-              {/* Purple brushstroke circle effect */}
-              <div className="absolute -left-16 -top-8 w-80 h-80 bg-gradient-primary rounded-full opacity-10 blur-3xl"></div>
+              {/* Glowing circle effect */}
+              <div className="absolute -left-16 -top-8 w-80 h-80 bg-gradient-primary rounded-full opacity-10 blur-3xl animate-pulse"></div>
               <div className="relative">
                 <h1 className="text-5xl lg:text-7xl font-bold text-foreground leading-tight">
-                  Simplify.
+                  Intelligent.
                   <br />
-                  <span className="text-primary">Streamline.</span>
+                  <span className="text-primary">Automated.</span>
                   <br />
-                  Succeed.
+                  <span className="bg-gradient-primary bg-clip-text text-transparent">Future-Ready.</span>
                 </h1>
               </div>
             </div>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
-              At Satoru Consulting, our mission is to empower your business to achieve sustainable success.
+              Harness the power of advanced AI technology to transform your business operations and unlock unprecedented growth opportunities.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="cta" size="lg" className="text-base">
-                Book a Consultation
+                Deploy AI Solutions
               </Button>
               <Button variant="outline" size="lg" className="text-base">
-                Learn More
+                Explore Technology
               </Button>
             </div>
           </div>
 
-          {/* Right Content - Image */}
+          {/* Right Content - AI Image */}
           <div className="relative">
-            <div className="relative overflow-hidden rounded-3xl shadow-elegant">
+            <div className="relative overflow-hidden rounded-3xl shadow-glow-cyan border border-primary/20">
               <img 
-                src={businessMeeting} 
-                alt="Professional business consulting meeting with two executives reviewing data and analytics" 
+                src={aiTechnology} 
+                alt="Advanced AI technology interface with holographic displays and neural network visualizations" 
                 className="w-full h-auto object-cover"
               />
             </div>
             {/* Floating accent */}
-            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-primary/30 rounded-full blur-2xl animate-pulse"></div>
           </div>
         </div>
 
-        {/* Stats Section */}
+        {/* AI Stats Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="text-center p-8 bg-muted/50 rounded-2xl shadow-soft hover:shadow-elegant transition-all duration-300 hover:-translate-y-1"
+              className="text-center p-8 bg-card/50 backdrop-blur-sm rounded-2xl shadow-glow-cyan border border-primary/10 hover:shadow-glow-purple hover:border-primary/30 transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="text-4xl lg:text-5xl font-bold text-primary mb-4">
+              <div className="text-4xl lg:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-4">
                 {stat.number}
               </div>
               <div className="text-muted-foreground font-medium tracking-wide">
