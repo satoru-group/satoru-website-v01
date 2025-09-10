@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 const Contact = () => {
   return (
-    <div className="relative">
+    <div className="relative font-body">
       <Header />
       
       {/* Main Contact Content */}
@@ -25,10 +25,10 @@ const Contact = () => {
           </div>
           
           <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10 px-6 lg:px-12">
-            <h1 className="text-5xl lg:text-7xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-8">
+            <h1 className="text-6xl lg:text-8xl font-heading font-bold bg-gradient-primary bg-clip-text text-transparent mb-8 leading-tight">
               Get In Touch
             </h1>
-            <p className="text-2xl text-muted-foreground font-light leading-relaxed max-w-3xl mx-auto">
+            <p className="text-2xl lg:text-3xl text-muted-foreground font-light leading-relaxed max-w-4xl mx-auto">
               Ready to transform your business operations? Let's discuss how we can help you streamline workflows and drive growth.
             </p>
           </div>
@@ -40,7 +40,7 @@ const Contact = () => {
             <div className="grid lg:grid-cols-2 gap-16">
               {/* Contact Form */}
               <div className="bg-card/80 backdrop-blur-sm p-8 rounded-2xl border border-border/50">
-                <h2 className="text-3xl font-bold text-foreground mb-8">Send us a message</h2>
+                <h2 className="text-3xl font-heading font-bold text-foreground mb-8">Send us a message</h2>
                 <form className="space-y-6">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
@@ -80,7 +80,7 @@ const Contact = () => {
               {/* Contact Information */}
               <div className="space-y-8">
                 <div className="bg-card/80 backdrop-blur-sm p-8 rounded-2xl border border-border/50">
-                  <h3 className="text-2xl font-bold text-foreground mb-6">Contact Information</h3>
+                  <h3 className="text-2xl font-heading font-bold text-foreground mb-6">Contact Information</h3>
                   
                   <div className="space-y-6">
                     <div className="flex items-center gap-4">
@@ -122,7 +122,7 @@ const Contact = () => {
                 </div>
 
                 <div className="bg-card/80 backdrop-blur-sm p-8 rounded-2xl border border-border/50">
-                  <h3 className="text-2xl font-bold text-foreground mb-6">Why Choose Satoru?</h3>
+                  <h3 className="text-2xl font-heading font-bold text-foreground mb-6">Why Choose Satoru?</h3>
                   
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
@@ -166,29 +166,29 @@ const Contact = () => {
         {/* FAQ Section */}
         <section className="py-20 px-6 lg:px-12 bg-background">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16 bg-gradient-primary bg-clip-text text-transparent">
+            <h2 className="text-5xl lg:text-6xl font-heading font-bold text-center mb-16 bg-gradient-primary bg-clip-text text-transparent">
               Frequently Asked Questions
             </h2>
             
             <div className="space-y-8">
               <div className="bg-card/50 p-6 rounded-xl border border-border/50">
-                <h4 className="text-xl font-semibold text-foreground mb-3">How quickly can you start working with my business?</h4>
-                <p className="text-muted-foreground">We can typically begin our discovery process within one week of our initial consultation, with full engagement starting within 2-3 weeks depending on project scope.</p>
+                <h4 className="text-xl font-heading font-semibold text-foreground mb-3">How quickly can you start working with my business?</h4>
+                <p className="text-lg text-muted-foreground leading-relaxed">We can typically begin our discovery process within one week of our initial consultation, with full engagement starting within 2-3 weeks depending on project scope.</p>
               </div>
               
               <div className="bg-card/50 p-6 rounded-xl border border-border/50">
-                <h4 className="text-xl font-semibold text-foreground mb-3">What size businesses do you work with?</h4>
-                <p className="text-muted-foreground">We specialize in small and mid-sized businesses, typically ranging from startups to companies with up to 500 employees across various industries.</p>
+                <h4 className="text-xl font-heading font-semibold text-foreground mb-3">What size businesses do you work with?</h4>
+                <p className="text-lg text-muted-foreground leading-relaxed">We specialize in small and mid-sized businesses, typically ranging from startups to companies with up to 500 employees across various industries.</p>
               </div>
               
               <div className="bg-card/50 p-6 rounded-xl border border-border/50">
-                <h4 className="text-xl font-semibold text-foreground mb-3">Do you offer ongoing support or just project-based work?</h4>
-                <p className="text-muted-foreground">We offer both! We can work on specific projects or provide ongoing fractional leadership and support to help your business continue growing and optimizing.</p>
+                <h4 className="text-xl font-heading font-semibold text-foreground mb-3">Do you offer ongoing support or just project-based work?</h4>
+                <p className="text-lg text-muted-foreground leading-relaxed">We offer both! We can work on specific projects or provide ongoing fractional leadership and support to help your business continue growing and optimizing.</p>
               </div>
               
               <div className="bg-card/50 p-6 rounded-xl border border-border/50">
-                <h4 className="text-xl font-semibold text-foreground mb-3">How do you measure success?</h4>
-                <p className="text-muted-foreground">We establish clear KPIs and metrics at the beginning of every engagement, focusing on measurable improvements in efficiency, cost savings, and business growth.</p>
+                <h4 className="text-xl font-heading font-semibold text-foreground mb-3">How do you measure success?</h4>
+                <p className="text-lg text-muted-foreground leading-relaxed">We establish clear KPIs and metrics at the beginning of every engagement, focusing on measurable improvements in efficiency, cost savings, and business growth.</p>
               </div>
             </div>
           </div>

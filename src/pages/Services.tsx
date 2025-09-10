@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Services = () => {
   return (
-    <div className="relative">
+    <div className="relative font-body">;
       <Header />
       
       {/* Main Services Content */}
@@ -24,10 +24,10 @@ const Services = () => {
           </div>
           
           <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10 px-6 lg:px-12">
-            <h1 className="text-5xl lg:text-7xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-8">
+            <h1 className="text-6xl lg:text-8xl font-heading font-bold bg-gradient-primary bg-clip-text text-transparent mb-8 leading-tight">
               Our Services
             </h1>
-            <p className="text-2xl text-muted-foreground font-light leading-relaxed max-w-3xl mx-auto">
+            <p className="text-2xl lg:text-3xl text-muted-foreground font-light leading-relaxed max-w-4xl mx-auto">
               We act as an extension of your team, providing fractional operations and IT leadership to support growth, scalability, and long-term success.
             </p>
           </div>
@@ -44,8 +44,8 @@ const Services = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-semibold mb-4 text-foreground">Operations Optimization</h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">
+                <h3 className="text-2xl font-heading font-semibold mb-4 text-foreground">Operations Optimization</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                   Streamline workflows and improve operational efficiency through systematic analysis and implementation of best practices.
                 </p>
                 <ul className="text-muted-foreground mb-6 space-y-2">
@@ -78,8 +78,8 @@ const Services = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-semibold mb-4 text-foreground">IT Systems Management</h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">
+                <h3 className="text-2xl font-heading font-semibold mb-4 text-foreground">IT Systems Management</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                   Optimize your technology infrastructure to support business growth and operational excellence.
                 </p>
                 <ul className="text-muted-foreground mb-6 space-y-2">
@@ -112,8 +112,8 @@ const Services = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-semibold mb-4 text-foreground">Fractional Leadership</h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">
+                <h3 className="text-2xl font-heading font-semibold mb-4 text-foreground">Fractional Leadership</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                   Expert C-level guidance and strategic leadership without the full-time executive cost.
                 </p>
                 <ul className="text-muted-foreground mb-6 space-y-2">
@@ -145,7 +145,7 @@ const Services = () => {
         {/* How We Work Section */}
         <section className="py-20 px-6 lg:px-12 bg-background">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16 bg-gradient-primary bg-clip-text text-transparent">
+            <h2 className="text-5xl lg:text-6xl font-heading font-bold text-center mb-16 bg-gradient-primary bg-clip-text text-transparent">
               How We Work
             </h2>
             
@@ -154,32 +154,32 @@ const Services = () => {
                 <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-primary">1</span>
                 </div>
-                <h4 className="text-xl font-semibold text-foreground mb-3">Discovery</h4>
-                <p className="text-muted-foreground">We analyze your current operations and identify opportunities for improvement.</p>
+                <h4 className="text-xl font-heading font-semibold text-foreground mb-3">Discovery</h4>
+                <p className="text-lg text-muted-foreground leading-relaxed">We analyze your current operations and identify opportunities for improvement.</p>
               </div>
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-primary">2</span>
                 </div>
-                <h4 className="text-xl font-semibold text-foreground mb-3">Strategy</h4>
-                <p className="text-muted-foreground">We develop a customized roadmap aligned with your business goals.</p>
+                <h4 className="text-xl font-heading font-semibold text-foreground mb-3">Strategy</h4>
+                <p className="text-lg text-muted-foreground leading-relaxed">We develop a customized roadmap aligned with your business goals.</p>
               </div>
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-primary">3</span>
                 </div>
-                <h4 className="text-xl font-semibold text-foreground mb-3">Implementation</h4>
-                <p className="text-muted-foreground">We work alongside your team to execute solutions and drive results.</p>
+                <h4 className="text-xl font-heading font-semibold text-foreground mb-3">Implementation</h4>
+                <p className="text-lg text-muted-foreground leading-relaxed">We work alongside your team to execute solutions and drive results.</p>
               </div>
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-primary">4</span>
                 </div>
-                <h4 className="text-xl font-semibold text-foreground mb-3">Optimization</h4>
-                <p className="text-muted-foreground">We continuously refine processes to ensure sustainable growth.</p>
+                <h4 className="text-xl font-heading font-semibold text-foreground mb-3">Optimization</h4>
+                <p className="text-lg text-muted-foreground leading-relaxed">We continuously refine processes to ensure sustainable growth.</p>
               </div>
             </div>
           </div>
@@ -188,7 +188,7 @@ const Services = () => {
         {/* CTA Section */}
         <section className="py-20 px-6 lg:px-12 bg-secondary/20">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-primary bg-clip-text text-transparent">
+            <h2 className="text-4xl lg:text-5xl font-heading font-bold mb-8 bg-gradient-primary bg-clip-text text-transparent">
               Ready to Transform Your Business?
             </h2>
             <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
