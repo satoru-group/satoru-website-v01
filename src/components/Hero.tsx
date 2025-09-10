@@ -60,13 +60,26 @@ const Hero = ({ showArrow = false }: HeroProps) => {
           </div>
 
           {/* Right Content - AI Image */}
-          <div className="relative order-first lg:order-last">
-            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-glow-cyan border border-primary/20">
+          <div className="relative order-first lg:order-last group">
+            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-glow-cyan border border-primary/20 transition-all duration-500 group-hover:shadow-glow-purple group-hover:border-primary/40">
               <img 
                 src={aiTechnology} 
                 alt="Advanced AI technology interface with holographic displays and neural network visualizations" 
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
               />
+              
+              {/* Scroll Down Indicator - Top Right Corner */}
+              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0">
+                <div className="bg-primary/20 backdrop-blur-md rounded-full p-3 border border-primary/30 shadow-lg">
+                  <div className="flex flex-col items-center space-y-1">
+                    <ChevronsDown className="w-4 h-4 text-primary animate-bounce" strokeWidth={2} />
+                    <span className="text-xs text-primary font-medium">Scroll</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Overlay gradient on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
           </div>
         </div>
