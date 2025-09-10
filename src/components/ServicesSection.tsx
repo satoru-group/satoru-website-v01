@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useState, useRef } from "react";
-import { ChevronsDown } from "lucide-react";
+import { ChevronsRight } from "lucide-react";
 
 interface ServicesSectionProps {
   showArrow?: boolean;
@@ -186,10 +186,10 @@ const ServicesSection = ({ showArrow = false }: ServicesSectionProps) => {
         </div>
       </div>
       
-      {/* Scroll Down Arrow */}
+      {/* Scroll Right Arrow */}
       {showArrow && (
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronsDown className="w-8 h-8 text-primary" strokeWidth={3} />
+        <div className="absolute bottom-8 right-8 animate-bounce">
+          <ChevronsRight className="w-8 h-8 text-primary" strokeWidth={3} />
         </div>
       )}
     </section>
