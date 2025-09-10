@@ -91,13 +91,7 @@ const Hero = () => {
       
       {/* Scroll Down Arrow */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="flex items-center space-x-2">
-          <ChevronsDown className="w-6 h-6 text-primary opacity-100 animate-pulse" strokeWidth={3} style={{animationDelay: '0s'}} />
-          <ChevronsDown className="w-6 h-6 text-primary opacity-90 animate-pulse" strokeWidth={3} style={{animationDelay: '0.2s'}} />
-          <ChevronsDown className="w-6 h-6 text-primary opacity-70 animate-pulse" strokeWidth={3} style={{animationDelay: '0.4s'}} />
-          <ChevronsDown className="w-6 h-6 text-primary opacity-50 animate-pulse" strokeWidth={3} style={{animationDelay: '0.6s'}} />
-          <ChevronsDown className="w-6 h-6 text-primary opacity-30 animate-pulse" strokeWidth={3} style={{animationDelay: '0.8s'}} />
-        </div>
+        <ChevronsDown className="w-8 h-8 text-primary" strokeWidth={3} />
       </div>
     </section>
   );
