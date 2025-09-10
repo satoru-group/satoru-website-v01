@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -13,30 +14,30 @@ const Header = () => {
       </div>
       
       <nav className="hidden md:flex items-center space-x-8">
-        <button 
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        <Link 
+          to="/"
           className="text-foreground hover:text-primary transition-smooth font-medium hover:shadow-glow-cyan"
         >
           Home
-        </button>
-        <button 
-          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+        </Link>
+        <Link 
+          to="/about"
           className="text-muted-foreground hover:text-primary transition-smooth font-medium hover:shadow-glow-cyan"
         >
           About Us
-        </button>
-        <button 
-          onClick={() => window.scrollTo({ top: window.innerHeight * 2, behavior: 'smooth' })}
+        </Link>
+        <Link 
+          to="/services"
           className="text-muted-foreground hover:text-primary transition-smooth font-medium hover:shadow-glow-cyan"
         >
           Services
-        </button>
-        <button 
-          onClick={() => window.scrollTo({ top: window.innerHeight * 3, behavior: 'smooth' })}
+        </Link>
+        <Link 
+          to="/contact"
           className="text-muted-foreground hover:text-primary transition-smooth font-medium hover:shadow-glow-cyan"
         >
           Contact
-        </button>
+        </Link>
       </nav>
 
       <Button variant="ai" size="default" className="hidden md:inline-flex">
