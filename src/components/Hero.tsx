@@ -1,12 +1,15 @@
 import { Button } from "@/components/ui/button";
 import aiTechnology from "@/assets/ai-technology.jpg";
 import { ChevronsDown } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 interface HeroProps {
   showArrow?: boolean;
 }
 
 const Hero = ({ showArrow = false }: HeroProps) => {
+  const heroAnimation = useScrollAnimation({ threshold: 0.3 });
+  const statsAnimation = useScrollAnimation({ threshold: 0.2 });
   const stats = [
     {
       number: "95%",
@@ -30,7 +33,7 @@ const Hero = ({ showArrow = false }: HeroProps) => {
     <section className="relative min-h-screen bg-background px-6 lg:px-12 py-20 pt-32 z-20">
       <div className="max-w-7xl mx-auto">
         {/* Main Hero Content */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+        <div ref={heroAnimation.ref} className={`grid lg:grid-cols-2 gap-16 items-center mb-20 scroll-hidden ${heroAnimation.isVisible ? 'animate-fade-in-up' : ''}`}>
           {/* Left Content */}
           <div className="space-y-8">
             <div className="relative">
@@ -76,7 +79,7 @@ const Hero = ({ showArrow = false }: HeroProps) => {
         </div>
 
         {/* AI Stats Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div ref={statsAnimation.ref} className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 scroll-hidden ${statsAnimation.isVisible ? 'animate-fade-in-up' : ''}`}>
           {stats.map((stat, index) => (
             <div
               key={index}

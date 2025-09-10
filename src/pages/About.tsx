@@ -1,8 +1,15 @@
 import Header from "@/components/Header";
 import ContactSection from "@/components/ContactSection";
+import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
 
 const About = () => {
+  const heroAnimation = useScrollAnimation({ threshold: 0.3 });
+  const storyAnimation = useScrollAnimation({ threshold: 0.2 });
+  const missionAnimation = useScrollAnimation({ threshold: 0.2 });
+  const valuesAnimation = useStaggeredAnimation(5, 150);
+  const statsAnimation = useScrollAnimation({ threshold: 0.2 });
+  
   return (
     <div className="relative font-body">
       <Header />
@@ -22,7 +29,7 @@ const About = () => {
             }}></div>
           </div>
           
-          <div className="max-w-6xl mx-auto text-center space-y-12 relative z-10 px-6 lg:px-12 py-20">
+          <div ref={heroAnimation.ref} className={`max-w-6xl mx-auto text-center space-y-12 relative z-10 px-6 lg:px-12 py-20 scroll-hidden ${heroAnimation.isVisible ? 'animate-fade-in-up' : ''}`}>
             <div className="space-y-6">
               <h1 className="text-6xl lg:text-8xl font-heading font-bold bg-gradient-primary bg-clip-text text-transparent leading-tight">
                 About Satoru
@@ -38,7 +45,7 @@ const About = () => {
         {/* Company Overview Section */}
         <section className="py-32 px-6 lg:px-12 bg-background relative">
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <div ref={storyAnimation.ref} className={`grid lg:grid-cols-2 gap-20 items-center scroll-hidden ${storyAnimation.isVisible ? 'animate-fade-in-left' : ''}`}>
               <div className="space-y-8">
                 <div className="space-y-6">
                   <h2 className="text-5xl lg:text-6xl font-heading font-bold text-foreground leading-tight">
@@ -103,7 +110,7 @@ const About = () => {
               <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
             </div>
             
-            <div className="grid lg:grid-cols-2 gap-12">
+            <div ref={missionAnimation.ref} className={`grid lg:grid-cols-2 gap-12 scroll-hidden ${missionAnimation.isVisible ? 'animate-fade-in-up' : ''}`}>
               <div className="backdrop-modern bg-card/10 p-12 rounded-3xl border border-border/20 hover:shadow-elegant transition-all duration-500 group">
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
@@ -152,7 +159,7 @@ const About = () => {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div ref={valuesAnimation.ref} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
                   title: "People First, Always",
@@ -180,7 +187,7 @@ const About = () => {
                   icon: "🤝"
                 }
               ].map((value, index) => (
-                <div key={index} className={`backdrop-modern bg-card/5 p-8 rounded-2xl border border-border/20 hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 group ${index === 4 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
+                <div key={index} className={`backdrop-modern bg-card/5 p-8 rounded-2xl border border-border/20 hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 group scroll-hidden-scale ${valuesAnimation.visibleItems.includes(index) ? 'animate-scale-in' : ''} ${index === 4 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
                   <div className="space-y-6">
                     <div className="text-4xl mb-4">{value.icon}</div>
                     <h4 className="text-xl font-heading font-semibold text-foreground leading-tight">
@@ -209,7 +216,7 @@ const About = () => {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-8">
+            <div ref={statsAnimation.ref} className={`grid md:grid-cols-3 gap-8 scroll-hidden ${statsAnimation.isVisible ? 'animate-fade-in-up' : ''}`}>
               {[
                 {
                   number: "70+",
