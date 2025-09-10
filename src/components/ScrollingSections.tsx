@@ -76,15 +76,9 @@ const ScrollingSections = () => {
       const contactScrollStart = 3 * viewportHeight;
       const relativeScroll = scrollY - contactScrollStart;
       
-      if (relativeScroll < -viewportHeight) {
-        // Contact section far away - keep hidden
-        return {
-          transform: 'translateX(100%)',
-          opacity: 0,
-          transition: "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
-        };
-      } else if (relativeScroll >= 0) {
-        // Contact section reached - slide in from right and stay visible
+      // Always show contact section when it's time
+      if (relativeScroll >= 0) {
+        // Contact section reached - slide in from right
         const slideProgress = Math.min(relativeScroll / (viewportHeight * 0.3), 1);
         const translateX = Math.max((1 - slideProgress) * 100, 0);
         
@@ -94,10 +88,10 @@ const ScrollingSections = () => {
           transition: "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
         };
       } else {
-        // Approaching contact section
+        // Contact section not reached yet - keep off-screen
         return {
-          transform: 'translateX(50%)',
-          opacity: 0.5,
+          transform: 'translateX(100%)',
+          opacity: 1,
           transition: "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
         };
       }
