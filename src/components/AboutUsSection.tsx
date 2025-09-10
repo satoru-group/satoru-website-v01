@@ -20,16 +20,16 @@ const AboutUsSection = ({ showArrow = false }: AboutUsSectionProps) => {
         </svg>
       </div>
       
-      <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10 px-6 lg:px-12">        
-        <h2 className="text-4xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-8">
+      <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8 relative z-10 px-4 sm:px-6 lg:px-12">        
+        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6 sm:mb-8">
           Who We Are?
         </h2>
         
-        <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
+        <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
           Satoru Consulting is an operations and IT consulting firm that helps small and mid-sized businesses streamline workflows, optimize systems, and drive efficiency. We act as an extension of our clients' teams, providing fractional operations and IT leadership to support growth, scalability, and long-term success.
         </p>
         
-        <Button variant="outline" size="lg" className="text-base">
+        <Button variant="outline" size="lg" className="text-sm sm:text-base px-6 sm:px-8">
           Learn More
         </Button>
         
@@ -55,8 +55,8 @@ const AboutUsSection = ({ showArrow = false }: AboutUsSectionProps) => {
       
       {/* Scroll Down Arrow */}
       {showArrow && (
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronsDown className="w-8 h-8 text-primary" strokeWidth={3} />
+        <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <ChevronsDown className="w-6 h-6 sm:w-8 sm:h-8 text-primary" strokeWidth={3} />
         </div>
       )}
     </section>

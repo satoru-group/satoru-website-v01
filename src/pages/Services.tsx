@@ -12,9 +12,9 @@ const Services = () => {
         {/* Hero Section */}
         <section className="w-full h-screen bg-gradient-subtle flex items-center justify-center relative overflow-hidden circuit-bg">
           {/* AI Animated Background Elements */}
-          <div className="absolute top-32 right-20 w-40 h-40 bg-gradient-ai rounded-full opacity-15 animate-orb-float"></div>
-          <div className="absolute bottom-32 left-16 w-28 h-28 bg-primary/20 rounded-full animate-float-subtle"></div>
-          <div className="absolute top-1/3 left-1/3 w-20 h-20 bg-accent/30 rounded-full animate-float-dynamic"></div>
+          <div className="absolute top-16 sm:top-32 right-8 sm:right-20 w-24 sm:w-40 h-24 sm:h-40 bg-gradient-ai rounded-full opacity-15 animate-orb-float"></div>
+          <div className="absolute bottom-16 sm:bottom-32 left-6 sm:left-16 w-16 sm:w-28 h-16 sm:h-28 bg-primary/20 rounded-full animate-float-subtle"></div>
+          <div className="absolute top-1/3 left-1/3 w-12 sm:w-20 h-12 sm:h-20 bg-accent/30 rounded-full animate-float-dynamic"></div>
           
           <div className="absolute inset-0 opacity-10 animate-neural-drift">
             <svg className="w-full h-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -28,32 +28,32 @@ const Services = () => {
             </svg>
           </div>
           
-          <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10 px-6 lg:px-12">
-            <h1 className="text-6xl lg:text-8xl font-heading font-bold bg-gradient-primary bg-clip-text text-transparent mb-8 leading-tight">
+          <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8 relative z-10 px-4 sm:px-6 lg:px-12">
+            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-heading font-bold bg-gradient-primary bg-clip-text text-transparent mb-6 sm:mb-8 leading-tight">
               Our Services
             </h1>
-            <p className="text-2xl lg:text-3xl text-muted-foreground font-light leading-relaxed max-w-4xl mx-auto">
+            <p className="text-lg sm:text-2xl lg:text-3xl text-muted-foreground font-light leading-relaxed max-w-4xl mx-auto">
               We act as an extension of your team, providing fractional operations and IT leadership to support growth, scalability, and long-term success.
             </p>
           </div>
         </section>
 
         {/* Services Grid */}
-        <section className="py-20 px-6 lg:px-12 bg-card/30 ai-bg">
+        <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-12 bg-card/30 ai-bg">
           <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
               {/* Operations Optimization */}
-              <div className="ai-card-hover bg-card/90 backdrop-blur-sm p-8 rounded-xl border border-primary/30 shadow-glow-ai">
-                <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-6 animate-float-subtle">
-                  <svg className="w-6 h-6 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="ai-card-hover bg-card/90 backdrop-blur-sm p-6 sm:p-8 rounded-xl border border-primary/30 shadow-glow-ai">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4 sm:mb-6 animate-float-subtle">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-heading font-semibold mb-4 text-foreground">Operations Optimization</h3>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                <h3 className="text-xl sm:text-2xl font-heading font-semibold mb-3 sm:mb-4 text-foreground">Operations Optimization</h3>
+                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-4 sm:mb-6">
                   Streamline workflows and improve operational efficiency through systematic analysis and implementation of best practices.
                 </p>
-                <ul className="text-muted-foreground mb-6 space-y-2">
+                <ul className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 space-y-2">
                   <li className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 bg-gradient-primary rounded-full animate-ai-pulse"></div>
                     Process mapping and improvement
@@ -71,7 +71,7 @@ const Services = () => {
                     Performance metrics and KPI development
                   </li>
                 </ul>
-                <Button variant="outline" size="sm" className="w-full hover-lift border-primary/50">
+                <Button variant="outline" size="sm" className="w-full hover-lift border-primary/50 text-sm">
                   Learn More
                 </Button>
               </div>

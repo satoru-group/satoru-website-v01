@@ -95,73 +95,73 @@ const ServicesSection = ({ showArrow = false }: ServicesSectionProps) => {
         </svg>
       </div>
       
-      <div className="max-w-6xl mx-auto text-center space-y-12 relative z-10 px-6 lg:px-12">
-        <h2 className="text-4xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-8">
+      <div className="max-w-6xl mx-auto text-center space-y-8 sm:space-y-12 relative z-10 px-4 sm:px-6 lg:px-12">
+        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6 sm:mb-8">
           How We Help Your Business
         </h2>
         
-        <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-12">
+        <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-12 px-4">
           We act as an extension of your team, providing fractional operations and IT leadership to support growth, scalability, and long-term success.
         </p>
         
-        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
           <div 
-            className="bg-card/90 backdrop-blur-sm p-8 rounded-lg border border-border/50"
+            className="bg-card/90 backdrop-blur-sm p-6 sm:p-8 rounded-lg border border-border/50"
             style={getCardStyle(0)}
           >
-            <h3 className="text-2xl font-semibold mb-4 text-foreground">Operations Optimization</h3>
-            <p className="text-muted-foreground leading-relaxed mb-6">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-foreground">Operations Optimization</h3>
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6">
               Streamline workflows and improve operational efficiency
             </p>
-            <ul className="text-left text-muted-foreground mb-6 space-y-2">
+            <ul className="text-left text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 space-y-2">
               <li>• Process mapping and improvement</li>
               <li>• Workflow automation</li>
               <li>• Resource allocation</li>
             </ul>
-            <Button variant="outline" size="sm" className="text-sm">
+            <Button variant="outline" size="sm" className="text-xs sm:text-sm w-full sm:w-auto">
               Learn more
             </Button>
           </div>
           
           <div 
-            className="bg-card/90 backdrop-blur-sm p-8 rounded-lg border border-border/50"
+            className="bg-card/90 backdrop-blur-sm p-6 sm:p-8 rounded-lg border border-border/50"
             style={getCardStyle(1)}
           >
-            <h3 className="text-2xl font-semibold mb-4 text-foreground">IT Systems Management</h3>
-            <p className="text-muted-foreground leading-relaxed mb-6">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-foreground">IT Systems Management</h3>
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6">
               Optimize your technology infrastructure
             </p>
-            <ul className="text-left text-muted-foreground mb-6 space-y-2">
+            <ul className="text-left text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 space-y-2">
               <li>• System integration</li>
               <li>• Technology stack assessment</li>
               <li>• IT strategy development</li>
             </ul>
-            <Button variant="outline" size="sm" className="text-sm">
+            <Button variant="outline" size="sm" className="text-xs sm:text-sm w-full sm:w-auto">
               Learn more
             </Button>
           </div>
           
           <div 
-            className="bg-card/90 backdrop-blur-sm p-8 rounded-lg border border-border/50"
+            className="bg-card/90 backdrop-blur-sm p-6 sm:p-8 rounded-lg border border-border/50 lg:col-span-1"
             style={getCardStyle(2)}
           >
-            <h3 className="text-2xl font-semibold mb-4 text-foreground">Fractional Leadership</h3>
-            <p className="text-muted-foreground leading-relaxed mb-6">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-foreground">Fractional Leadership</h3>
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6">
               Expert guidance without the full-time cost
             </p>
-            <ul className="text-left text-muted-foreground mb-6 space-y-2">
+            <ul className="text-left text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 space-y-2">
               <li>• Fractional COO services</li>
               <li>• Fractional CTO services</li>
               <li>• Strategic planning</li>
             </ul>
-            <Button variant="outline" size="sm" className="text-sm">
+            <Button variant="outline" size="sm" className="text-xs sm:text-sm w-full sm:w-auto">
               Learn more
             </Button>
           </div>
         </div>
         
         <div style={getButtonStyle()}>
-          <Button variant="default" size="lg" className="text-base">
+          <Button variant="default" size="lg" className="text-sm sm:text-base px-6 sm:px-8">
             Get Started
           </Button>
         </div>
@@ -188,8 +188,8 @@ const ServicesSection = ({ showArrow = false }: ServicesSectionProps) => {
       
       {/* Scroll Right Arrow */}
       {showArrow && (
-        <div className="absolute bottom-8 right-8 animate-bounce">
-          <ChevronsRight className="w-8 h-8 text-primary" strokeWidth={3} />
+        <div className="absolute bottom-4 sm:bottom-8 right-4 sm:right-8 animate-bounce">
+          <ChevronsRight className="w-6 h-6 sm:w-8 sm:h-8 text-primary" strokeWidth={3} />
         </div>
       )}
     </section>

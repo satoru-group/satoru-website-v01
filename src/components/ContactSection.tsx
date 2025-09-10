@@ -18,32 +18,32 @@ const ContactSection = () => {
         </svg>
       </div>
       
-      <div className="max-w-4xl mx-auto text-center space-y-12 relative z-10 px-6 lg:px-12">
-        <h2 className="text-4xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-8">
+      <div className="max-w-4xl mx-auto text-center space-y-8 sm:space-y-12 relative z-10 px-4 sm:px-6 lg:px-12">
+        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6 sm:mb-8">
           Get In Touch
         </h2>
         
-        <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-12">
+        <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-12 px-4">
           Ready to transform your business operations? Let's discuss how we can help you streamline workflows and drive growth.
         </p>
         
-        <div className="max-w-lg mx-auto space-y-6">
-          <div className="grid grid-cols-2 gap-4">
-            <Input placeholder="First Name" className="bg-card/80 backdrop-blur-sm border-border/50" />
-            <Input placeholder="Last Name" className="bg-card/80 backdrop-blur-sm border-border/50" />
+        <div className="max-w-lg mx-auto space-y-4 sm:space-y-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <Input placeholder="First Name" className="bg-card/80 backdrop-blur-sm border-border/50 text-sm sm:text-base" />
+            <Input placeholder="Last Name" className="bg-card/80 backdrop-blur-sm border-border/50 text-sm sm:text-base" />
           </div>
-          <Input placeholder="Email Address" className="bg-card/80 backdrop-blur-sm border-border/50" />
-          <Input placeholder="Company" className="bg-card/80 backdrop-blur-sm border-border/50" />
+          <Input placeholder="Email Address" className="bg-card/80 backdrop-blur-sm border-border/50 text-sm sm:text-base" />
+          <Input placeholder="Company" className="bg-card/80 backdrop-blur-sm border-border/50 text-sm sm:text-base" />
           <Textarea 
             placeholder="Tell us about your project..." 
-            className="bg-card/80 backdrop-blur-sm border-border/50 min-h-[120px]" 
+            className="bg-card/80 backdrop-blur-sm border-border/50 min-h-[100px] sm:min-h-[120px] text-sm sm:text-base" 
           />
-          <Button size="lg" className="w-full text-base">
+          <Button size="lg" className="w-full text-sm sm:text-base">
             Send Message
           </Button>
         </div>
         
-        <div className="flex flex-col sm:flex-row gap-8 justify-center items-center text-sm text-muted-foreground mt-12">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center items-center text-xs sm:text-sm text-muted-foreground mt-8 sm:mt-12">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-primary rounded-full"></div>
             <span>info@satoruconsulting.com</span>
