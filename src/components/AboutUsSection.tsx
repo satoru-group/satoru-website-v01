@@ -51,9 +51,7 @@ const AboutUsSection = () => {
       
       {/* Scroll Down Arrow */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="p-3 rounded-full bg-gradient-primary shadow-elegant">
-          <ChevronsDown className="w-6 h-6 text-primary-foreground" strokeWidth={3} />
-        </div>
+        <ChevronsDown className="w-8 h-8 bg-gradient-primary bg-clip-text text-transparent" strokeWidth={3} />
       </div>
     </section>
   );
