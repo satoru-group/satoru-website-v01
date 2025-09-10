@@ -5,21 +5,11 @@ import ServicesSection from "@/components/ServicesSection";
 import ContactSection from "@/components/ContactSection";
 
 const ScrollingSections = () => {
-  const [currentSection, setCurrentSection] = useState(0);
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setScrollY(scrollPosition);
-      
-      // Calculate which section should be visible based on scroll position
-      const viewportHeight = window.innerHeight;
-      const sectionIndex = Math.floor(scrollPosition / viewportHeight);
-      
-      // Limit to available sections (0: Hero, 1: About, 2: Services, 3: Contact)
-      const newSection = Math.min(Math.max(sectionIndex, 0), 3);
-      setCurrentSection(newSection);
+      setScrollY(window.scrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -29,10 +19,19 @@ const ScrollingSections = () => {
   }, []);
 
   const getTransformStyle = (sectionIndex: number) => {
-    const offset = (currentSection - sectionIndex) * 100;
+    const viewportHeight = window.innerHeight;
+    const scrollProgress = scrollY / viewportHeight;
+    
+    // Calculate how much this section should move up based on scroll
+    const sectionOffset = sectionIndex * viewportHeight;
+    const relativeScroll = scrollY - sectionOffset;
+    
+    // Make sections roll up smoothly
+    const translateY = Math.max(-relativeScroll, -viewportHeight);
+    
     return {
-      transform: `translateY(${offset}vh)`,
-      transition: "transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
+      transform: `translateY(${translateY}px)`,
+      transition: scrollY === 0 ? "transform 0.3s ease-out" : "none",
     };
   };
 
