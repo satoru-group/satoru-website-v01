@@ -21,8 +21,17 @@ const ScrollingSections = () => {
   const getTransformStyle = (sectionIndex: number) => {
     const viewportHeight = window.innerHeight;
     
-    // About Us section (index 1) stays fixed - no transform
+    if (sectionIndex === 0) {
+      // Hero section - rolls up as curtain
+      const translateY = Math.max(-scrollY, -viewportHeight);
+      return {
+        transform: `translateY(${translateY}px)`,
+        transition: scrollY === 0 ? "transform 0.3s ease-out" : "none",
+      };
+    }
+    
     if (sectionIndex === 1) {
+      // About Us section stays fixed behind
       return {
         transform: 'translateY(0px)',
         transition: "none",
@@ -30,10 +39,8 @@ const ScrollingSections = () => {
     }
     
     // Other sections roll up as curtains
-    const sectionOffset = sectionIndex * viewportHeight;
-    const relativeScroll = scrollY - sectionOffset;
-    
-    // Make sections roll up smoothly
+    const sectionOffset = (sectionIndex - 1) * viewportHeight;
+    const relativeScroll = scrollY - viewportHeight - sectionOffset;
     const translateY = Math.max(-relativeScroll, -viewportHeight);
     
     return {
