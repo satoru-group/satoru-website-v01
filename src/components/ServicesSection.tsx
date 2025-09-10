@@ -17,7 +17,7 @@ const ServicesSection = () => {
         // Calculate discrete scroll steps within the services section  
         const servicesScrollStart = 2 * window.innerHeight; // Services is section 2
         const relativeScroll = Math.max(0, window.scrollY - servicesScrollStart);
-        const stepSize = window.innerHeight / 4; // 4 steps total
+        const stepSize = window.innerHeight / 5; // 5 steps: enter + 3 cards + button
         const currentStep = Math.floor(relativeScroll / stepSize);
 
         // Show cards based on discrete steps

@@ -23,38 +23,38 @@ const ScrollingSections = () => {
 
   const getTransformStyle = (sectionIndex: number) => {
     const viewportHeight = window.innerHeight;
+    const currentScrollSection = Math.floor(scrollY / viewportHeight);
     
     // Special handling for Services section (index 2)
     if (sectionIndex === 2) {
       const servicesScrollStart = 2 * viewportHeight;
       const relativeScroll = scrollY - servicesScrollStart;
       
-      // Create 4 discrete steps within services section (each 25% of viewport)
-      const stepSize = viewportHeight / 4;
+      // Create 4 discrete steps for card animations (don't move section)
+      const stepSize = viewportHeight / 5; // 5 steps: enter + 3 cards + button
       const currentStep = Math.floor(relativeScroll / stepSize);
-      const maxSteps = 4; // 3 cards + button step
       
       if (relativeScroll < 0) {
         // Haven't reached services yet
         return {
           transform: 'translateY(0px)',
           opacity: 1,
-          transition: "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+          transition: "transform 0.3s ease-out",
         };
       }
       
-      if (currentStep < maxSteps) {
-        // Stay in services section, constrain movement to current step
-        const constrainedScroll = Math.min(relativeScroll, currentStep * stepSize + stepSize * 0.8);
+      if (currentStep < 4) {
+        // Stay fixed in services section while cards appear
         return {
-          transform: `translateY(-${constrainedScroll}px)`,
+          transform: 'translateY(0px)',
           opacity: 1,
-          transition: "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+          transition: "transform 0.3s ease-out",
         };
       } else {
-        // Allow scrolling to next section
+        // All cards shown, now allow scrolling to next section
+        const excessScroll = relativeScroll - (4 * stepSize);
         return {
-          transform: `translateY(-${relativeScroll}px)`,
+          transform: `translateY(-${excessScroll}px)`,
           opacity: 1,
           transition: "transform 0.3s ease-out",
         };
@@ -62,8 +62,6 @@ const ScrollingSections = () => {
     }
     
     // Regular handling for other sections
-    const currentScrollSection = Math.floor(scrollY / viewportHeight);
-    
     if (sectionIndex < currentScrollSection) {
       return {
         transform: `translateY(-${viewportHeight}px)`,
