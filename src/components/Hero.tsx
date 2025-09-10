@@ -4,20 +4,20 @@ import aiTechnology from "@/assets/ai-technology.jpg";
 const Hero = () => {
   const stats = [
     {
-      number: "99.9%",
-      label: "AI Accuracy",
+      number: "95%",
+      label: "Client Satisfaction",
     },
     {
-      number: "10x",
-      label: "Processing Speed",
+      number: "30%",
+      label: "Efficiency Increase",
     },
     {
-      number: "24/7",
-      label: "Autonomous Operations",
+      number: "70+ Years",
+      label: "Consulting Experience",
     },
     {
-      number: "1M+",
-      label: "Data Points Analyzed",
+      number: "20+",
+      label: "Projects Completed",
     },
   ];
 
