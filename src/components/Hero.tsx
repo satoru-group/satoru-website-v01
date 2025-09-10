@@ -48,10 +48,10 @@ const Hero = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="cta" size="lg" className="text-base">
-                Deploy AI Solutions
+                Book a Consultant
               </Button>
               <Button variant="outline" size="lg" className="text-base">
-                Explore Technology
+                Learn More
               </Button>
             </div>
           </div>
