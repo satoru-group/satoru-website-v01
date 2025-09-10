@@ -65,21 +65,14 @@ const Hero = ({ showArrow = false }: HeroProps) => {
               <img 
                 src={aiTechnology} 
                 alt="Advanced AI technology interface with holographic displays and neural network visualizations" 
-                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:translate-y-[-10%] group-hover:scale-110"
               />
               
-              {/* Scroll Down Indicator - Top Right Corner */}
-              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0">
-                <div className="bg-primary/20 backdrop-blur-md rounded-full p-3 border border-primary/30 shadow-lg">
-                  <div className="flex flex-col items-center space-y-1">
-                    <ChevronsDown className="w-4 h-4 text-primary animate-bounce" strokeWidth={2} />
-                    <span className="text-xs text-primary font-medium">Scroll</span>
-                  </div>
-                </div>
-              </div>
+              {/* Paper scroll effect overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
-              {/* Overlay gradient on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              {/* Scroll shadow effect */}
+              <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-background/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-y-full group-hover:translate-y-0" />
             </div>
           </div>
         </div>
