@@ -17,7 +17,7 @@ const ServicesSection = () => {
         // Calculate discrete scroll steps within the services section  
         const servicesScrollStart = 2 * window.innerHeight; // Services is section 2
         const relativeScroll = Math.max(0, window.scrollY - servicesScrollStart);
-        const stepSize = window.innerHeight / 5; // 5 steps: enter + 3 cards + button
+        const stepSize = window.innerHeight / 7; // 7 steps: enter + 3 cards + button + 2 extra
         const currentStep = Math.floor(relativeScroll / stepSize);
 
         // Show cards based on discrete steps
@@ -27,7 +27,7 @@ const ServicesSection = () => {
         if (currentStep >= 3) newVisibleCards.push(2); // Third card at step 3
         
         setVisibleCards(newVisibleCards);
-        setShowButton(currentStep >= 4); // Button at step 4
+        setShowButton(currentStep >= 4); // Button at step 4, then 2 more scroll steps before contact
       }
     };
 

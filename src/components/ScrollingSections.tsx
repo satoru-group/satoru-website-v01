@@ -30,8 +30,8 @@ const ScrollingSections = () => {
       const servicesScrollStart = 2 * viewportHeight;
       const relativeScroll = scrollY - servicesScrollStart;
       
-      // Create 4 discrete steps for card animations (don't move section)
-      const stepSize = viewportHeight / 5; // 5 steps: enter + 3 cards + button
+      // Create 6 discrete steps for card animations (don't move section)
+      const stepSize = viewportHeight / 7; // 7 steps: enter + 3 cards + button + 2 extra steps
       const currentStep = Math.floor(relativeScroll / stepSize);
       
       if (relativeScroll < 0) {
@@ -43,16 +43,16 @@ const ScrollingSections = () => {
         };
       }
       
-      if (currentStep < 4) {
-        // Stay fixed in services section while cards appear
+      if (currentStep < 6) {
+        // Stay fixed in services section while cards appear and extra scroll steps
         return {
           transform: 'translateY(0px)',
           opacity: 1,
           transition: "transform 0.3s ease-out",
         };
       } else {
-        // All cards shown, check if contact section should appear
-        const contactScrollTrigger = 2.5 * viewportHeight; // Earlier trigger
+        // All cards shown + 2 extra steps completed, check if contact section should appear
+        const contactScrollTrigger = 2 * viewportHeight + (6 * stepSize); // After 6 steps
         if (scrollY >= contactScrollTrigger) {
           // Hide services section when contact appears
           return {
@@ -73,7 +73,7 @@ const ScrollingSections = () => {
     
     // Special handling for Contact section (index 3) - slide from right
     if (sectionIndex === 3) {
-      const servicesCompleteScroll = 2.5 * viewportHeight; // When services cards are done
+      const servicesCompleteScroll = 2 * window.innerHeight + (6 * (window.innerHeight / 7)); // After 6 service steps
       
       if (scrollY < servicesCompleteScroll) {
         // Contact section hidden off-screen to the right
