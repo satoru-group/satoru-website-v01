@@ -27,7 +27,7 @@ const Hero = ({ showArrow = false }: HeroProps) => {
   ];
 
   return (
-    <section className="relative min-h-screen bg-background px-4 sm:px-6 lg:px-12 py-16 sm:py-20 pt-20 sm:pt-24 lg:pt-32 z-20">
+    <section className="relative min-h-screen bg-background px-4 sm:px-6 lg:px-12 py-16 sm:py-20 pt-24 sm:pt-28 lg:pt-32 z-20">
       <div className="max-w-7xl mx-auto">
         {/* Main Hero Content */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-12 sm:mb-16 lg:mb-20">
