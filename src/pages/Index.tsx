@@ -5,10 +5,12 @@ import BlankSection from "@/components/BlankSection";
 const Index = () => {
   return (
     <div className="relative">
+      <BlankSection />
       <Header />
-      <main className="relative">
+      <main className="relative z-20">
         <Hero />
-        <BlankSection />
+        {/* Spacer to allow scrolling past hero */}
+        <div className="h-screen"></div>
       </main>
     </div>
   );
