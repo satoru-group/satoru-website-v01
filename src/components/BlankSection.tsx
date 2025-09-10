@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 const BlankSection = () => {
   return (
     <section className="fixed top-0 left-0 w-full h-screen bg-gradient-subtle flex items-center justify-center z-0">
@@ -13,19 +15,18 @@ const BlankSection = () => {
         </svg>
       </div>
       
-      <div className="text-center space-y-8 relative z-10">
-        {/* Animated glow orbs */}
-        <div className="relative">
-          <div className="w-32 h-32 bg-gradient-primary rounded-full opacity-30 blur-2xl mx-auto animate-pulse"></div>
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-primary rounded-full opacity-50 blur-xl animate-ping"></div>
-        </div>
-        
-        <h2 className="text-4xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-          Next Generation
+      <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10 px-6 lg:px-12">        
+        <h2 className="text-4xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-8">
+          Who We Are?
         </h2>
-        <p className="text-muted-foreground text-lg max-w-md mx-auto">
-          Discover the future of artificial intelligence and automated solutions
+        
+        <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
+          Satoru Consulting is an operations and IT consulting firm that helps small and mid-sized businesses streamline workflows, optimize systems, and drive efficiency. We act as an extension of our clients' teams, providing fractional operations and IT leadership to support growth, scalability, and long-term success.
         </p>
+        
+        <Button variant="outline" size="lg" className="text-base">
+          Learn More
+        </Button>
         
         {/* Floating particles */}
         <div className="absolute inset-0 pointer-events-none">
