@@ -24,7 +24,12 @@ const AboutUsSection = () => {
           Satoru Consulting is an operations and IT consulting firm that helps small and mid-sized businesses streamline workflows, optimize systems, and drive efficiency. We act as an extension of our clients' teams, providing fractional operations and IT leadership to support growth, scalability, and long-term success.
         </p>
         
-        <Button variant="outline" size="lg" className="text-base">
+        <Button 
+          variant="outline" 
+          size="lg" 
+          className="text-base"
+          onClick={() => window.location.href = '/about'}
+        >
           Learn More
         </Button>
         

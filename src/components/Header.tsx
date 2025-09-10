@@ -20,7 +20,7 @@ const Header = () => {
           Home
         </button>
         <button 
-          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+          onClick={() => window.location.href = '/about'}
           className="text-muted-foreground hover:text-primary transition-smooth font-medium hover:shadow-glow-cyan"
         >
           About Us
