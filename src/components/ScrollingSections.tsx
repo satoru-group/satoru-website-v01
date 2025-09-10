@@ -52,13 +52,13 @@ const ScrollingSections = () => {
         };
       } else {
         // All cards shown, check if contact section should appear
-        const contactScrollTrigger = 2.7 * viewportHeight; // Earlier trigger
+        const contactScrollTrigger = 2.5 * viewportHeight; // Earlier trigger
         if (scrollY >= contactScrollTrigger) {
           // Hide services section when contact appears
           return {
-            transform: `translateY(-${viewportHeight}px)`,
+            transform: `translateY(-100vh)`,
             opacity: 0,
-            transition: "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-out",
+            transition: "all 0.6s ease-out",
           };
         } else {
           // Stay in services section
@@ -73,35 +73,25 @@ const ScrollingSections = () => {
     
     // Special handling for Contact section (index 3) - slide from right
     if (sectionIndex === 3) {
-      const contactScrollStart = 2.7 * viewportHeight; // Start earlier
-      const relativeScroll = scrollY - contactScrollStart;
+      const servicesCompleteScroll = 2.5 * viewportHeight; // When services cards are done
       
-      if (relativeScroll <= 0) {
-        // Contact section not reached yet - keep off-screen to the right
+      if (scrollY < servicesCompleteScroll) {
+        // Contact section hidden off-screen to the right
         return {
           transform: 'translateX(100%)',
           opacity: 1,
-          transition: "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
+          transition: "transform 0.6s ease-out",
         };
       } else {
-        // Contact section reached - slide in from right to fully visible
-        const slideDistance = viewportHeight * 0.8; // More scroll distance for complete slide
-        const slideProgress = Math.min(relativeScroll / slideDistance, 1);
-        const translateX = Math.max((1 - slideProgress) * 100, 0); // Ensure it reaches 0%
-        
-        // Force complete visibility when scroll progress is sufficient
-        if (slideProgress >= 0.8) {
-          return {
-            transform: 'translateX(0%)',
-            opacity: 1,
-            transition: "transform 0.3s ease-out",
-          };
-        }
+        // Contact section slides in - simple calculation
+        const contactProgress = (scrollY - servicesCompleteScroll) / (viewportHeight * 0.3);
+        const clampedProgress = Math.min(Math.max(contactProgress, 0), 1);
+        const translateX = (1 - clampedProgress) * 100;
         
         return {
           transform: `translateX(${translateX}%)`,
           opacity: 1,
-          transition: "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
+          transition: "transform 0.6s ease-out",
         };
       }
     }
