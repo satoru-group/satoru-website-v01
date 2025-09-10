@@ -171,6 +171,100 @@ const ScrollingSections = () => {
       
       {/* Fixed container for sections */}
       <div className="fixed top-0 left-0 w-full h-screen overflow-hidden ai-bg neural-bg">
+        {/* AI Background Animation Layer */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1]">
+          {/* Neural Network Connections */}
+          <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 1200 800">
+            <defs>
+              <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0"/>
+                <stop offset="50%" stopColor="hsl(var(--primary))" stopOpacity="0.6"/>
+                <stop offset="100%" stopColor="hsl(var(--accent))" stopOpacity="0"/>
+              </linearGradient>
+            </defs>
+            
+            {/* Animated connection lines */}
+            <g className="animate-pulse" style={{animationDuration: '4s'}}>
+              <line x1="100" y1="150" x2="300" y2="200" stroke="url(#connectionGradient)" strokeWidth="1"/>
+              <line x1="200" y1="300" x2="500" y2="180" stroke="url(#connectionGradient)" strokeWidth="1"/>
+              <line x1="400" y1="400" x2="700" y2="250" stroke="url(#connectionGradient)" strokeWidth="1"/>
+              <line x1="600" y1="500" x2="900" y2="300" stroke="url(#connectionGradient)" strokeWidth="1"/>
+              <line x1="800" y1="600" x2="1100" y2="350" stroke="url(#connectionGradient)" strokeWidth="1"/>
+            </g>
+            
+            {/* Floating nodes */}
+            <g>
+              <circle cx="150" cy="180" r="3" fill="hsl(var(--primary))" opacity="0.4" className="animate-float-subtle"/>
+              <circle cx="350" cy="220" r="2" fill="hsl(var(--accent))" opacity="0.5" className="animate-float-dynamic"/>
+              <circle cx="550" cy="280" r="2.5" fill="hsl(var(--primary))" opacity="0.3" className="animate-ai-pulse"/>
+              <circle cx="750" cy="320" r="2" fill="hsl(var(--accent))" opacity="0.4" className="animate-float-subtle"/>
+              <circle cx="950" cy="380" r="3" fill="hsl(var(--primary))" opacity="0.5" className="animate-float-dynamic"/>
+            </g>
+          </svg>
+          
+          {/* Data Stream Particles */}
+          <div className="absolute inset-0">
+            <div 
+              className="absolute w-1 h-1 bg-primary rounded-full opacity-30 animate-ping"
+              style={{
+                left: '20%',
+                top: '25%',
+                animationDuration: '3s',
+                animationDelay: '0s'
+              }}
+            ></div>
+            <div 
+              className="absolute w-1.5 h-1.5 bg-accent rounded-full opacity-25 animate-pulse"
+              style={{
+                left: '70%',
+                top: '40%',
+                animationDuration: '4s',
+                animationDelay: '1s'
+              }}
+            ></div>
+            <div 
+              className="absolute w-1 h-1 bg-primary rounded-full opacity-35 animate-ping"
+              style={{
+                left: '45%',
+                top: '60%',
+                animationDuration: '2.5s',
+                animationDelay: '2s'
+              }}
+            ></div>
+            <div 
+              className="absolute w-2 h-2 bg-accent rounded-full opacity-20 animate-pulse"
+              style={{
+                left: '85%',
+                top: '20%',
+                animationDuration: '3.5s',
+                animationDelay: '0.5s'
+              }}
+            ></div>
+            <div 
+              className="absolute w-1 h-1 bg-primary rounded-full opacity-40 animate-ping"
+              style={{
+                left: '15%',
+                top: '70%',
+                animationDuration: '4.5s',
+                animationDelay: '1.5s'
+              }}
+            ></div>
+          </div>
+          
+          {/* Subtle Grid Pattern */}
+          <div 
+            className="absolute inset-0 opacity-5"
+            style={{
+              backgroundImage: `
+                linear-gradient(90deg, hsl(var(--primary) / 0.1) 1px, transparent 1px),
+                linear-gradient(180deg, hsl(var(--primary) / 0.1) 1px, transparent 1px)
+              `,
+              backgroundSize: '100px 100px',
+              animation: 'drift 30s linear infinite'
+            }}
+          ></div>
+        </div>
+        
         {/* Contact Section - Highest z-index, guaranteed main viewport positioning */}
         <div 
           className="absolute inset-0 w-full h-full z-50 ai-bg"
