@@ -30,7 +30,7 @@ const ScrollingSections = () => {
       const servicesScrollStart = 2 * viewportHeight;
       const relativeScroll = scrollY - servicesScrollStart;
       
-      // Create 9 discrete steps for card animations (don't move section)
+      // Create 10 discrete steps for card animations (don't move section)
       const stepSize = viewportHeight / 10; // 10 steps: enter + 3 cards (each with extra scroll) + button + 2 extra steps
       const currentStep = Math.floor(relativeScroll / stepSize);
       
