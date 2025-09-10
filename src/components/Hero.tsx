@@ -33,11 +33,11 @@ const Hero = () => {
               <div className="absolute -left-16 -top-8 w-80 h-80 bg-gradient-primary rounded-full opacity-10 blur-3xl animate-pulse"></div>
               <div className="relative">
                 <h1 className="text-5xl lg:text-7xl font-bold text-foreground leading-tight">
-                  Intelligent.
+                  Simplify.
                   <br />
-                  <span className="text-primary">Automated.</span>
+                  <span className="text-primary">Streamline.</span>
                   <br />
-                  <span className="bg-gradient-primary bg-clip-text text-transparent">Future-Ready.</span>
+                  <span className="bg-gradient-primary bg-clip-text text-transparent">Succeed.</span>
                 </h1>
               </div>
             </div>
