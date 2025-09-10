@@ -1,6 +1,62 @@
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 const ServicesSection = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (typeof window !== 'undefined') {
+        setScrollY(window.scrollY);
+      }
+    };
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      handleScroll(); // Initial call
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
+  }, []);
+
+  // Calculate scroll progress within services section (section index 2)
+  const servicesScrollStart = typeof window !== 'undefined' ? 2 * window.innerHeight : 0;
+  const relativeScroll = Math.max(0, scrollY - servicesScrollStart);
+  const scrollProgress = typeof window !== 'undefined' 
+    ? Math.min(relativeScroll / (window.innerHeight * 0.8), 1) 
+    : 0;
+
+  // Calculate animation states based on scroll progress
+  const firstCardVisible = scrollProgress > 0;
+  const secondCardVisible = scrollProgress > 0.25;
+  const thirdCardVisible = scrollProgress > 0.5;
+  const buttonVisible = scrollProgress > 0.75;
+
+  const getCardStyle = (cardIndex: number) => {
+    const delays = [0, 0.25, 0.5];
+    const isVisible = scrollProgress > delays[cardIndex];
+    
+    if (!isVisible) {
+      return {
+        opacity: 0,
+        transform: cardIndex === 1 ? 'translateX(100px)' : 'translateY(30px)',
+        transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+      };
+    }
+
+    return {
+      opacity: 1,
+      transform: 'translateX(0px) translateY(0px)',
+      transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+    };
+  };
+
+  const getButtonStyle = () => {
+    return {
+      opacity: buttonVisible ? 1 : 0,
+      transform: buttonVisible ? 'translateY(0px)' : 'translateY(20px)',
+      transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+    };
+  };
   return (
     <section className="w-full h-screen bg-background flex items-center justify-center relative overflow-hidden">
       {/* Tech circuit background pattern */}
@@ -26,7 +82,10 @@ const ServicesSection = () => {
         </p>
         
         <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <div className="bg-card/90 backdrop-blur-sm p-8 rounded-lg border border-border/50">
+          <div 
+            className="bg-card/90 backdrop-blur-sm p-8 rounded-lg border border-border/50"
+            style={getCardStyle(0)}
+          >
             <h3 className="text-2xl font-semibold mb-4 text-foreground">Operations Optimization</h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Streamline workflows and improve operational efficiency
@@ -41,7 +100,10 @@ const ServicesSection = () => {
             </Button>
           </div>
           
-          <div className="bg-card/90 backdrop-blur-sm p-8 rounded-lg border border-border/50">
+          <div 
+            className="bg-card/90 backdrop-blur-sm p-8 rounded-lg border border-border/50"
+            style={getCardStyle(1)}
+          >
             <h3 className="text-2xl font-semibold mb-4 text-foreground">IT Systems Management</h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Optimize your technology infrastructure
@@ -56,7 +118,10 @@ const ServicesSection = () => {
             </Button>
           </div>
           
-          <div className="bg-card/90 backdrop-blur-sm p-8 rounded-lg border border-border/50">
+          <div 
+            className="bg-card/90 backdrop-blur-sm p-8 rounded-lg border border-border/50"
+            style={getCardStyle(2)}
+          >
             <h3 className="text-2xl font-semibold mb-4 text-foreground">Fractional Leadership</h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Expert guidance without the full-time cost
@@ -72,9 +137,11 @@ const ServicesSection = () => {
           </div>
         </div>
         
-        <Button variant="default" size="lg" className="text-base">
-          Get Started
-        </Button>
+        <div style={getButtonStyle()}>
+          <Button variant="default" size="lg" className="text-base">
+            Get Started
+          </Button>
+        </div>
         
         {/* Floating tech elements */}
         <div className="absolute inset-0 pointer-events-none">
