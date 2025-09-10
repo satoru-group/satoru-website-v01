@@ -14,17 +14,20 @@ const ServicesSection = () => {
       const isInView = rect.top < window.innerHeight && rect.bottom > 0;
 
       if (isInView) {
-        // Calculate how much of the section is visible
-        const scrollProgress = Math.max(0, 1 - rect.top / window.innerHeight);
+        // Calculate discrete scroll steps within the services section  
+        const servicesScrollStart = 2 * window.innerHeight; // Services is section 2
+        const relativeScroll = Math.max(0, window.scrollY - servicesScrollStart);
+        const stepSize = window.innerHeight / 4; // 4 steps total
+        const currentStep = Math.floor(relativeScroll / stepSize);
 
-        // Show cards progressively based on scroll progress
+        // Show cards based on discrete steps
         const newVisibleCards: number[] = [];
-        if (scrollProgress > 0.2) newVisibleCards.push(0); // First card
-        if (scrollProgress > 0.4) newVisibleCards.push(1); // Second card
-        if (scrollProgress > 0.6) newVisibleCards.push(2); // Third card
+        if (currentStep >= 1) newVisibleCards.push(0); // First card at step 1
+        if (currentStep >= 2) newVisibleCards.push(1); // Second card at step 2  
+        if (currentStep >= 3) newVisibleCards.push(2); // Third card at step 3
         
         setVisibleCards(newVisibleCards);
-        setShowButton(scrollProgress > 0.8); // Button appears at 80%
+        setShowButton(currentStep >= 4); // Button at step 4
       }
     };
 
