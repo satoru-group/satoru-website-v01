@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const AboutUsSection = () => {
   return (
-    <section className="w-full h-screen bg-gradient-subtle flex items-center justify-center relative overflow-hidden">
+    <section className="w-full h-screen bg-background flex items-center justify-center relative overflow-hidden">
       {/* Neural network background pattern */}
       <div className="absolute inset-0 opacity-5">
         <svg className="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">

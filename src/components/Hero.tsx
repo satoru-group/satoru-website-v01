@@ -22,7 +22,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-screen bg-gradient-subtle px-6 lg:px-12 py-20 pt-32 z-20">
+    <section className="relative min-h-screen bg-background px-6 lg:px-12 py-20 pt-32 z-20">
       <div className="max-w-7xl mx-auto">
         {/* Main Hero Content */}
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">

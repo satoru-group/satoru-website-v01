@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const ServicesSection = () => {
   return (
-    <section className="w-full h-screen bg-gradient-to-br from-background to-secondary/20 flex items-center justify-center relative overflow-hidden">
+    <section className="w-full h-screen bg-background flex items-center justify-center relative overflow-hidden">
       {/* Tech circuit background pattern */}
       <div className="absolute inset-0 opacity-10">
         <svg className="w-full h-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">

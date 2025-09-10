@@ -4,7 +4,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 const ContactSection = () => {
   return (
-    <section className="w-full h-screen bg-gradient-to-bl from-primary/10 to-background flex items-center justify-center relative overflow-hidden">
+    <section className="w-full h-screen bg-secondary/30 flex items-center justify-center relative overflow-hidden">
       {/* Contact grid background pattern */}
       <div className="absolute inset-0 opacity-5">
         <svg className="w-full h-full" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
