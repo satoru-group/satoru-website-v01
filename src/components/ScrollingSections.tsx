@@ -52,8 +52,8 @@ const ScrollingSections = () => {
         };
       } else {
         // All cards shown, check if contact section should appear
-        const contactScrollStart = 3 * viewportHeight;
-        if (scrollY >= contactScrollStart) {
+        const contactScrollTrigger = 2.8 * viewportHeight; // Trigger contact slightly earlier
+        if (scrollY >= contactScrollTrigger) {
           // Hide services section when contact appears
           return {
             transform: `translateY(-${viewportHeight}px)`,
@@ -73,26 +73,26 @@ const ScrollingSections = () => {
     
     // Special handling for Contact section (index 3) - slide from right
     if (sectionIndex === 3) {
-      const contactScrollStart = 3 * viewportHeight;
+      const contactScrollStart = 2.8 * viewportHeight; // Start slightly before section 3
       const relativeScroll = scrollY - contactScrollStart;
       
-      // Always show contact section when it's time
-      if (relativeScroll >= 0) {
-        // Contact section reached - slide in from right
-        const slideProgress = Math.min(relativeScroll / (viewportHeight * 0.3), 1);
-        const translateX = Math.max((1 - slideProgress) * 100, 0);
+      if (relativeScroll <= 0) {
+        // Contact section not reached yet - keep off-screen to the right
+        return {
+          transform: 'translateX(100%)',
+          opacity: 1,
+          transition: "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
+        };
+      } else {
+        // Contact section reached - slide in from right to center
+        const slideDistance = viewportHeight * 0.5; // Distance to complete the slide
+        const slideProgress = Math.min(relativeScroll / slideDistance, 1);
+        const translateX = (1 - slideProgress) * 100; // From 100% to 0%
         
         return {
           transform: `translateX(${translateX}%)`,
           opacity: 1,
-          transition: "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
-        };
-      } else {
-        // Contact section not reached yet - keep off-screen
-        return {
-          transform: 'translateX(100%)',
-          opacity: 1,
-          transition: "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
+          transition: slideProgress === 1 ? "none" : "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
         };
       }
     }
