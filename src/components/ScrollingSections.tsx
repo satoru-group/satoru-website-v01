@@ -61,6 +61,31 @@ const ScrollingSections = () => {
       }
     }
     
+    // Special handling for Contact section (index 3) - slide from right
+    if (sectionIndex === 3) {
+      const contactScrollStart = 3 * viewportHeight;
+      const relativeScroll = scrollY - contactScrollStart;
+      
+      if (relativeScroll < 0) {
+        // Contact section not reached yet - stay off-screen to the right
+        return {
+          transform: 'translateX(100%)',
+          opacity: 1,
+          transition: "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
+        };
+      } else {
+        // Contact section reached - slide in from right
+        const slideProgress = Math.min(relativeScroll / (viewportHeight * 0.3), 1);
+        const translateX = (1 - slideProgress) * 100;
+        
+        return {
+          transform: `translateX(${translateX}%)`,
+          opacity: 1,
+          transition: "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
+        };
+      }
+    }
+    
     // Regular handling for other sections
     if (sectionIndex < currentScrollSection) {
       return {
@@ -96,9 +121,17 @@ const ScrollingSections = () => {
       
       {/* Fixed container for sections */}
       <div className="fixed top-0 left-0 w-full h-screen overflow-hidden">
-        {/* Hero Section */}
+        {/* Contact Section */}
         <div 
           className="absolute inset-0 w-full h-full z-30"
+          style={getTransformStyle(3)}
+        >
+          <ContactSection />
+        </div>
+        
+        {/* Hero Section */}
+        <div 
+          className="absolute inset-0 w-full h-full z-20"
           style={getTransformStyle(0)}
         >
           <Hero />
@@ -106,7 +139,7 @@ const ScrollingSections = () => {
         
         {/* About Us Section */}
         <div 
-          className="absolute inset-0 w-full h-full z-20"
+          className="absolute inset-0 w-full h-full z-10"
           style={getTransformStyle(1)}
         >
           <AboutUsSection />
@@ -114,18 +147,10 @@ const ScrollingSections = () => {
         
         {/* Services Section */}
         <div 
-          className="absolute inset-0 w-full h-full z-10"
+          className="absolute inset-0 w-full h-full z-0"
           style={getTransformStyle(2)}
         >
           <ServicesSection />
-        </div>
-        
-        {/* Contact Section */}
-        <div 
-          className="absolute inset-0 w-full h-full z-0"
-          style={getTransformStyle(3)}
-        >
-          <ContactSection />
         </div>
       </div>
     </>

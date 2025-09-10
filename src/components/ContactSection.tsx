@@ -13,11 +13,8 @@ const ContactSection = () => {
 
       const rect = sectionRef.current.getBoundingClientRect();
       const isInView = rect.top < window.innerHeight && rect.bottom > 0;
-      
-      console.log('Contact section - rect.top:', rect.top, 'rect.bottom:', rect.bottom, 'isInView:', isInView, 'isVisible:', isVisible);
 
       if (isInView && !isVisible) {
-        console.log('Setting contact section visible!');
         setIsVisible(true);
       }
     };
@@ -50,7 +47,7 @@ const ContactSection = () => {
         </svg>
       </div>
       
-      <div className="max-w-4xl mx-auto text-center space-y-12 relative z-10 px-6 lg:px-12" style={getSectionStyle()}>
+      <div className="max-w-4xl mx-auto text-center space-y-12 relative z-10 px-6 lg:px-12">
         <h2 className="text-4xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-8">
           Get In Touch
         </h2>
