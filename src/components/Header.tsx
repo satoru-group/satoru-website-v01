@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useState } from "react";
@@ -7,6 +7,9 @@ import { useState } from "react";
 const Header = () => {
   const { theme, setTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  
+  const isActive = (path: string) => location.pathname === path;
   
   return (
     <>
@@ -25,27 +28,55 @@ const Header = () => {
         <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
           <Link 
             to="/"
-            className="text-sm lg:text-base text-foreground hover:text-primary transition-smooth font-medium hover:shadow-glow-cyan"
+            className={`relative text-sm lg:text-base transition-smooth font-medium hover:shadow-glow-cyan ${
+              isActive('/') 
+                ? 'text-primary' 
+                : 'text-foreground hover:text-primary'
+            }`}
           >
             Home
+            {isActive('/') && (
+              <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-primary rounded-full"></div>
+            )}
           </Link>
           <Link 
             to="/about"
-            className="text-sm lg:text-base text-muted-foreground hover:text-primary transition-smooth font-medium hover:shadow-glow-cyan"
+            className={`relative text-sm lg:text-base transition-smooth font-medium hover:shadow-glow-cyan ${
+              isActive('/about') 
+                ? 'text-primary' 
+                : 'text-muted-foreground hover:text-primary'
+            }`}
           >
             About Us
+            {isActive('/about') && (
+              <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-primary rounded-full"></div>
+            )}
           </Link>
           <Link 
             to="/services"
-            className="text-sm lg:text-base text-muted-foreground hover:text-primary transition-smooth font-medium hover:shadow-glow-cyan"
+            className={`relative text-sm lg:text-base transition-smooth font-medium hover:shadow-glow-cyan ${
+              isActive('/services') 
+                ? 'text-primary' 
+                : 'text-muted-foreground hover:text-primary'
+            }`}
           >
             Services
+            {isActive('/services') && (
+              <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-primary rounded-full"></div>
+            )}
           </Link>
           <Link 
             to="/contact"
-            className="text-sm lg:text-base text-muted-foreground hover:text-primary transition-smooth font-medium hover:shadow-glow-cyan"
+            className={`relative text-sm lg:text-base transition-smooth font-medium hover:shadow-glow-cyan ${
+              isActive('/contact') 
+                ? 'text-primary' 
+                : 'text-muted-foreground hover:text-primary'
+            }`}
           >
             Contact
+            {isActive('/contact') && (
+              <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-primary rounded-full"></div>
+            )}
           </Link>
         </nav>
 
@@ -104,31 +135,59 @@ const Header = () => {
             <nav className="flex flex-col space-y-4">
               <Link 
                 to="/"
-                className="text-foreground hover:text-primary transition-smooth font-medium py-2 px-4 rounded-lg hover:bg-muted/50"
+                className={`relative transition-smooth font-medium py-2 px-4 rounded-lg hover:bg-muted/50 ${
+                  isActive('/') 
+                    ? 'text-primary bg-muted/30' 
+                    : 'text-foreground hover:text-primary'
+                }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Home
+                {isActive('/') && (
+                  <div className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-primary rounded-full"></div>
+                )}
               </Link>
               <Link 
                 to="/about"
-                className="text-muted-foreground hover:text-primary transition-smooth font-medium py-2 px-4 rounded-lg hover:bg-muted/50"
+                className={`relative transition-smooth font-medium py-2 px-4 rounded-lg hover:bg-muted/50 ${
+                  isActive('/about') 
+                    ? 'text-primary bg-muted/30' 
+                    : 'text-muted-foreground hover:text-primary'
+                }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 About Us
+                {isActive('/about') && (
+                  <div className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-primary rounded-full"></div>
+                )}
               </Link>
               <Link 
                 to="/services"
-                className="text-muted-foreground hover:text-primary transition-smooth font-medium py-2 px-4 rounded-lg hover:bg-muted/50"
+                className={`relative transition-smooth font-medium py-2 px-4 rounded-lg hover:bg-muted/50 ${
+                  isActive('/services') 
+                    ? 'text-primary bg-muted/30' 
+                    : 'text-muted-foreground hover:text-primary'
+                }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Services
+                {isActive('/services') && (
+                  <div className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-primary rounded-full"></div>
+                )}
               </Link>
               <Link 
                 to="/contact"
-                className="text-muted-foreground hover:text-primary transition-smooth font-medium py-2 px-4 rounded-lg hover:bg-muted/50"
+                className={`relative transition-smooth font-medium py-2 px-4 rounded-lg hover:bg-muted/50 ${
+                  isActive('/contact') 
+                    ? 'text-primary bg-muted/30' 
+                    : 'text-muted-foreground hover:text-primary'
+                }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Contact
+                {isActive('/contact') && (
+                  <div className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-primary rounded-full"></div>
+                )}
               </Link>
               <Button variant="ai" size="sm" className="mt-4 w-full">
                 Get Started
