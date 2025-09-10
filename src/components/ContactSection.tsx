@@ -13,8 +13,11 @@ const ContactSection = () => {
 
       const rect = sectionRef.current.getBoundingClientRect();
       const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+      
+      console.log('Contact section - rect.top:', rect.top, 'rect.bottom:', rect.bottom, 'isInView:', isInView, 'isVisible:', isVisible);
 
       if (isInView && !isVisible) {
+        console.log('Setting contact section visible!');
         setIsVisible(true);
       }
     };
