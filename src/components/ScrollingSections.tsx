@@ -30,8 +30,8 @@ const ScrollingSections = () => {
       const servicesScrollStart = 2 * viewportHeight;
       const relativeScroll = scrollY - servicesScrollStart;
       
-      // Create 6 discrete steps for card animations (don't move section)
-      const stepSize = viewportHeight / 7; // 7 steps: enter + 3 cards + button + 2 extra steps
+      // Create 9 discrete steps for card animations (don't move section)
+      const stepSize = viewportHeight / 10; // 10 steps: enter + 3 cards (each with extra scroll) + button + 2 extra steps
       const currentStep = Math.floor(relativeScroll / stepSize);
       
       if (relativeScroll < 0) {
@@ -43,7 +43,7 @@ const ScrollingSections = () => {
         };
       }
       
-      if (currentStep < 6) {
+      if (currentStep < 9) {
         // Stay fixed in services section while cards appear and extra scroll steps
         return {
           transform: 'translateY(0px)',
@@ -51,8 +51,8 @@ const ScrollingSections = () => {
           transition: "transform 0.3s ease-out",
         };
       } else {
-        // All cards shown + 2 extra steps completed, check if contact section should appear
-        const contactScrollTrigger = 2 * viewportHeight + (6 * stepSize); // After 6 steps
+        // All cards shown + extra steps completed, check if contact section should appear
+        const contactScrollTrigger = 2 * viewportHeight + (9 * stepSize); // After 9 steps
         if (scrollY >= contactScrollTrigger) {
           // Hide services section when contact appears
           return {
@@ -73,7 +73,7 @@ const ScrollingSections = () => {
     
     // Special handling for Contact section (index 3) - slide from right
     if (sectionIndex === 3) {
-      const servicesCompleteScroll = 2 * window.innerHeight + (6 * (window.innerHeight / 7)); // After 6 service steps
+      const servicesCompleteScroll = 2 * window.innerHeight + (9 * (window.innerHeight / 10)); // After 9 service steps
       
       if (scrollY < servicesCompleteScroll) {
         // Contact section hidden off-screen to the right
