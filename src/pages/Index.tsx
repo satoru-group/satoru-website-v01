@@ -4,7 +4,7 @@ import BlankSection from "@/components/BlankSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="relative">
       <Header />
       <main className="relative">
         <Hero />

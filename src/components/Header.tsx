@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const Header = () => {
   return (
-    <header className="w-full py-6 px-6 lg:px-12 flex items-center justify-between bg-background/95 backdrop-blur-sm border-b border-border/50">
+    <header className="fixed top-0 left-0 right-0 w-full py-6 px-6 lg:px-12 flex items-center justify-between bg-background/95 backdrop-blur-sm border-b border-border/50 z-50">
       <div className="flex items-center">
         <div className="text-2xl font-bold text-foreground">
           SATORU<span className="text-primary">.</span>
