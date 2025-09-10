@@ -4,30 +4,24 @@ import { Button } from "@/components/ui/button";
 
 const About = () => {
   return (
-    <div className="relative font-body">
+    <div className="relative font-body ai-bg neural-bg">
       <Header />
       
       {/* Main About Content */}
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="w-full min-h-screen bg-gradient-to-br from-background via-background to-secondary/10 flex items-center justify-center relative overflow-hidden">
-          {/* Sophisticated background pattern */}
-          <div className="absolute inset-0 opacity-[0.03]">
-            <div className="absolute inset-0" style={{
-              backgroundImage: `
-                radial-gradient(circle at 25% 25%, hsl(var(--primary)) 2px, transparent 2px),
-                radial-gradient(circle at 75% 75%, hsl(var(--accent)) 1px, transparent 1px)
-              `,
-              backgroundSize: '80px 80px, 60px 60px'
-            }}></div>
-          </div>
+        <section className="w-full min-h-screen bg-gradient-subtle flex items-center justify-center relative overflow-hidden circuit-bg">
+          {/* AI Animated Orbs */}
+          <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-ai rounded-full opacity-20 animate-orb-float"></div>
+          <div className="absolute bottom-40 right-32 w-24 h-24 bg-gradient-primary rounded-full opacity-30 animate-float-subtle"></div>
+          <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-primary/20 rounded-full animate-float-dynamic"></div>
           
           <div className="max-w-6xl mx-auto text-center space-y-12 relative z-10 px-6 lg:px-12 py-20">
             <div className="space-y-6">
               <h1 className="text-6xl lg:text-8xl font-heading font-bold bg-gradient-primary bg-clip-text text-transparent leading-tight">
                 About Satoru
               </h1>
-              <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
+              <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full shadow-glow-ai"></div>
               <p className="text-2xl lg:text-3xl text-muted-foreground font-light leading-relaxed max-w-4xl mx-auto">
                 <span className="italic font-heading">Satoru</span> means to understand, to know, or to perceive—the foundation of transformative business consulting.
               </p>

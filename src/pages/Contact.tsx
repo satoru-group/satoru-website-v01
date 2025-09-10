@@ -5,22 +5,27 @@ import { Textarea } from "@/components/ui/textarea";
 
 const Contact = () => {
   return (
-    <div className="relative font-body">
+    <div className="relative font-body ai-bg neural-bg">
       <Header />
       
       {/* Main Contact Content */}
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="w-full h-screen bg-gradient-to-br from-background via-background to-secondary/20 flex items-center justify-center relative overflow-hidden">
-          <div className="absolute inset-0 opacity-5">
+        <section className="w-full h-screen bg-gradient-subtle flex items-center justify-center relative overflow-hidden circuit-bg">
+          {/* AI Animated Background Elements */}
+          <div className="absolute top-24 left-24 w-32 h-32 bg-gradient-ai rounded-full opacity-20 animate-orb-float"></div>
+          <div className="absolute bottom-32 right-20 w-24 h-24 bg-primary/30 rounded-full animate-float-subtle"></div>
+          <div className="absolute top-2/3 right-1/3 w-16 h-16 bg-accent/20 rounded-full animate-float-dynamic"></div>
+          
+          <div className="absolute inset-0 opacity-5 animate-circuit-flow">
             <svg className="w-full h-full" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <pattern id="contact-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+                <pattern id="ai-contact-grid" width="60" height="60" patternUnits="userSpaceOnUse">
                   <path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" strokeWidth="1"/>
-                  <circle cx="30" cy="30" r="1.5" fill="currentColor" opacity="0.4"/>
+                  <circle cx="30" cy="30" r="1.5" fill="currentColor" opacity="0.6" className="animate-ai-pulse"/>
                 </pattern>
               </defs>
-              <rect width="60" height="60" fill="url(#contact-grid)" />
+              <rect width="60" height="60" fill="url(#ai-contact-grid)" />
             </svg>
           </div>
           
@@ -35,43 +40,43 @@ const Contact = () => {
         </section>
 
         {/* Contact Form & Info */}
-        <section className="py-20 px-6 lg:px-12 bg-card/30">
+        <section className="py-20 px-6 lg:px-12 bg-card/30 ai-bg">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-16">
               {/* Contact Form */}
-              <div className="bg-card/80 backdrop-blur-sm p-8 rounded-2xl border border-border/50">
+              <div className="ai-card-hover bg-card/80 backdrop-blur-sm p-8 rounded-2xl border border-primary/30 shadow-glow-ai">
                 <h2 className="text-3xl font-heading font-bold text-foreground mb-8">Send us a message</h2>
                 <form className="space-y-6">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">First Name</label>
-                      <Input placeholder="John" className="bg-background/50" />
+                      <Input placeholder="John" className="bg-background/50 border-primary/20" />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">Last Name</label>
-                      <Input placeholder="Doe" className="bg-background/50" />
+                      <Input placeholder="Doe" className="bg-background/50 border-primary/20" />
                     </div>
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">Email Address</label>
-                    <Input type="email" placeholder="john@company.com" className="bg-background/50" />
+                    <Input type="email" placeholder="john@company.com" className="bg-background/50 border-primary/20" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">Company</label>
-                    <Input placeholder="Your Company" className="bg-background/50" />
+                    <Input placeholder="Your Company" className="bg-background/50 border-primary/20" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">Phone (Optional)</label>
-                    <Input placeholder="+1 (555) 123-4567" className="bg-background/50" />
+                    <Input placeholder="+1 (555) 123-4567" className="bg-background/50 border-primary/20" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">Message</label>
                     <Textarea 
                       placeholder="Tell us about your project and how we can help..." 
-                      className="bg-background/50 min-h-[120px]" 
+                      className="bg-background/50 border-primary/20 min-h-[120px]" 
                     />
                   </div>
-                  <Button size="lg" className="w-full text-base">
+                  <Button size="lg" className="w-full text-base hover-lift shadow-glow-ai">
                     Send Message
                   </Button>
                 </form>
@@ -79,13 +84,13 @@ const Contact = () => {
 
               {/* Contact Information */}
               <div className="space-y-8">
-                <div className="bg-card/80 backdrop-blur-sm p-8 rounded-2xl border border-border/50">
+                <div className="ai-card-hover bg-card/80 backdrop-blur-sm p-8 rounded-2xl border border-primary/30 shadow-glow-ai">
                   <h3 className="text-2xl font-heading font-bold text-foreground mb-6">Contact Information</h3>
                   
                   <div className="space-y-6">
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center animate-float-subtle">
+                        <svg className="w-6 h-6 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                       </div>
@@ -96,8 +101,8 @@ const Contact = () => {
                     </div>
                     
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center animate-float-dynamic">
+                        <svg className="w-6 h-6 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                         </svg>
                       </div>
@@ -108,8 +113,8 @@ const Contact = () => {
                     </div>
                     
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center animate-ai-pulse">
+                        <svg className="w-6 h-6 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>

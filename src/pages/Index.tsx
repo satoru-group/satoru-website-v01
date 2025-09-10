@@ -3,7 +3,7 @@ import ScrollingSections from "@/components/ScrollingSections";
 
 const Index = () => {
   return (
-    <div className="relative">
+    <div className="relative ai-bg neural-bg">
       <Header />
       <ScrollingSections />
     </div>

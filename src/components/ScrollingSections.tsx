@@ -170,10 +170,10 @@ const ScrollingSections = () => {
       <div className="h-[400vh]"></div>
       
       {/* Fixed container for sections */}
-      <div className="fixed top-0 left-0 w-full h-screen overflow-hidden">
+      <div className="fixed top-0 left-0 w-full h-screen overflow-hidden ai-bg neural-bg">
         {/* Contact Section - Highest z-index, guaranteed main viewport positioning */}
         <div 
-          className="absolute inset-0 w-full h-full z-50"
+          className="absolute inset-0 w-full h-full z-50 ai-bg"
           style={getTransformStyle(3)}
         >
           <ContactSection />
@@ -181,7 +181,7 @@ const ScrollingSections = () => {
         
         {/* Hero Section */}
         <div 
-          className="absolute inset-0 w-full h-full z-40"
+          className="absolute inset-0 w-full h-full z-40 ai-bg"
           style={getTransformStyle(0)}
         >
           <Hero showArrow={activeSection === 0} />
@@ -189,7 +189,7 @@ const ScrollingSections = () => {
         
         {/* About Us Section */}
         <div 
-          className="absolute inset-0 w-full h-full z-30"
+          className="absolute inset-0 w-full h-full z-30 ai-bg"
           style={getTransformStyle(1)}
         >
           <AboutUsSection showArrow={activeSection === 1} />
@@ -197,7 +197,7 @@ const ScrollingSections = () => {
         
         {/* Services Section */}
         <div 
-          className="absolute inset-0 w-full h-full z-20"
+          className="absolute inset-0 w-full h-full z-20 ai-bg"
           style={getTransformStyle(2)}
         >
           <ServicesSection showArrow={activeSection === 2} />

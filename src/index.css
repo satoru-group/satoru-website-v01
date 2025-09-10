@@ -18,7 +18,7 @@ All colors MUST be HSL.
     --popover: 220 23% 6%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 195 100% 50%;
+    --primary: 195 100% 50%; /* AI Cyan */
     --primary-foreground: 220 27% 4%;
 
     --secondary: 217 19% 12%;
@@ -27,7 +27,7 @@ All colors MUST be HSL.
     --muted: 217 19% 8%;
     --muted-foreground: 215 25% 65%;
 
-    --accent: 195 100% 50%;
+    --accent: 270 100% 60%; /* AI Purple */
     --accent-foreground: 220 27% 4%;
 
     --destructive: 0 73% 58%;
@@ -37,19 +37,28 @@ All colors MUST be HSL.
     --input: 217 19% 12%;
     --ring: 195 100% 50%;
 
+    /* AI Success & Warning */
+    --success: 158 48% 43%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 69% 51%;
+    --warning-foreground: 0 0% 100%;
+
     /* AI-themed gradients */
     --gradient-primary: linear-gradient(135deg, hsl(195 100% 50%), hsl(220 100% 60%), hsl(270 100% 60%));
     --gradient-subtle: linear-gradient(180deg, hsl(220 27% 4%), hsl(220 23% 6%));
     --gradient-glow: linear-gradient(135deg, hsl(195 100% 50% / 0.1), hsl(270 100% 60% / 0.1));
+    --gradient-ai: linear-gradient(135deg, hsl(195 100% 50% / 0.8), hsl(270 100% 60% / 0.8));
     
     /* AI-themed shadows and glows */
     --shadow-elegant: 0 10px 40px -12px hsl(195 100% 50% / 0.4);
     --shadow-soft: 0 4px 20px -4px hsl(195 100% 50% / 0.2);
     --glow-cyan: 0 0 20px hsl(195 100% 50% / 0.5);
     --glow-purple: 0 0 20px hsl(270 100% 60% / 0.5);
+    --glow-ai: 0 0 40px hsl(195 100% 50% / 0.3), 0 0 80px hsl(270 100% 60% / 0.2);
     
     /* Smooth transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 0.5rem;
 
@@ -64,49 +73,53 @@ All colors MUST be HSL.
   }
 
   .light {
-    /* Light Mode - Professional Palette */
+    /* AI Light Mode */
     --background: 210 40% 98%; /* Cloud White */
-    --foreground: 220 24% 14%; /* Midnight Navy */
+    --foreground: 220 27% 8%; /* Deep Navy */
 
     --card: 0 0% 100%; /* Pure white cards */
-    --card-foreground: 220 24% 14%; /* Midnight Navy */
+    --card-foreground: 220 27% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 24% 14%; /* Midnight Navy */
+    --popover-foreground: 220 27% 8%;
 
-    --primary: 213 61% 49%; /* Accent Blue */
+    --primary: 195 100% 45%; /* AI Cyan */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 98%;
-    --secondary-foreground: 220 24% 14%; /* Midnight Navy */
+    --secondary: 210 40% 95%;
+    --secondary-foreground: 220 27% 8%;
 
-    --muted: 210 40% 98%;
-    --muted-foreground: 214 20% 34%; /* Slate Gray */
+    --muted: 210 40% 95%;
+    --muted-foreground: 214 20% 40%;
 
-    --accent: 213 61% 49%; /* Accent Blue */
+    --accent: 270 100% 55%; /* AI Purple */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 45 69% 51%; /* Warm Gold for warnings */
+    --destructive: 0 73% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 213 61% 49%; /* Accent Blue */
+    --border: 220 13% 88%;
+    --input: 220 13% 88%;
+    --ring: 195 100% 45%;
 
-    /* Success color for positive stats */
-    --success: 158 48% 43%; /* Efficiency Green */
+    /* AI Success & Warning for light mode */
+    --success: 158 48% 40%;
     --success-foreground: 0 0% 100%;
+    --warning: 45 69% 48%;
+    --warning-foreground: 0 0% 100%;
 
-    /* Professional gradients for light mode */
-    --gradient-primary: linear-gradient(135deg, hsl(213 61% 49%), hsl(213 61% 59%), hsl(213 71% 69%));
+    /* AI-themed gradients for light mode */
+    --gradient-primary: linear-gradient(135deg, hsl(195 100% 45%), hsl(220 100% 55%), hsl(270 100% 55%));
     --gradient-subtle: linear-gradient(180deg, hsl(210 40% 98%), hsl(0 0% 100%));
-    --gradient-glow: linear-gradient(135deg, hsl(213 61% 49% / 0.1), hsl(158 48% 43% / 0.1));
+    --gradient-glow: linear-gradient(135deg, hsl(195 100% 45% / 0.1), hsl(270 100% 55% / 0.1));
+    --gradient-ai: linear-gradient(135deg, hsl(195 100% 45% / 0.6), hsl(270 100% 55% / 0.6));
     
-    /* Professional shadows and glows for light mode */
-    --shadow-elegant: 0 10px 40px -12px hsl(213 61% 49% / 0.2);
-    --shadow-soft: 0 4px 20px -4px hsl(213 61% 49% / 0.1);
-    --glow-cyan: 0 0 20px hsl(213 61% 49% / 0.3);
-    --glow-purple: 0 0 20px hsl(158 48% 43% / 0.3);
+    /* AI-themed shadows and glows for light mode */
+    --shadow-elegant: 0 10px 40px -12px hsl(195 100% 45% / 0.25);
+    --shadow-soft: 0 4px 20px -4px hsl(195 100% 45% / 0.15);
+    --glow-cyan: 0 0 20px hsl(195 100% 45% / 0.3);
+    --glow-purple: 0 0 20px hsl(270 100% 55% / 0.3);
+    --glow-ai: 0 0 40px hsl(195 100% 45% / 0.2), 0 0 80px hsl(270 100% 55% / 0.15);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -119,49 +132,53 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Dark Mode - Professional Palette */
-    --background: 220 24% 14%; /* Deep Charcoal */
-    --foreground: 210 40% 98%; /* Cloud White */
+    /* AI Dark Mode */
+    --background: 220 27% 4%; /* Deep AI Dark */
+    --foreground: 210 40% 98%; /* Bright white */
 
-    --card: 220 24% 14%; /* Deep Charcoal */
-    --card-foreground: 210 40% 98%; /* Cloud White */
+    --card: 220 23% 6%; /* Slightly lighter dark */
+    --card-foreground: 210 40% 98%;
 
-    --popover: 220 24% 14%; /* Deep Charcoal */
-    --popover-foreground: 210 40% 98%; /* Cloud White */
+    --popover: 220 23% 6%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 213 73% 67%; /* Accent Blue (lighter for dark mode) */
-    --primary-foreground: 220 24% 14%; /* Deep Charcoal */
+    --primary: 195 100% 60%; /* Brighter AI Cyan */
+    --primary-foreground: 220 27% 4%;
 
     --secondary: 217 19% 12%;
-    --secondary-foreground: 210 40% 98%; /* Cloud White */
+    --secondary-foreground: 210 40% 98%;
 
     --muted: 217 19% 8%;
-    --muted-foreground: 214 20% 69%; /* Cool Gray */
+    --muted-foreground: 215 25% 65%;
 
-    --accent: 213 73% 67%; /* Accent Blue (lighter for dark mode) */
-    --accent-foreground: 220 24% 14%; /* Deep Charcoal */
+    --accent: 270 100% 70%; /* Brighter AI Purple */
+    --accent-foreground: 220 27% 4%;
 
-    --destructive: 45 76% 61%; /* Warm Gold (brighter for dark mode) */
-    --destructive-foreground: 220 24% 14%; /* Deep Charcoal */
+    --destructive: 0 73% 60%;
+    --destructive-foreground: 210 40% 98%;
 
     --border: 217 19% 12%;
     --input: 217 19% 12%;
-    --ring: 213 73% 67%; /* Accent Blue */
+    --ring: 195 100% 60%;
 
-    /* Success color for positive stats */
-    --success: 158 48% 52%; /* Efficiency Green (brighter for dark mode) */
-    --success-foreground: 220 24% 14%; /* Deep Charcoal */
+    /* AI Success & Warning for dark mode */
+    --success: 158 48% 50%;
+    --success-foreground: 220 27% 4%;
+    --warning: 45 69% 55%;
+    --warning-foreground: 220 27% 4%;
 
-    /* Professional gradients for dark mode */
-    --gradient-primary: linear-gradient(135deg, hsl(213 73% 67%), hsl(213 73% 77%), hsl(213 83% 87%));
-    --gradient-subtle: linear-gradient(180deg, hsl(220 24% 14%), hsl(217 19% 12%));
-    --gradient-glow: linear-gradient(135deg, hsl(213 73% 67% / 0.1), hsl(158 48% 52% / 0.1));
+    /* AI-themed gradients for dark mode */
+    --gradient-primary: linear-gradient(135deg, hsl(195 100% 60%), hsl(220 100% 65%), hsl(270 100% 70%));
+    --gradient-subtle: linear-gradient(180deg, hsl(220 27% 4%), hsl(220 23% 6%));
+    --gradient-glow: linear-gradient(135deg, hsl(195 100% 60% / 0.15), hsl(270 100% 70% / 0.15));
+    --gradient-ai: linear-gradient(135deg, hsl(195 100% 60% / 0.8), hsl(270 100% 70% / 0.8));
     
-    /* Professional shadows and glows for dark mode */
-    --shadow-elegant: 0 10px 40px -12px hsl(213 73% 67% / 0.3);
-    --shadow-soft: 0 4px 20px -4px hsl(213 73% 67% / 0.2);
-    --glow-cyan: 0 0 20px hsl(213 73% 67% / 0.4);
-    --glow-purple: 0 0 20px hsl(158 48% 52% / 0.4);
+    /* AI-themed shadows and glows for dark mode */
+    --shadow-elegant: 0 10px 40px -12px hsl(195 100% 60% / 0.4);
+    --shadow-soft: 0 4px 20px -4px hsl(195 100% 60% / 0.3);
+    --glow-cyan: 0 0 20px hsl(195 100% 60% / 0.6);
+    --glow-purple: 0 0 20px hsl(270 100% 70% / 0.6);
+    --glow-ai: 0 0 40px hsl(195 100% 60% / 0.4), 0 0 80px hsl(270 100% 70% / 0.3);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -199,6 +216,58 @@ All colors MUST be HSL.
     text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
   }
 
+  /* AI Background Effects */
+  .ai-bg {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-glow);
+    opacity: 0.1;
+    animation: ai-pulse 4s ease-in-out infinite;
+    z-index: -1;
+  }
+
+  .ai-bg::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, hsl(var(--primary) / 0.05) 0%, transparent 70%);
+    animation: ai-rotate 20s linear infinite;
+    z-index: -1;
+  }
+
+  /* Neural Network Background Pattern */
+  .neural-bg {
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, hsl(var(--primary) / 0.2), transparent),
+      radial-gradient(2px 2px at 40px 70px, hsl(var(--accent) / 0.2), transparent),
+      radial-gradient(1px 1px at 90px 40px, hsl(var(--primary) / 0.1), transparent),
+      radial-gradient(1px 1px at 130px 80px, hsl(var(--accent) / 0.1), transparent);
+    background-size: 150px 100px;
+    animation: neural-drift 30s linear infinite;
+  }
+
+  /* Circuit Pattern */
+  .circuit-bg {
+    background-image: 
+      linear-gradient(90deg, hsl(var(--primary) / 0.1) 1px, transparent 1px),
+      linear-gradient(180deg, hsl(var(--primary) / 0.1) 1px, transparent 1px),
+      linear-gradient(45deg, hsl(var(--accent) / 0.05) 1px, transparent 1px);
+    background-size: 50px 50px, 50px 50px, 25px 25px;
+    animation: circuit-flow 15s ease-in-out infinite;
+  }
+
   /* Modern floating animations */
   @keyframes float-subtle {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -217,6 +286,37 @@ All colors MUST be HSL.
     from { filter: drop-shadow(0 0 10px hsl(var(--primary) / 0.8)); }
     to { filter: drop-shadow(0 0 20px hsl(var(--primary) / 0.4)); }
   }
+
+  /* AI Background Animations */
+  @keyframes ai-pulse {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.2; }
+  }
+
+  @keyframes ai-rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes neural-drift {
+    0% { background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px; }
+    100% { background-position: 150px 100px, -150px -100px, 75px 50px, -75px -50px; }
+  }
+
+  @keyframes circuit-flow {
+    0%, 100% { opacity: 0.3; }
+    25% { opacity: 0.6; }
+    50% { opacity: 0.3; }
+    75% { opacity: 0.6; }
+  }
+
+  /* Glowing orb animations */
+  @keyframes orb-float {
+    0%, 100% { transform: translate(0px, 0px) scale(1); }
+    25% { transform: translate(10px, -15px) scale(1.1); }
+    50% { transform: translate(-8px, -5px) scale(0.9); }
+    75% { transform: translate(15px, 10px) scale(1.05); }
+  }
   
   .animate-float-subtle {
     animation: float-subtle 6s ease-in-out infinite;
@@ -224,6 +324,43 @@ All colors MUST be HSL.
   
   .animate-float-dynamic {
     animation: float-dynamic 8s ease-in-out infinite;
+  }
+
+  /* AI Animation Classes */
+  .animate-ai-pulse {
+    animation: ai-pulse 4s ease-in-out infinite;
+  }
+
+  .animate-neural-drift {
+    animation: neural-drift 30s linear infinite;
+  }
+
+  .animate-circuit-flow {
+    animation: circuit-flow 15s ease-in-out infinite;
+  }
+
+  .animate-orb-float {
+    animation: orb-float 10s ease-in-out infinite;
+  }
+
+  /* AI Glow Effects */
+  .shadow-glow-ai {
+    box-shadow: var(--glow-ai);
+  }
+
+  .bg-gradient-ai {
+    background: var(--gradient-ai);
+  }
+
+  /* Modern Interactive Effects */
+  .ai-card-hover {
+    transition: var(--transition-glow);
+  }
+
+  .ai-card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--glow-ai);
+    background: var(--gradient-glow);
   }
 
   /* Modern button hover effects */
