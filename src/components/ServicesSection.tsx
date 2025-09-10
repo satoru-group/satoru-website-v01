@@ -185,8 +185,8 @@ const ServicesSection = () => {
       {/* Scroll Down Arrow */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="flex flex-col items-center space-y-1">
-          <ChevronsDown className="w-8 h-8 bg-gradient-primary bg-clip-text text-transparent" strokeWidth={3} />
-          <ChevronsDown className="w-8 h-8 bg-gradient-primary bg-clip-text text-transparent" strokeWidth={3} />
+          <ChevronsDown className="w-8 h-8 text-primary" strokeWidth={3} />
+          <ChevronsDown className="w-8 h-8 text-primary" strokeWidth={3} />
         </div>
       </div>
     </section>
