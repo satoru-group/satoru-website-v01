@@ -20,14 +20,23 @@ const ScrollingSections = () => {
 
   const getTransformStyle = (sectionIndex: number) => {
     const viewportHeight = window.innerHeight;
-    const sectionScrollStart = sectionIndex * viewportHeight;
-    const relativeScroll = scrollY - sectionScrollStart;
+    const currentScrollSection = Math.floor(scrollY / viewportHeight);
     
-    // Each section rolls up when you scroll past it
-    const translateY = Math.max(-relativeScroll, -viewportHeight);
+    // Only transform the section that should be rolling up
+    if (sectionIndex === currentScrollSection) {
+      const sectionScrollStart = sectionIndex * viewportHeight;
+      const relativeScroll = scrollY - sectionScrollStart;
+      const translateY = -relativeScroll;
+      
+      return {
+        transform: `translateY(${translateY}px)`,
+        transition: "none",
+      };
+    }
     
+    // All other sections stay in their natural position
     return {
-      transform: `translateY(${translateY}px)`,
+      transform: 'translateY(0px)',
       transition: "none",
     };
   };
@@ -41,7 +50,7 @@ const ScrollingSections = () => {
       <div className="fixed top-0 left-0 w-full h-screen overflow-hidden">
         {/* Hero Section */}
         <div 
-          className="absolute inset-0 w-full h-full"
+          className="absolute inset-0 w-full h-full z-30"
           style={getTransformStyle(0)}
         >
           <Hero />
@@ -49,7 +58,7 @@ const ScrollingSections = () => {
         
         {/* About Us Section */}
         <div 
-          className="absolute inset-0 w-full h-full"
+          className="absolute inset-0 w-full h-full z-20"
           style={getTransformStyle(1)}
         >
           <AboutUsSection />
@@ -57,7 +66,7 @@ const ScrollingSections = () => {
         
         {/* Services Section */}
         <div 
-          className="absolute inset-0 w-full h-full"
+          className="absolute inset-0 w-full h-full z-10"
           style={getTransformStyle(2)}
         >
           <ServicesSection />
@@ -65,7 +74,7 @@ const ScrollingSections = () => {
         
         {/* Contact Section */}
         <div 
-          className="absolute inset-0 w-full h-full"
+          className="absolute inset-0 w-full h-full z-0"
           style={getTransformStyle(3)}
         >
           <ContactSection />
