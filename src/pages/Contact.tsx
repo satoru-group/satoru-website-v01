@@ -45,7 +45,7 @@ const Contact = () => {
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
               {/* Contact Form */}
               <div className="ai-card-hover bg-card/80 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-primary/30 shadow-glow-ai">
-                <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-6 sm:mb-8">Send us a message</h2>
+                <h2 className="text-lg sm:text-2xl lg:text-3xl font-bold text-foreground mb-4 sm:mb-6 lg:mb-8">Send us a message</h2>
                 <form className="space-y-4 sm:space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
@@ -85,7 +85,7 @@ const Contact = () => {
               {/* Contact Information */}
               <div className="space-y-6 sm:space-y-8">
                 <div className="ai-card-hover bg-card/80 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-primary/30 shadow-glow-ai">
-                  <h3 className="text-xl sm:text-2xl font-heading font-bold text-foreground mb-4 sm:mb-6">Contact Information</h3>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground mb-4 sm:mb-6">Contact Information</h3>
                   
                   <div className="space-y-4 sm:space-y-6">
                     <div className="flex items-center gap-3 sm:gap-4">

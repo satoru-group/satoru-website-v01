@@ -18,12 +18,12 @@ const About = () => {
           
           <div className="max-w-6xl mx-auto text-center space-y-8 sm:space-y-12 relative z-10 px-4 sm:px-6 lg:px-12 py-16 sm:py-20">
             <div className="space-y-4 sm:space-y-6">
-              <h1 className="text-4xl sm:text-6xl lg:text-8xl font-heading font-bold bg-gradient-primary bg-clip-text text-transparent leading-tight">
+              <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold bg-gradient-primary bg-clip-text text-transparent leading-tight">
                 About Satoru
               </h1>
               <div className="w-16 sm:w-24 h-1 bg-gradient-primary mx-auto rounded-full shadow-glow-ai"></div>
               <p className="text-lg sm:text-2xl lg:text-3xl text-muted-foreground font-light leading-relaxed max-w-4xl mx-auto">
-                <span className="italic font-heading">Satoru</span> means to understand, to know, or to perceive—the foundation of transformative business consulting.
+                <span className="italic">Satoru</span> means to understand, to know, or to perceive—the foundation of transformative business consulting.
               </p>
             </div>
           </div>
@@ -91,7 +91,7 @@ const About = () => {
         <section className="py-32 px-6 lg:px-12 bg-gradient-subtle relative">
           <div className="max-w-7xl mx-auto">
             <div className="text-center space-y-12 mb-20">
-              <h2 className="text-5xl lg:text-6xl font-heading font-bold bg-gradient-primary bg-clip-text text-transparent">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                 Our Purpose
               </h2>
               <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
@@ -106,9 +106,9 @@ const About = () => {
                         <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z"/>
                       </svg>
                     </div>
-                    <h3 className="text-3xl font-heading font-bold text-foreground">Mission</h3>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-foreground">Mission</h3>
                   </div>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
+                  <p className="text-base sm:text-lg lg:text-lg text-muted-foreground leading-relaxed">
                     At Satoru Consulting, our mission is to empower your business to achieve sustainable success through strategic operations optimization and innovative technology solutions.
                   </p>
                 </div>
@@ -122,9 +122,9 @@ const About = () => {
                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                       </svg>
                     </div>
-                    <h3 className="text-3xl font-heading font-bold text-foreground">Vision</h3>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-foreground">Vision</h3>
                   </div>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
+                  <p className="text-base sm:text-lg lg:text-lg text-muted-foreground leading-relaxed">
                     To be the trusted force behind business transformation, envisioning a future where clarity powers growth and every business challenge leads to opportunity.
                   </p>
                 </div>
@@ -137,11 +137,11 @@ const About = () => {
         <section className="py-32 px-6 lg:px-12 bg-background relative">
           <div className="max-w-7xl mx-auto">
             <div className="text-center space-y-12 mb-20">
-              <h2 className="text-5xl lg:text-6xl font-heading font-bold bg-gradient-primary bg-clip-text text-transparent">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                 Our Values
               </h2>
               <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                 These core principles guide every decision we make and every solution we deliver.
               </p>
             </div>
@@ -177,10 +177,10 @@ const About = () => {
                 <div key={index} className={`backdrop-modern bg-card/5 p-8 rounded-2xl border border-border/20 hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 group ${index === 4 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
                   <div className="space-y-6">
                     <div className="text-4xl mb-4">{value.icon}</div>
-                    <h4 className="text-xl font-heading font-semibold text-foreground leading-tight">
+                    <h4 className="text-lg sm:text-xl font-bold text-foreground leading-tight">
                       {value.title}
                     </h4>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                       {value.description}
                     </p>
                   </div>
@@ -194,11 +194,11 @@ const About = () => {
         <section className="py-32 px-6 lg:px-12 bg-gradient-subtle relative">
           <div className="max-w-7xl mx-auto">
             <div className="text-center space-y-12 mb-20">
-              <h2 className="text-5xl lg:text-6xl font-heading font-bold bg-gradient-primary bg-clip-text text-transparent">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                 Excellence in Experience
               </h2>
               <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
-              <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
                 Backed by over 70 years of combined experience across operations, technology, strategy, and leadership, our founding team brings a proven track record of building scalable systems, leading transformative projects, and driving business growth across sectors.
               </p>
             </div>
@@ -223,13 +223,13 @@ const About = () => {
               ].map((stat, index) => (
                 <div key={index} className="text-center space-y-6 group">
                   <div className="space-y-4">
-                    <div className="text-5xl lg:text-6xl font-heading font-bold bg-gradient-primary bg-clip-text text-transparent">
+                    <div className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                       {stat.number}
                     </div>
-                    <div className="text-xl font-heading font-semibold text-foreground">
+                    <div className="text-lg sm:text-xl font-bold text-foreground">
                       {stat.label}
                     </div>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                       {stat.description}
                     </p>
                   </div>
@@ -243,19 +243,19 @@ const About = () => {
         <section className="py-32 px-6 lg:px-12 bg-background relative">
           <div className="max-w-4xl mx-auto text-center space-y-12">
             <div className="space-y-6">
-              <h2 className="text-4xl lg:text-5xl font-heading font-bold bg-gradient-primary bg-clip-text text-transparent leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent leading-tight">
                 Ready to Transform Your Business?
               </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+              <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
                 Let's discuss how our expertise can help you streamline operations, optimize systems, and achieve sustainable growth.
               </p>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Button size="lg" className="text-lg px-8 py-6 hover-lift bg-gradient-primary border-0 font-medium">
+              <Button size="lg" className="text-sm sm:text-lg px-6 sm:px-8 py-4 sm:py-6 hover-lift bg-gradient-primary border-0 font-medium">
                 Start Your Journey
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6 hover-lift border-border/30 font-medium">
+              <Button variant="outline" size="lg" className="text-sm sm:text-lg px-6 sm:px-8 py-4 sm:py-6 hover-lift border-border/30 font-medium">
                 Learn More
               </Button>
             </div>

@@ -29,7 +29,7 @@ const Services = () => {
           </div>
           
           <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8 relative z-10 px-4 sm:px-6 lg:px-12">
-            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-heading font-bold bg-gradient-primary bg-clip-text text-transparent mb-6 sm:mb-8 leading-tight">
+            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6 sm:mb-8 leading-tight">
               Our Services
             </h1>
             <p className="text-lg sm:text-2xl lg:text-3xl text-muted-foreground font-light leading-relaxed max-w-4xl mx-auto">
@@ -49,7 +49,7 @@ const Services = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                   </svg>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-heading font-semibold mb-3 sm:mb-4 text-foreground">Operations Optimization</h3>
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 text-foreground">Operations Optimization</h3>
                 <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-4 sm:mb-6">
                   Streamline workflows and improve operational efficiency through systematic analysis and implementation of best practices.
                 </p>
@@ -150,41 +150,41 @@ const Services = () => {
         {/* How We Work Section */}
         <section className="py-20 px-6 lg:px-12 bg-background">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-5xl lg:text-6xl font-heading font-bold text-center mb-16 bg-gradient-primary bg-clip-text text-transparent">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center mb-16 bg-gradient-primary bg-clip-text text-transparent">
               How We Work
             </h2>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center">
                 <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-primary">1</span>
+                  <span className="text-xl sm:text-2xl font-bold text-primary">1</span>
                 </div>
-                <h4 className="text-xl font-heading font-semibold text-foreground mb-3">Discovery</h4>
-                <p className="text-lg text-muted-foreground leading-relaxed">We analyze your current operations and identify opportunities for improvement.</p>
+                <h4 className="text-lg sm:text-xl font-bold text-foreground mb-3">Discovery</h4>
+                <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">We analyze your current operations and identify opportunities for improvement.</p>
               </div>
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-primary">2</span>
+                  <span className="text-xl sm:text-2xl font-bold text-primary">2</span>
                 </div>
-                <h4 className="text-xl font-heading font-semibold text-foreground mb-3">Strategy</h4>
-                <p className="text-lg text-muted-foreground leading-relaxed">We develop a customized roadmap aligned with your business goals.</p>
+                <h4 className="text-lg sm:text-xl font-bold text-foreground mb-3">Strategy</h4>
+                <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">We develop a customized roadmap aligned with your business goals.</p>
               </div>
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-primary">3</span>
+                  <span className="text-xl sm:text-2xl font-bold text-primary">3</span>
                 </div>
-                <h4 className="text-xl font-heading font-semibold text-foreground mb-3">Implementation</h4>
-                <p className="text-lg text-muted-foreground leading-relaxed">We work alongside your team to execute solutions and drive results.</p>
+                <h4 className="text-lg sm:text-xl font-bold text-foreground mb-3">Implementation</h4>
+                <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">We work alongside your team to execute solutions and drive results.</p>
               </div>
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-primary">4</span>
+                  <span className="text-xl sm:text-2xl font-bold text-primary">4</span>
                 </div>
-                <h4 className="text-xl font-heading font-semibold text-foreground mb-3">Optimization</h4>
-                <p className="text-lg text-muted-foreground leading-relaxed">We continuously refine processes to ensure sustainable growth.</p>
+                <h4 className="text-lg sm:text-xl font-bold text-foreground mb-3">Optimization</h4>
+                <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">We continuously refine processes to ensure sustainable growth.</p>
               </div>
             </div>
           </div>
@@ -193,13 +193,13 @@ const Services = () => {
         {/* CTA Section */}
         <section className="py-20 px-6 lg:px-12 bg-secondary/20">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl lg:text-5xl font-heading font-bold mb-8 bg-gradient-primary bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 bg-gradient-primary bg-clip-text text-transparent">
               Ready to Transform Your Business?
             </h2>
-            <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
+            <p className="text-lg sm:text-xl text-muted-foreground mb-12 leading-relaxed">
               Let's discuss how we can help you streamline operations, optimize systems, and drive sustainable growth.
             </p>
-            <Button size="lg" className="text-lg px-8 py-6">
+            <Button size="lg" className="text-sm sm:text-lg px-6 sm:px-8 py-4 sm:py-6">
               Get Started Today
             </Button>
           </div>
