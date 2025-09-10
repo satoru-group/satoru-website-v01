@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import aiTechnology from "@/assets/ai-technology.jpg";
-import { ArrowDown } from "lucide-react";
+import { ChevronsDown } from "lucide-react";
 
 const Hero = () => {
   const stats = [
@@ -92,7 +92,7 @@ const Hero = () => {
       {/* Scroll Down Arrow */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="p-3 rounded-full bg-gradient-primary shadow-elegant">
-          <ArrowDown className="w-6 h-6 text-primary-foreground" strokeWidth={3} />
+          <ChevronsDown className="w-6 h-6 text-primary-foreground" strokeWidth={3} />
         </div>
       </div>
     </section>
