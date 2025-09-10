@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 
-const BlankSection = () => {
+const AboutUs = () => {
   return (
     <section className="fixed top-0 left-0 w-full h-screen bg-gradient-subtle flex items-center justify-center z-0">
       {/* Neural network background pattern */}
@@ -39,4 +39,4 @@ const BlankSection = () => {
   );
 };
 
-export default BlankSection;
+export default AboutUs;
