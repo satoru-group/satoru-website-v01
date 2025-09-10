@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useState, useRef } from "react";
+import { ChevronDown } from "lucide-react";
 
 const ServicesSection = () => {
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
@@ -179,6 +180,11 @@ const ServicesSection = () => {
                  transform: `translate(${Math.sin(Date.now() * 0.0008) * 8}px, ${Math.cos(Date.now() * 0.0012) * 12}px)`,
                }}></div>
         </div>
+      </div>
+      
+      {/* Scroll Down Arrow */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <ChevronDown className="w-8 h-8 text-primary animate-pulse" />
       </div>
     </section>
   );

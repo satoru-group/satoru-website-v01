@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
 
 const AboutUsSection = () => {
   return (
@@ -46,6 +47,11 @@ const AboutUsSection = () => {
                  transform: `translate(${Math.cos(Date.now() * 0.0006) * 18}px, ${Math.sin(Date.now() * 0.0009) * 10}px)`,
                }}></div>
         </div>
+      </div>
+      
+      {/* Scroll Down Arrow */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <ChevronDown className="w-8 h-8 text-primary animate-pulse" />
       </div>
     </section>
   );
