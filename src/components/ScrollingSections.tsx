@@ -22,8 +22,16 @@ const ScrollingSections = () => {
     const viewportHeight = window.innerHeight;
     const currentScrollSection = Math.floor(scrollY / viewportHeight);
     
-    // Only transform the section that should be rolling up
+    if (sectionIndex < currentScrollSection) {
+      // Sections that have been scrolled past - keep them hidden
+      return {
+        transform: `translateY(-${viewportHeight}px)`,
+        transition: "none",
+      };
+    }
+    
     if (sectionIndex === currentScrollSection) {
+      // Current section being scrolled - move it up gradually
       const sectionScrollStart = sectionIndex * viewportHeight;
       const relativeScroll = scrollY - sectionScrollStart;
       const translateY = -relativeScroll;
@@ -34,7 +42,7 @@ const ScrollingSections = () => {
       };
     }
     
-    // All other sections stay in their natural position
+    // Sections below current one - stay in natural position
     return {
       transform: 'translateY(0px)',
       transition: "none",
