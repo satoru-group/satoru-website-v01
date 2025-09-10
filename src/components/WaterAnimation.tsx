@@ -47,7 +47,7 @@ export const WaterAnimation = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
       {ripples.map((ripple) => (
         <div
           key={ripple.id}
@@ -57,11 +57,11 @@ export const WaterAnimation = () => {
             top: ripple.y - 50,
           }}
         >
-          <div className="w-24 h-24 rounded-full border-2 border-primary/20 animate-water-expand" />
-          <div className="absolute inset-0 w-24 h-24 rounded-full border border-accent/10 animate-water-expand-delayed" />
+          <div className="w-24 h-24 rounded-full border-2 border-primary/40 animate-water-expand" />
+          <div className="absolute inset-0 w-24 h-24 rounded-full border border-accent/30 animate-water-expand-delayed" />
           <div className="absolute inset-0 w-24 h-24 rounded-full animate-water-fade" 
                style={{
-                 background: 'radial-gradient(circle, hsl(var(--primary) / 0.05) 0%, transparent 70%)'
+                 background: 'radial-gradient(circle, hsl(var(--primary) / 0.15) 0%, hsl(var(--accent) / 0.08) 50%, transparent 70%)'
                }} />
         </div>
       ))}
