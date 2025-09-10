@@ -51,13 +51,23 @@ const ScrollingSections = () => {
           transition: "transform 0.3s ease-out",
         };
       } else {
-        // All cards shown, now allow scrolling to next section
-        const excessScroll = relativeScroll - (4 * stepSize);
-        return {
-          transform: `translateY(-${excessScroll}px)`,
-          opacity: 1,
-          transition: "transform 0.3s ease-out",
-        };
+        // All cards shown, check if contact section should appear
+        const contactScrollStart = 3 * viewportHeight;
+        if (scrollY >= contactScrollStart) {
+          // Hide services section when contact appears
+          return {
+            transform: `translateY(-${viewportHeight}px)`,
+            opacity: 0,
+            transition: "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-out",
+          };
+        } else {
+          // Stay in services section
+          return {
+            transform: 'translateY(0px)',
+            opacity: 1,
+            transition: "transform 0.3s ease-out",
+          };
+        }
       }
     }
     
@@ -70,18 +80,18 @@ const ScrollingSections = () => {
         // Contact section not reached yet - stay off-screen to the right
         return {
           transform: 'translateX(100%)',
-          opacity: 1,
-          transition: "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
+          opacity: 0,
+          transition: "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-out",
         };
       } else {
         // Contact section reached - slide in from right
-        const slideProgress = Math.min(relativeScroll / (viewportHeight * 0.3), 1);
+        const slideProgress = Math.min(relativeScroll / (viewportHeight * 0.5), 1);
         const translateX = (1 - slideProgress) * 100;
         
         return {
           transform: `translateX(${translateX}%)`,
           opacity: 1,
-          transition: "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
+          transition: "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-out",
         };
       }
     }
