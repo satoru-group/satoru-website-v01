@@ -84,40 +84,37 @@ const ScrollingSections = () => {
       }
     }
     
-    // Special handling for Contact section (index 3) - slide from right with modern animations
+    // Special handling for Contact section (index 3) - slide from right with main viewport guarantee
     if (sectionIndex === 3) {
       const servicesCompleteScroll = 2 * window.innerHeight + (9 * (window.innerHeight / 10));
       
       if (scrollY < servicesCompleteScroll) {
-        // Contact section hidden off-screen with subtle scale
+        // Contact section hidden off-screen to the right
         return {
-          transform: 'translateX(100%) scale(0.9)',
+          transform: 'translateX(100%)',
           opacity: 0,
-          transition: "all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+          transition: "all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
         };
       } else {
-        // Contact section slides in with modern easing
+        // Contact section slides in and locks to main viewport
         const scrollBeyondTrigger = scrollY - servicesCompleteScroll;
         
-        if (scrollBeyondTrigger < 200) {
-          // Sliding in with smooth scaling and rotation
-          const slideProgress = modernEasing(scrollBeyondTrigger / 200);
+        if (scrollBeyondTrigger < 50) {
+          // Quick slide in over 50px of scroll
+          const slideProgress = scrollBeyondTrigger / 50;
           const translateX = Math.max((1 - slideProgress) * 100, 0);
-          const scale = 0.9 + (slideProgress * 0.1);
-          const rotateY = (1 - slideProgress) * 5;
           
           return {
-            transform: `translateX(${translateX}%) scale(${scale}) rotateY(${rotateY}deg)`,
-            opacity: slideProgress,
-            transition: "all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            transform: `translateX(${translateX}%)`,
+            opacity: 1,
+            transition: "transform 0.4s ease-out",
           };
         } else {
-          // Fully visible with subtle floating animation
-          const floatY = Math.sin(Date.now() * 0.001) * 3;
+          // Locked in main viewport - completely visible
           return {
-            transform: `translateX(0%) scale(1) rotateY(0deg) translateY(${floatY}px)`,
+            transform: 'translateX(0%)',
             opacity: 1,
-            transition: "opacity 0.3s ease-out",
+            transition: "transform 0.2s ease-out",
           };
         }
       }
@@ -165,14 +162,12 @@ const ScrollingSections = () => {
       
       {/* Fixed container for sections */}
       <div className="fixed top-0 left-0 w-full h-screen overflow-hidden">
-        {/* Contact Section - Highest z-index for content, force center positioning */}
+        {/* Contact Section - Highest z-index, guaranteed main viewport positioning */}
         <div 
-          className="absolute inset-0 w-full h-full z-50 flex items-center justify-center"
+          className="absolute inset-0 w-full h-full z-50"
           style={getTransformStyle(3)}
         >
-          <div className="w-full h-full">
-            <ContactSection />
-          </div>
+          <ContactSection />
         </div>
         
         {/* Hero Section */}
