@@ -76,22 +76,29 @@ const ScrollingSections = () => {
       const contactScrollStart = 3 * viewportHeight;
       const relativeScroll = scrollY - contactScrollStart;
       
-      if (relativeScroll < 0) {
-        // Contact section not reached yet - stay off-screen to the right
+      if (relativeScroll < -viewportHeight) {
+        // Contact section far away - keep hidden
         return {
           transform: 'translateX(100%)',
           opacity: 0,
-          transition: "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-out",
+          transition: "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
         };
-      } else {
-        // Contact section reached - slide in from right
-        const slideProgress = Math.min(relativeScroll / (viewportHeight * 0.5), 1);
-        const translateX = (1 - slideProgress) * 100;
+      } else if (relativeScroll >= 0) {
+        // Contact section reached - slide in from right and stay visible
+        const slideProgress = Math.min(relativeScroll / (viewportHeight * 0.3), 1);
+        const translateX = Math.max((1 - slideProgress) * 100, 0);
         
         return {
           transform: `translateX(${translateX}%)`,
           opacity: 1,
-          transition: "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-out",
+          transition: "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
+        };
+      } else {
+        // Approaching contact section
+        return {
+          transform: 'translateX(50%)',
+          opacity: 0.5,
+          transition: "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
         };
       }
     }
@@ -131,9 +138,9 @@ const ScrollingSections = () => {
       
       {/* Fixed container for sections */}
       <div className="fixed top-0 left-0 w-full h-screen overflow-hidden">
-        {/* Contact Section */}
+        {/* Contact Section - Highest z-index for content */}
         <div 
-          className="absolute inset-0 w-full h-full z-30"
+          className="absolute inset-0 w-full h-full z-50"
           style={getTransformStyle(3)}
         >
           <ContactSection />
@@ -141,7 +148,7 @@ const ScrollingSections = () => {
         
         {/* Hero Section */}
         <div 
-          className="absolute inset-0 w-full h-full z-20"
+          className="absolute inset-0 w-full h-full z-40"
           style={getTransformStyle(0)}
         >
           <Hero />
@@ -149,7 +156,7 @@ const ScrollingSections = () => {
         
         {/* About Us Section */}
         <div 
-          className="absolute inset-0 w-full h-full z-10"
+          className="absolute inset-0 w-full h-full z-30"
           style={getTransformStyle(1)}
         >
           <AboutUsSection />
@@ -157,7 +164,7 @@ const ScrollingSections = () => {
         
         {/* Services Section */}
         <div 
-          className="absolute inset-0 w-full h-full z-0"
+          className="absolute inset-0 w-full h-full z-20"
           style={getTransformStyle(2)}
         >
           <ServicesSection />
