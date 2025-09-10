@@ -1,11 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const ContactSection = () => {
-  const contentAnimation = useScrollAnimation({ threshold: 0.3 });
-  
   return (
     <section className="w-full h-screen bg-secondary/30 flex items-center justify-center relative overflow-hidden">
       {/* Contact grid background pattern */}
@@ -21,7 +18,7 @@ const ContactSection = () => {
         </svg>
       </div>
       
-      <div ref={contentAnimation.ref} className={`max-w-4xl mx-auto text-center space-y-12 relative z-10 px-6 lg:px-12 scroll-hidden ${contentAnimation.isVisible ? 'animate-fade-in-up' : ''}`}>
+      <div className="max-w-4xl mx-auto text-center space-y-12 relative z-10 px-6 lg:px-12">
         <h2 className="text-4xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-8">
           Get In Touch
         </h2>

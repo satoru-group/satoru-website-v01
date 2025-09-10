@@ -2,13 +2,8 @@ import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const Contact = () => {
-  const heroAnimation = useScrollAnimation({ threshold: 0.3 });
-  const formAnimation = useScrollAnimation({ threshold: 0.2 });
-  const faqAnimation = useStaggeredAnimation(4, 150);
-  
   return (
     <div className="relative font-body">
       <Header />
@@ -29,7 +24,7 @@ const Contact = () => {
             </svg>
           </div>
           
-          <div ref={heroAnimation.ref} className={`max-w-4xl mx-auto text-center space-y-8 relative z-10 px-6 lg:px-12 scroll-hidden ${heroAnimation.isVisible ? 'animate-fade-in-up' : ''}`}>
+          <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10 px-6 lg:px-12">
             <h1 className="text-6xl lg:text-8xl font-heading font-bold bg-gradient-primary bg-clip-text text-transparent mb-8 leading-tight">
               Get In Touch
             </h1>
@@ -42,7 +37,7 @@ const Contact = () => {
         {/* Contact Form & Info */}
         <section className="py-20 px-6 lg:px-12 bg-card/30">
           <div className="max-w-6xl mx-auto">
-            <div ref={formAnimation.ref} className={`grid lg:grid-cols-2 gap-16 scroll-hidden ${formAnimation.isVisible ? 'animate-fade-in-up' : ''}`}>
+            <div className="grid lg:grid-cols-2 gap-16">
               {/* Contact Form */}
               <div className="bg-card/80 backdrop-blur-sm p-8 rounded-2xl border border-border/50">
                 <h2 className="text-3xl font-heading font-bold text-foreground mb-8">Send us a message</h2>
@@ -175,30 +170,26 @@ const Contact = () => {
               Frequently Asked Questions
             </h2>
             
-            <div ref={faqAnimation.ref} className="space-y-8">
-              {[
-                {
-                  question: "How quickly can you start working with my business?",
-                  answer: "We can typically begin our discovery process within one week of our initial consultation, with full engagement starting within 2-3 weeks depending on project scope."
-                },
-                {
-                  question: "What size businesses do you work with?",
-                  answer: "We specialize in small and mid-sized businesses, typically ranging from startups to companies with up to 500 employees across various industries."
-                },
-                {
-                  question: "Do you offer ongoing support or just project-based work?",
-                  answer: "We offer both! We can work on specific projects or provide ongoing fractional leadership and support to help your business continue growing and optimizing."
-                },
-                {
-                  question: "How do you measure success?",
-                  answer: "We establish clear KPIs and metrics at the beginning of every engagement, focusing on measurable improvements in efficiency, cost savings, and business growth."
-                }
-              ].map((faq, index) => (
-                <div key={index} className={`bg-card/50 p-6 rounded-xl border border-border/50 scroll-hidden-scale ${faqAnimation.visibleItems.includes(index) ? 'animate-scale-in' : ''}`}>
-                  <h4 className="text-xl font-heading font-semibold text-foreground mb-3">{faq.question}</h4>
-                  <p className="text-lg text-muted-foreground leading-relaxed">{faq.answer}</p>
-                </div>
-              ))}
+            <div className="space-y-8">
+              <div className="bg-card/50 p-6 rounded-xl border border-border/50">
+                <h4 className="text-xl font-heading font-semibold text-foreground mb-3">How quickly can you start working with my business?</h4>
+                <p className="text-lg text-muted-foreground leading-relaxed">We can typically begin our discovery process within one week of our initial consultation, with full engagement starting within 2-3 weeks depending on project scope.</p>
+              </div>
+              
+              <div className="bg-card/50 p-6 rounded-xl border border-border/50">
+                <h4 className="text-xl font-heading font-semibold text-foreground mb-3">What size businesses do you work with?</h4>
+                <p className="text-lg text-muted-foreground leading-relaxed">We specialize in small and mid-sized businesses, typically ranging from startups to companies with up to 500 employees across various industries.</p>
+              </div>
+              
+              <div className="bg-card/50 p-6 rounded-xl border border-border/50">
+                <h4 className="text-xl font-heading font-semibold text-foreground mb-3">Do you offer ongoing support or just project-based work?</h4>
+                <p className="text-lg text-muted-foreground leading-relaxed">We offer both! We can work on specific projects or provide ongoing fractional leadership and support to help your business continue growing and optimizing.</p>
+              </div>
+              
+              <div className="bg-card/50 p-6 rounded-xl border border-border/50">
+                <h4 className="text-xl font-heading font-semibold text-foreground mb-3">How do you measure success?</h4>
+                <p className="text-lg text-muted-foreground leading-relaxed">We establish clear KPIs and metrics at the beginning of every engagement, focusing on measurable improvements in efficiency, cost savings, and business growth.</p>
+              </div>
             </div>
           </div>
         </section>

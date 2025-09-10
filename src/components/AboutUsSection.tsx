@@ -1,14 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ChevronsDown } from "lucide-react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 interface AboutUsSectionProps {
   showArrow?: boolean;
 }
 
 const AboutUsSection = ({ showArrow = false }: AboutUsSectionProps) => {
-  const contentAnimation = useScrollAnimation({ threshold: 0.3 });
-  
   return (
     <section className="w-full h-screen bg-background flex items-center justify-center relative overflow-hidden">
       {/* Neural network background pattern */}
@@ -23,7 +20,7 @@ const AboutUsSection = ({ showArrow = false }: AboutUsSectionProps) => {
         </svg>
       </div>
       
-      <div ref={contentAnimation.ref} className={`max-w-4xl mx-auto text-center space-y-8 relative z-10 px-6 lg:px-12 scroll-hidden ${contentAnimation.isVisible ? 'animate-fade-in-up' : ''}`}>        
+      <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10 px-6 lg:px-12">        
         <h2 className="text-4xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-8">
           Who We Are?
         </h2>

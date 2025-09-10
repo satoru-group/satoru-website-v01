@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useState, useRef } from "react";
 import { ChevronsRight } from "lucide-react";
-import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 interface ServicesSectionProps {
   showArrow?: boolean;
@@ -11,8 +10,6 @@ const ServicesSection = ({ showArrow = false }: ServicesSectionProps) => {
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
   const [showButton, setShowButton] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
-  const titleAnimation = useScrollAnimation({ threshold: 0.3 });
-  const cardsAnimation = useStaggeredAnimation(3, 200);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -99,19 +96,17 @@ const ServicesSection = ({ showArrow = false }: ServicesSectionProps) => {
       </div>
       
       <div className="max-w-6xl mx-auto text-center space-y-12 relative z-10 px-6 lg:px-12">
-        <div ref={titleAnimation.ref} className={`scroll-hidden ${titleAnimation.isVisible ? 'animate-fade-in-up' : ''}`}>
-          <h2 className="text-4xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-8">
-            How We Help Your Business
-          </h2>
-          
-          <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-12">
-            We act as an extension of your team, providing fractional operations and IT leadership to support growth, scalability, and long-term success.
-          </p>
-        </div>
+        <h2 className="text-4xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-8">
+          How We Help Your Business
+        </h2>
         
-        <div ref={cardsAnimation.ref} className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-12">
+          We act as an extension of your team, providing fractional operations and IT leadership to support growth, scalability, and long-term success.
+        </p>
+        
+        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <div 
-            className={`bg-card/90 backdrop-blur-sm p-8 rounded-lg border border-border/50 scroll-hidden-scale ${cardsAnimation.visibleItems.includes(0) ? 'animate-scale-in' : ''}`}
+            className="bg-card/90 backdrop-blur-sm p-8 rounded-lg border border-border/50"
             style={getCardStyle(0)}
           >
             <h3 className="text-2xl font-semibold mb-4 text-foreground">Operations Optimization</h3>
@@ -129,7 +124,7 @@ const ServicesSection = ({ showArrow = false }: ServicesSectionProps) => {
           </div>
           
           <div 
-            className={`bg-card/90 backdrop-blur-sm p-8 rounded-lg border border-border/50 scroll-hidden-scale ${cardsAnimation.visibleItems.includes(1) ? 'animate-scale-in' : ''}`}
+            className="bg-card/90 backdrop-blur-sm p-8 rounded-lg border border-border/50"
             style={getCardStyle(1)}
           >
             <h3 className="text-2xl font-semibold mb-4 text-foreground">IT Systems Management</h3>
@@ -147,7 +142,7 @@ const ServicesSection = ({ showArrow = false }: ServicesSectionProps) => {
           </div>
           
           <div 
-            className={`bg-card/90 backdrop-blur-sm p-8 rounded-lg border border-border/50 scroll-hidden-scale ${cardsAnimation.visibleItems.includes(2) ? 'animate-scale-in' : ''}`}
+            className="bg-card/90 backdrop-blur-sm p-8 rounded-lg border border-border/50"
             style={getCardStyle(2)}
           >
             <h3 className="text-2xl font-semibold mb-4 text-foreground">Fractional Leadership</h3>
