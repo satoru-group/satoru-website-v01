@@ -1,14 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Users, Target, Eye, Heart, Brain, Lightbulb, Building, TrendingUp } from "lucide-react";
-import Header from "@/components/Header";
-import ContactSection from "@/components/ContactSection";
 
 const About = () => {
   return (
-    <div className="relative">
-      <Header />
-      <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10" />
@@ -228,8 +224,6 @@ const About = () => {
           </Card>
         </div>
       </section>
-      </div>
-      <ContactSection />
     </div>
   );
 };
