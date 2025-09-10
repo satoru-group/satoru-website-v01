@@ -54,11 +54,23 @@ const ContactSection = () => {
           </div>
         </div>
         
-        {/* Floating contact elements */}
+        {/* Floating contact elements with enhanced animations */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/6 left-1/5 w-2 h-2 bg-primary rounded-full animate-pulse opacity-40"></div>
-          <div className="absolute bottom-1/5 right-1/4 w-1.5 h-1.5 bg-accent rounded-full animate-ping opacity-30" style={{animationDelay: '0.8s'}}></div>
-          <div className="absolute top-2/3 left-1/3 w-1 h-1 bg-primary rounded-full animate-pulse opacity-50" style={{animationDelay: '1.2s'}}></div>
+          <div className="absolute top-1/6 left-1/5 w-2 h-2 bg-primary rounded-full animate-pulse opacity-40"
+               style={{
+                 animationDuration: '3.5s',
+                 transform: `translate(${Math.sin(Date.now() * 0.0007) * 14}px, ${Math.cos(Date.now() * 0.001) * 8}px)`,
+               }}></div>
+          <div className="absolute bottom-1/5 right-1/4 w-1.5 h-1.5 bg-accent rounded-full animate-ping opacity-30" 
+               style={{
+                 animationDelay: '0.8s',
+                 transform: `translateX(${Math.sin(Date.now() * 0.0011) * 16}px)`,
+               }}></div>
+          <div className="absolute top-2/3 left-1/3 w-1 h-1 bg-primary rounded-full animate-pulse opacity-50" 
+               style={{
+                 animationDelay: '1.2s',
+                 transform: `translate(${Math.cos(Date.now() * 0.0009) * 12}px, ${Math.sin(Date.now() * 0.0013) * 6}px)`,
+               }}></div>
         </div>
       </div>
     </section>

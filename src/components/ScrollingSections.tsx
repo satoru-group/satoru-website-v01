@@ -9,21 +9,31 @@ const ScrollingSections = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Throttle scroll events for better performance
+      // Throttle scroll events for better performance with smooth animations
       requestAnimationFrame(() => {
         setScrollY(window.scrollY);
       });
     };
 
+    // Add smooth scroll behavior to the document
+    document.documentElement.style.scrollBehavior = 'smooth';
+    
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll(); // Initial call
     
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.documentElement.style.scrollBehavior = 'auto';
+    };
   }, []);
 
   const getTransformStyle = (sectionIndex: number) => {
     const viewportHeight = window.innerHeight;
     const currentScrollSection = Math.floor(scrollY / viewportHeight);
+    const scrollProgress = (scrollY % viewportHeight) / viewportHeight;
+    
+    // Modern easing function
+    const modernEasing = (t: number) => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
     
     // Special handling for Services section (index 2)
     if (sectionIndex === 2) {
@@ -35,102 +45,116 @@ const ScrollingSections = () => {
       const currentStep = Math.floor(relativeScroll / stepSize);
       
       if (relativeScroll < 0) {
-        // Haven't reached services yet
+        // Haven't reached services yet - add subtle parallax
+        const parallaxOffset = Math.min(relativeScroll * 0.1, 0);
         return {
-          transform: 'translateY(0px)',
+          transform: `translateY(${parallaxOffset}px)`,
           opacity: 1,
-          transition: "transform 0.3s ease-out",
+          transition: "all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
         };
       }
       
       if (currentStep < 9) {
-        // Stay fixed in services section while cards appear and extra scroll steps
+        // Stay fixed in services section with floating effect
+        const floatProgress = modernEasing(scrollProgress);
+        const floatY = Math.sin(floatProgress * Math.PI * 2) * 2;
         return {
-          transform: 'translateY(0px)',
+          transform: `translateY(${floatY}px)`,
           opacity: 1,
-          transition: "transform 0.3s ease-out",
+          transition: "transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
         };
       } else {
-        // All cards shown + extra steps completed, check if contact section should appear
-        const contactScrollTrigger = 2 * viewportHeight + (9 * stepSize); // After 9 steps
+        // All cards shown + extra steps completed
+        const contactScrollTrigger = 2 * viewportHeight + (9 * stepSize);
         if (scrollY >= contactScrollTrigger) {
-          // Hide services section when contact appears
+          // Hide services section with smooth exit
           return {
-            transform: `translateY(-100vh)`,
+            transform: `translateY(-100vh) scale(0.95)`,
             opacity: 0,
-            transition: "all 0.6s ease-out",
+            transition: "all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
           };
         } else {
           // Stay in services section
           return {
             transform: 'translateY(0px)',
             opacity: 1,
-            transition: "transform 0.3s ease-out",
+            transition: "transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
           };
         }
       }
     }
     
-    // Special handling for Contact section (index 3) - slide from right
+    // Special handling for Contact section (index 3) - slide from right with modern animations
     if (sectionIndex === 3) {
-      const servicesCompleteScroll = 2 * window.innerHeight + (9 * (window.innerHeight / 10)); // After 9 service steps
+      const servicesCompleteScroll = 2 * window.innerHeight + (9 * (window.innerHeight / 10));
       
       if (scrollY < servicesCompleteScroll) {
-        // Contact section hidden off-screen to the right
+        // Contact section hidden off-screen with subtle scale
         return {
-          transform: 'translateX(100%)',
-          opacity: 1,
-          transition: "transform 0.6s ease-out",
+          transform: 'translateX(100%) scale(0.9)',
+          opacity: 0,
+          transition: "all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
         };
       } else {
-        // Contact section reached - force it to be fully visible in main viewport
+        // Contact section slides in with modern easing
         const scrollBeyondTrigger = scrollY - servicesCompleteScroll;
         
-        if (scrollBeyondTrigger < 100) {
-          // Still sliding in
-          const slideProgress = scrollBeyondTrigger / 100;
+        if (scrollBeyondTrigger < 200) {
+          // Sliding in with smooth scaling and rotation
+          const slideProgress = modernEasing(scrollBeyondTrigger / 200);
           const translateX = Math.max((1 - slideProgress) * 100, 0);
+          const scale = 0.9 + (slideProgress * 0.1);
+          const rotateY = (1 - slideProgress) * 5;
+          
           return {
-            transform: `translateX(${translateX}%)`,
-            opacity: 1,
-            transition: "transform 0.3s ease-out",
+            transform: `translateX(${translateX}%) scale(${scale}) rotateY(${rotateY}deg)`,
+            opacity: slideProgress,
+            transition: "all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
           };
         } else {
-          // Fully visible in main viewport
+          // Fully visible with subtle floating animation
+          const floatY = Math.sin(Date.now() * 0.001) * 3;
           return {
-            transform: 'translateX(0%)',
+            transform: `translateX(0%) scale(1) rotateY(0deg) translateY(${floatY}px)`,
             opacity: 1,
-            transition: "transform 0.3s ease-out",
+            transition: "opacity 0.3s ease-out",
           };
         }
       }
     }
     
-    // Regular handling for other sections
+    // Enhanced handling for other sections with parallax effects
     if (sectionIndex < currentScrollSection) {
       return {
-        transform: `translateY(-${viewportHeight}px)`,
+        transform: `translateY(-${viewportHeight}px) scale(0.95)`,
         opacity: 0,
-        transition: "opacity 0.3s ease-out",
+        transition: "all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
       };
     }
     
     if (sectionIndex === currentScrollSection) {
       const sectionScrollStart = sectionIndex * viewportHeight;
       const relativeScroll = scrollY - sectionScrollStart;
+      const progress = modernEasing(Math.min(relativeScroll / viewportHeight, 1));
+      
+      // Add parallax and scaling effects
       const translateY = -relativeScroll;
+      const scale = 1 - (progress * 0.05);
+      const opacity = 1 - (progress * 0.1);
       
       return {
-        transform: `translateY(${translateY}px)`,
-        opacity: 1,
-        transition: "opacity 0.2s ease-out",
+        transform: `translateY(${translateY}px) scale(${scale})`,
+        opacity: Math.max(opacity, 0.9),
+        transition: "opacity 0.3s ease-out",
       };
     }
     
+    // Sections below current - subtle anticipation animation
+    const anticipationScale = sectionIndex === currentScrollSection + 1 ? 1.02 : 1;
     return {
-      transform: 'translateY(0px)',
+      transform: `translateY(0px) scale(${anticipationScale})`,
       opacity: 1,
-      transition: "opacity 0.3s ease-out",
+      transition: "all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
     };
   };
 

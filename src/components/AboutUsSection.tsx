@@ -28,11 +28,23 @@ const AboutUsSection = () => {
           Learn More
         </Button>
         
-        {/* Floating particles */}
+        {/* Floating particles with enhanced modern animations */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full animate-ping opacity-40"></div>
-          <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-accent rounded-full animate-pulse opacity-60"></div>
-          <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-primary rounded-full animate-ping opacity-30" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full animate-ping opacity-40"
+               style={{
+                 animationDuration: '4s',
+                 transform: `translate(${Math.sin(Date.now() * 0.0008) * 20}px, ${Math.cos(Date.now() * 0.001) * 15}px)`,
+               }}></div>
+          <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-accent rounded-full animate-pulse opacity-60"
+               style={{
+                 animationDuration: '3s',
+                 transform: `translateY(${Math.sin(Date.now() * 0.0012) * 12}px)`,
+               }}></div>
+          <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-primary rounded-full animate-ping opacity-30" 
+               style={{
+                 animationDelay: '1s',
+                 transform: `translate(${Math.cos(Date.now() * 0.0006) * 18}px, ${Math.sin(Date.now() * 0.0009) * 10}px)`,
+               }}></div>
         </div>
       </div>
     </section>

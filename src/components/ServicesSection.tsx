@@ -43,23 +43,36 @@ const ServicesSection = () => {
     if (!isVisible) {
       return {
         opacity: 0,
-        transform: cardIndex === 1 ? 'translateX(100px)' : 'translateY(30px)',
-        transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+        transform: cardIndex === 1 
+          ? 'translateX(120px) rotateY(15deg) scale(0.8)' 
+          : 'translateY(50px) scale(0.8)',
+        filter: 'blur(4px)',
+        transition: 'all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
       };
     }
 
+    // Add floating animation when visible
+    const floatDelay = cardIndex * 0.5;
+    const floatY = Math.sin((Date.now() * 0.001) + floatDelay) * 2;
+    
     return {
       opacity: 1,
-      transform: 'translateX(0px) translateY(0px)',
-      transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+      transform: `translateX(0px) translateY(${floatY}px) rotateY(0deg) scale(1)`,
+      filter: 'blur(0px)',
+      transition: 'all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
     };
   };
 
   const getButtonStyle = () => {
+    const floatY = Math.sin(Date.now() * 0.002) * 4;
+    
     return {
       opacity: showButton ? 1 : 0,
-      transform: showButton ? 'translateY(0px)' : 'translateY(30px)',
-      transition: 'all 1s cubic-bezier(0.4, 0, 0.2, 1)',
+      transform: showButton 
+        ? `translateY(${floatY}px) scale(1)` 
+        : 'translateY(40px) scale(0.8)',
+      filter: showButton ? 'blur(0px)' : 'blur(4px)',
+      transition: 'all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
     };
   };
   return (
@@ -148,11 +161,23 @@ const ServicesSection = () => {
           </Button>
         </div>
         
-        {/* Floating tech elements */}
+        {/* Floating tech elements with enhanced animations */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/5 right-1/4 w-3 h-3 bg-primary rounded-full animate-pulse opacity-30"></div>
-          <div className="absolute bottom-1/4 right-1/3 w-2 h-2 bg-accent rounded-full animate-ping opacity-40" style={{animationDelay: '0.5s'}}></div>
-          <div className="absolute top-1/3 left-1/5 w-1.5 h-1.5 bg-primary rounded-full animate-pulse opacity-50" style={{animationDelay: '1.5s'}}></div>
+          <div className="absolute top-1/5 right-1/4 w-3 h-3 bg-primary rounded-full animate-pulse opacity-30" 
+               style={{
+                 animationDuration: '3s',
+                 transform: `translateY(${Math.sin(Date.now() * 0.001) * 10}px)`,
+               }}></div>
+          <div className="absolute bottom-1/4 right-1/3 w-2 h-2 bg-accent rounded-full animate-ping opacity-40" 
+               style={{
+                 animationDelay: '0.5s',
+                 transform: `translateX(${Math.cos(Date.now() * 0.0015) * 15}px)`,
+               }}></div>
+          <div className="absolute top-1/3 left-1/5 w-1.5 h-1.5 bg-primary rounded-full animate-pulse opacity-50" 
+               style={{
+                 animationDelay: '1.5s', 
+                 transform: `translate(${Math.sin(Date.now() * 0.0008) * 8}px, ${Math.cos(Date.now() * 0.0012) * 12}px)`,
+               }}></div>
         </div>
       </div>
     </section>
