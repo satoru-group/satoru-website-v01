@@ -32,20 +32,18 @@ const Hero = ({ showArrow = false }: HeroProps) => {
         {/* Main Hero Content */}
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           {/* Left Content */}
-          <div className="space-y-8">
-            <div className="relative">
-              {/* Glowing circle effect */}
-              <div className="absolute -left-16 -top-8 w-80 h-80 bg-gradient-primary rounded-full opacity-10 blur-3xl animate-pulse"></div>
+            <div className="space-y-8">
               <div className="relative">
-                <h1 className="text-5xl lg:text-7xl font-bold text-foreground leading-tight">
-                  Simplify.
-                  <br />
-                  <span className="text-primary">Streamline.</span>
-                  <br />
-                  <span className="bg-gradient-primary bg-clip-text text-transparent">Succeed.</span>
-                </h1>
+                <div className="relative">
+                  <h1 className="text-5xl lg:text-7xl font-bold text-foreground leading-tight">
+                    Simplify.
+                    <br />
+                    <span className="text-primary">Streamline.</span>
+                    <br />
+                    <span className="bg-gradient-primary bg-clip-text text-transparent">Succeed.</span>
+                  </h1>
+                </div>
               </div>
-            </div>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
               Harness the power of advanced AI technology to transform your business operations and unlock unprecedented growth opportunities.
@@ -70,8 +68,6 @@ const Hero = ({ showArrow = false }: HeroProps) => {
                 className="w-full h-auto object-cover"
               />
             </div>
-            {/* Floating accent */}
-            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-primary/30 rounded-full blur-2xl animate-pulse"></div>
           </div>
         </div>
 
