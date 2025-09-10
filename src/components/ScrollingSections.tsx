@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Hero from "@/components/Hero";
 import AboutUsSection from "@/components/AboutUsSection";
 import ServicesSection from "@/components/ServicesSection";
+import ContactSection from "@/components/ContactSection";
 
 const ScrollingSections = () => {
   const [currentSection, setCurrentSection] = useState(0);
@@ -16,8 +17,8 @@ const ScrollingSections = () => {
       const viewportHeight = window.innerHeight;
       const sectionIndex = Math.floor(scrollPosition / viewportHeight);
       
-      // Limit to available sections (0: Hero, 1: About, 2: Services)
-      const newSection = Math.min(Math.max(sectionIndex, 0), 2);
+      // Limit to available sections (0: Hero, 1: About, 2: Services, 3: Contact)
+      const newSection = Math.min(Math.max(sectionIndex, 0), 3);
       setCurrentSection(newSection);
     };
 
@@ -37,8 +38,8 @@ const ScrollingSections = () => {
 
   return (
     <>
-      {/* Create scrollable height for 3 sections */}
-      <div className="h-[300vh]"></div>
+      {/* Create scrollable height for 4 sections */}
+      <div className="h-[400vh]"></div>
       
       {/* Fixed container for sections */}
       <div className="fixed top-0 left-0 w-full h-screen overflow-hidden">
@@ -64,6 +65,14 @@ const ScrollingSections = () => {
           style={getTransformStyle(2)}
         >
           <ServicesSection />
+        </div>
+        
+        {/* Contact Section */}
+        <div 
+          className="absolute inset-0 w-full h-full"
+          style={getTransformStyle(3)}
+        >
+          <ContactSection />
         </div>
       </div>
     </>
