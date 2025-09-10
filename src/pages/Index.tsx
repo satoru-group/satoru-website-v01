@@ -8,10 +8,10 @@ const Index = () => {
   return (
     <div className="relative">
       <ServicesBackground />
+      <AboutUs />
       <Header />
-      <main className="relative">
+      <main className="relative z-20">
         <Hero />
-        <AboutUs />
         <Services />
       </main>
     </div>
