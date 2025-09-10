@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 
-const BlankSection = () => {
+const AboutUsSection = () => {
   return (
-    <section className="fixed top-0 left-0 w-full h-screen bg-gradient-subtle flex items-center justify-center z-10">
+    <section className="w-full h-screen bg-gradient-subtle flex items-center justify-center relative overflow-hidden">
       {/* Neural network background pattern */}
       <div className="absolute inset-0 opacity-5">
         <svg className="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -39,4 +39,4 @@ const BlankSection = () => {
   );
 };
 
-export default BlankSection;
+export default AboutUsSection;
