@@ -18,14 +18,9 @@ const ScrollingSections = () => {
         // Determine active section for arrow visibility
         const viewportHeight = window.innerHeight;
         const currentScrollSection = Math.floor(newScrollY / viewportHeight);
-        const scrollProgress = (newScrollY % viewportHeight) / viewportHeight;
         
-        // Only show arrow when section is fully active (not transitioning)
-        if (scrollProgress < 0.1) {
-          setActiveSection(currentScrollSection);
-        } else {
-          setActiveSection(-1); // Hide all arrows during transitions
-        }
+        // Show arrow for the current active section (even during transitions)
+        setActiveSection(currentScrollSection);
       });
     };
 
