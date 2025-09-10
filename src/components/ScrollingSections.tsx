@@ -20,9 +20,16 @@ const ScrollingSections = () => {
 
   const getTransformStyle = (sectionIndex: number) => {
     const viewportHeight = window.innerHeight;
-    const scrollProgress = scrollY / viewportHeight;
     
-    // Calculate how much this section should move up based on scroll
+    // About Us section (index 1) stays fixed - no transform
+    if (sectionIndex === 1) {
+      return {
+        transform: 'translateY(0px)',
+        transition: "none",
+      };
+    }
+    
+    // Other sections roll up as curtains
     const sectionOffset = sectionIndex * viewportHeight;
     const relativeScroll = scrollY - sectionOffset;
     
