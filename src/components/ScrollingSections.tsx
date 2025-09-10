@@ -40,8 +40,8 @@ const ScrollingSections = () => {
       const servicesScrollStart = 2 * viewportHeight;
       const relativeScroll = scrollY - servicesScrollStart;
       
-      // Create 10 discrete steps for card animations (don't move section)
-      const stepSize = viewportHeight / 10; // 10 steps: enter + 3 cards (each with extra scroll) + button + 2 extra steps
+      // Create 12 discrete steps for card animations (don't move section)
+      const stepSize = viewportHeight / 12; // 12 steps: enter + 3 cards (each with extra scroll) + button + 4 extra steps
       const currentStep = Math.floor(relativeScroll / stepSize);
       
       if (relativeScroll < 0) {
@@ -54,7 +54,7 @@ const ScrollingSections = () => {
         };
       }
       
-      if (currentStep < 9) {
+      if (currentStep < 11) {
         // Stay fixed in services section with floating effect
         const floatProgress = modernEasing(scrollProgress);
         const floatY = Math.sin(floatProgress * Math.PI * 2) * 2;
@@ -65,7 +65,7 @@ const ScrollingSections = () => {
         };
       } else {
         // All cards shown + extra steps completed
-        const contactScrollTrigger = 2 * viewportHeight + (9 * stepSize);
+        const contactScrollTrigger = 2 * viewportHeight + (11 * stepSize);
         if (scrollY >= contactScrollTrigger) {
           // Hide services section with smooth exit
           return {
@@ -86,7 +86,7 @@ const ScrollingSections = () => {
     
     // Special handling for Contact section (index 3) - slide from right with main viewport guarantee
     if (sectionIndex === 3) {
-      const servicesCompleteScroll = 2 * window.innerHeight + (9 * (window.innerHeight / 10));
+      const servicesCompleteScroll = 2 * window.innerHeight + (11 * (window.innerHeight / 12));
       
       if (scrollY < servicesCompleteScroll) {
         // Contact section hidden off-screen to the right
