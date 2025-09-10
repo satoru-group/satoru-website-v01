@@ -83,16 +83,26 @@ const ScrollingSections = () => {
           transition: "transform 0.6s ease-out",
         };
       } else {
-        // Contact section slides in - simple calculation
-        const contactProgress = (scrollY - servicesCompleteScroll) / (viewportHeight * 0.3);
-        const clampedProgress = Math.min(Math.max(contactProgress, 0), 1);
-        const translateX = (1 - clampedProgress) * 100;
+        // Contact section reached - force it to be fully visible in main viewport
+        const scrollBeyondTrigger = scrollY - servicesCompleteScroll;
         
-        return {
-          transform: `translateX(${translateX}%)`,
-          opacity: 1,
-          transition: "transform 0.6s ease-out",
-        };
+        if (scrollBeyondTrigger < 100) {
+          // Still sliding in
+          const slideProgress = scrollBeyondTrigger / 100;
+          const translateX = Math.max((1 - slideProgress) * 100, 0);
+          return {
+            transform: `translateX(${translateX}%)`,
+            opacity: 1,
+            transition: "transform 0.3s ease-out",
+          };
+        } else {
+          // Fully visible in main viewport
+          return {
+            transform: 'translateX(0%)',
+            opacity: 1,
+            transition: "transform 0.3s ease-out",
+          };
+        }
       }
     }
     
@@ -131,12 +141,14 @@ const ScrollingSections = () => {
       
       {/* Fixed container for sections */}
       <div className="fixed top-0 left-0 w-full h-screen overflow-hidden">
-        {/* Contact Section - Highest z-index for content */}
+        {/* Contact Section - Highest z-index for content, force center positioning */}
         <div 
-          className="absolute inset-0 w-full h-full z-50"
+          className="absolute inset-0 w-full h-full z-50 flex items-center justify-center"
           style={getTransformStyle(3)}
         >
-          <ContactSection />
+          <div className="w-full h-full">
+            <ContactSection />
+          </div>
         </div>
         
         {/* Hero Section */}
