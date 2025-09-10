@@ -64,45 +64,49 @@ All colors MUST be HSL.
   }
 
   .light {
-    /* AI Light Theme */
-    --background: 0 0% 100%;
-    --foreground: 220 27% 4%;
+    /* Light Mode - Professional Palette */
+    --background: 210 40% 98%; /* Cloud White */
+    --foreground: 220 24% 14%; /* Midnight Navy */
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 27% 4%;
+    --card: 0 0% 100%; /* Pure white cards */
+    --card-foreground: 220 24% 14%; /* Midnight Navy */
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 27% 4%;
+    --popover-foreground: 220 24% 14%; /* Midnight Navy */
 
-    --primary: 195 100% 50%;
+    --primary: 213 61% 49%; /* Accent Blue */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 98%;
-    --secondary-foreground: 220 27% 4%;
+    --secondary-foreground: 220 24% 14%; /* Midnight Navy */
 
     --muted: 210 40% 98%;
-    --muted-foreground: 215 25% 35%;
+    --muted-foreground: 214 20% 34%; /* Slate Gray */
 
-    --accent: 195 100% 50%;
+    --accent: 213 61% 49%; /* Accent Blue */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 73% 58%;
+    --destructive: 45 69% 51%; /* Warm Gold for warnings */
     --destructive-foreground: 0 0% 100%;
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 195 100% 50%;
+    --ring: 213 61% 49%; /* Accent Blue */
 
-    /* AI-themed gradients for light mode */
-    --gradient-primary: linear-gradient(135deg, hsl(195 100% 50%), hsl(220 100% 60%), hsl(270 100% 60%));
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 40% 98%));
-    --gradient-glow: linear-gradient(135deg, hsl(195 100% 50% / 0.1), hsl(270 100% 60% / 0.1));
+    /* Success color for positive stats */
+    --success: 158 48% 43%; /* Efficiency Green */
+    --success-foreground: 0 0% 100%;
+
+    /* Professional gradients for light mode */
+    --gradient-primary: linear-gradient(135deg, hsl(213 61% 49%), hsl(213 61% 59%), hsl(213 71% 69%));
+    --gradient-subtle: linear-gradient(180deg, hsl(210 40% 98%), hsl(0 0% 100%));
+    --gradient-glow: linear-gradient(135deg, hsl(213 61% 49% / 0.1), hsl(158 48% 43% / 0.1));
     
-    /* AI-themed shadows and glows for light mode */
-    --shadow-elegant: 0 10px 40px -12px hsl(195 100% 50% / 0.2);
-    --shadow-soft: 0 4px 20px -4px hsl(195 100% 50% / 0.1);
-    --glow-cyan: 0 0 20px hsl(195 100% 50% / 0.3);
-    --glow-purple: 0 0 20px hsl(270 100% 60% / 0.3);
+    /* Professional shadows and glows for light mode */
+    --shadow-elegant: 0 10px 40px -12px hsl(213 61% 49% / 0.2);
+    --shadow-soft: 0 4px 20px -4px hsl(213 61% 49% / 0.1);
+    --glow-cyan: 0 0 20px hsl(213 61% 49% / 0.3);
+    --glow-purple: 0 0 20px hsl(158 48% 43% / 0.3);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -115,33 +119,49 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark Mode - Professional Palette */
+    --background: 220 24% 14%; /* Deep Charcoal */
+    --foreground: 210 40% 98%; /* Cloud White */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 24% 14%; /* Deep Charcoal */
+    --card-foreground: 210 40% 98%; /* Cloud White */
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 24% 14%; /* Deep Charcoal */
+    --popover-foreground: 210 40% 98%; /* Cloud White */
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 213 73% 67%; /* Accent Blue (lighter for dark mode) */
+    --primary-foreground: 220 24% 14%; /* Deep Charcoal */
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 217 19% 12%;
+    --secondary-foreground: 210 40% 98%; /* Cloud White */
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 217 19% 8%;
+    --muted-foreground: 214 20% 69%; /* Cool Gray */
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 213 73% 67%; /* Accent Blue (lighter for dark mode) */
+    --accent-foreground: 220 24% 14%; /* Deep Charcoal */
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 45 76% 61%; /* Warm Gold (brighter for dark mode) */
+    --destructive-foreground: 220 24% 14%; /* Deep Charcoal */
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 217 19% 12%;
+    --input: 217 19% 12%;
+    --ring: 213 73% 67%; /* Accent Blue */
+
+    /* Success color for positive stats */
+    --success: 158 48% 52%; /* Efficiency Green (brighter for dark mode) */
+    --success-foreground: 220 24% 14%; /* Deep Charcoal */
+
+    /* Professional gradients for dark mode */
+    --gradient-primary: linear-gradient(135deg, hsl(213 73% 67%), hsl(213 73% 77%), hsl(213 83% 87%));
+    --gradient-subtle: linear-gradient(180deg, hsl(220 24% 14%), hsl(217 19% 12%));
+    --gradient-glow: linear-gradient(135deg, hsl(213 73% 67% / 0.1), hsl(158 48% 52% / 0.1));
+    
+    /* Professional shadows and glows for dark mode */
+    --shadow-elegant: 0 10px 40px -12px hsl(213 73% 67% / 0.3);
+    --shadow-soft: 0 4px 20px -4px hsl(213 73% 67% / 0.2);
+    --glow-cyan: 0 0 20px hsl(213 73% 67% / 0.4);
+    --glow-purple: 0 0 20px hsl(158 48% 52% / 0.4);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
