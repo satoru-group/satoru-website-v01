@@ -1,64 +1,66 @@
 import { Button } from "@/components/ui/button";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const ServicesSection = () => {
-  const [scrollY, setScrollY] = useState(0);
+  const [visibleCards, setVisibleCards] = useState<number[]>([]);
+  const [showButton, setShowButton] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (typeof window !== 'undefined') {
-        setScrollY(window.scrollY);
+      if (!sectionRef.current) return;
+
+      const rect = sectionRef.current.getBoundingClientRect();
+      const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+
+      if (isInView) {
+        // Calculate how much of the section is visible
+        const scrollProgress = Math.max(0, 1 - rect.top / window.innerHeight);
+
+        // Show cards progressively based on scroll progress
+        const newVisibleCards: number[] = [];
+        if (scrollProgress > 0.1) newVisibleCards.push(0); // First card
+        if (scrollProgress > 0.3) newVisibleCards.push(1); // Second card
+        if (scrollProgress > 0.5) newVisibleCards.push(2); // Third card
+        
+        setVisibleCards(newVisibleCards);
+        setShowButton(scrollProgress > 0.7);
       }
     };
 
-    if (typeof window !== 'undefined') {
-      window.addEventListener("scroll", handleScroll, { passive: true });
-      handleScroll(); // Initial call
-      return () => window.removeEventListener("scroll", handleScroll);
-    }
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Initial call
+    
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Calculate scroll progress within services section (section index 2)
-  const servicesScrollStart = typeof window !== 'undefined' ? 2 * window.innerHeight : 0;
-  const relativeScroll = Math.max(0, scrollY - servicesScrollStart);
-  const scrollProgress = typeof window !== 'undefined' 
-    ? Math.min(relativeScroll / (window.innerHeight * 0.8), 1) 
-    : 0;
-
-  // Calculate animation states based on scroll progress
-  const firstCardVisible = scrollProgress > 0;
-  const secondCardVisible = scrollProgress > 0.25;
-  const thirdCardVisible = scrollProgress > 0.5;
-  const buttonVisible = scrollProgress > 0.75;
-
   const getCardStyle = (cardIndex: number) => {
-    const delays = [0, 0.25, 0.5];
-    const isVisible = scrollProgress > delays[cardIndex];
+    const isVisible = visibleCards.includes(cardIndex);
     
     if (!isVisible) {
       return {
         opacity: 0,
         transform: cardIndex === 1 ? 'translateX(100px)' : 'translateY(30px)',
-        transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+        transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
       };
     }
 
     return {
       opacity: 1,
       transform: 'translateX(0px) translateY(0px)',
-      transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+      transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
     };
   };
 
   const getButtonStyle = () => {
     return {
-      opacity: buttonVisible ? 1 : 0,
-      transform: buttonVisible ? 'translateY(0px)' : 'translateY(20px)',
-      transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+      opacity: showButton ? 1 : 0,
+      transform: showButton ? 'translateY(0px)' : 'translateY(30px)',
+      transition: 'all 1s cubic-bezier(0.4, 0, 0.2, 1)',
     };
   };
   return (
-    <section className="w-full h-screen bg-background flex items-center justify-center relative overflow-hidden">
+    <section ref={sectionRef} className="w-full h-screen bg-background flex items-center justify-center relative overflow-hidden">
       {/* Tech circuit background pattern */}
       <div className="absolute inset-0 opacity-10">
         <svg className="w-full h-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
