@@ -93,16 +93,16 @@ All colors MUST be HSL.
     --input: 241 245 249; /* Light input backgrounds */
     --ring: 147 51 234; /* Purple focus rings */
 
-    /* Soft purple gradients for light mode */
-    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(255 91% 76%), hsl(267 84% 81%));
-    --gradient-subtle: linear-gradient(180deg, hsl(248 250 252), hsl(241 245 249));
-    --gradient-glow: linear-gradient(135deg, hsl(262 83% 58% / 0.08), hsl(267 84% 81% / 0.08));
+    /* Soft purple gradients for light mode - Fixed HSL syntax */
+    --gradient-primary: linear-gradient(135deg, hsl(262, 83%, 58%), hsl(255, 91%, 76%), hsl(267, 84%, 81%));
+    --gradient-subtle: linear-gradient(180deg, hsl(210, 40%, 98%), hsl(220, 13%, 91%));
+    --gradient-glow: linear-gradient(135deg, hsl(262, 83%, 58%, 0.08), hsl(267, 84%, 81%, 0.08));
     
     /* Professional shadows with purple tints */
-    --shadow-elegant: 0 20px 40px -12px hsl(15 23 42 / 0.15);
-    --shadow-soft: 0 8px 32px -8px hsl(15 23 42 / 0.12);
-    --glow-cyan: 0 0 40px hsl(262 83% 58% / 0.25);
-    --glow-purple: 0 0 40px hsl(267 84% 81% / 0.25);
+    --shadow-elegant: 0 20px 40px -12px hsl(15, 23%, 42%, 0.15);
+    --shadow-soft: 0 8px 32px -8px hsl(15, 23%, 42%, 0.12);
+    --glow-cyan: 0 0 40px hsl(262, 83%, 58%, 0.25);
+    --glow-purple: 0 0 40px hsl(267, 84%, 81%, 0.25);
 
     --sidebar-background: 248 250 252;
     --sidebar-foreground: 51 65 85;
