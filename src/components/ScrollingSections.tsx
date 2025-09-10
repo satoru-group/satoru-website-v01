@@ -24,10 +24,26 @@ const ScrollingSections = () => {
   const getTransformStyle = (sectionIndex: number) => {
     const viewportHeight = window.innerHeight;
     const currentScrollSection = Math.floor(scrollY / viewportHeight);
-    const scrollProgress = (scrollY % viewportHeight) / viewportHeight;
     
+    // Special handling for Services section (index 2) - prevent scrolling until animations complete
+    if (sectionIndex === 2 && currentScrollSection === 2) {
+      const sectionScrollStart = 2 * viewportHeight;
+      const relativeScroll = scrollY - sectionScrollStart;
+      
+      // Don't allow scrolling past services section until 80% completion
+      const maxScroll = viewportHeight * 0.8;
+      const constrainedScroll = Math.min(relativeScroll, maxScroll);
+      
+      return {
+        transform: `translateY(-${constrainedScroll}px)`,
+        opacity: 1,
+        transition: "opacity 0.2s ease-out",
+      };
+    }
+    
+    // Regular handling for other sections
     if (sectionIndex < currentScrollSection) {
-      // Sections that have been scrolled past - keep them hidden with smooth exit
+      // Sections that have been scrolled past - keep them hidden
       return {
         transform: `translateY(-${viewportHeight}px)`,
         opacity: 0,
@@ -36,28 +52,20 @@ const ScrollingSections = () => {
     }
     
     if (sectionIndex === currentScrollSection) {
-      // Current section being scrolled - move it up gradually with easing
+      // Current section being scrolled - move it up gradually
       const sectionScrollStart = sectionIndex * viewportHeight;
       const relativeScroll = scrollY - sectionScrollStart;
-      
-      // Apply smooth easing curve for professional feel
-      const easedProgress = relativeScroll / viewportHeight;
-      const smoothEasing = easedProgress < 0.5 
-        ? 2 * easedProgress * easedProgress 
-        : -1 + (4 - 2 * easedProgress) * easedProgress;
-      
       const translateY = -relativeScroll;
-      const opacity = 1 - (smoothEasing * 0.1); // Subtle fade as it scrolls
       
       return {
         transform: `translateY(${translateY}px)`,
-        opacity: Math.max(opacity, 0.9),
+        opacity: 1,
         transition: "opacity 0.2s ease-out",
       };
     }
     
     if (sectionIndex === currentScrollSection + 1) {
-      // Next section - prepare for entrance with subtle animation
+      // Next section - prepare for entrance
       return {
         transform: 'translateY(0px)',
         opacity: 1,
@@ -65,7 +73,7 @@ const ScrollingSections = () => {
       };
     }
     
-    // Sections further below - stay hidden but ready
+    // Sections further below - stay in position
     return {
       transform: 'translateY(0px)',
       opacity: 1,

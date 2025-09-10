@@ -19,12 +19,12 @@ const ServicesSection = () => {
 
         // Show cards progressively based on scroll progress
         const newVisibleCards: number[] = [];
-        if (scrollProgress > 0.1) newVisibleCards.push(0); // First card
-        if (scrollProgress > 0.3) newVisibleCards.push(1); // Second card
-        if (scrollProgress > 0.5) newVisibleCards.push(2); // Third card
+        if (scrollProgress > 0.2) newVisibleCards.push(0); // First card
+        if (scrollProgress > 0.4) newVisibleCards.push(1); // Second card
+        if (scrollProgress > 0.6) newVisibleCards.push(2); // Third card
         
         setVisibleCards(newVisibleCards);
-        setShowButton(scrollProgress > 0.7);
+        setShowButton(scrollProgress > 0.8); // Button appears at 80%
       }
     };
 
