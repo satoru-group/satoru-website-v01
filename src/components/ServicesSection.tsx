@@ -18,29 +18,57 @@ const ServicesSection = () => {
       
       <div className="max-w-6xl mx-auto text-center space-y-12 relative z-10 px-6 lg:px-12">
         <h2 className="text-4xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-8">
-          Our Services
+          How We Help Your Business
         </h2>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <div className="bg-card/80 backdrop-blur-sm p-6 rounded-lg border border-border/50">
-            <h3 className="text-xl font-semibold mb-4 text-foreground">Operations Consulting</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Streamline workflows, optimize processes, and improve operational efficiency across your organization.
+        <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-12">
+          We act as an extension of your team, providing fractional operations and IT leadership to support growth, scalability, and long-term success.
+        </p>
+        
+        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="bg-card/90 backdrop-blur-sm p-8 rounded-lg border border-border/50">
+            <h3 className="text-2xl font-semibold mb-4 text-foreground">Operations Optimization</h3>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Streamline workflows and improve operational efficiency
             </p>
+            <ul className="text-left text-muted-foreground mb-6 space-y-2">
+              <li>• Process mapping and improvement</li>
+              <li>• Workflow automation</li>
+              <li>• Resource allocation</li>
+            </ul>
+            <Button variant="outline" size="sm" className="text-sm">
+              Learn more
+            </Button>
           </div>
           
-          <div className="bg-card/80 backdrop-blur-sm p-6 rounded-lg border border-border/50">
-            <h3 className="text-xl font-semibold mb-4 text-foreground">IT Strategy & Leadership</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Fractional IT leadership to guide technology decisions and digital transformation initiatives.
+          <div className="bg-card/90 backdrop-blur-sm p-8 rounded-lg border border-border/50">
+            <h3 className="text-2xl font-semibold mb-4 text-foreground">IT Systems Management</h3>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Optimize your technology infrastructure
             </p>
+            <ul className="text-left text-muted-foreground mb-6 space-y-2">
+              <li>• System integration</li>
+              <li>• Technology stack assessment</li>
+              <li>• IT strategy development</li>
+            </ul>
+            <Button variant="outline" size="sm" className="text-sm">
+              Learn more
+            </Button>
           </div>
           
-          <div className="bg-card/80 backdrop-blur-sm p-6 rounded-lg border border-border/50">
-            <h3 className="text-xl font-semibold mb-4 text-foreground">System Integration</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Connect disparate systems and automate workflows to reduce manual work and errors.
+          <div className="bg-card/90 backdrop-blur-sm p-8 rounded-lg border border-border/50">
+            <h3 className="text-2xl font-semibold mb-4 text-foreground">Fractional Leadership</h3>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Expert guidance without the full-time cost
             </p>
+            <ul className="text-left text-muted-foreground mb-6 space-y-2">
+              <li>• Fractional COO services</li>
+              <li>• Fractional CTO services</li>
+              <li>• Strategic planning</li>
+            </ul>
+            <Button variant="outline" size="sm" className="text-sm">
+              Learn more
+            </Button>
           </div>
         </div>
         
