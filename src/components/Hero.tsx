@@ -2,7 +2,11 @@ import { Button } from "@/components/ui/button";
 import aiTechnology from "@/assets/ai-technology.jpg";
 import { ChevronsDown } from "lucide-react";
 
-const Hero = () => {
+interface HeroProps {
+  showArrow?: boolean;
+}
+
+const Hero = ({ showArrow = false }: HeroProps) => {
   const stats = [
     {
       number: "95%",
@@ -90,9 +94,11 @@ const Hero = () => {
       </div>
       
       {/* Scroll Down Arrow */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ChevronsDown className="w-8 h-8 text-primary" strokeWidth={3} />
-      </div>
+      {showArrow && (
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <ChevronsDown className="w-8 h-8 text-primary" strokeWidth={3} />
+        </div>
+      )}
     </section>
   );
 };

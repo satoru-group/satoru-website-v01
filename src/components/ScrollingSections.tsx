@@ -6,12 +6,26 @@ import ContactSection from "@/components/ContactSection";
 
 const ScrollingSections = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [activeSection, setActiveSection] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       // Throttle scroll events for better performance with smooth animations
       requestAnimationFrame(() => {
-        setScrollY(window.scrollY);
+        const newScrollY = window.scrollY;
+        setScrollY(newScrollY);
+        
+        // Determine active section for arrow visibility
+        const viewportHeight = window.innerHeight;
+        const currentScrollSection = Math.floor(newScrollY / viewportHeight);
+        const scrollProgress = (newScrollY % viewportHeight) / viewportHeight;
+        
+        // Only show arrow when section is fully active (not transitioning)
+        if (scrollProgress < 0.1) {
+          setActiveSection(currentScrollSection);
+        } else {
+          setActiveSection(-1); // Hide all arrows during transitions
+        }
       });
     };
 
@@ -175,7 +189,7 @@ const ScrollingSections = () => {
           className="absolute inset-0 w-full h-full z-40"
           style={getTransformStyle(0)}
         >
-          <Hero />
+          <Hero showArrow={activeSection === 0} />
         </div>
         
         {/* About Us Section */}
@@ -183,7 +197,7 @@ const ScrollingSections = () => {
           className="absolute inset-0 w-full h-full z-30"
           style={getTransformStyle(1)}
         >
-          <AboutUsSection />
+          <AboutUsSection showArrow={activeSection === 1} />
         </div>
         
         {/* Services Section */}
@@ -191,7 +205,7 @@ const ScrollingSections = () => {
           className="absolute inset-0 w-full h-full z-20"
           style={getTransformStyle(2)}
         >
-          <ServicesSection />
+          <ServicesSection showArrow={activeSection === 2} />
         </div>
       </div>
     </>

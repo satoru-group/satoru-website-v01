@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ChevronsDown } from "lucide-react";
 
-const AboutUsSection = () => {
+interface AboutUsSectionProps {
+  showArrow?: boolean;
+}
+
+const AboutUsSection = ({ showArrow = false }: AboutUsSectionProps) => {
   return (
     <section className="w-full h-screen bg-background flex items-center justify-center relative overflow-hidden">
       {/* Neural network background pattern */}
@@ -50,9 +54,11 @@ const AboutUsSection = () => {
       </div>
       
       {/* Scroll Down Arrow */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ChevronsDown className="w-8 h-8 text-primary" strokeWidth={3} />
-      </div>
+      {showArrow && (
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <ChevronsDown className="w-8 h-8 text-primary" strokeWidth={3} />
+        </div>
+      )}
     </section>
   );
 };
