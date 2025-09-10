@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Services from "@/components/Services";
 import BlankSection from "@/components/BlankSection";
 
 const Index = () => {
@@ -9,8 +10,7 @@ const Index = () => {
       <Header />
       <main className="relative z-20">
         <Hero />
-        {/* Spacer to allow scrolling past hero */}
-        <div className="h-screen"></div>
+        <Services />
       </main>
     </div>
   );
