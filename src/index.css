@@ -252,23 +252,41 @@ All colors MUST be HSL.
     overflow-x: hidden;
   }
 
-  /* Mobile viewport fixes and enhancements */
+  /* Mobile scroll behavior enhancements */
   @media screen and (max-width: 768px) {
     html {
       -webkit-text-size-adjust: none;
       -ms-text-size-adjust: none;
       text-size-adjust: none;
+      /* Improve scroll performance on mobile */
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
     }
     
     body {
       position: relative;
       overflow-x: hidden;
       font-size: 16px; /* Prevent zoom on iOS */
+      /* Optimize touch scrolling */
+      touch-action: pan-y;
     }
     
     /* Ensure touch targets are properly sized */
     button, input, textarea, select {
       min-height: 44px;
+    }
+    
+    /* Improve section visibility */
+    section {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+    
+    /* Better mobile content visibility */
+    .scroll-container {
+      scroll-snap-type: y mandatory;
+      overflow-y: auto;
+      height: 100vh;
     }
   }
 

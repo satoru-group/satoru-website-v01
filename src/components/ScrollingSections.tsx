@@ -8,15 +8,39 @@ const ScrollingSections = () => {
   const [scrollY, setScrollY] = useState(0);
   const [activeSection, setActiveSection] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
+  const [sectionContentVisible, setSectionContentVisible] = useState<boolean[]>([false, false, false, false]);
 
   useEffect(() => {
     let scrollTimeout: NodeJS.Timeout;
+    
+    const checkSectionContentVisibility = () => {
+      const isMobile = window.innerWidth < 768;
+      if (!isMobile) return [true, true, true, true]; // Allow all scrolling on desktop
+      
+      const viewportHeight = window.innerHeight;
+      const currentSection = Math.floor(scrollY / viewportHeight);
+      const scrollProgress = (scrollY % viewportHeight) / viewportHeight;
+      
+      // Check if current section content is fully visible
+      const newVisibility = [...sectionContentVisible];
+      
+      // For mobile, require 80% of section to be scrolled through before allowing next
+      if (scrollProgress >= 0.8 || currentSection === 0) {
+        newVisibility[currentSection] = true;
+      }
+      
+      return newVisibility;
+    };
     
     const handleScroll = () => {
       // Throttle scroll events for better performance
       requestAnimationFrame(() => {
         const newScrollY = window.scrollY;
         setScrollY(newScrollY);
+        
+        // Update content visibility
+        const visibility = checkSectionContentVisibility();
+        setSectionContentVisible(visibility);
         
         // Responsive viewport height calculation
         const viewportHeight = window.innerHeight;
@@ -34,26 +58,42 @@ const ScrollingSections = () => {
       });
     };
 
-    // Smooth scroll behavior with section snapping
+    // Mobile-specific scroll control with content visibility check
     const handleWheelScroll = (e: WheelEvent) => {
-      if (isScrolling) return;
+      const isMobile = window.innerWidth < 768;
+      if (!isMobile || isScrolling) return;
       
-      e.preventDefault();
       const viewportHeight = window.innerHeight;
       const currentSection = Math.round(window.scrollY / viewportHeight);
       const isScrollingDown = e.deltaY > 0;
       
-      let targetSection = currentSection;
-      
+      // Check if current section content is visible before allowing scroll
       if (isScrollingDown && currentSection < 3) {
-        targetSection = currentSection + 1;
-      } else if (!isScrollingDown && currentSection > 0) {
-        targetSection = currentSection - 1;
-      }
-      
-      // Smooth scroll to target section
-      if (targetSection !== currentSection) {
+        const currentSectionProgress = (window.scrollY % viewportHeight) / viewportHeight;
+        
+        // Only allow scrolling to next section if current content is 80% visible
+        if (currentSectionProgress < 0.8) {
+          return; // Don't prevent default, allow normal scrolling within section
+        }
+        
+        // Prevent default and snap to next section
+        e.preventDefault();
+        const targetSection = currentSection + 1;
         setIsScrolling(true);
+        
+        window.scrollTo({
+          top: targetSection * viewportHeight,
+          behavior: 'smooth'
+        });
+        
+        setTimeout(() => {
+          setIsScrolling(false);
+        }, 800);
+      } else if (!isScrollingDown && currentSection > 0) {
+        e.preventDefault();
+        const targetSection = currentSection - 1;
+        setIsScrolling(true);
+        
         window.scrollTo({
           top: targetSection * viewportHeight,
           behavior: 'smooth'
@@ -65,20 +105,79 @@ const ScrollingSections = () => {
       }
     };
 
+    // Touch handling for mobile swipe gestures
+    let touchStartY = 0;
+    let touchEndY = 0;
+    
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartY = e.changedTouches[0].screenY;
+    };
+    
+    const handleTouchEnd = (e: TouchEvent) => {
+      const isMobile = window.innerWidth < 768;
+      if (!isMobile || isScrolling) return;
+      
+      touchEndY = e.changedTouches[0].screenY;
+      const touchDiff = touchStartY - touchEndY;
+      
+      // Only trigger on significant swipe (> 50px)
+      if (Math.abs(touchDiff) > 50) {
+        const viewportHeight = window.innerHeight;
+        const currentSection = Math.round(window.scrollY / viewportHeight);
+        const currentSectionProgress = (window.scrollY % viewportHeight) / viewportHeight;
+        
+        if (touchDiff > 0 && currentSection < 3) {
+          // Swiping up (next section)
+          if (currentSectionProgress >= 0.8) {
+            e.preventDefault();
+            const targetSection = currentSection + 1;
+            setIsScrolling(true);
+            
+            window.scrollTo({
+              top: targetSection * viewportHeight,
+              behavior: 'smooth'
+            });
+            
+            setTimeout(() => {
+              setIsScrolling(false);
+            }, 800);
+          }
+        } else if (touchDiff < 0 && currentSection > 0) {
+          // Swiping down (previous section)
+          e.preventDefault();
+          const targetSection = currentSection - 1;
+          setIsScrolling(true);
+          
+          window.scrollTo({
+            top: targetSection * viewportHeight,
+            behavior: 'smooth'
+          });
+          
+          setTimeout(() => {
+            setIsScrolling(false);
+          }, 800);
+        }
+      }
+    };
+
     // Add smooth scroll behavior
     document.documentElement.style.scrollBehavior = 'smooth';
     
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("wheel", handleWheelScroll, { passive: false });
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchend", handleTouchEnd, { passive: false });
     handleScroll(); // Initial call
     
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("wheel", handleWheelScroll);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchend", handleTouchEnd);
       document.documentElement.style.scrollBehavior = 'auto';
       clearTimeout(scrollTimeout);
     };
-  }, [isScrolling]);
+  }, [isScrolling, scrollY, sectionContentVisible]);
 
   const getTransformStyle = (sectionIndex: number) => {
     const viewportHeight = window.innerHeight;
