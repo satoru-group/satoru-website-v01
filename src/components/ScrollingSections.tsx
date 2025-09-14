@@ -183,10 +183,19 @@ const ScrollingSections = () => {
   return (
     <>
       {/* Create scrollable height for 4 sections */}
-      <div className="h-[400vh]"></div>
+      <div className="h-[400vh] w-full" style={{ width: '100%', maxWidth: '100vw' }}></div>
       
       {/* Fixed container for sections */}
-      <div className="fixed top-0 left-0 w-full h-screen overflow-hidden ai-bg neural-bg">
+      <div 
+        className="fixed top-0 left-0 w-full h-screen overflow-hidden ai-bg neural-bg" 
+        style={{ 
+          WebkitOverflowScrolling: 'touch',
+          touchAction: 'pan-y',
+          width: '100vw',
+          maxWidth: '100%',
+          height: '100dvh'
+        }}
+      >
         {/* AI Background Animation Layer */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1]">
           {/* Neural Network Connections */}
@@ -284,7 +293,13 @@ const ScrollingSections = () => {
         {/* Contact Section - Highest z-index, guaranteed main viewport positioning */}
         <div 
           className="absolute inset-0 w-full h-full z-50 ai-bg"
-          style={getTransformStyle(3)}
+          style={{
+            ...getTransformStyle(3),
+            width: '100%',
+            maxWidth: '100vw',
+            height: '100%',
+            minHeight: '100vh'
+          }}
         >
           <ContactSection />
         </div>
@@ -292,7 +307,11 @@ const ScrollingSections = () => {
         {/* Hero Section */}
         <div 
           className="absolute inset-0 w-full h-full z-40 ai-bg"
-          style={getTransformStyle(0)}
+          style={{
+            ...getTransformStyle(0),
+            width: '100%',
+            maxWidth: '100vw'
+          }}
         >
           <Hero showArrow={activeSection === 0} />
         </div>
@@ -300,7 +319,11 @@ const ScrollingSections = () => {
         {/* About Us Section */}
         <div 
           className="absolute inset-0 w-full h-full z-30 ai-bg"
-          style={getTransformStyle(1)}
+          style={{
+            ...getTransformStyle(1),
+            width: '100%',
+            maxWidth: '100vw'
+          }}
         >
           <AboutUsSection showArrow={activeSection === 1} />
         </div>
@@ -308,7 +331,11 @@ const ScrollingSections = () => {
         {/* Services Section */}
         <div 
           className="absolute inset-0 w-full h-full z-20 ai-bg"
-          style={getTransformStyle(2)}
+          style={{
+            ...getTransformStyle(2),
+            width: '100%',
+            maxWidth: '100vw'
+          }}
         >
           <ServicesSection showArrow={activeSection === 2} />
         </div>
