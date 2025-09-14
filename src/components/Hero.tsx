@@ -29,9 +29,9 @@ const Hero = ({ showArrow = false }: HeroProps) => {
   ];
 
   return (
-    <section className="relative w-full h-full flex flex-col bg-background overflow-hidden pt-[120px] sm:pt-[68px] lg:pt-[72px]">
-      {/* Full viewport container accounting for fixed header - exact header height */}
-      <div className="flex-1 flex flex-col justify-center px-4 sm:px-6 lg:px-6 py-4 sm:py-6 lg:py-4 min-h-0">
+    <section className="relative w-full flex flex-col bg-background overflow-hidden pt-[120px] sm:pt-[68px] lg:pt-[72px]">
+      {/* Mobile: Full content container */}
+      <div className="flex flex-col px-4 sm:px-6 lg:px-6 py-8 sm:py-6 lg:py-4 lg:flex-1 lg:justify-center lg:min-h-0">
         {/* Consistent Background Patterns */}
         <div className="absolute inset-0 tech-grid opacity-30 dark:opacity-20 pointer-events-none" />
         <div className="absolute inset-0 light-geometric-bg opacity-20 dark:opacity-0 pointer-events-none" />
@@ -58,13 +58,13 @@ const Hero = ({ showArrow = false }: HeroProps) => {
         {/* Scanning Lines - Disabled on mobile */}
         <div className="absolute inset-0 scan-lines opacity-0 sm:opacity-30 pointer-events-none" />
         
-        <div className="max-w-6xl mx-auto w-full flex flex-col justify-center flex-1">
-          {/* Mobile Layout - Professional responsive design */}
-          <div className="flex flex-col lg:hidden">
-            <div className="w-full max-w-md mx-auto px-4 space-y-12">
+        <div className="max-w-6xl mx-auto w-full lg:flex lg:flex-col lg:justify-center lg:flex-1">
+          {/* Mobile Layout - Full content display */}
+          <div className="flex flex-col lg:hidden space-y-12 pb-8">
+            <div className="w-full max-w-md mx-auto space-y-12">
               
               {/* Mobile: Hero text section */}
-              <div className="text-center space-y-8">
+              <div className="text-center space-y-8 px-4">
                 <div className="relative py-8">
                   {/* Decorative background image - more visible */}
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-30 dark:opacity-40">
@@ -102,13 +102,35 @@ const Hero = ({ showArrow = false }: HeroProps) => {
               </div>
 
               {/* Mobile: Action buttons */}
-              <div className="space-y-4 w-full px-2">
+              <div className="space-y-4 w-full px-6">
                 <Button variant="cta" size="lg" className="w-full text-lg font-semibold h-14 rounded-xl">
                   Book a Consultant
                 </Button>
                 <Button variant="outline" size="lg" className="w-full text-lg font-semibold h-14 rounded-xl">
                   Learn More
                 </Button>
+              </div>
+
+              {/* Mobile: AI Stats Section */}
+              <div className="grid grid-cols-2 gap-4 px-4">
+                {stats.map((stat, index) => (
+                  <div
+                    key={index}
+                    className="text-center p-4 bg-card/30 backdrop-blur-sm rounded-lg border border-primary/10"
+                  >
+                    <div className="text-xl font-bold text-primary mb-2">
+                      {stat.number}
+                    </div>
+                    <div className="text-sm text-muted-foreground font-medium leading-tight">
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Mobile: Client Logos Section */}
+              <div className="px-4">
+                <ClientLogos />
               </div>
             </div>
           </div>
@@ -187,14 +209,14 @@ const Hero = ({ showArrow = false }: HeroProps) => {
             </div>
           </div>
 
-          {/* AI Stats Section - Larger for mobile professional look */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 mb-6 lg:mb-5 px-1 mt-8 lg:mt-0">
+          {/* Desktop AI Stats Section */}
+          <div className="hidden lg:grid lg:grid-cols-4 gap-4 mb-5 px-1">
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="text-center p-4 lg:p-4 bg-card/30 backdrop-blur-sm rounded-lg border border-primary/10 hover:border-primary/20 transition-colors duration-200"
+                className="text-center p-4 bg-card/30 backdrop-blur-sm rounded-lg border border-primary/10 hover:border-primary/20 transition-colors duration-200"
               >
-                <div className="text-lg lg:text-xl font-bold text-primary mb-2">
+                <div className="text-xl font-bold text-primary mb-2">
                   {stat.number}
                 </div>
                 <div className="text-sm text-muted-foreground font-medium leading-tight">
@@ -204,8 +226,8 @@ const Hero = ({ showArrow = false }: HeroProps) => {
             ))}
           </div>
 
-          {/* Client Logos Section - Compact */}
-          <div className="mt-4 lg:mt-3">
+          {/* Desktop Client Logos Section */}
+          <div className="hidden lg:block mt-3">
             <ClientLogos />
           </div>
         </div>
