@@ -106,8 +106,8 @@ const Header = () => {
             Get Started
           </Button>
           
-          {/* Mobile controls - hidden in desktop mode */}
-          <div className="hidden">
+          {/* Mobile controls */}
+          <div className="flex items-center space-x-1 md:hidden">
             {/* Mobile Theme Toggle */}
             <Button
               variant="ghost"
@@ -136,6 +136,75 @@ const Header = () => {
         </div>
       </header>
       
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 z-[99] md:hidden">
+          <div className="fixed inset-0 bg-background/95 backdrop-blur-sm" />
+          <div className="fixed top-16 left-0 right-0 bg-card/95 backdrop-blur-sm border-b border-border/50 p-4">
+            <nav className="flex flex-col space-y-4">
+              <Link 
+                to="/"
+                className={`relative transition-smooth font-medium py-2 px-4 rounded-lg hover:bg-muted/50 ${
+                  isActive('/') 
+                    ? 'text-primary bg-muted/30' 
+                    : 'text-[#27254c] dark:text-foreground hover:text-primary'
+                }`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Home
+                {isActive('/') && (
+                  <div className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-primary rounded-full"></div>
+                )}
+              </Link>
+              <Link 
+                to="/about"
+                className={`relative transition-smooth font-medium py-2 px-4 rounded-lg hover:bg-muted/50 ${
+                  isActive('/about') 
+                    ? 'text-primary bg-muted/30' 
+                    : 'text-[#27254c] dark:text-muted-foreground hover:text-primary'
+                }`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                About Us
+                {isActive('/about') && (
+                  <div className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-primary rounded-full"></div>
+                )}
+              </Link>
+              <Link 
+                to="/services"
+                className={`relative transition-smooth font-medium py-2 px-4 rounded-lg hover:bg-muted/50 ${
+                  isActive('/services') 
+                    ? 'text-primary bg-muted/30' 
+                    : 'text-[#564a94] dark:text-muted-foreground hover:text-primary'
+                }`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Services
+                {isActive('/services') && (
+                  <div className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-primary rounded-full"></div>
+                )}
+              </Link>
+              <Link 
+                to="/contact"
+                className={`relative transition-smooth font-medium py-2 px-4 rounded-lg hover:bg-muted/50 ${
+                  isActive('/contact') 
+                    ? 'text-primary bg-muted/30' 
+                    : 'text-[#1f232f] dark:text-muted-foreground hover:text-primary'
+                }`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Contact
+                {isActive('/contact') && (
+                  <div className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-primary rounded-full"></div>
+                )}
+              </Link>
+              <Button variant="ai" size="sm" className="mt-4 w-full">
+                Get Started
+              </Button>
+            </nav>
+          </div>
+        </div>
+      )}
     </>
   );
 };

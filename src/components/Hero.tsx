@@ -108,7 +108,7 @@ const Hero = ({ showArrow = false }: HeroProps) => {
 
             {/* Right Content - AI Image */}
             <div className="relative order-2 group w-full max-w-xs sm:max-w-sm lg:max-w-none mx-auto">
-              <div className="relative overflow-hidden rounded-lg lg:rounded-xl shadow-glow-cyan border-2 border-primary/30 hover:border-primary/50 transition-all duration-500 group-hover:shadow-glow-purple scan-lines">
+              <div className="relative overflow-hidden rounded-lg lg:rounded-xl shadow-glow-cyan border-2 border-primary/30 hover:border-primary/50 transition-all duration-500 group-hover:shadow-glow-purple scan-lines aspect-square sm:aspect-auto">
                 <img 
                   src={aiTechnology} 
                   alt="Advanced AI technology interface with holographic displays and neural network visualizations" 
