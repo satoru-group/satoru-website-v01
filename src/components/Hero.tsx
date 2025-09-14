@@ -59,9 +59,9 @@ const Hero = ({ showArrow = false }: HeroProps) => {
         
         <div className="max-w-6xl mx-auto w-full flex flex-col justify-center flex-1">
           {/* Main Hero Content */}
-          <div className="grid grid-cols-2 gap-4 lg:gap-8 items-center mb-3 lg:mb-6">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 lg:gap-8 items-center mb-3 lg:mb-6">
             {/* Left Content */}
-            <div className="space-y-3 sm:space-y-4 lg:space-y-5 text-left order-1">
+            <div className="space-y-3 sm:space-y-4 lg:space-y-5 text-center lg:text-left order-2 lg:order-1">
               <div className="space-y-2 sm:space-y-3 lg:space-y-4">
                 <div className="relative">
                   {/* Decorative background image */}
@@ -107,7 +107,7 @@ const Hero = ({ showArrow = false }: HeroProps) => {
             </div>
 
             {/* Right Content - AI Image */}
-            <div className="relative order-2 group w-full -mx-4 sm:mx-auto sm:max-w-sm lg:max-w-none">
+            <div className="relative order-1 lg:order-2 group w-full -mx-4 sm:mx-auto sm:max-w-sm lg:max-w-none">
               <div className="relative overflow-hidden rounded-none sm:rounded-lg lg:rounded-xl shadow-glow-cyan border-0 sm:border-2 border-primary/30 hover:border-primary/50 transition-all duration-500 group-hover:shadow-glow-purple scan-lines aspect-square sm:aspect-auto">
                 <img 
                   src={aiTechnology} 
