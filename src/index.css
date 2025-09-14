@@ -79,22 +79,22 @@ All colors MUST be HSL.
   .light {
     /* Warm Pink Professional - Light Theme */
     --background: 350 30% 98%; /* Soft pink-cream background */
-    --foreground: 340 25% 15%; /* Warm dark text */
+    --foreground: 243 35% 22%; /* #27254c - Dark Navy */
 
     --card: 350 25% 96%; /* Soft pink-cream card */
-    --card-foreground: 340 25% 15%;
+    --card-foreground: 225 21% 15%; /* #1f232f - Charcoal */
 
     --popover: 350 25% 96%;
-    --popover-foreground: 340 25% 15%;
+    --popover-foreground: 225 21% 15%; /* #1f232f - Charcoal */
 
     --primary: 200 50% 40%; /* Professional blue */
     --primary-foreground: 350 30% 98%;
 
     --secondary: 350 15% 90%; /* Soft pink-gray */
-    --secondary-foreground: 340 25% 15%;
+    --secondary-foreground: 222 47% 11%; /* #0f172a - Darker Gray */
 
     --muted: 350 12% 92%;
-    --muted-foreground: 340 15% 45%; /* Warm medium gray */
+    --muted-foreground: 215 25% 27%; /* #334155 - Dark Gray */
 
     --accent: 340 45% 55%; /* Soft warm pink accent */
     --accent-foreground: 350 30% 98%;
