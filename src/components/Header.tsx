@@ -34,7 +34,7 @@ const Header = () => {
           </div>
         </div>
         
-        <nav className="flex items-center space-x-6 lg:space-x-8">
+        <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
           <Link 
             to="/"
             className={`relative text-sm lg:text-base transition-smooth font-medium hover:shadow-glow-cyan ${
@@ -91,18 +91,18 @@ const Header = () => {
 
         <div className="flex items-center space-x-1 sm:space-x-2 lg:space-x-4">
           {/* Theme Toggle */}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-              className="w-8 h-8 lg:w-10 lg:h-10"
-            >
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            className="hidden md:inline-flex w-8 h-8 lg:w-10 lg:h-10"
+          >
             <Sun className="h-4 w-4 lg:h-5 lg:w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
             <Moon className="absolute h-4 w-4 lg:h-5 lg:w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             <span className="sr-only">Toggle theme</span>
           </Button>
 
-          <Button variant="ai" size="sm" className="inline-flex text-xs lg:text-sm px-3 lg:px-4 py-2">
+          <Button variant="ai" size="sm" className="hidden md:inline-flex text-xs lg:text-sm px-3 lg:px-4 py-2">
             Get Started
           </Button>
           
