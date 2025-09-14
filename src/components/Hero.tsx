@@ -59,59 +59,60 @@ const Hero = ({ showArrow = false }: HeroProps) => {
         <div className="absolute inset-0 scan-lines opacity-0 sm:opacity-30 pointer-events-none" />
         
         <div className="max-w-6xl mx-auto w-full flex flex-col justify-center flex-1">
-          {/* Mobile Layout - Simple normal scrolling */}
-          <div className="flex flex-col lg:hidden gap-6 mb-6 mt-16">
-            {/* Mobile: Text and decoration section */}
-            <div className="text-center px-4">
-              <div className="relative max-w-sm mx-auto">
-                {/* Decorative background image - simplified */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <img 
-                    src={satoruDecoration} 
-                    alt="" 
-                    className="w-48 h-48 object-contain opacity-15 dark:opacity-25"
-                  />
+          {/* Mobile Layout - Professional responsive design */}
+          <div className="flex flex-col lg:hidden space-y-8 mb-8 mt-16">
+            {/* Mobile: Main content container */}
+            <div className="px-6 space-y-8">
+              
+              {/* Mobile: Hero text section */}
+              <div className="text-center space-y-6">
+                <div className="relative">
+                  {/* Decorative background image - stable positioning */}
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-10 dark:opacity-20">
+                    <img 
+                      src={satoruDecoration} 
+                      alt="" 
+                      className="w-64 h-64 object-contain"
+                    />
+                  </div>
+                  
+                  <h1 className="relative z-10 text-5xl leading-[1.1] font-bold text-[#27254c] dark:text-foreground">
+                    <div className="mb-2">Simplify.</div>
+                    <div className="text-[#564a94] dark:text-primary mb-2">Streamline.</div>
+                    <div className="text-[#8b7dd6] dark:bg-gradient-primary dark:bg-clip-text dark:text-transparent">Succeed.</div>
+                  </h1>
                 </div>
                 
-                <h1 className="relative z-10 text-4xl sm:text-5xl leading-tight font-bold text-[#27254c] dark:text-foreground text-center mb-6">
-                  <span className="inline-block">Simplify.</span>
-                  <br />
-                  <span className="text-[#564a94] dark:text-primary inline-block">Streamline.</span>
-                  <br />
-                  <span className="text-[#8b7dd6] dark:bg-gradient-primary dark:bg-clip-text dark:text-transparent inline-block">Succeed.</span>
-                </h1>
+                {/* Mobile: Description */}
+                <p className="text-xl text-[#1f232f] dark:text-muted-foreground leading-relaxed max-w-lg mx-auto">
+                  Harness the power of advanced AI technology to transform your business operations and unlock unprecedented growth opportunities.
+                </p>
               </div>
-            </div>
 
-            {/* Mobile: AI Image section */}
-            <div className="px-4">
-              <div className="w-full max-w-sm mx-auto">
-                <div className="relative overflow-hidden rounded-2xl border border-primary/30 aspect-[4/5] w-full">
-                  <img 
-                    src={aiTechnology} 
-                    alt="Advanced AI technology interface with holographic displays and neural network visualizations" 
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/10" />
+              {/* Mobile: AI Image section */}
+              <div className="flex justify-center">
+                <div className="w-full max-w-xs">
+                  <div className="relative overflow-hidden rounded-2xl border border-primary/30 aspect-[4/5]">
+                    <img 
+                      src={aiTechnology} 
+                      alt="Advanced AI technology interface with holographic displays and neural network visualizations" 
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/10" />
+                  </div>
                 </div>
               </div>
-            </div>
-            
-            {/* Mobile: Description text */}
-            <div className="px-4">
-              <p className="text-lg sm:text-xl text-[#1f232f] dark:text-muted-foreground leading-relaxed text-center max-w-md mx-auto">
-                Harness the power of advanced AI technology to transform your business operations and unlock unprecedented growth opportunities.
-              </p>
-            </div>
 
-            {/* Mobile: Buttons */}
-            <div className="flex flex-col gap-4 px-4 max-w-sm mx-auto w-full">
-              <Button variant="cta" size="lg" className="text-lg font-bold px-8 py-6 w-full min-h-[56px]">
-                Book a Consultant
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg font-bold px-8 py-6 w-full min-h-[56px]">
-                Learn More
-              </Button>
+              {/* Mobile: Action buttons */}
+              <div className="space-y-4 max-w-sm mx-auto">
+                <Button variant="cta" size="lg" className="w-full text-xl font-bold py-6 px-8 min-h-[60px]">
+                  Book a Consultant
+                </Button>
+                <Button variant="outline" size="lg" className="w-full text-xl font-bold py-6 px-8 min-h-[60px]">
+                  Learn More
+                </Button>
+              </div>
+              
             </div>
           </div>
 
