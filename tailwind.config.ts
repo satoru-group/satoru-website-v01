@@ -13,6 +13,11 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'sans': ['Work Sans', 'system-ui', 'sans-serif'],
+        'heading': ['Work Sans', 'system-ui', 'sans-serif'],
+        'body': ['Work Sans', 'system-ui', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -66,8 +71,8 @@ export default {
       boxShadow: {
         'elegant': 'var(--shadow-elegant)',
         'soft': 'var(--shadow-soft)',
-        'glow-cyan': 'var(--glow-cyan)',
-        'glow-purple': 'var(--glow-purple)',
+        'glow-primary': 'var(--glow-primary)',
+        'glow-accent': 'var(--glow-accent)',
       },
       transitionTimingFunction: {
         'smooth': 'var(--transition-smooth)',
