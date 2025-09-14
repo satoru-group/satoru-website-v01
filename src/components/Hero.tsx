@@ -67,15 +67,15 @@ const Hero = ({ showArrow = false }: HeroProps) => {
               <div className="text-center space-y-8 px-4">
                 <div className="relative py-8">
                   {/* Decorative background image - more visible */}
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-30 dark:opacity-40">
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-40 dark:opacity-50">
                     <img 
                       src={satoruDecoration} 
                       alt="" 
-                      className="w-56 h-56 object-contain"
+                      className="w-80 h-80 object-contain"
                     />
                   </div>
                   
-                  <h1 className="relative z-20 text-5xl sm:text-6xl font-bold leading-[1.1] text-center">
+                  <h1 className="relative z-20 text-6xl sm:text-7xl font-bold leading-[1.1] text-center">
                     <div className="text-[#27254c] dark:text-foreground mb-4">Simplify.</div>
                     <div className="text-[#564a94] dark:text-primary mb-4">Streamline.</div>
                     <div className="text-[#8b7dd6] dark:bg-gradient-primary dark:bg-clip-text dark:text-transparent">Succeed.</div>
