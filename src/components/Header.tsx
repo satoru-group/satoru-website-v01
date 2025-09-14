@@ -14,7 +14,7 @@ const Header = () => {
   
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 w-full py-2 sm:py-2.5 lg:py-3 px-4 sm:px-6 lg:px-12 flex items-center justify-between bg-background/95 backdrop-blur-sm border-b border-border/50 z-[100]">
+      <header className="fixed top-0 left-0 right-0 w-full py-2 sm:py-2.5 lg:py-3 px-4 sm:px-6 lg:px-12 flex items-center justify-between bg-background sm:bg-background/95 backdrop-blur-sm border-b border-border/50 z-[100]">
         <div className="flex items-center">
           <div className="flex flex-col text-center">
             <div className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent animate-digital-pulse">
