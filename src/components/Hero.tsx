@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import aiTechnology from "@/assets/ai-technology.jpg";
 import { ChevronsDown } from "lucide-react";
+import ClientLogos from "@/components/ClientLogos";
 
 interface HeroProps {
   showArrow?: boolean;
@@ -128,6 +129,9 @@ const Hero = ({ showArrow = false }: HeroProps) => {
             </div>
           ))}
         </div>
+
+        {/* Client Logos Section */}
+        <ClientLogos />
       </div>
       
       {/* Scroll Down Arrow */}
