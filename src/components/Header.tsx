@@ -23,7 +23,7 @@ const Header = () => {
                 <img 
                   src={satoruOLogo} 
                   alt="O" 
-                  className="inline-block w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 mx-0.5 animate-float-subtle" 
+                  className="inline-block w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 xl:w-8 xl:h-8 mx-0.5 animate-float-subtle" 
                 />
                 RU
               </span><span className="text-primary glow animate-pulse">.</span>
