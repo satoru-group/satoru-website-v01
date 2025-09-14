@@ -43,7 +43,7 @@ const ServicesSection = ({ showArrow = false }: ServicesSectionProps) => {
     };
   };
   return (
-    <section className="w-full h-screen bg-background flex items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8">
+    <section className="w-full h-full bg-background flex items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8">
       {/* Consistent Background Patterns */}
       <div className="absolute inset-0 circuit-bg opacity-15 dark:opacity-25 pointer-events-none" />
       <div className="absolute inset-0 light-geometric-bg opacity-15 dark:opacity-0 pointer-events-none" />
