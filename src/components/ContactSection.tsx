@@ -19,12 +19,12 @@ const ContactSection = () => {
       </div>
       
       <div className="max-w-4xl mx-auto text-center space-y-8 sm:space-y-12 relative z-10 px-4 sm:px-6 lg:px-12">
-        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6 sm:mb-8">
+        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-foreground dark:bg-gradient-primary dark:bg-clip-text dark:text-transparent mb-6 sm:mb-8">
           Get In Touch
         </h2>
         
-        <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-12 px-4">
-          Ready to transform your business operations? Let's discuss how we can help you streamline workflows and drive growth.
+        <p className="text-lg sm:text-xl text-foreground/80 dark:text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-12 px-4">
+          Ready to transform your business operations? Let&apos;s discuss how we can help you streamline workflows and drive growth.
         </p>
         
         <div className="max-w-lg mx-auto space-y-4 sm:space-y-6">
