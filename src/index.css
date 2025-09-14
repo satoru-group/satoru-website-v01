@@ -254,20 +254,44 @@ All colors MUST be HSL.
     overflow-x: hidden;
   }
 
-  /* Mobile scroll behavior enhancements */
+  /* Mobile performance optimizations */
   @media screen and (max-width: 768px) {
-    html {
-      -webkit-text-size-adjust: none;
-      -ms-text-size-adjust: none;
-      text-size-adjust: none;
-      /* Improve scroll performance on mobile */
-      -webkit-overflow-scrolling: touch;
-      scroll-behavior: smooth;
+    /* Disable complex animations on mobile for better performance */
+    .animate-particle-float,
+    .animate-circuit-flow,
+    .animate-digital-pulse,
+    .animate-float-subtle,
+    .animate-float-dynamic,
+    .holographic,
+    .scan-lines {
+      animation: none !important;
     }
     
-    body {
-      position: relative;
-      overflow-x: hidden;
+    /* Reduce transform complexity */
+    .hover-lift:hover {
+      transform: none !important;
+    }
+    
+    /* Simplify shadows and glows */
+    .shadow-glow-cyan,
+    .shadow-glow-purple,
+    .shadow-glow-primary {
+      box-shadow: none !important;
+    }
+    
+    /* Disable backdrop filters for performance */
+    .backdrop-blur-sm {
+      backdrop-filter: none !important;
+      background: rgba(255, 255, 255, 0.02) !important;
+    }
+    
+    /* Optimize will-change for essential animations only */
+    .transition-smooth,
+    .transition-colors {
+      will-change: transform, opacity !important;
+    }
+    
+    html, body {
       font-size: 16px; /* Prevent zoom on iOS */
       /* Optimize touch scrolling */
       touch-action: pan-y;

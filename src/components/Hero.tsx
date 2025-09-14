@@ -36,26 +36,27 @@ const Hero = ({ showArrow = false }: HeroProps) => {
         <div className="absolute inset-0 tech-grid opacity-30 dark:opacity-20 pointer-events-none" />
         <div className="absolute inset-0 light-geometric-bg opacity-20 dark:opacity-0 pointer-events-none" />
         
-        {/* AI Particle System - Reduced for mobile */}
-        <div className="particles pointer-events-none">
-          {[...Array(8)].map((_, i) => (
+        {/* AI Particle System - Disabled on mobile for performance */}
+        <div className="particles pointer-events-none hidden sm:block">
+          {[...Array(4)].map((_, i) => (
             <div 
               key={i}
               className="particle animate-particle-float"
               style={{
                 left: `${Math.random() * 100}%`,
                 animationDelay: `${Math.random() * 8}s`,
-                animationDuration: `${6 + Math.random() * 4}s`
+                animationDuration: `${6 + Math.random() * 4}s`,
+                willChange: 'transform'
               }}
             />
           ))}
         </div>
 
-        {/* Matrix Rain Background */}
-        <div className="absolute inset-0 matrix-bg opacity-20 pointer-events-none" />
+        {/* Matrix Rain Background - Reduced opacity on mobile */}
+        <div className="absolute inset-0 matrix-bg opacity-5 sm:opacity-20 pointer-events-none" />
         
-        {/* Scanning Lines */}
-        <div className="absolute inset-0 scan-lines opacity-30 pointer-events-none" />
+        {/* Scanning Lines - Disabled on mobile */}
+        <div className="absolute inset-0 scan-lines opacity-0 sm:opacity-30 pointer-events-none" />
         
         <div className="max-w-6xl mx-auto w-full flex flex-col justify-center flex-1">
           {/* Mobile Layout - Different structure for mobile */}
@@ -70,10 +71,11 @@ const Hero = ({ showArrow = false }: HeroProps) => {
                     <img 
                       src={satoruDecoration} 
                       alt="" 
-                      className="w-24 h-24 object-contain opacity-10 dark:opacity-20 animate-float-subtle"
+                      className="w-24 h-24 object-contain opacity-10 dark:opacity-20"
                       style={{ 
                         filter: 'hue-rotate(10deg) saturate(1.2)',
-                        transform: 'rotate(-5deg) scale(1.1)'
+                        transform: 'rotate(-5deg) scale(1.1)',
+                        willChange: 'auto'
                       }}
                     />
                   </div>
@@ -93,27 +95,21 @@ const Hero = ({ showArrow = false }: HeroProps) => {
 
               {/* Mobile Right - AI Image - takes 2 columns */}
               <div className="col-span-2 relative group w-full">
-                <div className="relative overflow-hidden rounded-lg shadow-glow-cyan border border-primary/30 hover:border-primary/50 transition-all duration-500 group-hover:shadow-glow-purple scan-lines aspect-square">
+                <div className="relative overflow-hidden rounded-lg border border-primary/30 transition-colors duration-300 aspect-square">
                   <img 
                     src={aiTechnology} 
                     alt="Advanced AI technology interface with holographic displays and neural network visualizations" 
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:translate-y-[-10%] group-hover:scale-110"
+                    className="w-full h-full object-cover"
+                    style={{ willChange: 'auto' }}
                   />
                   
-                  {/* Paper scroll effect overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  {/* Scroll shadow effect */}
-                  <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-background/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-y-full group-hover:translate-y-0" />
-                  
-                  {/* AI Circuit overlay */}
-                  <div className="absolute inset-0 circuit-bg opacity-20 animate-circuit-flow" />
+                  {/* Simplified overlay for mobile */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/10" />
                 </div>
                 
-                {/* Floating AI elements - smaller for mobile */}
-                <div className="absolute -top-1 -right-1 w-2 h-2 bg-gradient-primary rounded-full animate-digital-pulse opacity-80" />
-                <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-accent rounded-full animate-float-dynamic opacity-60" />
-                <div className="absolute top-1/2 -left-1 w-1.5 h-1.5 bg-primary rounded-full animate-digital-pulse opacity-70" />
+                {/* Simplified floating elements for mobile */}
+                <div className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full opacity-60" />
+                <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-accent rounded-full opacity-40" />
               </div>
             </div>
             
@@ -209,18 +205,17 @@ const Hero = ({ showArrow = false }: HeroProps) => {
             </div>
           </div>
 
-          {/* AI Stats Section - More compact for mobile */}
+          {/* AI Stats Section - Simplified for mobile performance */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4 mb-4 lg:mb-5 px-1 mt-6 lg:mt-0">
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="text-center p-3 lg:p-4 bg-card/50 backdrop-blur-sm rounded-lg shadow-glow-cyan border border-primary/20 hover:border-primary/40 hover:shadow-glow-purple transition-all duration-300 hover:-translate-y-1 scan-lines holographic"
-                style={{ animationDelay: `${index * 0.2}s` }}
+                className="text-center p-3 lg:p-4 bg-card/30 backdrop-blur-sm rounded-lg border border-primary/10 hover:border-primary/20 transition-colors duration-200"
               >
-                <div className="text-sm lg:text-xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-1 animate-digital-pulse">
+                <div className="text-sm lg:text-xl font-bold text-primary mb-1">
                   {stat.number}
                 </div>
-                <div className="text-xs text-[#334155] dark:text-muted-foreground font-medium tracking-wide leading-tight">
+                <div className="text-xs text-muted-foreground font-medium leading-tight">
                   {stat.label}
                 </div>
               </div>
