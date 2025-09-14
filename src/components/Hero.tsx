@@ -66,12 +66,12 @@ const Hero = ({ showArrow = false }: HeroProps) => {
               {/* Mobile Left - Heading and decoration - takes 3 columns */}
               <div className="col-span-3 text-left">
                 <div className="relative">
-                  {/* Decorative background image - smaller for mobile */}
+                  {/* Decorative background image - larger for mobile */}
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <img 
                       src={satoruDecoration} 
                       alt="" 
-                      className="w-24 h-24 object-contain opacity-10 dark:opacity-20"
+                      className="w-32 h-32 object-contain opacity-10 dark:opacity-20"
                       style={{ 
                         filter: 'hue-rotate(10deg) saturate(1.2)',
                         transform: 'rotate(-5deg) scale(1.1)',
@@ -80,12 +80,12 @@ const Hero = ({ showArrow = false }: HeroProps) => {
                     />
                   </div>
                   
-                  <h1 className="relative z-10 text-base leading-tight font-bold text-[#27254c] dark:text-foreground">
-                    <span className="inline-block animate-float-subtle">Simplify.</span>
+                  <h1 className="relative z-10 text-lg leading-tight font-bold text-[#27254c] dark:text-foreground text-center">
+                    <span className="inline-block">Simplify.</span>
                     <br />
-                    <span className="text-[#564a94] dark:text-primary inline-block animate-float-dynamic text-glow">Streamline.</span>
+                    <span className="text-[#564a94] dark:text-primary inline-block text-glow">Streamline.</span>
                     <br />
-                    <span className="text-[#8b7dd6] dark:bg-gradient-primary dark:bg-clip-text dark:text-transparent inline-block animate-float-subtle glow">Succeed.</span>
+                    <span className="text-[#8b7dd6] dark:bg-gradient-primary dark:bg-clip-text dark:text-transparent inline-block glow">Succeed.</span>
                   </h1>
                   
                   {/* Holographic overlay */}
