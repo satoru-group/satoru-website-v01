@@ -8,57 +8,57 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Satoru Brand Colors with Lighter Variations - Dark Theme */
-    --background: 240 25% 8%;
-    --foreground: 40 25% 95%; /* Warm white */
+    /* Dark Theme - New Color Palette */
+    --background: 222 47% 11%; /* Darker Gray */
+    --foreground: 0 0% 100%; /* White */
 
-    --card: 240 20% 10%;
-    --card-foreground: 40 25% 95%;
+    --card: 225 21% 15%; /* Charcoal */
+    --card-foreground: 0 0% 100%;
 
-    --popover: 240 20% 10%;
-    --popover-foreground: 40 25% 95%;
+    --popover: 225 21% 15%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 240 45% 25%; /* Main Satoru Dark Blue */
-    --primary-foreground: 40 25% 95%;
+    --primary: 243 35% 22%; /* Dark Navy */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 216 32% 15%; /* Main Satoru Dark Gray */
-    --secondary-foreground: 40 25% 95%;
+    --secondary: 250 33% 44%; /* Purple */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 216 32% 12%;
-    --muted-foreground: 40 15% 70%; /* Warm light gray */
+    --muted: 215 25% 27%; /* Dark Gray */
+    --muted-foreground: 0 0% 44%; /* Gray */
 
-    --accent: 240 25% 45%; /* Lighter Satoru Blue */
-    --accent-foreground: 40 25% 95%;
+    --accent: 249 53% 66%; /* Light Purple */
+    --accent-foreground: 243 35% 22%;
 
-    --destructive: 0 40% 50%;
-    --destructive-foreground: 40 25% 95%;
+    --destructive: 0 84% 60%; /* Red */
+    --destructive-foreground: 0 0% 100%;
 
-    /* Subtle variations using lighter Satoru colors */
-    --success: 240 20% 55%; /* Light Satoru blue variation */
-    --success-foreground: 40 25% 95%;
-    --warning: 40 30% 70%; /* Warm milk */
-    --warning-foreground: 240 25% 8%;
-    --info: 240 15% 65%; /* Very light Satoru blue */
-    --info-foreground: 240 25% 8%;
+    /* Accent color variations */
+    --success: 142 71% 45%; /* Green */
+    --success-foreground: 0 0% 100%;
+    --warning: 21 95% 53%; /* Orange */
+    --warning-foreground: 0 0% 100%;
+    --info: 218 91% 64%; /* Blue */
+    --info-foreground: 0 0% 100%;
 
-    --border: 240 20% 15%;
-    --input: 240 20% 15%;
-    --ring: 240 45% 25%;
+    --border: 215 25% 27%;
+    --input: 215 25% 27%;
+    --ring: 249 53% 66%;
 
-    /* Subtle Satoru Brand Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(240 45% 25%), hsl(240 25% 45%), hsl(216 32% 25%));
-    --gradient-subtle: linear-gradient(180deg, hsl(240 25% 8%), hsl(240 20% 10%));
-    --gradient-accent: linear-gradient(135deg, hsl(40 25% 95%), hsl(40 20% 90%), hsl(40 15% 85%));
-    --gradient-glow: linear-gradient(135deg, hsl(240 45% 25% / 0.08), hsl(240 25% 45% / 0.08));
-    --gradient-ai: linear-gradient(135deg, hsl(240 45% 25% / 0.15), hsl(40 25% 95% / 0.1));
+    /* Modern Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(243 35% 22%), hsl(250 33% 44%), hsl(249 53% 66%));
+    --gradient-subtle: linear-gradient(180deg, hsl(222 47% 11%), hsl(225 21% 15%));
+    --gradient-accent: linear-gradient(135deg, hsl(249 53% 66%), hsl(218 91% 64%));
+    --gradient-glow: linear-gradient(135deg, hsl(249 53% 66% / 0.1), hsl(218 91% 64% / 0.1));
+    --gradient-ai: linear-gradient(135deg, hsl(243 35% 22% / 0.15), hsl(249 53% 66% / 0.1));
     
-    /* Subtle Professional Shadows */
-    --shadow-elegant: 0 10px 40px -12px hsl(240 45% 25% / 0.25);
-    --shadow-soft: 0 4px 20px -4px hsl(240 45% 25% / 0.15);
-    --shadow-warm: 0 8px 32px -8px hsl(40 25% 95% / 0.1);
-    --glow-primary: 0 0 20px hsl(240 45% 25% / 0.3);
-    --glow-accent: 0 0 20px hsl(240 25% 45% / 0.2);
-    --glow-ai: 0 0 40px hsl(240 45% 25% / 0.15), 0 0 80px hsl(40 25% 95% / 0.05);
+    /* Professional Shadows */
+    --shadow-elegant: 0 10px 40px -12px hsl(243 35% 22% / 0.25);
+    --shadow-soft: 0 4px 20px -4px hsl(243 35% 22% / 0.15);
+    --shadow-warm: 0 8px 32px -8px hsl(249 53% 66% / 0.1);
+    --glow-primary: 0 0 20px hsl(243 35% 22% / 0.3);
+    --glow-accent: 0 0 20px hsl(249 53% 66% / 0.2);
+    --glow-ai: 0 0 40px hsl(243 35% 22% / 0.15), 0 0 80px hsl(249 53% 66% / 0.05);
     
     /* Smooth transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -77,57 +77,57 @@ All colors MUST be HSL.
   }
 
   .light {
-    /* Satoru Brand Colors with Milk & Warm White Accents - Light Theme */
-    --background: 40 20% 99%; /* Warm white */
-    --foreground: 240 45% 12%; /* Deep Satoru blue text */
+    /* Light Theme - New Color Palette */
+    --background: 0 0% 100%; /* White */
+    --foreground: 243 35% 22%; /* Dark Navy */
 
-    --card: 40 15% 99%; /* Milk white cards */
-    --card-foreground: 240 45% 12%;
+    --card: 210 40% 98%; /* Light Gray */
+    --card-foreground: 243 35% 22%;
 
-    --popover: 40 15% 99%;
-    --popover-foreground: 240 45% 12%;
+    --popover: 210 40% 98%;
+    --popover-foreground: 243 35% 22%;
 
-    --primary: 240 45% 25%; /* Main Satoru Dark Blue */
-    --primary-foreground: 40 20% 99%;
+    --primary: 243 35% 22%; /* Dark Navy */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 40 15% 96%; /* Milk background */
-    --secondary-foreground: 240 45% 12%;
+    --secondary: 214 32% 91%; /* Medium Gray */
+    --secondary-foreground: 243 35% 22%;
 
-    --muted: 40 10% 97%;
-    --muted-foreground: 0 0% 44%; /* Satoru Medium Gray #707070 */
+    --muted: 214 32% 91%;
+    --muted-foreground: 0 0% 44%; /* Gray */
 
-    --accent: 240 25% 65%; /* Light Satoru Blue */
-    --accent-foreground: 240 45% 12%;
+    --accent: 249 53% 66%; /* Light Purple */
+    --accent-foreground: 243 35% 22%;
 
-    --destructive: 0 35% 50%;
-    --destructive-foreground: 40 20% 99%;
+    --destructive: 0 84% 60%; /* Red */
+    --destructive-foreground: 0 0% 100%;
 
-    /* Subtle variations using lighter Satoru colors */
-    --success: 240 15% 75%; /* Very light Satoru blue */
-    --success-foreground: 240 45% 12%;
-    --warning: 40 25% 88%; /* Light milk */
-    --warning-foreground: 240 45% 12%;
-    --info: 240 20% 80%; /* Light Satoru blue variation */
-    --info-foreground: 240 45% 12%;
+    /* Accent color variations */
+    --success: 142 71% 45%; /* Green */
+    --success-foreground: 0 0% 100%;
+    --warning: 21 95% 53%; /* Orange */
+    --warning-foreground: 0 0% 100%;
+    --info: 218 91% 64%; /* Blue */
+    --info-foreground: 0 0% 100%;
 
-    --border: 40 15% 88%;
-    --input: 40 15% 94%;
-    --ring: 240 45% 25%;
+    --border: 214 32% 91%;
+    --input: 210 40% 98%;
+    --ring: 249 53% 66%;
 
-    /* Subtle Satoru Brand Gradients for Light Mode */
-    --gradient-primary: linear-gradient(135deg, hsl(240 45% 25%), hsl(240 25% 65%), hsl(240 15% 75%));
-    --gradient-subtle: linear-gradient(180deg, hsl(40 20% 99%), hsl(40 15% 97%));
-    --gradient-accent: linear-gradient(135deg, hsl(40 15% 99%), hsl(40 10% 97%), hsl(40 5% 95%));
-    --gradient-glow: linear-gradient(135deg, hsl(240 45% 25% / 0.03), hsl(240 25% 65% / 0.03));
-    --gradient-ai: linear-gradient(135deg, hsl(240 45% 25% / 0.05), hsl(40 15% 99% / 0.5));
+    /* Modern Gradients for Light Mode */
+    --gradient-primary: linear-gradient(135deg, hsl(243 35% 22%), hsl(250 33% 44%), hsl(249 53% 66%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 40% 98%));
+    --gradient-accent: linear-gradient(135deg, hsl(249 53% 66%), hsl(218 91% 64%));
+    --gradient-glow: linear-gradient(135deg, hsl(249 53% 66% / 0.05), hsl(218 91% 64% / 0.05));
+    --gradient-ai: linear-gradient(135deg, hsl(243 35% 22% / 0.05), hsl(210 40% 98% / 0.5));
     
-    /* Subtle Professional Shadows for Light Mode */
-    --shadow-elegant: 0 10px 40px -12px hsl(240 45% 25% / 0.1);
-    --shadow-soft: 0 4px 20px -4px hsl(240 45% 25% / 0.06);
-    --shadow-warm: 0 8px 32px -8px hsl(40 15% 88% / 0.8);
-    --glow-primary: 0 0 20px hsl(240 45% 25% / 0.15);
-    --glow-accent: 0 0 20px hsl(240 25% 65% / 0.1);
-    --glow-ai: 0 0 40px hsl(240 45% 25% / 0.05), 0 0 80px hsl(40 15% 99% / 0.3);
+    /* Professional Shadows for Light Mode */
+    --shadow-elegant: 0 10px 40px -12px hsl(243 35% 22% / 0.1);
+    --shadow-soft: 0 4px 20px -4px hsl(243 35% 22% / 0.06);
+    --shadow-warm: 0 8px 32px -8px hsl(214 32% 91% / 0.8);
+    --glow-primary: 0 0 20px hsl(243 35% 22% / 0.15);
+    --glow-accent: 0 0 20px hsl(249 53% 66% / 0.1);
+    --glow-ai: 0 0 40px hsl(243 35% 22% / 0.05), 0 0 80px hsl(210 40% 98% / 0.3);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -140,57 +140,57 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Satoru Brand Colors with Lighter Variations - Dark Theme */
-    --background: 240 25% 8%;
-    --foreground: 40 25% 95%;
+    /* Dark Theme - New Color Palette */
+    --background: 222 47% 11%; /* Darker Gray */
+    --foreground: 0 0% 100%; /* White */
 
-    --card: 240 20% 10%;
-    --card-foreground: 40 25% 95%;
+    --card: 225 21% 15%; /* Charcoal */
+    --card-foreground: 0 0% 100%;
 
-    --popover: 240 20% 10%;
-    --popover-foreground: 40 25% 95%;
+    --popover: 225 21% 15%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 240 45% 30%; /* Slightly lighter Satoru Blue for dark */
-    --primary-foreground: 40 25% 95%;
+    --primary: 243 35% 22%; /* Dark Navy */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 216 32% 15%;
-    --secondary-foreground: 40 25% 95%;
+    --secondary: 250 33% 44%; /* Purple */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 216 32% 12%;
-    --muted-foreground: 40 15% 75%;
+    --muted: 215 25% 27%; /* Dark Gray */
+    --muted-foreground: 0 0% 44%; /* Gray */
 
-    --accent: 240 20% 55%; /* Light Satoru Blue for dark mode */
-    --accent-foreground: 240 25% 8%;
+    --accent: 249 53% 66%; /* Light Purple */
+    --accent-foreground: 243 35% 22%;
 
-    --destructive: 0 35% 55%;
-    --destructive-foreground: 40 25% 95%;
+    --destructive: 0 84% 60%; /* Red */
+    --destructive-foreground: 0 0% 100%;
 
-    /* Subtle variations using lighter Satoru colors for dark */
-    --success: 240 15% 60%;
-    --success-foreground: 240 25% 8%;
-    --warning: 40 20% 75%; /* Light warm milk */
-    --warning-foreground: 240 25% 8%;
-    --info: 240 10% 70%;
-    --info-foreground: 240 25% 8%;
+    /* Accent color variations */
+    --success: 142 71% 45%; /* Green */
+    --success-foreground: 0 0% 100%;
+    --warning: 21 95% 53%; /* Orange */
+    --warning-foreground: 0 0% 100%;
+    --info: 218 91% 64%; /* Blue */
+    --info-foreground: 0 0% 100%;
 
-    --border: 240 20% 15%;
-    --input: 240 20% 15%;
-    --ring: 240 45% 30%;
+    --border: 215 25% 27%;
+    --input: 215 25% 27%;
+    --ring: 249 53% 66%;
 
-    /* Subtle Satoru Brand Gradients for Dark Mode */
-    --gradient-primary: linear-gradient(135deg, hsl(240 45% 30%), hsl(240 20% 55%), hsl(216 32% 25%));
-    --gradient-subtle: linear-gradient(180deg, hsl(240 25% 8%), hsl(240 20% 10%));
-    --gradient-accent: linear-gradient(135deg, hsl(40 25% 95%), hsl(40 20% 90%), hsl(40 15% 85%));
-    --gradient-glow: linear-gradient(135deg, hsl(240 45% 30% / 0.1), hsl(240 20% 55% / 0.1));
-    --gradient-ai: linear-gradient(135deg, hsl(240 45% 30% / 0.15), hsl(40 25% 95% / 0.08));
+    /* Modern Gradients for Dark Mode */
+    --gradient-primary: linear-gradient(135deg, hsl(243 35% 22%), hsl(250 33% 44%), hsl(249 53% 66%));
+    --gradient-subtle: linear-gradient(180deg, hsl(222 47% 11%), hsl(225 21% 15%));
+    --gradient-accent: linear-gradient(135deg, hsl(249 53% 66%), hsl(218 91% 64%));
+    --gradient-glow: linear-gradient(135deg, hsl(249 53% 66% / 0.1), hsl(218 91% 64% / 0.1));
+    --gradient-ai: linear-gradient(135deg, hsl(243 35% 22% / 0.15), hsl(249 53% 66% / 0.08));
     
-    /* Subtle Shadows for Dark Mode */
-    --shadow-elegant: 0 10px 40px -12px hsl(240 45% 30% / 0.2);
-    --shadow-soft: 0 4px 20px -4px hsl(240 45% 30% / 0.12);
-    --shadow-warm: 0 8px 32px -8px hsl(40 25% 95% / 0.08);
-    --glow-primary: 0 0 20px hsl(240 45% 30% / 0.25);
-    --glow-accent: 0 0 20px hsl(240 20% 55% / 0.2);
-    --glow-ai: 0 0 40px hsl(240 45% 30% / 0.15), 0 0 80px hsl(40 25% 95% / 0.05);
+    /* Professional Shadows for Dark Mode */
+    --shadow-elegant: 0 10px 40px -12px hsl(243 35% 22% / 0.2);
+    --shadow-soft: 0 4px 20px -4px hsl(243 35% 22% / 0.12);
+    --shadow-warm: 0 8px 32px -8px hsl(249 53% 66% / 0.08);
+    --glow-primary: 0 0 20px hsl(243 35% 22% / 0.25);
+    --glow-accent: 0 0 20px hsl(249 53% 66% / 0.2);
+    --glow-ai: 0 0 40px hsl(243 35% 22% / 0.15), 0 0 80px hsl(249 53% 66% / 0.05);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
