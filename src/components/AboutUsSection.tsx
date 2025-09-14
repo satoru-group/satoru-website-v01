@@ -7,7 +7,7 @@ interface AboutUsSectionProps {
 
 const AboutUsSection = ({ showArrow = false }: AboutUsSectionProps) => {
   return (
-    <section className="w-full h-full bg-background flex items-center justify-center relative overflow-hidden px-3 sm:px-4 lg:px-6 pt-20 sm:pt-24 lg:pt-28">
+    <section className="w-full h-full min-h-screen bg-background flex flex-col justify-center relative overflow-y-auto overflow-x-hidden px-3 sm:px-4 lg:px-6 pt-20 sm:pt-24 lg:pt-28 pb-8">
       {/* Consistent Background Patterns */}
       <div className="absolute inset-0 neural-bg opacity-15 dark:opacity-25 pointer-events-none" />
       <div className="absolute inset-0 light-dots-bg opacity-20 dark:opacity-0 pointer-events-none" />
@@ -118,7 +118,7 @@ const AboutUsSection = ({ showArrow = false }: AboutUsSectionProps) => {
       </div>
       
       {/* Standardized Spacing and Typography - More compact */}
-      <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6 lg:space-y-8 relative z-10 w-full">
+      <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6 lg:space-y-8 relative z-10 w-full flex-1 flex flex-col justify-center">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-3 sm:mb-4 lg:mb-6">
           Who We Are?
         </h2>

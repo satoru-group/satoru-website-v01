@@ -4,7 +4,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 const ContactSection = () => {
   return (
-    <section className="relative w-full h-full flex items-center justify-center bg-secondary/30 overflow-hidden px-3 sm:px-4 lg:px-6 pt-20 sm:pt-24 lg:pt-28">
+    <section className="relative w-full h-full min-h-screen flex flex-col justify-center bg-secondary/30 overflow-y-auto overflow-x-hidden px-3 sm:px-4 lg:px-6 pt-20 sm:pt-24 lg:pt-28 pb-8">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-primary opacity-20 rounded-full blur-3xl animate-float-subtle" />
@@ -29,7 +29,7 @@ const ContactSection = () => {
         ))}
       </div>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 relative z-10 w-full items-center">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 relative z-10 w-full items-center flex-1 flex flex-col lg:grid justify-center">
         {/* Left Column - Heading and Description */}
         <div className="text-center lg:text-left space-y-4 sm:space-y-6">
           <div className="space-y-3 sm:space-y-4">
