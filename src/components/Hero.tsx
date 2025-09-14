@@ -29,7 +29,7 @@ const Hero = ({ showArrow = false }: HeroProps) => {
   ];
 
   return (
-    <section className="relative w-full flex flex-col bg-background overflow-hidden pt-[120px] sm:pt-[68px] lg:pt-[72px]">
+    <section className="relative w-full flex flex-col bg-background overflow-hidden pt-[120px] sm:pt-[68px] lg:pt-[72px] lg:min-h-screen">
       {/* Mobile: Full content container */}
       <div className="flex flex-col px-4 sm:px-6 lg:px-6 py-8 sm:py-6 lg:py-4 lg:flex-1 lg:justify-center lg:min-h-0">
         {/* Consistent Background Patterns */}
