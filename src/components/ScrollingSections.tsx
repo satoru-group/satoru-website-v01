@@ -7,146 +7,154 @@ import ContactSection from "@/components/ContactSection";
 const ScrollingSections = () => {
   const [scrollY, setScrollY] = useState(0);
   const [activeSection, setActiveSection] = useState(0);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
+    let scrollTimeout: NodeJS.Timeout;
+    
     const handleScroll = () => {
-      // Throttle scroll events for better performance with smooth animations
+      // Throttle scroll events for better performance
       requestAnimationFrame(() => {
         const newScrollY = window.scrollY;
         setScrollY(newScrollY);
         
-        // Determine active section for arrow visibility
+        // Responsive viewport height calculation
         const viewportHeight = window.innerHeight;
         const currentScrollSection = Math.floor(newScrollY / viewportHeight);
         
-        // Show arrow for the current active section (even during transitions)
-        setActiveSection(currentScrollSection);
+        // Show arrow for the current active section
+        setActiveSection(Math.min(Math.max(currentScrollSection, 0), 3));
+        
+        // Set scrolling state
+        setIsScrolling(true);
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          setIsScrolling(false);
+        }, 150);
       });
     };
 
-    // Add smooth scroll behavior to the document
+    // Smooth scroll behavior with section snapping
+    const handleWheelScroll = (e: WheelEvent) => {
+      if (isScrolling) return;
+      
+      e.preventDefault();
+      const viewportHeight = window.innerHeight;
+      const currentSection = Math.round(window.scrollY / viewportHeight);
+      const isScrollingDown = e.deltaY > 0;
+      
+      let targetSection = currentSection;
+      
+      if (isScrollingDown && currentSection < 3) {
+        targetSection = currentSection + 1;
+      } else if (!isScrollingDown && currentSection > 0) {
+        targetSection = currentSection - 1;
+      }
+      
+      // Smooth scroll to target section
+      if (targetSection !== currentSection) {
+        setIsScrolling(true);
+        window.scrollTo({
+          top: targetSection * viewportHeight,
+          behavior: 'smooth'
+        });
+        
+        setTimeout(() => {
+          setIsScrolling(false);
+        }, 800);
+      }
+    };
+
+    // Add smooth scroll behavior
     document.documentElement.style.scrollBehavior = 'smooth';
     
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("wheel", handleWheelScroll, { passive: false });
     handleScroll(); // Initial call
     
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("wheel", handleWheelScroll);
       document.documentElement.style.scrollBehavior = 'auto';
+      clearTimeout(scrollTimeout);
     };
-  }, []);
+  }, [isScrolling]);
 
   const getTransformStyle = (sectionIndex: number) => {
     const viewportHeight = window.innerHeight;
     const currentScrollSection = Math.floor(scrollY / viewportHeight);
     const scrollProgress = (scrollY % viewportHeight) / viewportHeight;
     
+    // Responsive breakpoints
+    const isMobile = window.innerWidth < 768;
+    const isTablet = window.innerWidth < 1024;
+    
     // Modern easing function
     const modernEasing = (t: number) => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
     
-    // Special handling for Services section (index 2)
+    // Enhanced Services section handling for mobile responsiveness
     if (sectionIndex === 2) {
-      const servicesScrollStart = 2 * viewportHeight;
-      const relativeScroll = scrollY - servicesScrollStart;
-      
-      // Create 12 discrete steps for card animations (don't move section)
-      const stepSize = viewportHeight / 12; // 12 steps: enter + 3 cards (each with extra scroll) + button + 4 extra steps
-      const currentStep = Math.floor(relativeScroll / stepSize);
-      
-      if (relativeScroll < 0) {
-        // Haven't reached services yet - add subtle parallax
-        const parallaxOffset = Math.min(relativeScroll * 0.1, 0);
+      if (currentScrollSection < 2) {
+        // Services section hidden below
         return {
-          transform: `translateY(${parallaxOffset}px)`,
-          opacity: 1,
+          transform: `translateY(100vh)`,
+          opacity: 0,
           transition: "all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
         };
-      }
-      
-      if (currentStep < 11) {
-        // Stay fixed in services section with floating effect
-        const floatProgress = modernEasing(scrollProgress);
-        const floatY = Math.sin(floatProgress * Math.PI * 2) * 2;
+      } else if (currentScrollSection === 2) {
+        // Services section active
+        const floatY = isMobile ? 0 : Math.sin(Date.now() * 0.001) * 2;
         return {
           transform: `translateY(${floatY}px)`,
           opacity: 1,
           transition: "transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
         };
       } else {
-        // All cards shown + extra steps completed
-        const contactScrollTrigger = 2 * viewportHeight + (11 * stepSize);
-        if (scrollY >= contactScrollTrigger) {
-          // Hide services section with smooth exit
-          return {
-            transform: `translateY(-100vh) scale(0.95)`,
-            opacity: 0,
-            transition: "all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-          };
-        } else {
-          // Stay in services section
-          return {
-            transform: 'translateY(0px)',
-            opacity: 1,
-            transition: "transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-          };
-        }
+        // Services section moving up
+        return {
+          transform: `translateY(-100vh) scale(0.95)`,
+          opacity: 0,
+          transition: "all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        };
       }
     }
     
-    // Special handling for Contact section (index 3) - slide from right with main viewport guarantee
+    // Enhanced Contact section with responsive slide animation
     if (sectionIndex === 3) {
-      const servicesCompleteScroll = 2 * window.innerHeight + (11 * (window.innerHeight / 12));
-      
-      if (scrollY < servicesCompleteScroll) {
-        // Contact section hidden off-screen to the right
+      if (currentScrollSection < 3) {
+        // Contact section hidden off-screen
+        const slideDirection = isMobile ? 'translateY(100vh)' : 'translateX(100%)';
         return {
-          transform: 'translateX(100%)',
+          transform: slideDirection,
           opacity: 0,
           transition: "all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
         };
       } else {
-        // Contact section slides in and locks to main viewport
-        const scrollBeyondTrigger = scrollY - servicesCompleteScroll;
-        
-        if (scrollBeyondTrigger < 50) {
-          // Quick slide in over 50px of scroll
-          const slideProgress = scrollBeyondTrigger / 50;
-          const translateX = Math.max((1 - slideProgress) * 100, 0);
-          
-          return {
-            transform: `translateX(${translateX}%)`,
-            opacity: 1,
-            transition: "transform 0.4s ease-out",
-          };
-        } else {
-          // Locked in main viewport - completely visible
-          return {
-            transform: 'translateX(0%)',
-            opacity: 1,
-            transition: "transform 0.2s ease-out",
-          };
-        }
+        // Contact section active and visible
+        return {
+          transform: 'translate(0%, 0%)',
+          opacity: 1,
+          transition: "all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        };
       }
     }
     
-    // Enhanced handling for other sections with parallax effects
+    // Enhanced handling for Hero and About sections
     if (sectionIndex < currentScrollSection) {
+      // Sections that have been scrolled past
       return {
-        transform: `translateY(-${viewportHeight}px) scale(0.95)`,
+        transform: `translateY(-100vh) scale(0.95)`,
         opacity: 0,
-        transition: "all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        transition: "all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
       };
     }
     
     if (sectionIndex === currentScrollSection) {
-      const sectionScrollStart = sectionIndex * viewportHeight;
-      const relativeScroll = scrollY - sectionScrollStart;
-      const progress = modernEasing(Math.min(relativeScroll / viewportHeight, 1));
-      
-      // Add parallax and scaling effects
-      const translateY = -relativeScroll;
-      const scale = 1 - (progress * 0.05);
-      const opacity = 1 - (progress * 0.1);
+      // Current active section
+      const parallaxIntensity = isMobile ? 0.3 : 0.5;
+      const translateY = -scrollProgress * viewportHeight * parallaxIntensity;
+      const scale = 1 - (scrollProgress * 0.03);
+      const opacity = 1 - (scrollProgress * 0.1);
       
       return {
         transform: `translateY(${translateY}px) scale(${scale})`,
@@ -155,10 +163,18 @@ const ScrollingSections = () => {
       };
     }
     
-    // Sections below current - subtle anticipation animation
-    const anticipationScale = sectionIndex === currentScrollSection + 1 ? 1.02 : 1;
+    // Sections below current - waiting state
+    if (sectionIndex > currentScrollSection) {
+      const anticipationScale = sectionIndex === currentScrollSection + 1 ? 1.01 : 1;
+      return {
+        transform: `translateY(0px) scale(${anticipationScale})`,
+        opacity: 1,
+        transition: "all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      };
+    }
+
     return {
-      transform: `translateY(0px) scale(${anticipationScale})`,
+      transform: 'translateY(0px) scale(1)',
       opacity: 1,
       transition: "all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
     };

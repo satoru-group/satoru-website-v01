@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { ChevronsRight } from "lucide-react";
 
 interface ServicesSectionProps {
@@ -7,97 +7,62 @@ interface ServicesSectionProps {
 }
 
 const ServicesSection = ({ showArrow = false }: ServicesSectionProps) => {
-  const [visibleCards, setVisibleCards] = useState<number[]>([]);
-  const [showButton, setShowButton] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
+  const [visibleCards, setVisibleCards] = useState<number[]>([0, 1, 2]);
+  const [showButton, setShowButton] = useState(true);
 
+  // Show all cards immediately for better mobile experience
   useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-
-      const rect = sectionRef.current.getBoundingClientRect();
-      const isInView = rect.top < window.innerHeight && rect.bottom > 0;
-
-      if (isInView) {
-        // Calculate discrete scroll steps within the services section  
-        const servicesScrollStart = 2 * window.innerHeight; // Services is section 2
-        const relativeScroll = Math.max(0, window.scrollY - servicesScrollStart);
-        const stepSize = window.innerHeight / 12; // 12 steps: enter + 3 cards (each with extra scroll) + button + 4 extra
-        const currentStep = Math.floor(relativeScroll / stepSize);
-
-        // Show cards based on discrete steps with extra scroll for each card
-        const newVisibleCards: number[] = [];
-        if (currentStep >= 1) newVisibleCards.push(0); // First card at step 1
-        if (currentStep >= 3) newVisibleCards.push(1); // Second card at step 3 (after extra scroll)
-        if (currentStep >= 5) newVisibleCards.push(2); // Third card at step 5 (after extra scroll)
-        
-        setVisibleCards(newVisibleCards);
-        setShowButton(currentStep >= 7); // Button at step 7, then 4 more scroll steps before contact
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Initial call
+    const timer = setTimeout(() => {
+      setVisibleCards([0, 1, 2]);
+      setShowButton(true);
+    }, 300);
     
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => clearTimeout(timer);
   }, []);
 
   const getCardStyle = (cardIndex: number) => {
     const isVisible = visibleCards.includes(cardIndex);
-    
-    if (!isVisible) {
-      return {
-        opacity: 0,
-        transform: cardIndex === 1 
-          ? 'translateX(120px) rotateY(15deg) scale(0.8)' 
-          : 'translateY(50px) scale(0.8)',
-        filter: 'blur(4px)',
-        transition: 'all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-      };
-    }
-
-    // Add floating animation when visible
-    const floatDelay = cardIndex * 0.5;
-    const floatY = Math.sin((Date.now() * 0.001) + floatDelay) * 2;
+    const floatY = Math.sin((Date.now() * 0.001) + (cardIndex * 0.5)) * 2;
     
     return {
-      opacity: 1,
-      transform: `translateX(0px) translateY(${floatY}px) rotateY(0deg) scale(1)`,
-      filter: 'blur(0px)',
-      transition: 'all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+      opacity: isVisible ? 1 : 0,
+      transform: `translateY(${isVisible ? floatY : 20}px) scale(${isVisible ? 1 : 0.95})`,
+      transition: 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+      transitionDelay: `${cardIndex * 0.1}s`,
     };
   };
 
   const getButtonStyle = () => {
-    const floatY = Math.sin(Date.now() * 0.002) * 4;
+    const floatY = Math.sin(Date.now() * 0.002) * 3;
     
     return {
       opacity: showButton ? 1 : 0,
-      transform: showButton 
-        ? `translateY(${floatY}px) scale(1)` 
-        : 'translateY(40px) scale(0.8)',
-      filter: showButton ? 'blur(0px)' : 'blur(4px)',
-      transition: 'all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+      transform: `translateY(${showButton ? floatY : 20}px) scale(${showButton ? 1 : 0.95})`,
+      transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+      transitionDelay: '0.4s',
     };
   };
   return (
-    <section ref={sectionRef} className="w-full h-screen bg-background flex items-center justify-center relative overflow-hidden">
+    <section className="w-full h-screen bg-background flex items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8">
       {/* Consistent Background Patterns */}
       <div className="absolute inset-0 circuit-bg opacity-15 dark:opacity-25 pointer-events-none" />
       <div className="absolute inset-0 light-geometric-bg opacity-15 dark:opacity-0 pointer-events-none" />
       
-      <div className="max-w-6xl mx-auto text-center space-y-8 sm:space-y-12 relative z-10 px-4 sm:px-6 lg:px-12">
-        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6 sm:mb-8">
-          How We Help Your Business
-        </h2>
+      <div className="max-w-7xl mx-auto text-center space-y-8 sm:space-y-12 relative z-10 w-full">
+        <div className="space-y-6 sm:space-y-8">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+            How We Help Your Business
+          </h2>
+          
+          <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+            We act as an extension of your team, providing fractional operations and IT leadership to support growth, scalability, and long-term success.
+          </p>
+        </div>
         
-        <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-12 px-4">
-          We act as an extension of your team, providing fractional operations and IT leadership to support growth, scalability, and long-term success.
-        </p>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
+        {/* Responsive grid layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
           <div 
-            className="bg-card/90 backdrop-blur-sm p-6 sm:p-8 rounded-lg border-2 border-border/40 hover:border-border/60 transition-all duration-300"
+            className="bg-card/90 backdrop-blur-sm p-6 sm:p-8 rounded-xl border border-border/40 hover:border-border/60 transition-all duration-300 hover:shadow-lg"
             style={getCardStyle(0)}
           >
             <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-foreground">Operations Optimization</h3>
@@ -109,13 +74,13 @@ const ServicesSection = ({ showArrow = false }: ServicesSectionProps) => {
               <li>• Workflow automation</li>
               <li>• Resource allocation</li>
             </ul>
-            <Button variant="outline" size="sm" className="text-xs sm:text-sm w-full sm:w-auto">
+            <Button variant="outline" size="sm" className="text-xs sm:text-sm w-full">
               Learn more
             </Button>
           </div>
           
           <div 
-            className="bg-card/90 backdrop-blur-sm p-6 sm:p-8 rounded-lg border-2 border-border/40 hover:border-border/60 transition-all duration-300"
+            className="bg-card/90 backdrop-blur-sm p-6 sm:p-8 rounded-xl border border-border/40 hover:border-border/60 transition-all duration-300 hover:shadow-lg md:col-span-2 lg:col-span-1"
             style={getCardStyle(1)}
           >
             <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-foreground">IT Systems Management</h3>
@@ -127,13 +92,13 @@ const ServicesSection = ({ showArrow = false }: ServicesSectionProps) => {
               <li>• Technology stack assessment</li>
               <li>• IT strategy development</li>
             </ul>
-            <Button variant="outline" size="sm" className="text-xs sm:text-sm w-full sm:w-auto">
+            <Button variant="outline" size="sm" className="text-xs sm:text-sm w-full">
               Learn more
             </Button>
           </div>
           
           <div 
-            className="bg-card/90 backdrop-blur-sm p-6 sm:p-8 rounded-lg border-2 border-border/40 hover:border-border/60 transition-all duration-300 lg:col-span-1"
+            className="bg-card/90 backdrop-blur-sm p-6 sm:p-8 rounded-xl border border-border/40 hover:border-border/60 transition-all duration-300 hover:shadow-lg md:col-span-2 lg:col-span-1"
             style={getCardStyle(2)}
           >
             <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-foreground">Fractional Leadership</h3>
@@ -145,7 +110,7 @@ const ServicesSection = ({ showArrow = false }: ServicesSectionProps) => {
               <li>• Fractional CTO services</li>
               <li>• Strategic planning</li>
             </ul>
-            <Button variant="outline" size="sm" className="text-xs sm:text-sm w-full sm:w-auto">
+            <Button variant="outline" size="sm" className="text-xs sm:text-sm w-full">
               Learn more
             </Button>
           </div>
