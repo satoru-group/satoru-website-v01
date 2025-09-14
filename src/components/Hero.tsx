@@ -76,7 +76,7 @@ const Hero = ({ showArrow = false }: HeroProps) => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button variant="cta" size="lg" className="text-sm sm:text-base px-6 sm:px-8 hover-lift animate-digital-pulse">
+              <Button variant="cta" size="lg" className="text-sm sm:text-base px-6 sm:px-8 hover-lift transition-smooth hover:shadow-glow-primary">
                 Book a Consultant
               </Button>
               <Button variant="outline" size="lg" className="text-sm sm:text-base px-6 sm:px-8 hover-lift holographic">
