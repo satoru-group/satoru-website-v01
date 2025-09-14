@@ -13,13 +13,13 @@ const Header = () => {
   
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 w-full py-4 px-4 sm:py-6 sm:px-6 lg:px-12 flex items-center justify-between bg-background/95 backdrop-blur-sm border-b border-border/50 z-[100]">
+      <header className="fixed top-0 left-0 right-0 w-full py-3 sm:py-4 lg:py-6 px-4 sm:px-6 lg:px-12 flex items-center justify-between bg-background/95 backdrop-blur-sm border-b border-border/50 z-[100]">
         <div className="flex items-center">
           <div className="flex flex-col text-center">
-            <div className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent animate-digital-pulse">
+            <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent animate-digital-pulse">
               <span className="inline-block hover:animate-float-subtle">SATORU</span><span className="text-primary glow animate-pulse">.</span>
             </div>
-            <div className="text-xs sm:text-sm lg:text-base text-muted-foreground font-medium tracking-wide data-stream">
+            <div className="text-xs sm:text-sm text-muted-foreground font-medium tracking-wide data-stream">
               GROUP
             </div>
           </div>
@@ -80,25 +80,25 @@ const Header = () => {
           </Link>
         </nav>
 
-        <div className="flex items-center space-x-2 sm:space-x-4">
+        <div className="flex items-center space-x-1 sm:space-x-2 lg:space-x-4">
           {/* Theme Toggle */}
           <Button
             variant="ghost"
             size="icon"
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-            className="hidden md:inline-flex"
+            className="hidden md:inline-flex w-8 h-8 lg:w-10 lg:h-10"
           >
-            <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-            <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            <Sun className="h-4 w-4 lg:h-5 lg:w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute h-4 w-4 lg:h-5 lg:w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             <span className="sr-only">Toggle theme</span>
           </Button>
 
-          <Button variant="ai" size="sm" className="hidden md:inline-flex text-sm lg:text-base">
+          <Button variant="ai" size="sm" className="hidden md:inline-flex text-xs lg:text-sm px-3 lg:px-4 py-2">
             Get Started
           </Button>
           
           {/* Mobile controls */}
-          <div className="flex items-center space-x-2 md:hidden">
+          <div className="flex items-center space-x-1 md:hidden">
             {/* Mobile Theme Toggle */}
             <Button
               variant="ghost"
@@ -118,9 +118,9 @@ const Header = () => {
               className="w-8 h-8"
             >
               {mobileMenuOpen ? (
-                <X className="h-5 w-5" />
+                <X className="h-4 w-4" />
               ) : (
-                <Menu className="h-5 w-5" />
+                <Menu className="h-4 w-4" />
               )}
             </Button>
           </div>

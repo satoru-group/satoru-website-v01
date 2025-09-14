@@ -252,7 +252,7 @@ All colors MUST be HSL.
     overflow-x: hidden;
   }
 
-  /* Mobile viewport fixes */
+  /* Mobile viewport fixes and enhancements */
   @media screen and (max-width: 768px) {
     html {
       -webkit-text-size-adjust: none;
@@ -263,6 +263,24 @@ All colors MUST be HSL.
     body {
       position: relative;
       overflow-x: hidden;
+      font-size: 16px; /* Prevent zoom on iOS */
+    }
+    
+    /* Ensure touch targets are properly sized */
+    button, input, textarea, select {
+      min-height: 44px;
+    }
+  }
+
+  /* Extra small screens */
+  @media screen and (max-width: 480px) {
+    html, body {
+      font-size: 14px;
+    }
+    
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
   }
 
@@ -281,6 +299,25 @@ All colors MUST be HSL.
   .overflow-x-hidden {
     overflow-x: hidden !important;
   }
+
+/* Add mobile-specific responsive breakpoint */
+@media screen and (max-width: 390px) {
+  /* Extra small mobile devices */
+  .text-2xl { font-size: 1.25rem; }
+  .text-3xl { font-size: 1.5rem; }
+  .px-4 { padding-left: 0.75rem; padding-right: 0.75rem; }
+  .py-4 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+  .gap-3 { gap: 0.5rem; }
+  .space-y-3 > * + * { margin-top: 0.5rem; }
+}
+
+@media screen and (min-width: 391px) and (max-width: 640px) {
+  /* Standard mobile devices */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
 
   /* AI-themed utility classes */
   .glow {
