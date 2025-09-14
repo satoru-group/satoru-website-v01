@@ -16,10 +16,10 @@ const Header = () => {
       <header className="fixed top-0 left-0 right-0 w-full py-4 px-4 sm:py-6 sm:px-6 lg:px-12 flex items-center justify-between bg-background/95 backdrop-blur-sm border-b border-border/50 z-[100]">
         <div className="flex items-center">
           <div className="flex flex-col text-center">
-            <div className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent animate-pulse">
-              SATORU<span className="text-primary glow">.</span>
+            <div className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent animate-digital-pulse">
+              <span className="inline-block hover:animate-float-subtle">SATORU</span><span className="text-primary glow animate-pulse">.</span>
             </div>
-            <div className="text-xs sm:text-sm lg:text-base text-muted-foreground font-medium tracking-wide">
+            <div className="text-xs sm:text-sm lg:text-base text-muted-foreground font-medium tracking-wide data-stream">
               GROUP
             </div>
           </div>

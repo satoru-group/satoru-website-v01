@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import ContactSection from "@/components/ContactSection";
+import AIBackground from "@/components/AIBackground";
 import { Button } from "@/components/ui/button";
 
 const Services = () => {
@@ -11,33 +12,15 @@ const Services = () => {
       <main className="pt-20">
         {/* Hero Section */}
         <section className="w-full h-screen bg-background flex items-center justify-center relative overflow-hidden">
-          {/* Reduced opacity background patterns for better text visibility */}
-          <div className="absolute inset-0 opacity-10 dark:opacity-20">
-            <div className="circuit-bg w-full h-full"></div>
-          </div>
-          
-          {/* AI Animated Background Elements with reduced opacity */}
-          <div className="absolute top-16 sm:top-32 right-8 sm:right-20 w-24 sm:w-40 h-24 sm:h-40 bg-gradient-ai rounded-full opacity-5 dark:opacity-15 animate-orb-float"></div>
-          <div className="absolute bottom-16 sm:bottom-32 left-6 sm:left-16 w-16 sm:w-28 h-16 sm:h-28 bg-primary/5 dark:bg-primary/20 rounded-full animate-float-subtle"></div>
-          <div className="absolute top-1/3 left-1/3 w-12 sm:w-20 h-12 sm:h-20 bg-accent/5 dark:bg-accent/30 rounded-full animate-float-dynamic"></div>
-          
-          <div className="absolute inset-0 opacity-5 dark:opacity-10 animate-neural-drift">
-            <svg className="w-full h-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <pattern id="ai-circuit" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M20 0v40M0 20h40M10 10h20v20H10z" fill="none" stroke="currentColor" strokeWidth="0.5"/>
-                  <circle cx="20" cy="20" r="2" fill="currentColor" opacity="0.5" className="animate-ai-pulse"/>
-                </pattern>
-              </defs>
-              <rect width="200" height="200" fill="url(#ai-circuit)" />
-            </svg>
-          </div>
+          {/* AI Background Component */}
+          <AIBackground showParticles={true} showMatrix={true} showCircuits={true} showDataStream={true} />
           
           <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8 relative z-20 px-4 sm:px-6 lg:px-12">
             <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold text-[#27254c] dark:bg-gradient-primary dark:bg-clip-text dark:text-transparent mb-6 sm:mb-8 leading-tight">
-              Our <span className="text-[#564a94] dark:text-primary">Services</span>
+              <span className="inline-block animate-float-subtle">Our</span>{" "}
+              <span className="text-[#564a94] dark:text-primary inline-block animate-float-dynamic text-glow">Services</span>
             </h1>
-            <p className="text-lg sm:text-2xl lg:text-3xl text-[#1f232f] dark:text-muted-foreground font-light leading-relaxed max-w-4xl mx-auto">
+            <p className="text-lg sm:text-2xl lg:text-3xl text-[#1f232f] dark:text-muted-foreground font-light leading-relaxed max-w-4xl mx-auto data-stream holographic">
               We act as an extension of your team, providing fractional operations and IT leadership to support growth, scalability, and long-term success.
             </p>
           </div>

@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import AIBackground from "@/components/AIBackground";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -12,33 +13,15 @@ const Contact = () => {
       <main className="pt-20">
         {/* Hero Section */}
         <section className="w-full h-screen bg-background flex items-center justify-center relative overflow-hidden">
-          {/* Reduced opacity background patterns for better text visibility */}
-          <div className="absolute inset-0 opacity-10 dark:opacity-20">
-            <div className="circuit-bg w-full h-full"></div>
-          </div>
-          
-          {/* AI Animated Background Elements with reduced opacity */}
-          <div className="absolute top-12 sm:top-24 left-12 sm:left-24 w-20 sm:w-32 h-20 sm:h-32 bg-gradient-ai rounded-full opacity-5 dark:opacity-20 animate-orb-float"></div>
-          <div className="absolute bottom-16 sm:bottom-32 right-8 sm:right-20 w-16 sm:w-24 h-16 sm:h-24 bg-primary/5 dark:bg-primary/30 rounded-full animate-float-subtle"></div>
-          <div className="absolute top-2/3 right-1/3 w-12 sm:w-16 h-12 sm:h-16 bg-accent/5 dark:bg-accent/20 rounded-full animate-float-dynamic"></div>
-          
-          <div className="absolute inset-0 opacity-3 dark:opacity-5 animate-circuit-flow">
-            <svg className="w-full h-full" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <pattern id="ai-contact-grid" width="60" height="60" patternUnits="userSpaceOnUse">
-                  <path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" strokeWidth="1"/>
-                  <circle cx="30" cy="30" r="1.5" fill="currentColor" opacity="0.6" className="animate-ai-pulse"/>
-                </pattern>
-              </defs>
-              <rect width="60" height="60" fill="url(#ai-contact-grid)" />
-            </svg>
-          </div>
+          {/* AI Background Component */}
+          <AIBackground showParticles={true} showMatrix={true} showCircuits={true} showDataStream={true} />
           
           <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8 relative z-20 px-4 sm:px-6 lg:px-12">
             <h1 className="text-4xl sm:text-6xl lg:text-8xl font-heading font-bold text-[#27254c] dark:bg-gradient-primary dark:bg-clip-text dark:text-transparent mb-6 sm:mb-8 leading-tight">
-              Get In <span className="text-[#564a94] dark:text-primary">Touch</span>
+              <span className="inline-block animate-float-subtle">Get In</span>{" "}
+              <span className="text-[#564a94] dark:text-primary inline-block animate-float-dynamic text-glow">Touch</span>
             </h1>
-            <p className="text-lg sm:text-2xl lg:text-3xl text-[#1f232f] dark:text-muted-foreground font-light leading-relaxed max-w-4xl mx-auto">
+            <p className="text-lg sm:text-2xl lg:text-3xl text-[#1f232f] dark:text-muted-foreground font-light leading-relaxed max-w-4xl mx-auto data-stream holographic">
               Ready to transform your business operations? Let&apos;s discuss how we can help you streamline workflows and drive growth.
             </p>
           </div>

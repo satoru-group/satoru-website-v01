@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import ContactSection from "@/components/ContactSection";
+import AIBackground from "@/components/AIBackground";
 import { Button } from "@/components/ui/button";
 import { Users, Rocket, Lightbulb, TrendingUp, Handshake } from "lucide-react";
 
@@ -12,24 +13,18 @@ const About = () => {
       <main className="pt-20">
         {/* Hero Section */}
         <section className="w-full min-h-screen bg-background flex items-center justify-center relative overflow-hidden">
-          {/* Reduced opacity background patterns for better text visibility */}
-          <div className="absolute inset-0 opacity-10 dark:opacity-20">
-            <div className="circuit-bg w-full h-full"></div>
-          </div>
-          
-          {/* AI Animated Orbs with reduced opacity */}
-          <div className="absolute top-12 sm:top-20 left-8 sm:left-20 w-20 sm:w-32 h-20 sm:h-32 bg-gradient-ai rounded-full opacity-5 dark:opacity-20 animate-orb-float"></div>
-          <div className="absolute bottom-20 sm:bottom-40 right-16 sm:right-32 w-16 sm:w-24 h-16 sm:h-24 bg-gradient-primary rounded-full opacity-10 dark:opacity-30 animate-float-subtle"></div>
-          <div className="absolute top-1/2 left-1/4 w-12 sm:w-16 h-12 sm:h-16 bg-primary/5 dark:bg-primary/20 rounded-full animate-float-dynamic"></div>
+          {/* AI Background Component */}
+          <AIBackground showParticles={true} showMatrix={true} showCircuits={true} showDataStream={true} />
           
           <div className="max-w-6xl mx-auto text-center space-y-8 sm:space-y-12 relative z-20 px-4 sm:px-6 lg:px-12 py-16 sm:py-20">
             <div className="space-y-4 sm:space-y-6">
               <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold text-[#27254c] dark:text-foreground leading-tight">
-                About <span className="text-[#564a94] dark:text-primary">Satoru</span>
+                <span className="inline-block animate-float-subtle">About</span>{" "}
+                <span className="text-[#564a94] dark:text-primary inline-block animate-float-dynamic text-glow">Satoru</span>
               </h1>
-              <div className="w-16 sm:w-24 h-1 bg-gradient-primary mx-auto rounded-full shadow-glow-ai"></div>
-              <p className="text-lg sm:text-2xl lg:text-3xl text-[#1f232f] dark:text-muted-foreground font-light leading-relaxed max-w-4xl mx-auto">
-                <span className="italic">Satoru</span> means to understand, to know, or to perceive—the foundation of transformative business consulting.
+              <div className="w-16 sm:w-24 h-1 bg-gradient-primary mx-auto rounded-full shadow-glow-ai animate-digital-pulse"></div>
+              <p className="text-lg sm:text-2xl lg:text-3xl text-[#1f232f] dark:text-muted-foreground font-light leading-relaxed max-w-4xl mx-auto data-stream">
+                <span className="italic holographic">Satoru</span> means to understand, to know, or to perceive—the foundation of transformative business consulting.
               </p>
             </div>
           </div>

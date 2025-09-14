@@ -229,6 +229,107 @@ All colors MUST be HSL.
     text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
   }
 
+  /* Typing Animation */
+  .typing-animation {
+    overflow: hidden;
+    border-right: 3px solid hsl(var(--primary));
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+
+  /* Matrix Rain Effect */
+  .matrix-bg {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .matrix-bg::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(0deg, transparent 24%, hsl(var(--primary) / 0.1) 25%, hsl(var(--primary) / 0.1) 26%, transparent 27%, transparent 74%, hsl(var(--primary) / 0.1) 75%, hsl(var(--primary) / 0.1) 76%, transparent 77%);
+    background-size: 50px 50px;
+    animation: matrix-rain 20s linear infinite;
+  }
+
+  /* Data Stream Animation */
+  .data-stream {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .data-stream::after {
+    content: '01001100011011110111011001100001011000100110110001100101';
+    position: absolute;
+    top: 50%;
+    left: -100%;
+    transform: translateY(-50%);
+    font-family: monospace;
+    font-size: 12px;
+    color: hsl(var(--primary) / 0.3);
+    white-space: nowrap;
+    animation: data-flow 15s linear infinite;
+  }
+
+  /* Holographic Effect */
+  .holographic {
+    position: relative;
+    background: linear-gradient(45deg, transparent 30%, hsl(var(--primary) / 0.1) 50%, transparent 70%);
+    animation: holographic-scan 3s ease-in-out infinite;
+  }
+
+  /* Scanning Line Effect */
+  .scan-lines {
+    position: relative;
+  }
+
+  .scan-lines::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      hsl(var(--primary) / 0.03) 2px,
+      hsl(var(--primary) / 0.03) 4px
+    );
+    pointer-events: none;
+    animation: scan-move 2s ease-in-out infinite alternate;
+  }
+
+  /* Particle System */
+  .particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: hsl(var(--primary) / 0.6);
+    border-radius: 50%;
+    animation: particle-float 8s linear infinite;
+  }
+
+  /* Tech Grid Background */
+  .tech-grid {
+    background-image: 
+      linear-gradient(hsl(var(--primary) / 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--primary) / 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: tech-grid-move 20s linear infinite;
+  }
+
   /* AI Background Effects */
   .ai-bg {
     position: relative;
@@ -298,6 +399,70 @@ All colors MUST be HSL.
   @keyframes glow-pulse {
     from { filter: drop-shadow(0 0 10px hsl(var(--primary) / 0.8)); }
     to { filter: drop-shadow(0 0 20px hsl(var(--primary) / 0.4)); }
+  }
+
+  /* New AI Technology Animations */
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: hsl(var(--primary)); }
+  }
+
+  @keyframes matrix-rain {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+  }
+
+  @keyframes data-flow {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+
+  @keyframes holographic-scan {
+    0%, 100% { background-position: -100% 0; }
+    50% { background-position: 100% 0; }
+  }
+
+  @keyframes scan-move {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  @keyframes particle-float {
+    0% { 
+      transform: translateY(100vh) translateX(0) rotate(0deg);
+      opacity: 0;
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { 
+      transform: translateY(-100vh) translateX(100px) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes tech-grid-move {
+    0% { background-position: 0 0; }
+    100% { background-position: 50px 50px; }
+  }
+
+  @keyframes digital-pulse {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+  }
+
+  @keyframes code-scroll {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50px); }
+  }
+
+  @keyframes neural-connect {
+    0%, 100% { stroke-dashoffset: 100; }
+    50% { stroke-dashoffset: 0; }
   }
 
   /* AI Background Animations */
@@ -387,6 +552,38 @@ All colors MUST be HSL.
 
   .animate-orb-float {
     animation: orb-float 10s ease-in-out infinite;
+  }
+
+  .animate-typing {
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+
+  .animate-matrix-rain {
+    animation: matrix-rain 20s linear infinite;
+  }
+
+  .animate-data-flow {
+    animation: data-flow 15s linear infinite;
+  }
+
+  .animate-holographic {
+    animation: holographic-scan 3s ease-in-out infinite;
+  }
+
+  .animate-particle-float {
+    animation: particle-float 8s linear infinite;
+  }
+
+  .animate-digital-pulse {
+    animation: digital-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-code-scroll {
+    animation: code-scroll 10s linear infinite;
+  }
+
+  .animate-tech-grid {
+    animation: tech-grid-move 20s linear infinite;
   }
 
   /* Water Animation Classes */

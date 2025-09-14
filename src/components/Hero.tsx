@@ -27,7 +27,28 @@ const Hero = ({ showArrow = false }: HeroProps) => {
   ];
 
   return (
-    <section className="relative min-h-screen bg-background px-4 sm:px-6 lg:px-12 py-16 sm:py-20 pt-24 sm:pt-28 lg:pt-32 z-20">
+    <section className="relative min-h-screen bg-background px-4 sm:px-6 lg:px-12 py-16 sm:py-20 pt-24 sm:pt-28 lg:pt-32 z-20 tech-grid">
+      {/* AI Particle System */}
+      <div className="particles pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <div 
+            key={i}
+            className="particle animate-particle-float"
+            style={{
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 8}s`,
+              animationDuration: `${6 + Math.random() * 4}s`
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Matrix Rain Background */}
+      <div className="absolute inset-0 matrix-bg opacity-20 pointer-events-none" />
+      
+      {/* Scanning Lines */}
+      <div className="absolute inset-0 scan-lines opacity-30 pointer-events-none" />
+      
       <div className="max-w-7xl mx-auto">
         {/* Main Hero Content */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-12 sm:mb-16 lg:mb-20">
@@ -36,24 +57,29 @@ const Hero = ({ showArrow = false }: HeroProps) => {
             <div className="space-y-6 sm:space-y-8">
               <div className="relative">
                 <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-[#27254c] dark:text-foreground leading-tight">
-                  Simplify.
+                  <span className="inline-block animate-float-subtle">Simplify.</span>
                   <br />
-                  <span className="text-[#564a94] dark:text-primary">Streamline.</span>
+                  <span className="text-[#564a94] dark:text-primary inline-block animate-float-dynamic text-glow">Streamline.</span>
                   <br />
-                  <span className="text-[#8b7dd6] dark:bg-gradient-primary dark:bg-clip-text dark:text-transparent">Succeed.</span>
+                  <span className="text-[#8b7dd6] dark:bg-gradient-primary dark:bg-clip-text dark:text-transparent inline-block animate-float-subtle glow">Succeed.</span>
                 </h1>
+                
+                {/* Holographic overlay */}
+                <div className="absolute inset-0 holographic opacity-50 pointer-events-none" />
               </div>
             </div>
             
-            <p className="text-lg sm:text-xl lg:text-xl text-[#1f232f] dark:text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0">
-              Harness the power of advanced AI technology to transform your business operations and unlock unprecedented growth opportunities.
-            </p>
+            <div className="data-stream">
+              <p className="text-lg sm:text-xl lg:text-xl text-[#1f232f] dark:text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0">
+                Harness the power of advanced AI technology to transform your business operations and unlock unprecedented growth opportunities.
+              </p>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button variant="cta" size="lg" className="text-sm sm:text-base px-6 sm:px-8">
+              <Button variant="cta" size="lg" className="text-sm sm:text-base px-6 sm:px-8 hover-lift animate-digital-pulse">
                 Book a Consultant
               </Button>
-              <Button variant="outline" size="lg" className="text-sm sm:text-base px-6 sm:px-8">
+              <Button variant="outline" size="lg" className="text-sm sm:text-base px-6 sm:px-8 hover-lift holographic">
                 Learn More
               </Button>
             </div>
@@ -61,7 +87,7 @@ const Hero = ({ showArrow = false }: HeroProps) => {
 
           {/* Right Content - AI Image */}
           <div className="relative order-first lg:order-last group">
-            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-glow-cyan border-2 border-primary/30 hover:border-primary/50 transition-all duration-500 group-hover:shadow-glow-purple">
+            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-glow-cyan border-2 border-primary/30 hover:border-primary/50 transition-all duration-500 group-hover:shadow-glow-purple scan-lines">
               <img 
                 src={aiTechnology} 
                 alt="Advanced AI technology interface with holographic displays and neural network visualizations" 
@@ -73,7 +99,15 @@ const Hero = ({ showArrow = false }: HeroProps) => {
               
               {/* Scroll shadow effect */}
               <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-background/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-y-full group-hover:translate-y-0" />
+              
+              {/* AI Circuit overlay */}
+              <div className="absolute inset-0 circuit-bg opacity-20 animate-circuit-flow" />
             </div>
+            
+            {/* Floating AI elements */}
+            <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-primary rounded-full animate-digital-pulse opacity-80" />
+            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-accent rounded-full animate-float-dynamic opacity-60" />
+            <div className="absolute top-1/2 -left-6 w-4 h-4 bg-primary rounded-full animate-digital-pulse opacity-70" />
           </div>
         </div>
 
@@ -82,9 +116,10 @@ const Hero = ({ showArrow = false }: HeroProps) => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="text-center p-4 sm:p-6 lg:p-8 bg-card/50 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-glow-cyan border-2 border-primary/20 hover:border-primary/40 hover:shadow-glow-purple transition-all duration-300 hover:-translate-y-1"
+              className="text-center p-4 sm:p-6 lg:p-8 bg-card/50 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-glow-cyan border-2 border-primary/20 hover:border-primary/40 hover:shadow-glow-purple transition-all duration-300 hover:-translate-y-1 scan-lines holographic"
+              style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2 sm:mb-4">
+              <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2 sm:mb-4 animate-digital-pulse">
                 {stat.number}
               </div>
               <div className="text-xs sm:text-sm lg:text-base text-[#334155] dark:text-muted-foreground font-medium tracking-wide">
