@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import aiTechnology from "@/assets/ai-technology.jpg";
+import satoruDecoration from "@/assets/satoru-decoration.png";
 import { ChevronsDown } from "lucide-react";
 import ClientLogos from "@/components/ClientLogos";
 
@@ -63,7 +64,20 @@ const Hero = ({ showArrow = false }: HeroProps) => {
             <div className="space-y-4 sm:space-y-6 lg:space-y-8 text-center lg:text-left order-2 lg:order-1">
               <div className="space-y-3 sm:space-y-4 lg:space-y-6">
                 <div className="relative">
-                  <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#27254c] dark:text-foreground leading-tight">
+                  {/* Decorative background image */}
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <img 
+                      src={satoruDecoration} 
+                      alt="" 
+                      className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-contain opacity-10 dark:opacity-20 animate-float-subtle"
+                      style={{ 
+                        filter: 'hue-rotate(10deg) saturate(1.2)',
+                        transform: 'rotate(-5deg) scale(1.1)'
+                      }}
+                    />
+                  </div>
+                  
+                  <h1 className="relative z-10 text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#27254c] dark:text-foreground leading-tight">
                     <span className="inline-block animate-float-subtle">Simplify.</span>
                     <br />
                     <span className="text-[#564a94] dark:text-primary inline-block animate-float-dynamic text-glow">Streamline.</span>
