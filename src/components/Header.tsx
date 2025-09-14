@@ -14,21 +14,21 @@ const Header = () => {
   
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 w-full py-3 sm:py-4 lg:py-6 px-4 sm:px-6 lg:px-12 flex items-center justify-between bg-background/95 backdrop-blur-sm border-b border-border/50 z-[100]">
+      <header className="fixed top-0 left-0 right-0 w-full py-2 sm:py-2.5 lg:py-3 px-4 sm:px-6 lg:px-12 flex items-center justify-between bg-background/95 backdrop-blur-sm border-b border-border/50 z-[100]">
         <div className="flex items-center">
           <div className="flex flex-col text-center">
-            <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent animate-digital-pulse">
+            <div className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent animate-digital-pulse">
               <span className="inline-block hover:animate-float-subtle flex items-center">
                 SAT
                 <img 
                   src={satoruOLogo} 
                   alt="O" 
-                  className="inline-block w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 xl:w-8 xl:h-8 mx-0.5 animate-float-subtle" 
+                  className="inline-block w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6 mx-0.5 animate-float-subtle" 
                 />
                 RU
               </span><span className="text-primary glow animate-pulse">.</span>
             </div>
-            <div className="text-xs sm:text-sm text-muted-foreground font-medium tracking-wide data-stream">
+            <div className="text-xs text-muted-foreground font-medium tracking-wide data-stream">
               GROUP
             </div>
           </div>
