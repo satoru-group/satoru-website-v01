@@ -60,7 +60,7 @@ const Hero = ({ showArrow = false }: HeroProps) => {
         
         <div className="max-w-6xl mx-auto w-full flex flex-col justify-center flex-1">
           {/* Mobile Layout - Different structure for mobile */}
-          <div className="flex flex-col lg:hidden gap-4 mb-3">
+          <div className="flex flex-col lg:hidden gap-4 mb-3 mt-24">
             {/* Mobile: Top row - Heading on left, Image on right */}
             <div className="grid grid-cols-5 gap-3 items-start">
               {/* Mobile Left - Heading and decoration - takes 3 columns */}
