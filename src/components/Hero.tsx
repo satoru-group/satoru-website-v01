@@ -35,17 +35,17 @@ const Hero = ({ showArrow = false }: HeroProps) => {
           <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
             <div className="space-y-6 sm:space-y-8">
               <div className="relative">
-                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground leading-tight">
+                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-[#27254c] dark:text-foreground leading-tight">
                   Simplify.
                   <br />
-                  <span className="text-primary">Streamline.</span>
+                  <span className="text-[#564a94] dark:text-primary">Streamline.</span>
                   <br />
-                  <span className="bg-gradient-primary bg-clip-text text-transparent">Succeed.</span>
+                  <span className="text-[#8b7dd6] dark:bg-gradient-primary dark:bg-clip-text dark:text-transparent">Succeed.</span>
                 </h1>
               </div>
             </div>
             
-            <p className="text-lg sm:text-xl lg:text-xl text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0">
+            <p className="text-lg sm:text-xl lg:text-xl text-[#1f232f] dark:text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0">
               Harness the power of advanced AI technology to transform your business operations and unlock unprecedented growth opportunities.
             </p>
 
@@ -87,7 +87,7 @@ const Hero = ({ showArrow = false }: HeroProps) => {
               <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2 sm:mb-4">
                 {stat.number}
               </div>
-              <div className="text-xs sm:text-sm lg:text-base text-muted-foreground font-medium tracking-wide">
+              <div className="text-xs sm:text-sm lg:text-base text-[#334155] dark:text-muted-foreground font-medium tracking-wide">
                 {stat.label}
               </div>
             </div>
