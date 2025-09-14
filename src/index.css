@@ -8,57 +8,57 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Warm Professional - Dark Theme */
-    --background: 25 20% 8%; /* Warm dark background */
-    --foreground: 40 15% 92%; /* Warm cream text */
+    /* Warm Pink Professional - Dark Theme */
+    --background: 340 25% 8%; /* Warm dark with pink undertone */
+    --foreground: 30 15% 92%; /* Warm cream text */
 
-    --card: 25 15% 12%; /* Warm dark card */
-    --card-foreground: 40 15% 92%;
+    --card: 340 20% 12%; /* Warm dark card with pink */
+    --card-foreground: 30 15% 92%;
 
-    --popover: 25 15% 12%;
-    --popover-foreground: 40 15% 92%;
+    --popover: 340 20% 12%;
+    --popover-foreground: 30 15% 92%;
 
-    --primary: 210 40% 45%; /* Warm professional blue */
-    --primary-foreground: 40 15% 92%;
+    --primary: 200 45% 45%; /* Warm professional blue */
+    --primary-foreground: 30 15% 92%;
 
-    --secondary: 30 25% 20%; /* Warm brown-gray */
-    --secondary-foreground: 40 15% 92%;
+    --secondary: 320 30% 20%; /* Warm pink-brown */
+    --secondary-foreground: 30 15% 92%;
 
-    --muted: 25 15% 18%; /* Warm muted dark */
-    --muted-foreground: 40 10% 65%; /* Warm medium gray */
+    --muted: 340 15% 18%; /* Warm muted with pink */
+    --muted-foreground: 30 10% 65%; /* Warm medium gray */
 
-    --accent: 35 60% 55%; /* Warm accent orange */
-    --accent-foreground: 25 20% 8%;
+    --accent: 350 50% 60%; /* Soft warm pink accent */
+    --accent-foreground: 340 25% 8%;
 
     --destructive: 5 50% 50%; /* Warm red */
-    --destructive-foreground: 40 15% 92%;
+    --destructive-foreground: 30 15% 92%;
 
-    /* Warm Professional Accents */
+    /* Warm Pink Professional Accents */
     --success: 145 35% 45%; /* Warm green */
-    --success-foreground: 40 15% 92%;
-    --warning: 40 65% 60%; /* Warm amber */
-    --warning-foreground: 25 20% 8%;
+    --success-foreground: 30 15% 92%;
+    --warning: 30 65% 60%; /* Warm peach */
+    --warning-foreground: 340 25% 8%;
     --info: 200 35% 55%; /* Warm blue */
-    --info-foreground: 25 20% 8%;
+    --info-foreground: 340 25% 8%;
 
-    --border: 25 15% 22%;
-    --input: 25 15% 22%;
-    --ring: 210 40% 45%;
+    --border: 340 15% 22%;
+    --input: 340 15% 22%;
+    --ring: 350 50% 60%;
 
-    /* Warm Professional Backgrounds */
-    --gradient-primary: hsl(210 40% 45%);
-    --gradient-subtle: hsl(25 15% 12%);
-    --gradient-accent: hsl(35 60% 55%);
-    --gradient-glow: hsl(35 60% 55% / 0.1);
-    --gradient-ai: hsl(25 20% 8%);
+    /* Warm Pink Gradient Backgrounds */
+    --gradient-primary: linear-gradient(135deg, hsl(200 45% 45%), hsl(350 40% 50%));
+    --gradient-subtle: linear-gradient(135deg, hsl(340 25% 8%), hsl(320 20% 12%), hsl(340 15% 15%));
+    --gradient-accent: linear-gradient(135deg, hsl(350 50% 60%), hsl(30 50% 65%));
+    --gradient-glow: linear-gradient(135deg, hsl(350 50% 60% / 0.1), hsl(30 50% 65% / 0.08));
+    --gradient-ai: linear-gradient(135deg, hsl(340 25% 8%), hsl(350 20% 10%), hsl(320 15% 12%));
     
-    /* Warm Professional Shadows */
-    --shadow-elegant: 0 8px 32px -8px hsl(25 20% 8% / 0.3);
-    --shadow-soft: 0 4px 16px -4px hsl(25 20% 8% / 0.2);
-    --shadow-warm: 0 4px 16px -4px hsl(35 60% 55% / 0.15);
-    --glow-primary: 0 0 24px hsl(210 40% 45% / 0.3);
-    --glow-accent: 0 0 24px hsl(35 60% 55% / 0.25);
-    --glow-ai: 0 0 32px hsl(35 60% 55% / 0.2);
+    /* Warm Pink Professional Shadows */
+    --shadow-elegant: 0 8px 32px -8px hsl(340 25% 8% / 0.3);
+    --shadow-soft: 0 4px 16px -4px hsl(340 25% 8% / 0.2);
+    --shadow-warm: 0 4px 16px -4px hsl(350 50% 60% / 0.15);
+    --glow-primary: 0 0 24px hsl(200 45% 45% / 0.3);
+    --glow-accent: 0 0 24px hsl(350 50% 60% / 0.25);
+    --glow-ai: 0 0 32px hsl(350 50% 60% / 0.2);
     
     /* Smooth transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -77,57 +77,57 @@ All colors MUST be HSL.
   }
 
   .light {
-    /* Warm Professional - Light Theme */
-    --background: 40 20% 98%; /* Warm cream background */
-    --foreground: 25 25% 15%; /* Warm dark text */
+    /* Warm Pink Professional - Light Theme */
+    --background: 350 30% 98%; /* Soft pink-cream background */
+    --foreground: 340 25% 15%; /* Warm dark text */
 
-    --card: 40 15% 96%; /* Warm cream card */
-    --card-foreground: 25 25% 15%;
+    --card: 350 25% 96%; /* Soft pink-cream card */
+    --card-foreground: 340 25% 15%;
 
-    --popover: 40 15% 96%;
-    --popover-foreground: 25 25% 15%;
+    --popover: 350 25% 96%;
+    --popover-foreground: 340 25% 15%;
 
-    --primary: 210 50% 40%; /* Professional blue */
-    --primary-foreground: 40 20% 98%;
+    --primary: 200 50% 40%; /* Professional blue */
+    --primary-foreground: 350 30% 98%;
 
-    --secondary: 40 10% 90%; /* Warm light gray */
-    --secondary-foreground: 25 25% 15%;
+    --secondary: 350 15% 90%; /* Soft pink-gray */
+    --secondary-foreground: 340 25% 15%;
 
-    --muted: 40 8% 92%;
-    --muted-foreground: 25 15% 45%; /* Warm medium gray */
+    --muted: 350 12% 92%;
+    --muted-foreground: 340 15% 45%; /* Warm medium gray */
 
-    --accent: 30 55% 50%; /* Warm accent orange */
-    --accent-foreground: 40 20% 98%;
+    --accent: 340 45% 55%; /* Soft warm pink accent */
+    --accent-foreground: 350 30% 98%;
 
     --destructive: 5 50% 45%; /* Warm red */
-    --destructive-foreground: 40 20% 98%;
+    --destructive-foreground: 350 30% 98%;
 
-    /* Warm Professional Accents */
+    /* Warm Pink Professional Accents */
     --success: 145 40% 40%; /* Warm green */
-    --success-foreground: 40 20% 98%;
-    --warning: 40 60% 55%; /* Warm amber */
-    --warning-foreground: 40 20% 98%;
+    --success-foreground: 350 30% 98%;
+    --warning: 30 55% 55%; /* Warm peach */
+    --warning-foreground: 350 30% 98%;
     --info: 200 40% 45%; /* Professional blue */
-    --info-foreground: 40 20% 98%;
+    --info-foreground: 350 30% 98%;
 
-    --border: 40 12% 85%;
-    --input: 40 8% 94%;
-    --ring: 210 50% 40%;
+    --border: 350 15% 85%;
+    --input: 350 12% 94%;
+    --ring: 340 45% 55%;
 
-    /* Warm Professional Backgrounds - Light */
-    --gradient-primary: hsl(210 50% 40%);
-    --gradient-subtle: hsl(40 15% 96%);
-    --gradient-accent: hsl(30 55% 50%);
-    --gradient-glow: hsl(30 55% 50% / 0.08);
-    --gradient-ai: hsl(40 20% 98%);
+    /* Warm Pink Gradient Backgrounds - Light */
+    --gradient-primary: linear-gradient(135deg, hsl(200 50% 40%), hsl(340 35% 60%));
+    --gradient-subtle: linear-gradient(135deg, hsl(350 30% 98%), hsl(340 25% 96%), hsl(350 20% 94%));
+    --gradient-accent: linear-gradient(135deg, hsl(340 45% 55%), hsl(30 45% 65%));
+    --gradient-glow: linear-gradient(135deg, hsl(340 45% 55% / 0.08), hsl(30 45% 65% / 0.06));
+    --gradient-ai: linear-gradient(135deg, hsl(350 30% 98%), hsl(340 25% 96%));
     
-    /* Warm Professional Shadows - Light */
-    --shadow-elegant: 0 8px 32px -8px hsl(25 25% 15% / 0.12);
-    --shadow-soft: 0 4px 16px -4px hsl(25 25% 15% / 0.08);
-    --shadow-warm: 0 4px 16px -4px hsl(40 12% 85% / 0.6);
-    --glow-primary: 0 0 24px hsl(210 50% 40% / 0.15);
-    --glow-accent: 0 0 24px hsl(30 55% 50% / 0.12);
-    --glow-ai: 0 0 32px hsl(30 55% 50% / 0.1);
+    /* Warm Pink Professional Shadows - Light */
+    --shadow-elegant: 0 8px 32px -8px hsl(340 25% 15% / 0.12);
+    --shadow-soft: 0 4px 16px -4px hsl(340 25% 15% / 0.08);
+    --shadow-warm: 0 4px 16px -4px hsl(350 15% 85% / 0.6);
+    --glow-primary: 0 0 24px hsl(200 50% 40% / 0.15);
+    --glow-accent: 0 0 24px hsl(340 45% 55% / 0.12);
+    --glow-ai: 0 0 32px hsl(340 45% 55% / 0.1);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -140,57 +140,57 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Warm Professional - Dark Theme */
-    --background: 25 20% 8%; /* Warm dark background */
-    --foreground: 40 15% 92%; /* Warm cream text */
+    /* Warm Pink Professional - Dark Theme */
+    --background: 340 25% 8%; /* Warm dark with pink undertone */
+    --foreground: 30 15% 92%; /* Warm cream text */
 
-    --card: 25 15% 12%; /* Warm dark card */
-    --card-foreground: 40 15% 92%;
+    --card: 340 20% 12%; /* Warm dark card with pink */
+    --card-foreground: 30 15% 92%;
 
-    --popover: 25 15% 12%;
-    --popover-foreground: 40 15% 92%;
+    --popover: 340 20% 12%;
+    --popover-foreground: 30 15% 92%;
 
-    --primary: 210 40% 45%; /* Warm professional blue */
-    --primary-foreground: 40 15% 92%;
+    --primary: 200 45% 45%; /* Warm professional blue */
+    --primary-foreground: 30 15% 92%;
 
-    --secondary: 30 25% 20%; /* Warm brown-gray */
-    --secondary-foreground: 40 15% 92%;
+    --secondary: 320 30% 20%; /* Warm pink-brown */
+    --secondary-foreground: 30 15% 92%;
 
-    --muted: 25 15% 18%; /* Warm muted dark */
-    --muted-foreground: 40 10% 65%; /* Warm medium gray */
+    --muted: 340 15% 18%; /* Warm muted with pink */
+    --muted-foreground: 30 10% 65%; /* Warm medium gray */
 
-    --accent: 35 60% 55%; /* Warm accent orange */
-    --accent-foreground: 25 20% 8%;
+    --accent: 350 50% 60%; /* Soft warm pink accent */
+    --accent-foreground: 340 25% 8%;
 
     --destructive: 5 50% 50%; /* Warm red */
-    --destructive-foreground: 40 15% 92%;
+    --destructive-foreground: 30 15% 92%;
 
-    /* Warm Professional Accents */
+    /* Warm Pink Professional Accents */
     --success: 145 35% 45%; /* Warm green */
-    --success-foreground: 40 15% 92%;
-    --warning: 40 65% 60%; /* Warm amber */
-    --warning-foreground: 25 20% 8%;
+    --success-foreground: 30 15% 92%;
+    --warning: 30 65% 60%; /* Warm peach */
+    --warning-foreground: 340 25% 8%;
     --info: 200 35% 55%; /* Warm blue */
-    --info-foreground: 25 20% 8%;
+    --info-foreground: 340 25% 8%;
 
-    --border: 25 15% 22%;
-    --input: 25 15% 22%;
-    --ring: 210 40% 45%;
+    --border: 340 15% 22%;
+    --input: 340 15% 22%;
+    --ring: 350 50% 60%;
 
-    /* Warm Professional Backgrounds - Dark */
-    --gradient-primary: hsl(210 40% 45%);
-    --gradient-subtle: hsl(25 15% 12%);
-    --gradient-accent: hsl(35 60% 55%);
-    --gradient-glow: hsl(35 60% 55% / 0.1);
-    --gradient-ai: hsl(25 20% 8%);
+    /* Warm Pink Gradient Backgrounds - Dark */
+    --gradient-primary: linear-gradient(135deg, hsl(200 45% 45%), hsl(350 40% 50%));
+    --gradient-subtle: linear-gradient(135deg, hsl(340 25% 8%), hsl(320 20% 12%), hsl(340 15% 15%));
+    --gradient-accent: linear-gradient(135deg, hsl(350 50% 60%), hsl(30 50% 65%));
+    --gradient-glow: linear-gradient(135deg, hsl(350 50% 60% / 0.1), hsl(30 50% 65% / 0.08));
+    --gradient-ai: linear-gradient(135deg, hsl(340 25% 8%), hsl(350 20% 10%), hsl(320 15% 12%));
     
-    /* Warm Professional Shadows - Dark */
-    --shadow-elegant: 0 8px 32px -8px hsl(25 20% 8% / 0.3);
-    --shadow-soft: 0 4px 16px -4px hsl(25 20% 8% / 0.2);
-    --shadow-warm: 0 4px 16px -4px hsl(35 60% 55% / 0.15);
-    --glow-primary: 0 0 24px hsl(210 40% 45% / 0.3);
-    --glow-accent: 0 0 24px hsl(35 60% 55% / 0.25);
-    --glow-ai: 0 0 32px hsl(35 60% 55% / 0.2);
+    /* Warm Pink Professional Shadows - Dark */
+    --shadow-elegant: 0 8px 32px -8px hsl(340 25% 8% / 0.3);
+    --shadow-soft: 0 4px 16px -4px hsl(340 25% 8% / 0.2);
+    --shadow-warm: 0 4px 16px -4px hsl(350 50% 60% / 0.15);
+    --glow-primary: 0 0 24px hsl(200 45% 45% / 0.3);
+    --glow-accent: 0 0 24px hsl(350 50% 60% / 0.25);
+    --glow-ai: 0 0 32px hsl(350 50% 60% / 0.2);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -208,7 +208,8 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background: var(--gradient-subtle);
     scroll-behavior: smooth;
     font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
