@@ -67,11 +67,11 @@ const Hero = ({ showArrow = false }: HeroProps) => {
               <div className="col-span-3 text-left">
                 <div className="relative">
                   {/* Decorative background image - larger for mobile */}
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="absolute inset-0 flex items-center justify-start pointer-events-none pl-2">
                     <img 
                       src={satoruDecoration} 
                       alt="" 
-                      className="w-32 h-32 object-contain opacity-10 dark:opacity-20"
+                      className="w-40 h-40 object-contain opacity-10 dark:opacity-20"
                       style={{ 
                         filter: 'hue-rotate(10deg) saturate(1.2)',
                         transform: 'rotate(-5deg) scale(1.1)',
@@ -80,7 +80,7 @@ const Hero = ({ showArrow = false }: HeroProps) => {
                     />
                   </div>
                   
-                  <h1 className="relative z-10 text-lg leading-tight font-bold text-[#27254c] dark:text-foreground text-center">
+                  <h1 className="relative z-10 text-xl leading-tight font-bold text-[#27254c] dark:text-foreground text-left pl-2">
                     <span className="inline-block">Simplify.</span>
                     <br />
                     <span className="text-[#564a94] dark:text-primary inline-block text-glow">Streamline.</span>
