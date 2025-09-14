@@ -59,64 +59,42 @@ const Hero = ({ showArrow = false }: HeroProps) => {
         <div className="absolute inset-0 scan-lines opacity-0 sm:opacity-30 pointer-events-none" />
         
         <div className="max-w-6xl mx-auto w-full flex flex-col justify-center flex-1">
-          {/* Mobile Layout - Full viewport scrollable experience */}
-          <div className="flex flex-col lg:hidden">
-            {/* Mobile: First viewport - Text and decoration */}
-            <div className="min-h-screen flex flex-col justify-center items-center px-4 py-8 relative">
-              <div className="relative w-full max-w-sm mx-auto text-center">
-                {/* Decorative background image - full screen */}
+          {/* Mobile Layout - Normal scrolling experience */}
+          <div className="flex flex-col lg:hidden gap-8 mb-8 mt-16">
+            {/* Mobile: Text and decoration section */}
+            <div className="text-center px-4">
+              <div className="relative max-w-sm mx-auto">
+                {/* Decorative background image */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <img 
                     src={satoruDecoration} 
                     alt="" 
-                    className="w-80 h-80 object-contain opacity-20 dark:opacity-30"
+                    className="w-60 h-60 object-contain opacity-15 dark:opacity-25"
                     style={{ 
                       filter: 'hue-rotate(10deg) saturate(1.2)',
-                      transform: 'rotate(-5deg) scale(1.3)',
+                      transform: 'rotate(-5deg) scale(1.2)',
                       willChange: 'auto'
                     }}
                   />
                 </div>
                 
-                <h1 className="relative z-10 text-4xl sm:text-5xl leading-tight font-bold text-[#27254c] dark:text-foreground text-center">
-                  <span className="inline-block animate-float-subtle">Simplify.</span>
+                <h1 className="relative z-10 text-4xl sm:text-5xl leading-tight font-bold text-[#27254c] dark:text-foreground text-center mb-6">
+                  <span className="inline-block">Simplify.</span>
                   <br />
-                  <span className="text-[#564a94] dark:text-primary inline-block text-glow animate-float-dynamic">Streamline.</span>
+                  <span className="text-[#564a94] dark:text-primary inline-block text-glow">Streamline.</span>
                   <br />
-                  <span className="text-[#8b7dd6] dark:bg-gradient-primary dark:bg-clip-text dark:text-transparent inline-block glow animate-float-subtle">Succeed.</span>
+                  <span className="text-[#8b7dd6] dark:bg-gradient-primary dark:bg-clip-text dark:text-transparent inline-block glow">Succeed.</span>
                 </h1>
                 
                 {/* Holographic overlay */}
                 <div className="absolute inset-0 holographic opacity-50 pointer-events-none" />
               </div>
-
-              {/* Description text */}
-              <div className="data-stream mt-8 max-w-md mx-auto">
-                <p className="text-lg sm:text-xl text-[#1f232f] dark:text-muted-foreground leading-relaxed text-center">
-                  Harness the power of advanced AI technology to transform your business operations and unlock unprecedented growth opportunities.
-                </p>
-              </div>
-
-              {/* Buttons */}
-              <div className="flex flex-col gap-4 mt-8 w-full max-w-sm mx-auto">
-                <Button variant="cta" size="lg" className="text-lg font-bold px-8 py-6 hover-lift transition-smooth hover:shadow-glow-primary w-full min-h-[56px]">
-                  Book a Consultant
-                </Button>
-                <Button variant="outline" size="lg" className="text-lg font-bold px-8 py-6 hover-lift holographic w-full min-h-[56px]">
-                  Learn More
-                </Button>
-              </div>
-
-              {/* Scroll indicator */}
-              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <div className="w-1 h-8 bg-gradient-to-b from-primary to-transparent rounded-full opacity-60"></div>
-              </div>
             </div>
 
-            {/* Mobile: Second viewport - AI Image */}
-            <div className="min-h-screen flex flex-col justify-center items-center px-4 py-8 relative">
-              <div className="relative group w-full max-w-md mx-auto">
-                <div className="relative overflow-hidden rounded-2xl border-2 border-primary/30 transition-colors duration-300 aspect-[3/4] w-full shadow-glow-cyan">
+            {/* Mobile: AI Image section */}
+            <div className="px-4">
+              <div className="relative group w-full max-w-sm mx-auto">
+                <div className="relative overflow-hidden rounded-2xl border border-primary/30 transition-colors duration-300 aspect-[4/5] w-full">
                   <img 
                     src={aiTechnology} 
                     alt="Advanced AI technology interface with holographic displays and neural network visualizations" 
@@ -125,24 +103,31 @@ const Hero = ({ showArrow = false }: HeroProps) => {
                     style={{ willChange: 'auto' }}
                   />
                   
-                  {/* Enhanced overlay for mobile */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/20" />
-                  
-                  {/* AI Circuit overlay */}
-                  <div className="absolute inset-0 circuit-bg opacity-20 animate-circuit-flow" />
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/10" />
                 </div>
                 
-                {/* Enhanced floating elements */}
-                <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-primary rounded-full animate-digital-pulse opacity-80" />
-                <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-accent rounded-full animate-float-dynamic opacity-60" />
-                <div className="absolute top-1/2 -left-4 w-3 h-3 bg-primary rounded-full animate-digital-pulse opacity-70" />
-                <div className="absolute top-1/4 -right-4 w-2 h-2 bg-secondary rounded-full animate-pulse opacity-50" />
+                {/* Floating elements */}
+                <div className="absolute -top-1 -right-1 w-4 h-4 bg-primary rounded-full opacity-70 animate-pulse" />
+                <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-accent rounded-full opacity-50" />
               </div>
+            </div>
+            
+            {/* Mobile: Description text */}
+            <div className="data-stream px-4">
+              <p className="text-lg sm:text-xl text-[#1f232f] dark:text-muted-foreground leading-relaxed text-center max-w-md mx-auto">
+                Harness the power of advanced AI technology to transform your business operations and unlock unprecedented growth opportunities.
+              </p>
+            </div>
 
-              {/* Scroll indicator */}
-              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <div className="w-1 h-8 bg-gradient-to-b from-primary to-transparent rounded-full opacity-60"></div>
-              </div>
+            {/* Mobile: Buttons */}
+            <div className="flex flex-col gap-4 px-4 max-w-sm mx-auto w-full">
+              <Button variant="cta" size="lg" className="text-lg font-bold px-8 py-6 hover-lift transition-smooth hover:shadow-glow-primary w-full min-h-[56px]">
+                Book a Consultant
+              </Button>
+              <Button variant="outline" size="lg" className="text-lg font-bold px-8 py-6 hover-lift holographic w-full min-h-[56px]">
+                Learn More
+              </Button>
             </div>
           </div>
 
