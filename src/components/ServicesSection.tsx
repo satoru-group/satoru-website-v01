@@ -43,81 +43,81 @@ const ServicesSection = ({ showArrow = false }: ServicesSectionProps) => {
     };
   };
   return (
-    <section className="w-full h-full bg-background flex items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8">
+    <section className="w-full h-full bg-background flex items-center justify-center relative overflow-hidden px-3 sm:px-4 lg:px-6 pt-20 sm:pt-24 lg:pt-28">
       {/* Consistent Background Patterns */}
       <div className="absolute inset-0 circuit-bg opacity-15 dark:opacity-25 pointer-events-none" />
       <div className="absolute inset-0 light-geometric-bg opacity-15 dark:opacity-0 pointer-events-none" />
       
-      <div className="max-w-7xl mx-auto text-center space-y-8 sm:space-y-12 relative z-10 w-full">
-        <div className="space-y-6 sm:space-y-8">
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+      <div className="max-w-6xl mx-auto text-center space-y-6 sm:space-y-8 relative z-10 w-full">
+        <div className="space-y-4 sm:space-y-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent">
             How We Help Your Business
           </h2>
           
-          <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
             We act as an extension of your team, providing fractional operations and IT leadership to support growth, scalability, and long-term success.
           </p>
         </div>
         
         {/* Responsive grid layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
           <div 
-            className="bg-card/90 backdrop-blur-sm p-6 sm:p-8 rounded-xl border border-border/40 hover:border-border/60 transition-all duration-300 hover:shadow-lg"
+            className="bg-card/90 backdrop-blur-sm p-4 sm:p-6 rounded-xl border border-border/40 hover:border-border/60 transition-all duration-300 hover:shadow-lg"
             style={getCardStyle(0)}
           >
-            <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-foreground">Operations Optimization</h3>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6">
+            <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-foreground">Operations Optimization</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-3 sm:mb-4">
               Streamline workflows and improve operational efficiency
             </p>
-            <ul className="text-left text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 space-y-2">
+            <ul className="text-left text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4 space-y-1">
               <li>• Process mapping and improvement</li>
               <li>• Workflow automation</li>
               <li>• Resource allocation</li>
             </ul>
-            <Button variant="outline" size="sm" className="text-xs sm:text-sm w-full">
+            <Button variant="outline" size="sm" className="text-xs w-full">
               Learn more
             </Button>
           </div>
           
           <div 
-            className="bg-card/90 backdrop-blur-sm p-6 sm:p-8 rounded-xl border border-border/40 hover:border-border/60 transition-all duration-300 hover:shadow-lg md:col-span-2 lg:col-span-1"
+            className="bg-card/90 backdrop-blur-sm p-4 sm:p-6 rounded-xl border border-border/40 hover:border-border/60 transition-all duration-300 hover:shadow-lg md:col-span-2 lg:col-span-1"
             style={getCardStyle(1)}
           >
-            <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-foreground">IT Systems Management</h3>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6">
+            <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-foreground">IT Systems Management</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-3 sm:mb-4">
               Optimize your technology infrastructure
             </p>
-            <ul className="text-left text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 space-y-2">
+            <ul className="text-left text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4 space-y-1">
               <li>• System integration</li>
               <li>• Technology stack assessment</li>
               <li>• IT strategy development</li>
             </ul>
-            <Button variant="outline" size="sm" className="text-xs sm:text-sm w-full">
+            <Button variant="outline" size="sm" className="text-xs w-full">
               Learn more
             </Button>
           </div>
           
           <div 
-            className="bg-card/90 backdrop-blur-sm p-6 sm:p-8 rounded-xl border border-border/40 hover:border-border/60 transition-all duration-300 hover:shadow-lg md:col-span-2 lg:col-span-1"
+            className="bg-card/90 backdrop-blur-sm p-4 sm:p-6 rounded-xl border border-border/40 hover:border-border/60 transition-all duration-300 hover:shadow-lg md:col-span-2 lg:col-span-1"
             style={getCardStyle(2)}
           >
-            <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-foreground">Fractional Leadership</h3>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6">
+            <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-foreground">Fractional Leadership</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-3 sm:mb-4">
               Expert guidance without the full-time cost
             </p>
-            <ul className="text-left text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 space-y-2">
+            <ul className="text-left text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4 space-y-1">
               <li>• Fractional COO services</li>
               <li>• Fractional CTO services</li>
               <li>• Strategic planning</li>
             </ul>
-            <Button variant="outline" size="sm" className="text-xs sm:text-sm w-full">
+            <Button variant="outline" size="sm" className="text-xs w-full">
               Learn more
             </Button>
           </div>
         </div>
         
         <div style={getButtonStyle()}>
-          <Button variant="default" size="lg" className="text-sm sm:text-base px-6 sm:px-8">
+          <Button variant="default" size="lg" className="text-sm px-6 py-3">
             Get Started
           </Button>
         </div>
