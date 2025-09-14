@@ -8,57 +8,57 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* AI-Themed Dark Colors - Solid */
-    --background: 220 25% 6%; /* Deep AI Dark */
-    --foreground: 200 15% 95%; /* Cool White */
+    /* Warm Professional - Dark Theme */
+    --background: 25 20% 8%; /* Warm dark background */
+    --foreground: 40 15% 92%; /* Warm cream text */
 
-    --card: 220 20% 10%; /* AI Card Dark */
-    --card-foreground: 200 15% 95%;
+    --card: 25 15% 12%; /* Warm dark card */
+    --card-foreground: 40 15% 92%;
 
-    --popover: 220 20% 10%;
-    --popover-foreground: 200 15% 95%;
+    --popover: 25 15% 12%;
+    --popover-foreground: 40 15% 92%;
 
-    --primary: 220 100% 50%; /* Bright AI Blue */
-    --primary-foreground: 220 25% 6%;
+    --primary: 210 40% 45%; /* Warm professional blue */
+    --primary-foreground: 40 15% 92%;
 
-    --secondary: 270 50% 40%; /* AI Purple */
-    --secondary-foreground: 200 15% 95%;
+    --secondary: 30 25% 20%; /* Warm brown-gray */
+    --secondary-foreground: 40 15% 92%;
 
-    --muted: 220 15% 15%; /* Muted AI Dark */
-    --muted-foreground: 200 10% 70%; /* AI Gray */
+    --muted: 25 15% 18%; /* Warm muted dark */
+    --muted-foreground: 40 10% 65%; /* Warm medium gray */
 
-    --accent: 180 100% 50%; /* AI Cyan */
-    --accent-foreground: 220 25% 6%;
+    --accent: 35 60% 55%; /* Warm accent orange */
+    --accent-foreground: 25 20% 8%;
 
-    --destructive: 0 75% 55%; /* AI Red */
-    --destructive-foreground: 200 15% 95%;
+    --destructive: 5 50% 50%; /* Warm red */
+    --destructive-foreground: 40 15% 92%;
 
-    /* AI Accent Colors - Solid */
-    --success: 140 100% 40%; /* AI Green */
-    --success-foreground: 220 25% 6%;
-    --warning: 45 100% 60%; /* AI Gold */
-    --warning-foreground: 220 25% 6%;
-    --info: 200 100% 60%; /* AI Light Blue */
-    --info-foreground: 220 25% 6%;
+    /* Warm Professional Accents */
+    --success: 145 35% 45%; /* Warm green */
+    --success-foreground: 40 15% 92%;
+    --warning: 40 65% 60%; /* Warm amber */
+    --warning-foreground: 25 20% 8%;
+    --info: 200 35% 55%; /* Warm blue */
+    --info-foreground: 25 20% 8%;
 
-    --border: 220 25% 18%;
-    --input: 220 25% 18%;
-    --ring: 220 100% 50%;
+    --border: 25 15% 22%;
+    --input: 25 15% 22%;
+    --ring: 210 40% 45%;
 
-    /* AI Solid Backgrounds - No Gradients */
-    --gradient-primary: hsl(220 100% 50%);
-    --gradient-subtle: hsl(220 20% 10%);
-    --gradient-accent: hsl(180 100% 50%);
-    --gradient-glow: hsl(220 100% 50% / 0.1);
-    --gradient-ai: hsl(220 25% 6%);
+    /* Warm Professional Backgrounds */
+    --gradient-primary: hsl(210 40% 45%);
+    --gradient-subtle: hsl(25 15% 12%);
+    --gradient-accent: hsl(35 60% 55%);
+    --gradient-glow: hsl(35 60% 55% / 0.1);
+    --gradient-ai: hsl(25 20% 8%);
     
-    /* AI Shadows - Minimal */
-    --shadow-elegant: 0 8px 32px -8px hsl(220 100% 50% / 0.2);
-    --shadow-soft: 0 4px 16px -4px hsl(220 100% 50% / 0.15);
-    --shadow-warm: 0 4px 16px -4px hsl(180 100% 50% / 0.1);
-    --glow-primary: 0 0 24px hsl(220 100% 50% / 0.4);
-    --glow-accent: 0 0 24px hsl(180 100% 50% / 0.3);
-    --glow-ai: 0 0 32px hsl(220 100% 50% / 0.2);
+    /* Warm Professional Shadows */
+    --shadow-elegant: 0 8px 32px -8px hsl(25 20% 8% / 0.3);
+    --shadow-soft: 0 4px 16px -4px hsl(25 20% 8% / 0.2);
+    --shadow-warm: 0 4px 16px -4px hsl(35 60% 55% / 0.15);
+    --glow-primary: 0 0 24px hsl(210 40% 45% / 0.3);
+    --glow-accent: 0 0 24px hsl(35 60% 55% / 0.25);
+    --glow-ai: 0 0 32px hsl(35 60% 55% / 0.2);
     
     /* Smooth transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -77,57 +77,57 @@ All colors MUST be HSL.
   }
 
   .light {
-    /* AI-Themed Light Colors - Solid */
-    --background: 200 20% 98%; /* AI Light Background */
-    --foreground: 220 25% 6%; /* AI Dark Text */
+    /* Warm Professional - Light Theme */
+    --background: 40 20% 98%; /* Warm cream background */
+    --foreground: 25 25% 15%; /* Warm dark text */
 
-    --card: 200 15% 96%; /* AI Light Card */
-    --card-foreground: 220 25% 6%;
+    --card: 40 15% 96%; /* Warm cream card */
+    --card-foreground: 25 25% 15%;
 
-    --popover: 200 15% 96%;
-    --popover-foreground: 220 25% 6%;
+    --popover: 40 15% 96%;
+    --popover-foreground: 25 25% 15%;
 
-    --primary: 220 100% 50%; /* Bright AI Blue */
-    --primary-foreground: 200 20% 98%;
+    --primary: 210 50% 40%; /* Professional blue */
+    --primary-foreground: 40 20% 98%;
 
-    --secondary: 200 15% 90%; /* AI Light Gray */
-    --secondary-foreground: 220 25% 6%;
+    --secondary: 40 10% 90%; /* Warm light gray */
+    --secondary-foreground: 25 25% 15%;
 
-    --muted: 200 10% 92%;
-    --muted-foreground: 220 15% 40%; /* AI Medium Gray */
+    --muted: 40 8% 92%;
+    --muted-foreground: 25 15% 45%; /* Warm medium gray */
 
-    --accent: 180 100% 40%; /* AI Dark Cyan */
-    --accent-foreground: 200 20% 98%;
+    --accent: 30 55% 50%; /* Warm accent orange */
+    --accent-foreground: 40 20% 98%;
 
-    --destructive: 0 75% 55%; /* AI Red */
-    --destructive-foreground: 200 20% 98%;
+    --destructive: 5 50% 45%; /* Warm red */
+    --destructive-foreground: 40 20% 98%;
 
-    /* AI Accent Colors - Solid */
-    --success: 140 100% 35%; /* AI Dark Green */
-    --success-foreground: 200 20% 98%;
-    --warning: 45 100% 50%; /* AI Gold */
-    --warning-foreground: 200 20% 98%;
-    --info: 200 100% 45%; /* AI Blue */
-    --info-foreground: 200 20% 98%;
+    /* Warm Professional Accents */
+    --success: 145 40% 40%; /* Warm green */
+    --success-foreground: 40 20% 98%;
+    --warning: 40 60% 55%; /* Warm amber */
+    --warning-foreground: 40 20% 98%;
+    --info: 200 40% 45%; /* Professional blue */
+    --info-foreground: 40 20% 98%;
 
-    --border: 200 15% 85%;
-    --input: 200 10% 94%;
-    --ring: 220 100% 50%;
+    --border: 40 12% 85%;
+    --input: 40 8% 94%;
+    --ring: 210 50% 40%;
 
-    /* AI Solid Backgrounds - Light Mode */
-    --gradient-primary: hsl(220 100% 50%);
-    --gradient-subtle: hsl(200 15% 96%);
-    --gradient-accent: hsl(180 100% 40%);
-    --gradient-glow: hsl(220 100% 50% / 0.05);
-    --gradient-ai: hsl(200 20% 98%);
+    /* Warm Professional Backgrounds - Light */
+    --gradient-primary: hsl(210 50% 40%);
+    --gradient-subtle: hsl(40 15% 96%);
+    --gradient-accent: hsl(30 55% 50%);
+    --gradient-glow: hsl(30 55% 50% / 0.08);
+    --gradient-ai: hsl(40 20% 98%);
     
-    /* AI Shadows - Light Mode */
-    --shadow-elegant: 0 8px 32px -8px hsl(220 100% 50% / 0.1);
-    --shadow-soft: 0 4px 16px -4px hsl(220 100% 50% / 0.08);
-    --shadow-warm: 0 4px 16px -4px hsl(200 15% 85% / 0.6);
-    --glow-primary: 0 0 24px hsl(220 100% 50% / 0.15);
-    --glow-accent: 0 0 24px hsl(180 100% 40% / 0.1);
-    --glow-ai: 0 0 32px hsl(220 100% 50% / 0.08);
+    /* Warm Professional Shadows - Light */
+    --shadow-elegant: 0 8px 32px -8px hsl(25 25% 15% / 0.12);
+    --shadow-soft: 0 4px 16px -4px hsl(25 25% 15% / 0.08);
+    --shadow-warm: 0 4px 16px -4px hsl(40 12% 85% / 0.6);
+    --glow-primary: 0 0 24px hsl(210 50% 40% / 0.15);
+    --glow-accent: 0 0 24px hsl(30 55% 50% / 0.12);
+    --glow-ai: 0 0 32px hsl(30 55% 50% / 0.1);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -140,57 +140,57 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* AI-Themed Dark Colors - Solid */
-    --background: 220 25% 6%; /* Deep AI Dark */
-    --foreground: 200 15% 95%; /* Cool White */
+    /* Warm Professional - Dark Theme */
+    --background: 25 20% 8%; /* Warm dark background */
+    --foreground: 40 15% 92%; /* Warm cream text */
 
-    --card: 220 20% 10%; /* AI Card Dark */
-    --card-foreground: 200 15% 95%;
+    --card: 25 15% 12%; /* Warm dark card */
+    --card-foreground: 40 15% 92%;
 
-    --popover: 220 20% 10%;
-    --popover-foreground: 200 15% 95%;
+    --popover: 25 15% 12%;
+    --popover-foreground: 40 15% 92%;
 
-    --primary: 220 100% 50%; /* Bright AI Blue */
-    --primary-foreground: 220 25% 6%;
+    --primary: 210 40% 45%; /* Warm professional blue */
+    --primary-foreground: 40 15% 92%;
 
-    --secondary: 270 50% 40%; /* AI Purple */
-    --secondary-foreground: 200 15% 95%;
+    --secondary: 30 25% 20%; /* Warm brown-gray */
+    --secondary-foreground: 40 15% 92%;
 
-    --muted: 220 15% 15%; /* Muted AI Dark */
-    --muted-foreground: 200 10% 70%; /* AI Gray */
+    --muted: 25 15% 18%; /* Warm muted dark */
+    --muted-foreground: 40 10% 65%; /* Warm medium gray */
 
-    --accent: 180 100% 50%; /* AI Cyan */
-    --accent-foreground: 220 25% 6%;
+    --accent: 35 60% 55%; /* Warm accent orange */
+    --accent-foreground: 25 20% 8%;
 
-    --destructive: 0 75% 55%; /* AI Red */
-    --destructive-foreground: 200 15% 95%;
+    --destructive: 5 50% 50%; /* Warm red */
+    --destructive-foreground: 40 15% 92%;
 
-    /* AI Accent Colors - Solid */
-    --success: 140 100% 40%; /* AI Green */
-    --success-foreground: 220 25% 6%;
-    --warning: 45 100% 60%; /* AI Gold */
-    --warning-foreground: 220 25% 6%;
-    --info: 200 100% 60%; /* AI Light Blue */
-    --info-foreground: 220 25% 6%;
+    /* Warm Professional Accents */
+    --success: 145 35% 45%; /* Warm green */
+    --success-foreground: 40 15% 92%;
+    --warning: 40 65% 60%; /* Warm amber */
+    --warning-foreground: 25 20% 8%;
+    --info: 200 35% 55%; /* Warm blue */
+    --info-foreground: 25 20% 8%;
 
-    --border: 220 25% 18%;
-    --input: 220 25% 18%;
-    --ring: 220 100% 50%;
+    --border: 25 15% 22%;
+    --input: 25 15% 22%;
+    --ring: 210 40% 45%;
 
-    /* AI Solid Backgrounds - Dark Mode */
-    --gradient-primary: hsl(220 100% 50%);
-    --gradient-subtle: hsl(220 20% 10%);
-    --gradient-accent: hsl(180 100% 50%);
-    --gradient-glow: hsl(220 100% 50% / 0.1);
-    --gradient-ai: hsl(220 25% 6%);
+    /* Warm Professional Backgrounds - Dark */
+    --gradient-primary: hsl(210 40% 45%);
+    --gradient-subtle: hsl(25 15% 12%);
+    --gradient-accent: hsl(35 60% 55%);
+    --gradient-glow: hsl(35 60% 55% / 0.1);
+    --gradient-ai: hsl(25 20% 8%);
     
-    /* AI Shadows - Dark Mode */
-    --shadow-elegant: 0 8px 32px -8px hsl(220 100% 50% / 0.2);
-    --shadow-soft: 0 4px 16px -4px hsl(220 100% 50% / 0.15);
-    --shadow-warm: 0 4px 16px -4px hsl(180 100% 50% / 0.1);
-    --glow-primary: 0 0 24px hsl(220 100% 50% / 0.4);
-    --glow-accent: 0 0 24px hsl(180 100% 50% / 0.3);
-    --glow-ai: 0 0 32px hsl(220 100% 50% / 0.2);
+    /* Warm Professional Shadows - Dark */
+    --shadow-elegant: 0 8px 32px -8px hsl(25 20% 8% / 0.3);
+    --shadow-soft: 0 4px 16px -4px hsl(25 20% 8% / 0.2);
+    --shadow-warm: 0 4px 16px -4px hsl(35 60% 55% / 0.15);
+    --glow-primary: 0 0 24px hsl(210 40% 45% / 0.3);
+    --glow-accent: 0 0 24px hsl(35 60% 55% / 0.25);
+    --glow-ai: 0 0 32px hsl(35 60% 55% / 0.2);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
