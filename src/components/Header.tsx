@@ -18,7 +18,7 @@ const Header = () => {
         <div className="flex items-center">
           <div className="flex flex-col text-center">
             <div className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent animate-digital-pulse">
-              <span className="inline-block hover:animate-float-subtle flex items-center">
+              <span className="inline-flex items-center whitespace-nowrap hover:animate-float-subtle">
                 SAT
                 <img 
                   src={satoruOLogo} 
