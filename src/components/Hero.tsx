@@ -61,7 +61,7 @@ const Hero = ({ showArrow = false }: HeroProps) => {
 
           {/* Right Content - AI Image */}
           <div className="relative order-first lg:order-last group">
-            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-glow-cyan border border-primary/20 transition-all duration-500 group-hover:shadow-glow-purple group-hover:border-primary/40">
+            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-glow-cyan border-2 border-primary/30 hover:border-primary/50 transition-all duration-500 group-hover:shadow-glow-purple">
               <img 
                 src={aiTechnology} 
                 alt="Advanced AI technology interface with holographic displays and neural network visualizations" 
@@ -82,7 +82,7 @@ const Hero = ({ showArrow = false }: HeroProps) => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="text-center p-4 sm:p-6 lg:p-8 bg-card/50 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-glow-cyan border border-primary/10 hover:shadow-glow-purple hover:border-primary/30 transition-all duration-300 hover:-translate-y-1"
+              className="text-center p-4 sm:p-6 lg:p-8 bg-card/50 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-glow-cyan border-2 border-primary/20 hover:border-primary/40 hover:shadow-glow-purple transition-all duration-300 hover:-translate-y-1"
             >
               <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2 sm:mb-4">
                 {stat.number}

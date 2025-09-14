@@ -29,14 +29,14 @@ const ContactSection = () => {
         
         <div className="max-w-lg mx-auto space-y-4 sm:space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <Input placeholder="First Name" className="bg-card/80 backdrop-blur-sm border-border/50 text-sm sm:text-base" />
-            <Input placeholder="Last Name" className="bg-card/80 backdrop-blur-sm border-border/50 text-sm sm:text-base" />
+            <Input placeholder="First Name" className="bg-card/80 backdrop-blur-sm border-2 border-border/40 hover:border-border/60 focus:border-primary/50 transition-colors text-sm sm:text-base" />
+            <Input placeholder="Last Name" className="bg-card/80 backdrop-blur-sm border-2 border-border/40 hover:border-border/60 focus:border-primary/50 transition-colors text-sm sm:text-base" />
           </div>
-          <Input placeholder="Email Address" className="bg-card/80 backdrop-blur-sm border-border/50 text-sm sm:text-base" />
-          <Input placeholder="Company" className="bg-card/80 backdrop-blur-sm border-border/50 text-sm sm:text-base" />
+          <Input placeholder="Email Address" className="bg-card/80 backdrop-blur-sm border-2 border-border/40 hover:border-border/60 focus:border-primary/50 transition-colors text-sm sm:text-base" />
+          <Input placeholder="Company" className="bg-card/80 backdrop-blur-sm border-2 border-border/40 hover:border-border/60 focus:border-primary/50 transition-colors text-sm sm:text-base" />
           <Textarea 
             placeholder="Tell us about your project..." 
-            className="bg-card/80 backdrop-blur-sm border-border/50 min-h-[100px] sm:min-h-[120px] text-sm sm:text-base" 
+            className="bg-card/80 backdrop-blur-sm border-2 border-border/40 hover:border-border/60 focus:border-primary/50 transition-colors min-h-[100px] sm:min-h-[120px] text-sm sm:text-base" 
           />
           <Button size="lg" className="w-full text-sm sm:text-base">
             Send Message

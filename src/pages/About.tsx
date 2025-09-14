@@ -50,7 +50,7 @@ const About = () => {
               </div>
               
               <div className="relative">
-                <div className="backdrop-modern bg-card/20 p-12 rounded-3xl border border-border/30 shadow-elegant">
+                <div className="backdrop-modern bg-card/20 p-12 rounded-3xl border-2 border-border/40 shadow-elegant hover:border-border/60 transition-all duration-300">
                   <div className="space-y-8">
                     <div className="text-center space-y-4">
                       <div className="text-6xl font-heading font-bold bg-gradient-primary bg-clip-text text-transparent">
@@ -93,7 +93,7 @@ const About = () => {
             </div>
             
             <div className="grid lg:grid-cols-2 gap-12">
-              <div className="backdrop-modern bg-card/10 p-12 rounded-3xl border border-border/20 hover:shadow-elegant transition-all duration-500 group">
+              <div className="backdrop-modern bg-card/10 p-12 rounded-3xl border-2 border-border/30 hover:border-border/50 hover:shadow-elegant transition-all duration-500 group">
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-gradient-primary rounded-2xl flex items-center justify-center">
@@ -109,7 +109,7 @@ const About = () => {
                 </div>
               </div>
               
-              <div className="backdrop-modern bg-card/10 p-12 rounded-3xl border border-border/20 hover:shadow-elegant transition-all duration-500 group">
+              <div className="backdrop-modern bg-card/10 p-12 rounded-3xl border-2 border-border/30 hover:border-border/50 hover:shadow-elegant transition-all duration-500 group">
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-gradient-primary rounded-2xl flex items-center justify-center">
@@ -169,7 +169,7 @@ const About = () => {
                   icon: Handshake
                 }
               ].map((value, index) => (
-                <div key={index} className={`backdrop-modern bg-card/5 p-8 rounded-2xl border border-border/20 hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 group ${index === 4 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
+                <div key={index} className={`backdrop-modern bg-card/5 p-8 rounded-2xl border-2 border-border/30 hover:border-border/50 hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 group ${index === 4 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
                   <div className="space-y-6">
                     <div className="w-12 h-12 bg-gradient-primary rounded-2xl flex items-center justify-center mb-4">
                       <value.icon className="w-6 h-6 text-primary-foreground" />

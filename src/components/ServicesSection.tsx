@@ -106,7 +106,7 @@ const ServicesSection = ({ showArrow = false }: ServicesSectionProps) => {
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
           <div 
-            className="bg-card/90 backdrop-blur-sm p-6 sm:p-8 rounded-lg border border-border/50"
+            className="bg-card/90 backdrop-blur-sm p-6 sm:p-8 rounded-lg border-2 border-border/40 hover:border-border/60 transition-all duration-300"
             style={getCardStyle(0)}
           >
             <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-foreground">Operations Optimization</h3>
@@ -124,7 +124,7 @@ const ServicesSection = ({ showArrow = false }: ServicesSectionProps) => {
           </div>
           
           <div 
-            className="bg-card/90 backdrop-blur-sm p-6 sm:p-8 rounded-lg border border-border/50"
+            className="bg-card/90 backdrop-blur-sm p-6 sm:p-8 rounded-lg border-2 border-border/40 hover:border-border/60 transition-all duration-300"
             style={getCardStyle(1)}
           >
             <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-foreground">IT Systems Management</h3>
@@ -142,7 +142,7 @@ const ServicesSection = ({ showArrow = false }: ServicesSectionProps) => {
           </div>
           
           <div 
-            className="bg-card/90 backdrop-blur-sm p-6 sm:p-8 rounded-lg border border-border/50 lg:col-span-1"
+            className="bg-card/90 backdrop-blur-sm p-6 sm:p-8 rounded-lg border-2 border-border/40 hover:border-border/60 transition-all duration-300 lg:col-span-1"
             style={getCardStyle(2)}
           >
             <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-foreground">Fractional Leadership</h3>
