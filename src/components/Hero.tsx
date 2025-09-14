@@ -59,28 +59,28 @@ const Hero = ({ showArrow = false }: HeroProps) => {
         <div className="absolute inset-0 scan-lines opacity-0 sm:opacity-30 pointer-events-none" />
         
         <div className="max-w-6xl mx-auto w-full flex flex-col justify-center flex-1">
-          {/* Mobile Layout - Different structure for mobile */}
-          <div className="flex flex-col lg:hidden gap-4 mb-3 mt-24">
+          {/* Mobile Layout - Optimized for professional mobile experience */}
+          <div className="flex flex-col lg:hidden gap-6 mb-6 mt-16">
             {/* Mobile: Top row - Heading on left, Image on right */}
-            <div className="grid grid-cols-5 gap-3 items-start">
-              {/* Mobile Left - Heading and decoration - takes 3 columns */}
-              <div className="col-span-3 text-left">
+            <div className="grid grid-cols-7 gap-4 items-start">
+              {/* Mobile Left - Heading and decoration - takes 4 columns for better text space */}
+              <div className="col-span-4 text-left">
                 <div className="relative">
-                  {/* Decorative background image - larger for mobile */}
-                  <div className="absolute inset-0 flex items-center justify-start pointer-events-none pl-2">
+                  {/* Decorative background image - optimized for mobile */}
+                  <div className="absolute inset-0 flex items-center justify-start pointer-events-none pl-1">
                     <img 
                       src={satoruDecoration} 
                       alt="" 
-                      className="w-40 h-40 object-contain opacity-10 dark:opacity-20"
+                      className="w-48 h-48 object-contain opacity-15 dark:opacity-25"
                       style={{ 
                         filter: 'hue-rotate(10deg) saturate(1.2)',
-                        transform: 'rotate(-5deg) scale(1.1)',
+                        transform: 'rotate(-5deg) scale(1.2)',
                         willChange: 'auto'
                       }}
                     />
                   </div>
                   
-                  <h1 className="relative z-10 text-xl leading-tight font-bold text-[#27254c] dark:text-foreground text-left pl-2">
+                  <h1 className="relative z-10 text-2xl sm:text-3xl leading-tight font-bold text-[#27254c] dark:text-foreground text-left pl-1">
                     <span className="inline-block">Simplify.</span>
                     <br />
                     <span className="text-[#564a94] dark:text-primary inline-block text-glow">Streamline.</span>
@@ -93,13 +93,14 @@ const Hero = ({ showArrow = false }: HeroProps) => {
                 </div>
               </div>
 
-              {/* Mobile Right - AI Image - takes 2 columns */}
-              <div className="col-span-2 relative group w-full">
-                <div className="relative overflow-hidden rounded-lg border border-primary/30 transition-colors duration-300 aspect-square">
+              {/* Mobile Right - AI Image - takes 3 columns for better proportions */}
+              <div className="col-span-3 relative group w-full">
+                <div className="relative overflow-hidden rounded-xl border border-primary/30 transition-colors duration-300 aspect-[4/5]">
                   <img 
                     src={aiTechnology} 
                     alt="Advanced AI technology interface with holographic displays and neural network visualizations" 
                     className="w-full h-full object-cover"
+                    loading="eager"
                     style={{ willChange: 'auto' }}
                   />
                   
@@ -107,25 +108,25 @@ const Hero = ({ showArrow = false }: HeroProps) => {
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/10" />
                 </div>
                 
-                {/* Simplified floating elements for mobile */}
-                <div className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full opacity-60" />
-                <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-accent rounded-full opacity-40" />
+                {/* Optimized floating elements for mobile */}
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-primary rounded-full opacity-70 animate-pulse" />
+                <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-accent rounded-full opacity-50" />
               </div>
             </div>
             
-            {/* Mobile: Description text */}
-            <div className="data-stream mt-4">
-              <p className="text-xs text-[#1f232f] dark:text-muted-foreground leading-relaxed">
+            {/* Mobile: Description text - better spacing and readability */}
+            <div className="data-stream mt-2">
+              <p className="text-sm sm:text-base text-[#1f232f] dark:text-muted-foreground leading-relaxed px-1">
                 Harness the power of advanced AI technology to transform your business operations and unlock unprecedented growth opportunities.
               </p>
             </div>
 
-            {/* Mobile: Buttons */}
-            <div className="flex flex-col sm:flex-row gap-2 justify-center mt-4">
-              <Button variant="cta" size="sm" className="text-xs font-bold px-4 py-2 hover-lift transition-smooth hover:shadow-glow-primary w-full sm:w-auto">
+            {/* Mobile: Buttons - optimized for touch */}
+            <div className="flex flex-col sm:flex-row gap-3 justify-center mt-2 px-1">
+              <Button variant="cta" size="default" className="text-sm font-bold px-6 py-3 hover-lift transition-smooth hover:shadow-glow-primary w-full sm:w-auto min-h-[44px]">
                 Book a Consultant
               </Button>
-              <Button variant="outline" size="sm" className="text-xs font-bold px-4 py-2 hover-lift holographic w-full sm:w-auto">
+              <Button variant="outline" size="default" className="text-sm font-bold px-6 py-3 hover-lift holographic w-full sm:w-auto min-h-[44px]">
                 Learn More
               </Button>
             </div>
