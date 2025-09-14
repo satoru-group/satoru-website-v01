@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import ContactSection from "@/components/ContactSection";
 import { Button } from "@/components/ui/button";
+import { Users, Rocket, Lightbulb, TrendingUp, Handshake } from "lucide-react";
 
 const About = () => {
   return (
@@ -145,32 +146,34 @@ const About = () => {
                 {
                   title: "People First, Always",
                   description: "We design solutions that empower people—owners, teams, and communities—not just systems.",
-                  icon: "👥"
+                  icon: Users
                 },
                 {
                   title: "Entrepreneurial Mindset", 
                   description: "We think like owners, not just advisors—because we are.",
-                  icon: "🚀"
+                  icon: Rocket
                 },
                 {
                   title: "Clarity Over Complexity",
                   description: "We simplify the path to growth—cutting through chaos with clear systems, processes, and priorities.",
-                  icon: "💡"
+                  icon: Lightbulb
                 },
                 {
                   title: "Build for Scale",
                   description: "We create operational foundations that evolve with the business, not just patch today's pain points.",
-                  icon: "📈"
+                  icon: TrendingUp
                 },
                 {
                   title: "Progress Through Partnerships",
                   description: "We don't consult from the sidelines—we embed, collaborate, and move businesses forward together.",
-                  icon: "🤝"
+                  icon: Handshake
                 }
               ].map((value, index) => (
                 <div key={index} className={`backdrop-modern bg-card/5 p-8 rounded-2xl border border-border/20 hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 group ${index === 4 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
                   <div className="space-y-6">
-                    <div className="text-4xl mb-4">{value.icon}</div>
+                    <div className="w-12 h-12 bg-gradient-primary rounded-2xl flex items-center justify-center mb-4">
+                      <value.icon className="w-6 h-6 text-primary-foreground" />
+                    </div>
                     <h4 className="text-lg sm:text-xl font-bold text-foreground leading-tight">
                       {value.title}
                     </h4>
