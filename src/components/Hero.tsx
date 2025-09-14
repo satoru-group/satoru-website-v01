@@ -59,62 +59,46 @@ const Hero = ({ showArrow = false }: HeroProps) => {
         <div className="absolute inset-0 scan-lines opacity-0 sm:opacity-30 pointer-events-none" />
         
         <div className="max-w-6xl mx-auto w-full flex flex-col justify-center flex-1">
-          {/* Mobile Layout - Normal scrolling experience */}
-          <div className="flex flex-col lg:hidden gap-8 mb-8 mt-16">
+          {/* Mobile Layout - Simple normal scrolling */}
+          <div className="flex flex-col lg:hidden gap-6 mb-6 mt-16">
             {/* Mobile: Text and decoration section */}
             <div className="text-center px-4">
               <div className="relative max-w-sm mx-auto">
-                {/* Decorative background image */}
+                {/* Decorative background image - simplified */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <img 
                     src={satoruDecoration} 
                     alt="" 
-                    className="w-60 h-60 object-contain opacity-15 dark:opacity-25"
-                    style={{ 
-                      filter: 'hue-rotate(10deg) saturate(1.2)',
-                      transform: 'rotate(-5deg) scale(1.2)',
-                      willChange: 'auto'
-                    }}
+                    className="w-48 h-48 object-contain opacity-15 dark:opacity-25"
                   />
                 </div>
                 
                 <h1 className="relative z-10 text-4xl sm:text-5xl leading-tight font-bold text-[#27254c] dark:text-foreground text-center mb-6">
                   <span className="inline-block">Simplify.</span>
                   <br />
-                  <span className="text-[#564a94] dark:text-primary inline-block text-glow">Streamline.</span>
+                  <span className="text-[#564a94] dark:text-primary inline-block">Streamline.</span>
                   <br />
-                  <span className="text-[#8b7dd6] dark:bg-gradient-primary dark:bg-clip-text dark:text-transparent inline-block glow">Succeed.</span>
+                  <span className="text-[#8b7dd6] dark:bg-gradient-primary dark:bg-clip-text dark:text-transparent inline-block">Succeed.</span>
                 </h1>
-                
-                {/* Holographic overlay */}
-                <div className="absolute inset-0 holographic opacity-50 pointer-events-none" />
               </div>
             </div>
 
             {/* Mobile: AI Image section */}
             <div className="px-4">
-              <div className="relative group w-full max-w-sm mx-auto">
-                <div className="relative overflow-hidden rounded-2xl border border-primary/30 transition-colors duration-300 aspect-[4/5] w-full">
+              <div className="w-full max-w-sm mx-auto">
+                <div className="relative overflow-hidden rounded-2xl border border-primary/30 aspect-[4/5] w-full">
                   <img 
                     src={aiTechnology} 
                     alt="Advanced AI technology interface with holographic displays and neural network visualizations" 
                     className="w-full h-full object-cover"
-                    loading="eager"
-                    style={{ willChange: 'auto' }}
                   />
-                  
-                  {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/10" />
                 </div>
-                
-                {/* Floating elements */}
-                <div className="absolute -top-1 -right-1 w-4 h-4 bg-primary rounded-full opacity-70 animate-pulse" />
-                <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-accent rounded-full opacity-50" />
               </div>
             </div>
             
             {/* Mobile: Description text */}
-            <div className="data-stream px-4">
+            <div className="px-4">
               <p className="text-lg sm:text-xl text-[#1f232f] dark:text-muted-foreground leading-relaxed text-center max-w-md mx-auto">
                 Harness the power of advanced AI technology to transform your business operations and unlock unprecedented growth opportunities.
               </p>
@@ -122,10 +106,10 @@ const Hero = ({ showArrow = false }: HeroProps) => {
 
             {/* Mobile: Buttons */}
             <div className="flex flex-col gap-4 px-4 max-w-sm mx-auto w-full">
-              <Button variant="cta" size="lg" className="text-lg font-bold px-8 py-6 hover-lift transition-smooth hover:shadow-glow-primary w-full min-h-[56px]">
+              <Button variant="cta" size="lg" className="text-lg font-bold px-8 py-6 w-full min-h-[56px]">
                 Book a Consultant
               </Button>
-              <Button variant="outline" size="lg" className="text-lg font-bold px-8 py-6 hover-lift holographic w-full min-h-[56px]">
+              <Button variant="outline" size="lg" className="text-lg font-bold px-8 py-6 w-full min-h-[56px]">
                 Learn More
               </Button>
             </div>
