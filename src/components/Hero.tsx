@@ -29,7 +29,7 @@ const Hero = ({ showArrow = false }: HeroProps) => {
   ];
 
   return (
-    <section className="relative w-full h-full flex flex-col bg-background overflow-hidden pt-[72px] sm:pt-[80px] lg:pt-[88px]">
+    <section className="relative w-full h-full flex flex-col bg-background overflow-hidden pt-[64px] sm:pt-[68px] lg:pt-[72px]">
       {/* Full viewport container accounting for fixed header - exact header height */}
       <div className="flex-1 flex flex-col justify-center px-3 sm:px-4 lg:px-6 py-2 sm:py-3 lg:py-4 min-h-0">
         {/* Consistent Background Patterns */}
@@ -59,9 +59,9 @@ const Hero = ({ showArrow = false }: HeroProps) => {
         
         <div className="max-w-6xl mx-auto w-full flex flex-col justify-center flex-1">
           {/* Main Hero Content */}
-          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 lg:gap-8 items-center mb-3 lg:mb-6">
+          <div className="grid grid-cols-2 gap-4 lg:gap-8 items-center mb-3 lg:mb-6">
             {/* Left Content */}
-            <div className="space-y-3 sm:space-y-4 lg:space-y-5 text-center lg:text-left order-2 lg:order-1">
+            <div className="space-y-3 sm:space-y-4 lg:space-y-5 text-left order-1">
               <div className="space-y-2 sm:space-y-3 lg:space-y-4">
                 <div className="relative">
                   {/* Decorative background image */}
@@ -107,7 +107,7 @@ const Hero = ({ showArrow = false }: HeroProps) => {
             </div>
 
             {/* Right Content - AI Image */}
-            <div className="relative order-1 lg:order-2 group w-full max-w-xs sm:max-w-sm lg:max-w-none mx-auto">
+            <div className="relative order-2 group w-full max-w-xs sm:max-w-sm lg:max-w-none mx-auto">
               <div className="relative overflow-hidden rounded-lg lg:rounded-xl shadow-glow-cyan border-2 border-primary/30 hover:border-primary/50 transition-all duration-500 group-hover:shadow-glow-purple scan-lines">
                 <img 
                   src={aiTechnology} 
