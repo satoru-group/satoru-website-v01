@@ -21,9 +21,20 @@ const ClientLogos = () => {
         {mockLogos.map((logo) => (
           <div
             key={`first-${logo.id}`}
-            className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-primary/30 bg-card/50 backdrop-blur-sm flex items-center justify-center hover:border-primary/60 transition-colors duration-300 shadow-glow-cyan"
+            className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 backdrop-blur-sm flex items-center justify-center hover:border-opacity-80 transition-colors duration-300"
+            style={{
+              borderColor: '#564a94',
+              backgroundColor: '#f8fafc',
+              boxShadow: '0 0 20px rgba(86, 74, 148, 0.3)'
+            }}
           >
-            <span className="text-xl sm:text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+            <span className="text-xl sm:text-2xl font-bold"
+                  style={{ 
+                    background: 'linear-gradient(135deg, #564a94 0%, #f97316 100%)',
+                    backgroundClip: 'text',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent'
+                  }}>
               {logo.letter}
             </span>
           </div>
@@ -33,9 +44,20 @@ const ClientLogos = () => {
         {mockLogos.map((logo) => (
           <div
             key={`second-${logo.id}`}
-            className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-primary/30 bg-card/50 backdrop-blur-sm flex items-center justify-center hover:border-primary/60 transition-colors duration-300 shadow-glow-cyan"
+            className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 backdrop-blur-sm flex items-center justify-center hover:border-opacity-80 transition-colors duration-300"
+            style={{
+              borderColor: '#564a94',
+              backgroundColor: '#f8fafc',
+              boxShadow: '0 0 20px rgba(86, 74, 148, 0.3)'
+            }}
           >
-            <span className="text-xl sm:text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+            <span className="text-xl sm:text-2xl font-bold"
+                  style={{ 
+                    background: 'linear-gradient(135deg, #564a94 0%, #f97316 100%)',
+                    backgroundClip: 'text',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent'
+                  }}>
               {logo.letter}
             </span>
           </div>

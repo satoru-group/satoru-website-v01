@@ -43,12 +43,15 @@ const LoadingPage = () => {
         {[...Array(8)].map((_, i) => (
           <div 
             key={i}
-            className="absolute rounded-full bg-gradient-primary opacity-20 animate-orb-float"
+            className="absolute rounded-full opacity-20 animate-orb-float"
             style={{
               width: `${20 + Math.random() * 40}px`,
               height: `${20 + Math.random() * 40}px`,
               left: `${Math.random() * 90}%`,
               top: `${Math.random() * 90}%`,
+              background: i % 2 === 0 
+                ? 'linear-gradient(135deg, #564a94, #f97316)'
+                : 'linear-gradient(135deg, #f97316, #564a94)',
               animationDelay: `${Math.random() * 5}s`,
               animationDuration: `${8 + Math.random() * 6}s`
             }}
@@ -61,8 +64,16 @@ const LoadingPage = () => {
         {/* Floating logo/brand */}
         <div className="relative">
           <div className="w-20 h-20 mx-auto mb-6 relative animate-float-subtle">
-            <div className="w-full h-full bg-gradient-primary rounded-2xl shadow-glow-primary flex items-center justify-center">
-              <span className="text-2xl font-bold text-primary-foreground">S</span>
+            <div className="w-full h-full rounded-2xl shadow-glow-primary flex items-center justify-center relative overflow-hidden" 
+                 style={{ 
+                   background: 'linear-gradient(135deg, #564a94 0%, #f97316 100%)',
+                   boxShadow: '0 0 30px rgba(86, 74, 148, 0.4)'
+                 }}>
+              <span className="text-2xl font-bold" style={{ color: '#ffffff' }}>S</span>
+              
+              {/* Accent elements */}
+              <div className="absolute top-1 right-1 w-2 h-2 rounded-full" style={{ backgroundColor: '#f8fafc' }}></div>
+              <div className="absolute bottom-1 left-1 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#f97316', opacity: 0.8 }}></div>
             </div>
             
             {/* Orbiting elements */}
@@ -87,27 +98,38 @@ const LoadingPage = () => {
             </div>
           </div>
           
-          <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent animate-fade-in">
+          <h2 className="text-2xl sm:text-3xl font-bold animate-fade-in"
+              style={{ 
+                background: 'linear-gradient(135deg, #564a94 0%, #f97316 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}>
             Satoru
           </h2>
-          <p className="text-muted-foreground animate-fade-in" style={{animationDelay: '0.5s'}}>
+          <p className="animate-fade-in" style={{animationDelay: '0.5s', color: '#564a94'}}>
             AI-Powered Business Consulting
           </p>
         </div>
 
         {/* Progress bar */}
         <div className="w-64 mx-auto space-y-4">
-          <div className="relative h-2 bg-muted/30 rounded-full overflow-hidden backdrop-blur-sm">
+          <div className="relative h-2 rounded-full overflow-hidden backdrop-blur-sm"
+               style={{ backgroundColor: '#f8fafc' }}>
             <div 
-              className="absolute left-0 top-0 h-full bg-gradient-primary rounded-full transition-all duration-300 shadow-glow-primary"
-              style={{ width: `${progress}%` }}
+              className="absolute left-0 top-0 h-full rounded-full transition-all duration-300"
+              style={{ 
+                width: `${progress}%`,
+                background: 'linear-gradient(90deg, #564a94 0%, #f97316 100%)',
+                boxShadow: '0 0 15px rgba(249, 115, 22, 0.5)'
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-slide-left opacity-50" />
           </div>
           
-          <div className="flex justify-between items-center text-sm text-muted-foreground">
-            <span>Loading...</span>
-            <span className="tabular-nums">{progress}%</span>
+          <div className="flex justify-between items-center text-sm">
+            <span style={{ color: '#564a94' }}>Loading...</span>
+            <span className="tabular-nums" style={{ color: '#564a94' }}>{progress}%</span>
           </div>
         </div>
 
@@ -116,8 +138,9 @@ const LoadingPage = () => {
           {[...Array(3)].map((_, i) => (
             <div 
               key={i}
-              className="w-2 h-2 bg-primary rounded-full animate-pulse"
+              className="w-2 h-2 rounded-full animate-pulse"
               style={{
+                backgroundColor: i === 1 ? '#f97316' : '#564a94',
                 animationDelay: `${i * 0.3}s`,
                 animationDuration: '1.5s'
               }}
