@@ -1,12 +1,15 @@
 import Header from "@/components/Header";
 import ScrollingSections from "@/components/ScrollingSections";
+import PageTransition from "@/components/PageTransition";
 
 const Index = () => {
   return (
-    <div className="relative ai-bg neural-bg">
-      <Header />
-      <ScrollingSections />
-    </div>
+    <PageTransition>
+      <div className="relative ai-bg neural-bg">
+        <Header />
+        <ScrollingSections />
+      </div>
+    </PageTransition>
   );
 };
 

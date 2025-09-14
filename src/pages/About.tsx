@@ -3,10 +3,12 @@ import ContactSection from "@/components/ContactSection";
 import AIBackground from "@/components/AIBackground";
 import { Button } from "@/components/ui/button";
 import { Users, Rocket, Lightbulb, TrendingUp, Handshake } from "lucide-react";
+import PageTransition from "@/components/PageTransition";
 
 const About = () => {
   return (
-    <div className="relative font-body ai-bg neural-bg">
+    <PageTransition>
+      <div className="relative font-body ai-bg neural-bg">
       <Header />
       
       {/* Main About Content */}
@@ -353,7 +355,8 @@ const About = () => {
       </main>
       
       <ContactSection />
-    </div>
+      </div>
+    </PageTransition>
   );
 };
 

@@ -3,10 +3,12 @@ import AIBackground from "@/components/AIBackground";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import PageTransition from "@/components/PageTransition";
 
 const Contact = () => {
   return (
-    <div className="relative font-body ai-bg neural-bg">
+    <PageTransition>
+      <div className="relative font-body ai-bg neural-bg">
       <Header />
       
       {/* Main Contact Content */}
@@ -187,7 +189,8 @@ const Contact = () => {
           </div>
         </section>
       </main>
-    </div>
+      </div>
+    </PageTransition>
   );
 };
 

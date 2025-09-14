@@ -2,10 +2,12 @@ import Header from "@/components/Header";
 import ContactSection from "@/components/ContactSection";
 import AIBackground from "@/components/AIBackground";
 import { Button } from "@/components/ui/button";
+import PageTransition from "@/components/PageTransition";
 
 const Services = () => {
   return (
-    <div className="relative font-body ai-bg neural-bg">
+    <PageTransition>
+      <div className="relative font-body ai-bg neural-bg">
       <Header />
       
       {/* Main Services Content */}
@@ -195,7 +197,8 @@ const Services = () => {
       </main>
       
       <ContactSection />
-    </div>
+      </div>
+    </PageTransition>
   );
 };
 
