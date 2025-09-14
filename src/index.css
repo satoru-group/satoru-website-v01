@@ -73,53 +73,53 @@ All colors MUST be HSL.
   }
 
   .light {
-    /* Subtle Professional Light Mode */
-    --background: 0 0% 98%; /* Clean white */
-    --foreground: 210 15% 15%; /* Soft dark */
+    /* Warm Purple Light Mode */
+    --background: 0 0% 99%; /* Crisp white */
+    --foreground: 240 15% 8%; /* Rich dark for contrast */
 
     --card: 0 0% 100%; /* Pure white cards */
-    --card-foreground: 210 15% 15%;
+    --card-foreground: 240 15% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 15% 15%;
+    --popover-foreground: 240 15% 8%;
 
-    --primary: 215 25% 35%; /* Muted professional blue */
+    --primary: 280 60% 50%; /* Warm purple */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 8% 92%; /* Very light gray */
-    --secondary-foreground: 210 15% 15%;
+    --secondary: 320 20% 95%; /* Light warm purple */
+    --secondary-foreground: 240 15% 8%;
 
-    --muted: 220 6% 94%;
-    --muted-foreground: 210 10% 50%;
+    --muted: 320 15% 96%;
+    --muted-foreground: 240 10% 35%;
 
-    --accent: 25 60% 45%; /* Warm AI amber */
+    --accent: 300 65% 55%; /* Vibrant warm purple */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 355 40% 45%;
+    --destructive: 355 70% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 8% 88%;
-    --input: 220 8% 90%;
-    --ring: 215 25% 35%;
+    --border: 320 20% 85%;
+    --input: 320 15% 92%;
+    --ring: 280 60% 50%;
 
-    /* Subtle Success & Warning */
-    --success: 155 35% 35%;
+    /* Warm Success & Warning */
+    --success: 155 60% 40%;
     --success-foreground: 0 0% 100%;
-    --warning: 25 60% 50;
+    --warning: 25 60% 50%;
     --warning-foreground: 0 0% 100%;
 
-    /* Subtle gradients for light mode */
-    --gradient-primary: linear-gradient(135deg, hsl(215 25% 35%), hsl(25 60% 45%), hsl(210 20% 30%));
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 98%), hsl(220 8% 95%));
-    --gradient-glow: linear-gradient(135deg, hsl(215 25% 35% / 0.04), hsl(25 60% 45% / 0.04));
-    --gradient-ai: linear-gradient(135deg, hsl(215 25% 35% / 0.08), hsl(25 60% 45% / 0.08));
+    /* Warm purple gradients for light mode */
+    --gradient-primary: linear-gradient(135deg, hsl(280 60% 50%), hsl(300 65% 55%), hsl(320 50% 45%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 99%), hsl(320 20% 97%));
+    --gradient-glow: linear-gradient(135deg, hsl(280 60% 50% / 0.08), hsl(300 65% 55% / 0.08));
+    --gradient-ai: linear-gradient(135deg, hsl(280 60% 50% / 0.12), hsl(300 65% 55% / 0.12));
     
-    /* Subtle shadows and glows */
-    --shadow-elegant: 0 10px 40px -12px hsl(215 25% 35% / 0.1);
-    --shadow-soft: 0 4px 20px -4px hsl(215 25% 35% / 0.06);
-    --glow-cyan: 0 0 20px hsl(215 25% 35% / 0.12);
-    --glow-purple: 0 0 20px hsl(25 60% 45% / 0.15);
-    --glow-ai: 0 0 40px hsl(215 25% 35% / 0.08), 0 0 80px hsl(25 60% 45% / 0.06);
+    /* Enhanced shadows and glows */
+    --shadow-elegant: 0 10px 40px -12px hsl(280 60% 50% / 0.2);
+    --shadow-soft: 0 4px 20px -4px hsl(280 60% 50% / 0.12);
+    --glow-cyan: 0 0 20px hsl(280 60% 50% / 0.2);
+    --glow-purple: 0 0 20px hsl(300 65% 55% / 0.25);
+    --glow-ai: 0 0 40px hsl(280 60% 50% / 0.15), 0 0 80px hsl(300 65% 55% / 0.1);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
