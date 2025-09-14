@@ -58,44 +58,61 @@ const Hero = ({ showArrow = false }: HeroProps) => {
         <div className="absolute inset-0 scan-lines opacity-30 pointer-events-none" />
         
         <div className="max-w-6xl mx-auto w-full flex flex-col justify-center flex-1">
-          {/* Main Hero Content - Side by side layout on all devices */}
-          <div className="grid grid-cols-2 gap-2 sm:gap-4 lg:gap-8 items-start mb-4 lg:mb-6">
-            {/* Left Content - Heading and Decoration */}
-            <div className="space-y-2 sm:space-y-3 lg:space-y-4 text-left">
-              <div className="relative">
-                {/* Decorative background image */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <img 
-                    src={satoruDecoration} 
-                    alt="" 
-                    className="w-24 h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 lg:w-60 lg:h-60 xl:w-72 xl:h-72 object-contain opacity-10 dark:opacity-20 animate-float-subtle"
-                    style={{ 
-                      filter: 'hue-rotate(10deg) saturate(1.2)',
-                      transform: 'rotate(-5deg) scale(1.1)'
-                    }}
-                  />
+          {/* Main Hero Content */}
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 lg:gap-8 items-center mb-3 lg:mb-6">
+            {/* Left Content */}
+            <div className="space-y-3 sm:space-y-4 lg:space-y-5 text-center lg:text-left order-2 lg:order-1">
+              <div className="space-y-2 sm:space-y-3 lg:space-y-4">
+                <div className="relative">
+                  {/* Decorative background image */}
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <img 
+                      src={satoruDecoration} 
+                      alt="" 
+                      className="w-48 h-48 sm:w-60 sm:h-60 lg:w-72 lg:h-72 object-contain opacity-10 dark:opacity-20 animate-float-subtle"
+                      style={{ 
+                        filter: 'hue-rotate(10deg) saturate(1.2)',
+                        transform: 'rotate(-5deg) scale(1.1)'
+                      }}
+                    />
+                  </div>
+                  
+                  <h1 className="relative z-10 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#27254c] dark:text-foreground leading-tight">
+                    <span className="inline-block animate-float-subtle">Simplify.</span>
+                    <br />
+                    <span className="text-[#564a94] dark:text-primary inline-block animate-float-dynamic text-glow">Streamline.</span>
+                    <br />
+                    <span className="text-[#8b7dd6] dark:bg-gradient-primary dark:bg-clip-text dark:text-transparent inline-block animate-float-subtle glow">Succeed.</span>
+                  </h1>
+                  
+                  {/* Holographic overlay */}
+                  <div className="absolute inset-0 holographic opacity-50 pointer-events-none" />
                 </div>
-                
-                <h1 className="relative z-10 text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-4xl 2xl:text-5xl font-bold text-[#27254c] dark:text-foreground leading-tight">
-                  <span className="inline-block animate-float-subtle">Simplify.</span>
-                  <br />
-                  <span className="text-[#564a94] dark:text-primary inline-block animate-float-dynamic text-glow">Streamline.</span>
-                  <br />
-                  <span className="text-[#8b7dd6] dark:bg-gradient-primary dark:bg-clip-text dark:text-transparent inline-block animate-float-subtle glow">Succeed.</span>
-                </h1>
-                
-                {/* Holographic overlay */}
-                <div className="absolute inset-0 holographic opacity-50 pointer-events-none" />
+              </div>
+              
+              <div className="data-stream">
+                <p className="text-xs sm:text-sm lg:text-base text-[#1f232f] dark:text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0 px-1">
+                  Harness the power of advanced AI technology to transform your business operations and unlock unprecedented growth opportunities.
+                </p>
+              </div>
+
+              <div className="flex flex-row gap-3 justify-center lg:justify-start px-2 sm:px-0">
+                <Button variant="cta" size="sm" className="text-xs font-bold px-3 py-1.5 hover-lift transition-smooth hover:shadow-glow-primary">
+                  Book a Consultant
+                </Button>
+                <Button variant="outline" size="sm" className="text-xs font-bold px-3 py-1.5 hover-lift holographic">
+                  Learn More
+                </Button>
               </div>
             </div>
 
             {/* Right Content - AI Image */}
-            <div className="relative group w-full">
-              <div className="relative overflow-hidden rounded-lg lg:rounded-xl shadow-glow-cyan border border-primary/30 hover:border-primary/50 transition-all duration-500 group-hover:shadow-glow-purple scan-lines aspect-square">
+            <div className="relative order-1 lg:order-2 group w-full -mx-4 sm:mx-auto sm:max-w-sm lg:max-w-none">
+              <div className="relative overflow-hidden rounded-none sm:rounded-lg lg:rounded-xl shadow-glow-cyan border-0 sm:border-2 border-primary/30 hover:border-primary/50 transition-all duration-500 group-hover:shadow-glow-purple scan-lines aspect-square sm:aspect-auto">
                 <img 
                   src={aiTechnology} 
                   alt="Advanced AI technology interface with holographic displays and neural network visualizations" 
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:translate-y-[-10%] group-hover:scale-110"
+                  className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:translate-y-[-10%] group-hover:scale-110"
                 />
                 
                 {/* Paper scroll effect overlay */}
@@ -109,27 +126,10 @@ const Hero = ({ showArrow = false }: HeroProps) => {
               </div>
               
               {/* Floating AI elements */}
-              <div className="absolute -top-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 lg:w-4 lg:h-4 bg-gradient-primary rounded-full animate-digital-pulse opacity-80" />
-              <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 sm:w-2 sm:h-2 lg:w-3 lg:h-3 bg-accent rounded-full animate-float-dynamic opacity-60" />
-              <div className="absolute top-1/2 -left-1 sm:-left-2 lg:-left-3 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full animate-digital-pulse opacity-70" />
+              <div className="absolute -top-1 -right-1 w-3 h-3 sm:w-4 sm:h-4 bg-gradient-primary rounded-full animate-digital-pulse opacity-80" />
+              <div className="absolute -bottom-1 -left-1 w-2 h-2 sm:w-3 sm:h-3 bg-accent rounded-full animate-float-dynamic opacity-60" />
+              <div className="absolute top-1/2 -left-2 sm:-left-3 w-2 h-2 bg-primary rounded-full animate-digital-pulse opacity-70" />
             </div>
-          </div>
-
-          {/* Description Text */}
-          <div className="data-stream mb-3 lg:mb-4">
-            <p className="text-xs sm:text-sm lg:text-base text-[#1f232f] dark:text-muted-foreground leading-relaxed text-center max-w-2xl mx-auto px-1">
-              Harness the power of advanced AI technology to transform your business operations and unlock unprecedented growth opportunities.
-            </p>
-          </div>
-
-          {/* Buttons */}
-          <div className="flex flex-row gap-3 justify-center mb-4 lg:mb-6 px-2 sm:px-0">
-            <Button variant="cta" size="sm" className="text-xs font-bold px-3 py-1.5 hover-lift transition-smooth hover:shadow-glow-primary">
-              Book a Consultant
-            </Button>
-            <Button variant="outline" size="sm" className="text-xs font-bold px-3 py-1.5 hover-lift holographic">
-              Learn More
-            </Button>
           </div>
 
           {/* AI Stats Section - More compact */}
