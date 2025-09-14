@@ -193,6 +193,8 @@ All colors MUST be HSL.
     --glow-primary: 0 0 24px hsl(200 45% 45% / 0.3);
     --glow-accent: 0 0 24px hsl(350 50% 60% / 0.25);
     --glow-ai: 0 0 32px hsl(350 50% 60% / 0.2);
+    --glow-cyan: 0 0 20px hsl(200 45% 45% / 0.25);
+    --glow-purple: 0 0 20px hsl(350 50% 60% / 0.2);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
