@@ -5,25 +5,16 @@ import { Textarea } from "@/components/ui/textarea";
 const ContactSection = () => {
   return (
     <section className="w-full h-screen bg-secondary/30 flex items-center justify-center relative overflow-hidden">
-      {/* Contact grid background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <svg className="w-full h-full" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="contact-grid" width="60" height="60" patternUnits="userSpaceOnUse">
-              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" strokeWidth="1"/>
-              <circle cx="30" cy="30" r="1.5" fill="currentColor" opacity="0.4"/>
-            </pattern>
-          </defs>
-          <rect width="60" height="60" fill="url(#contact-grid)" />
-        </svg>
-      </div>
+      {/* Consistent Background Patterns */}
+      <div className="absolute inset-0 tech-grid opacity-10 dark:opacity-15 pointer-events-none" />
+      <div className="absolute inset-0 light-dots-bg opacity-15 dark:opacity-0 pointer-events-none" />
       
       <div className="max-w-4xl mx-auto text-center space-y-8 sm:space-y-12 relative z-10 px-4 sm:px-6 lg:px-12">
-        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-foreground dark:bg-gradient-primary dark:bg-clip-text dark:text-transparent mb-6 sm:mb-8">
+        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6 sm:mb-8">
           Get In Touch
         </h2>
         
-        <p className="text-lg sm:text-xl text-foreground/80 dark:text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-12 px-4">
+        <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-12 px-4">
           Ready to transform your business operations? Let&apos;s discuss how we can help you streamline workflows and drive growth.
         </p>
         

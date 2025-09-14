@@ -28,9 +28,10 @@ const Hero = ({ showArrow = false }: HeroProps) => {
   ];
 
   return (
-    <section className="relative min-h-screen bg-background px-4 sm:px-6 lg:px-12 py-16 sm:py-20 pt-24 sm:pt-28 lg:pt-32 z-20 tech-grid light-geometric-bg">
-      {/* Light Mode Subtle Pattern Overlay */}
-      <div className="absolute inset-0 light-dots-bg opacity-50 dark:opacity-0 pointer-events-none" />
+    <section className="relative min-h-screen bg-background px-4 sm:px-6 lg:px-12 py-16 sm:py-20 pt-24 sm:pt-28 lg:pt-32 z-20">
+      {/* Consistent Background Patterns */}
+      <div className="absolute inset-0 tech-grid opacity-30 dark:opacity-20 pointer-events-none" />
+      <div className="absolute inset-0 light-geometric-bg opacity-20 dark:opacity-0 pointer-events-none" />
       
       {/* AI Particle System */}
       <div className="particles pointer-events-none">

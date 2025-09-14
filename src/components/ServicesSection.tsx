@@ -82,18 +82,9 @@ const ServicesSection = ({ showArrow = false }: ServicesSectionProps) => {
   };
   return (
     <section ref={sectionRef} className="w-full h-screen bg-background flex items-center justify-center relative overflow-hidden">
-      {/* Tech circuit background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <svg className="w-full h-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="circuit" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M20 0v40M0 20h40M10 10h20v20H10z" fill="none" stroke="currentColor" strokeWidth="0.5"/>
-              <circle cx="20" cy="20" r="2" fill="currentColor" opacity="0.3"/>
-            </pattern>
-          </defs>
-          <rect width="200" height="200" fill="url(#circuit)" />
-        </svg>
-      </div>
+      {/* Consistent Background Patterns */}
+      <div className="absolute inset-0 circuit-bg opacity-15 dark:opacity-25 pointer-events-none" />
+      <div className="absolute inset-0 light-geometric-bg opacity-15 dark:opacity-0 pointer-events-none" />
       
       <div className="max-w-6xl mx-auto text-center space-y-8 sm:space-y-12 relative z-10 px-4 sm:px-6 lg:px-12">
         <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6 sm:mb-8">

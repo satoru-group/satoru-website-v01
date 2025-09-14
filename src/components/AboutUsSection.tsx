@@ -7,9 +7,10 @@ interface AboutUsSectionProps {
 
 const AboutUsSection = ({ showArrow = false }: AboutUsSectionProps) => {
   return (
-    <section className="w-full h-screen bg-background flex items-center justify-center relative overflow-hidden light-geometric-bg light-dots-bg">
-      {/* Light Mode Pattern Enhancement */}
-      <div className="absolute inset-0 circuit-bg opacity-20 dark:opacity-40 pointer-events-none" />
+    <section className="w-full h-screen bg-background flex items-center justify-center relative overflow-hidden">
+      {/* Consistent Background Patterns */}
+      <div className="absolute inset-0 neural-bg opacity-15 dark:opacity-25 pointer-events-none" />
+      <div className="absolute inset-0 light-dots-bg opacity-20 dark:opacity-0 pointer-events-none" />
       
       {/* Large Microchip with Electric Animation Background */}
       <div className="absolute inset-0 pointer-events-none">
@@ -117,12 +118,13 @@ const AboutUsSection = ({ showArrow = false }: AboutUsSectionProps) => {
         </svg>
       </div>
       
-      <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8 relative z-10 px-4 sm:px-6 lg:px-12">        
+        {/* Standardized Spacing and Typography */}
+        <div className="max-w-4xl mx-auto text-center space-y-8 sm:space-y-12 relative z-10 px-4 sm:px-6 lg:px-12">
         <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6 sm:mb-8">
           Who We Are?
         </h2>
         
-        <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
+        <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-12 px-4">
           Satoru Consulting is an operations and IT consulting firm that helps small and mid-sized businesses streamline workflows, optimize systems, and drive efficiency. We act as an extension of our clients' teams, providing fractional operations and IT leadership to support growth, scalability, and long-term success.
         </p>
         
