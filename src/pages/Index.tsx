@@ -5,7 +5,7 @@ import PageTransition from "@/components/PageTransition";
 const Index = () => {
   return (
     <PageTransition>
-      <div className="relative ai-bg neural-bg">
+      <div className="relative ai-bg neural-bg light-geometric-bg">
         <Header />
         <ScrollingSections />
       </div>

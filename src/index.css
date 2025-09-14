@@ -351,6 +351,12 @@ All colors MUST be HSL.
     z-index: -1;
   }
 
+  /* Light Mode Enhanced AI Background */
+  .light .ai-bg::before {
+    background: var(--gradient-glow);
+    opacity: 0.4;
+  }
+
   .ai-bg::after {
     content: '';
     position: absolute;
@@ -361,6 +367,11 @@ All colors MUST be HSL.
     background: radial-gradient(circle, hsl(var(--primary) / 0.12) 0%, transparent 70%);
     animation: ai-rotate 20s linear infinite;
     z-index: -1;
+  }
+
+  /* Light Mode Enhanced AI Background After */
+  .light .ai-bg::after {
+    background: radial-gradient(circle, hsl(var(--primary) / 0.06) 0%, transparent 70%);
   }
 
   /* Neural Network Background Pattern */
@@ -374,6 +385,18 @@ All colors MUST be HSL.
     animation: neural-drift 30s linear infinite;
   }
 
+  /* Light Mode Enhanced Neural Pattern */
+  .light .neural-bg {
+    background-image: 
+      radial-gradient(3px 3px at 20px 30px, hsl(var(--primary) / 0.15), transparent),
+      radial-gradient(2px 2px at 40px 70px, hsl(var(--accent) / 0.12), transparent),
+      radial-gradient(2px 2px at 90px 40px, hsl(var(--primary) / 0.08), transparent),
+      radial-gradient(1px 1px at 130px 80px, hsl(var(--accent) / 0.06), transparent),
+      linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(0deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 150px 100px, 150px 100px, 150px 100px, 150px 100px, 40px 40px, 40px 40px;
+  }
+
   /* Circuit Pattern */
   .circuit-bg {
     background-image: 
@@ -382,6 +405,34 @@ All colors MUST be HSL.
       linear-gradient(45deg, hsl(var(--accent) / 0.15) 1px, transparent 1px);
     background-size: 50px 50px, 50px 50px, 25px 25px;
     animation: circuit-flow 15s ease-in-out infinite;
+  }
+
+  /* Light Mode Enhanced Circuit Pattern */
+  .light .circuit-bg {
+    background-image: 
+      linear-gradient(90deg, hsl(var(--border) / 0.4) 1px, transparent 1px),
+      linear-gradient(180deg, hsl(var(--border) / 0.4) 1px, transparent 1px),
+      linear-gradient(45deg, hsl(var(--primary) / 0.08) 1px, transparent 1px),
+      radial-gradient(circle at 25px 25px, hsl(var(--accent) / 0.05) 2px, transparent 2px);
+    background-size: 50px 50px, 50px 50px, 25px 25px, 50px 50px;
+  }
+
+  /* Light Mode Geometric Pattern */
+  .light-geometric-bg {
+    background-image: 
+      linear-gradient(30deg, transparent 24%, hsl(var(--border) / 0.2) 25%, hsl(var(--border) / 0.2) 26%, transparent 27%, transparent 74%, hsl(var(--border) / 0.2) 75%, hsl(var(--border) / 0.2) 76%, transparent 77%),
+      linear-gradient(60deg, transparent 24%, hsl(var(--primary) / 0.05) 25%, hsl(var(--primary) / 0.05) 26%, transparent 27%, transparent 74%, hsl(var(--primary) / 0.05) 75%, hsl(var(--primary) / 0.05) 76%, transparent 77%);
+    background-size: 60px 60px;
+    animation: geometric-shift 25s linear infinite;
+  }
+
+  /* Light Mode Dot Matrix Pattern */
+  .light-dots-bg {
+    background-image: 
+      radial-gradient(circle at 1px 1px, hsl(var(--primary) / 0.08) 1px, transparent 0),
+      radial-gradient(circle at 20px 20px, hsl(var(--accent) / 0.06) 1px, transparent 0);
+    background-size: 40px 40px, 60px 60px;
+    animation: dots-drift 20s linear infinite;
   }
 
   /* Modern floating animations */
@@ -495,6 +546,17 @@ All colors MUST be HSL.
     100% { transform: translate(-100px, -100px); }
   }
 
+  /* Light Mode Pattern Animations */
+  @keyframes geometric-shift {
+    0% { background-position: 0px 0px, 0px 0px; }
+    100% { background-position: 60px 60px, -60px -60px; }
+  }
+
+  @keyframes dots-drift {
+    0% { background-position: 0px 0px, 0px 0px; }
+    100% { background-position: 40px 40px, -60px -60px; }
+  }
+
   /* Glowing orb animations */
   @keyframes orb-float {
     0%, 100% { transform: translate(0px, 0px) scale(1); }
@@ -596,6 +658,15 @@ All colors MUST be HSL.
 
   .animate-slide-left {
     animation: slide-left 30s linear infinite;
+  }
+
+  /* Light Mode Pattern Animation Classes */
+  .animate-geometric-shift {
+    animation: geometric-shift 25s linear infinite;
+  }
+
+  .animate-dots-drift {
+    animation: dots-drift 20s linear infinite;
   }
 
   /* Water Animation Classes */

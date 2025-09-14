@@ -7,7 +7,10 @@ interface AboutUsSectionProps {
 
 const AboutUsSection = ({ showArrow = false }: AboutUsSectionProps) => {
   return (
-    <section className="w-full h-screen bg-background flex items-center justify-center relative overflow-hidden">
+    <section className="w-full h-screen bg-background flex items-center justify-center relative overflow-hidden light-geometric-bg light-dots-bg">
+      {/* Light Mode Pattern Enhancement */}
+      <div className="absolute inset-0 circuit-bg opacity-20 dark:opacity-40 pointer-events-none" />
+      
       {/* Large Microchip with Electric Animation Background */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Large Microchip Component */}
