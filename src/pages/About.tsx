@@ -19,8 +19,8 @@ const About = () => {
           
           <div className="max-w-6xl mx-auto text-center space-y-8 sm:space-y-12 relative z-10 px-4 sm:px-6 lg:px-12 py-16 sm:py-20">
             <div className="space-y-4 sm:space-y-6">
-              <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold bg-gradient-primary bg-clip-text text-transparent leading-tight">
-                About Satoru
+              <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold text-foreground leading-tight">
+                About <span className="text-primary">Satoru</span>
               </h1>
               <div className="w-16 sm:w-24 h-1 bg-gradient-primary mx-auto rounded-full shadow-glow-ai"></div>
               <p className="text-lg sm:text-2xl lg:text-3xl text-muted-foreground font-light leading-relaxed max-w-4xl mx-auto">
