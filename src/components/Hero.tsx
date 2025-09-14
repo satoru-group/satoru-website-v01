@@ -60,59 +60,56 @@ const Hero = ({ showArrow = false }: HeroProps) => {
         
         <div className="max-w-6xl mx-auto w-full flex flex-col justify-center flex-1">
           {/* Mobile Layout - Professional responsive design */}
-          <div className="flex flex-col lg:hidden space-y-8 mb-8 mt-8">
-            {/* Mobile: Main content container */}
-            <div className="px-6 space-y-8">
+          <div className="flex flex-col lg:hidden">
+            <div className="w-full max-w-md mx-auto px-4 space-y-12">
               
               {/* Mobile: Hero text section */}
-              <div className="text-center space-y-6">
-                <div className="relative">
-                  {/* Decorative background image - stable positioning */}
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-10 dark:opacity-20">
+              <div className="text-center space-y-8">
+                <div className="relative min-h-[280px] flex flex-col justify-center">
+                  {/* Decorative background image */}
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-15 dark:opacity-25">
                     <img 
                       src={satoruDecoration} 
                       alt="" 
-                      className="w-64 h-64 object-contain"
+                      className="w-48 h-48 object-contain"
                     />
                   </div>
                   
-                  <h1 className="relative z-10 text-5xl leading-[1.1] font-bold text-[#27254c] dark:text-foreground">
-                    <div className="mb-2">Simplify.</div>
-                    <div className="text-[#564a94] dark:text-primary mb-2">Streamline.</div>
+                  <h1 className="relative z-10 text-4xl sm:text-5xl font-bold leading-tight">
+                    <div className="text-[#27254c] dark:text-foreground mb-3">Simplify.</div>
+                    <div className="text-[#564a94] dark:text-primary mb-3">Streamline.</div>
                     <div className="text-[#8b7dd6] dark:bg-gradient-primary dark:bg-clip-text dark:text-transparent">Succeed.</div>
                   </h1>
                 </div>
                 
-                {/* Mobile: Description */}
-                <p className="text-xl text-[#1f232f] dark:text-muted-foreground leading-relaxed max-w-lg mx-auto">
+                <p className="text-lg sm:text-xl text-[#1f232f] dark:text-muted-foreground leading-relaxed px-2">
                   Harness the power of advanced AI technology to transform your business operations and unlock unprecedented growth opportunities.
                 </p>
               </div>
 
               {/* Mobile: AI Image section */}
-              <div className="flex justify-center">
-                <div className="w-full max-w-xs">
-                  <div className="relative overflow-hidden rounded-2xl border border-primary/30 aspect-[4/5]">
+              <div className="flex justify-center px-4">
+                <div className="w-full max-w-sm">
+                  <div className="relative overflow-hidden rounded-2xl border-2 border-primary/20 aspect-[3/4] shadow-lg">
                     <img 
                       src={aiTechnology} 
                       alt="Advanced AI technology interface with holographic displays and neural network visualizations" 
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/10" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/20" />
                   </div>
                 </div>
               </div>
 
               {/* Mobile: Action buttons */}
-              <div className="space-y-4 max-w-sm mx-auto">
-                <Button variant="cta" size="lg" className="w-full text-xl font-bold py-6 px-8 min-h-[60px]">
+              <div className="space-y-4 w-full px-2">
+                <Button variant="cta" size="lg" className="w-full text-lg font-semibold h-14 rounded-xl">
                   Book a Consultant
                 </Button>
-                <Button variant="outline" size="lg" className="w-full text-xl font-bold py-6 px-8 min-h-[60px]">
+                <Button variant="outline" size="lg" className="w-full text-lg font-semibold h-14 rounded-xl">
                   Learn More
                 </Button>
               </div>
-              
             </div>
           </div>
 
