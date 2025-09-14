@@ -62,10 +62,10 @@ const Hero = ({ showArrow = false }: HeroProps) => {
           {/* Mobile Layout - Optimized for professional mobile experience */}
           <div className="flex flex-col lg:hidden gap-6 mb-6 mt-16">
             {/* Mobile: Top row - Heading on left, Image on right */}
-            <div className="grid grid-cols-7 gap-4 items-start">
+            <div className="grid grid-cols-7 gap-4 items-center">
               {/* Mobile Left - Heading and decoration - takes 4 columns for better text space */}
-              <div className="col-span-4 text-left">
-                <div className="relative">
+              <div className="col-span-4 text-left flex items-center">
+                <div className="relative w-full">
                   {/* Decorative background image - optimized for mobile */}
                   <div className="absolute inset-0 flex items-center justify-start pointer-events-none pl-1">
                     <img 
@@ -94,8 +94,8 @@ const Hero = ({ showArrow = false }: HeroProps) => {
               </div>
 
               {/* Mobile Right - AI Image - takes 3 columns for better proportions */}
-              <div className="col-span-3 relative group w-full">
-                <div className="relative overflow-hidden rounded-xl border border-primary/30 transition-colors duration-300 aspect-[4/5]">
+              <div className="col-span-3 relative group w-full flex items-center">
+                <div className="relative overflow-hidden rounded-xl border border-primary/30 transition-colors duration-300 aspect-[4/5] w-full">
                   <img 
                     src={aiTechnology} 
                     alt="Advanced AI technology interface with holographic displays and neural network visualizations" 
