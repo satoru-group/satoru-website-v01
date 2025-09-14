@@ -66,11 +66,13 @@ export default {
       backgroundImage: {
         'gradient-primary': 'var(--gradient-primary)',
         'gradient-subtle': 'var(--gradient-subtle)',
+        'gradient-accent': 'var(--gradient-accent)',
         'gradient-glow': 'var(--gradient-glow)',
       },
       boxShadow: {
         'elegant': 'var(--shadow-elegant)',
         'soft': 'var(--shadow-soft)',
+        'warm': 'var(--shadow-warm)',
         'glow-primary': 'var(--glow-primary)',
         'glow-accent': 'var(--glow-accent)',
       },
