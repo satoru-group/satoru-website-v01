@@ -31,7 +31,99 @@ const About = () => {
         </section>
 
         {/* Company Overview Section */}
-        <section className="py-32 px-6 lg:px-12 bg-background relative">
+        <section className="py-32 px-6 lg:px-12 bg-background relative overflow-hidden">
+          {/* Animated Microchip Background Elements */}
+          <div className="absolute inset-0 pointer-events-none">
+            {/* Microchip 1 */}
+            <div className="absolute top-20 left-10 w-16 h-16 opacity-10 dark:opacity-20 animate-float-subtle">
+              <svg viewBox="0 0 64 64" className="w-full h-full text-primary">
+                <rect x="8" y="8" width="48" height="48" fill="none" stroke="currentColor" strokeWidth="1" rx="4"/>
+                <rect x="16" y="16" width="32" height="32" fill="currentColor" opacity="0.2" rx="2"/>
+                <circle cx="32" cy="32" r="8" fill="none" stroke="currentColor" strokeWidth="1"/>
+                <g className="animate-digital-pulse">
+                  <line x1="0" y1="20" x2="8" y2="20" stroke="currentColor" strokeWidth="1"/>
+                  <line x1="0" y1="32" x2="8" y2="32" stroke="currentColor" strokeWidth="1"/>
+                  <line x1="0" y1="44" x2="8" y2="44" stroke="currentColor" strokeWidth="1"/>
+                  <line x1="56" y1="20" x2="64" y2="20" stroke="currentColor" strokeWidth="1"/>
+                  <line x1="56" y1="32" x2="64" y2="32" stroke="currentColor" strokeWidth="1"/>
+                  <line x1="56" y1="44" x2="64" y2="44" stroke="currentColor" strokeWidth="1"/>
+                </g>
+              </svg>
+            </div>
+
+            {/* Microchip 2 */}
+            <div className="absolute bottom-32 right-16 w-20 h-20 opacity-10 dark:opacity-20 animate-float-dynamic">
+              <svg viewBox="0 0 64 64" className="w-full h-full text-accent">
+                <rect x="4" y="4" width="56" height="56" fill="none" stroke="currentColor" strokeWidth="1" rx="6"/>
+                <rect x="12" y="12" width="40" height="40" fill="currentColor" opacity="0.15" rx="3"/>
+                <g className="animate-digital-pulse" style={{animationDelay: '0.5s'}}>
+                  <rect x="20" y="20" width="6" height="6" fill="currentColor" opacity="0.6"/>
+                  <rect x="38" y="20" width="6" height="6" fill="currentColor" opacity="0.6"/>
+                  <rect x="20" y="38" width="6" height="6" fill="currentColor" opacity="0.6"/>
+                  <rect x="38" y="38" width="6" height="6" fill="currentColor" opacity="0.6"/>
+                </g>
+                <g>
+                  <line x1="0" y1="16" x2="4" y2="16" stroke="currentColor" strokeWidth="1"/>
+                  <line x1="0" y1="24" x2="4" y2="24" stroke="currentColor" strokeWidth="1"/>
+                  <line x1="0" y1="40" x2="4" y2="40" stroke="currentColor" strokeWidth="1"/>
+                  <line x1="0" y1="48" x2="4" y2="48" stroke="currentColor" strokeWidth="1"/>
+                  <line x1="60" y1="16" x2="64" y2="16" stroke="currentColor" strokeWidth="1"/>
+                  <line x1="60" y1="24" x2="64" y2="24" stroke="currentColor" strokeWidth="1"/>
+                  <line x1="60" y1="40" x2="64" y2="40" stroke="currentColor" strokeWidth="1"/>
+                  <line x1="60" y1="48" x2="64" y2="48" stroke="currentColor" strokeWidth="1"/>
+                </g>
+              </svg>
+            </div>
+
+            {/* Microchip 3 */}
+            <div className="absolute top-1/2 left-1/4 w-12 h-12 opacity-15 dark:opacity-25 animate-float-subtle" style={{animationDelay: '1s'}}>
+              <svg viewBox="0 0 48 48" className="w-full h-full text-primary">
+                <rect x="6" y="6" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1" rx="3"/>
+                <rect x="12" y="12" width="24" height="24" fill="currentColor" opacity="0.3" rx="2"/>
+                <circle cx="24" cy="24" r="6" fill="none" stroke="currentColor" strokeWidth="1" className="animate-digital-pulse"/>
+                <g>
+                  <line x1="0" y1="12" x2="6" y2="12" stroke="currentColor" strokeWidth="1"/>
+                  <line x1="0" y1="24" x2="6" y2="24" stroke="currentColor" strokeWidth="1"/>
+                  <line x1="0" y1="36" x2="6" y2="36" stroke="currentColor" strokeWidth="1"/>
+                  <line x1="42" y1="12" x2="48" y2="12" stroke="currentColor" strokeWidth="1"/>
+                  <line x1="42" y1="24" x2="48" y2="24" stroke="currentColor" strokeWidth="1"/>
+                  <line x1="42" y1="36" x2="48" y2="36" stroke="currentColor" strokeWidth="1"/>
+                </g>
+              </svg>
+            </div>
+
+            {/* Small Microchip 4 */}
+            <div className="absolute bottom-20 left-1/3 w-10 h-10 opacity-12 dark:opacity-22 animate-float-dynamic" style={{animationDelay: '1.5s'}}>
+              <svg viewBox="0 0 40 40" className="w-full h-full text-accent">
+                <rect x="4" y="4" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1" rx="2"/>
+                <rect x="8" y="8" width="24" height="24" fill="currentColor" opacity="0.2" rx="1"/>
+                <g className="animate-digital-pulse" style={{animationDelay: '1s'}}>
+                  <rect x="14" y="14" width="4" height="4" fill="currentColor" opacity="0.8"/>
+                  <rect x="22" y="14" width="4" height="4" fill="currentColor" opacity="0.8"/>
+                  <rect x="14" y="22" width="4" height="4" fill="currentColor" opacity="0.8"/>
+                  <rect x="22" y="22" width="4" height="4" fill="currentColor" opacity="0.8"/>
+                </g>
+              </svg>
+            </div>
+
+            {/* Microchip 5 */}
+            <div className="absolute top-16 right-32 w-14 h-14 opacity-8 dark:opacity-18 animate-float-subtle" style={{animationDelay: '2s'}}>
+              <svg viewBox="0 0 56 56" className="w-full h-full text-primary">
+                <rect x="7" y="7" width="42" height="42" fill="none" stroke="currentColor" strokeWidth="1" rx="4"/>
+                <rect x="14" y="14" width="28" height="28" fill="currentColor" opacity="0.25" rx="2"/>
+                <circle cx="28" cy="28" r="4" fill="currentColor" opacity="0.5" className="animate-digital-pulse"/>
+                <g>
+                  <line x1="0" y1="14" x2="7" y2="14" stroke="currentColor" strokeWidth="1"/>
+                  <line x1="0" y1="28" x2="7" y2="28" stroke="currentColor" strokeWidth="1"/>
+                  <line x1="0" y1="42" x2="7" y2="42" stroke="currentColor" strokeWidth="1"/>
+                  <line x1="49" y1="14" x2="56" y2="14" stroke="currentColor" strokeWidth="1"/>
+                  <line x1="49" y1="28" x2="56" y2="28" stroke="currentColor" strokeWidth="1"/>
+                  <line x1="49" y1="42" x2="56" y2="42" stroke="currentColor" strokeWidth="1"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-20 items-center">
               <div className="space-y-8">
@@ -44,7 +136,7 @@ const About = () => {
                 
                 <div className="space-y-6 text-lg leading-relaxed">
                   <p className="text-muted-foreground">
-                    Satoru Consulting is an operations and IT consulting firm that helps small and mid-sized businesses streamline workflows, optimize systems, and drive efficiency. We act as an extension of our clients' teams, providing fractional operations and IT leadership to support growth, scalability, and long-term success. Our approach is rooted in understanding and clarity, identifying bottlenecks and implementing tailored solutions that empower businesses to simplify, streamline, and succeed.
+                    Satoru Consulting is an operations and IT consulting firm that helps small and mid-sized businesses streamline workflows, optimize systems, and drive efficiency. We act as an extension of our clients&apos; teams, providing fractional operations and IT leadership to support growth, scalability, and long-term success. Our approach is rooted in understanding and clarity, identifying bottlenecks and implementing tailored solutions that empower businesses to simplify, streamline, and succeed.
                   </p>
                 </div>
               </div>
