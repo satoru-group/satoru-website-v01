@@ -10,59 +10,74 @@ export const WaterAnimation = () => {
   const [ripples, setRipples] = useState<Ripple[]>([]);
 
   useEffect(() => {
+    // Disable on mobile devices for performance
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) return;
+
     let rippleId = 0;
     
-    const handleMouseMove = (e: MouseEvent) => {
+    const createRipple = (x: number, y: number) => {
+      // Limit maximum ripples for performance
+      if (ripples.length >= 3) return;
+      
       const newRipple: Ripple = {
         id: rippleId++,
-        x: e.clientX,
-        y: e.clientY,
+        x,
+        y,
       };
       
-      setRipples(prev => [...prev, newRipple]);
+      setRipples(prev => [...prev.slice(-2), newRipple]); // Keep only last 3 ripples
       
       // Remove ripple after animation completes
       setTimeout(() => {
         setRipples(prev => prev.filter(ripple => ripple.id !== newRipple.id));
-      }, 1500);
+      }, 1200); // Reduced duration
     };
 
-    // Throttle mouse events for performance
+    const handleMouseMove = (e: MouseEvent) => createRipple(e.clientX, e.clientY);
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        createRipple(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    };
+
+    // More aggressive throttling for performance
     let throttleTimer: NodeJS.Timeout | null = null;
-    const throttledMouseMove = (e: MouseEvent) => {
+    const throttledMove = (handler: Function) => (e: Event) => {
       if (throttleTimer) return;
       
       throttleTimer = setTimeout(() => {
-        handleMouseMove(e);
+        handler(e);
         throttleTimer = null;
-      }, 100);
+      }, 200); // Increased throttle
     };
 
+    const throttledMouseMove = throttledMove(handleMouseMove);
+    const throttledTouchMove = throttledMove(handleTouchMove);
+
     document.addEventListener('mousemove', throttledMouseMove);
+    document.addEventListener('touchmove', throttledTouchMove, { passive: true });
     
     return () => {
       document.removeEventListener('mousemove', throttledMouseMove);
+      document.removeEventListener('touchmove', throttledTouchMove);
       if (throttleTimer) clearTimeout(throttleTimer);
     };
-  }, []);
+  }, [ripples.length]);
 
   return (
     <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
       {ripples.map((ripple) => (
         <div
           key={ripple.id}
-          className="absolute animate-water-ripple"
+          className="absolute"
           style={{
-            left: ripple.x - 50,
-            top: ripple.y - 50,
+            left: ripple.x - 30,
+            top: ripple.y - 30,
+            willChange: 'transform, opacity'
           }}
         >
-          <div className="w-24 h-24 rounded-full border-2 border-primary/40 animate-water-expand" />
-          <div className="absolute inset-0 w-24 h-24 rounded-full border border-accent/30 animate-water-expand-delayed" />
-          <div className="absolute inset-0 w-24 h-24 rounded-full animate-water-fade" 
-               style={{
-                 background: 'radial-gradient(circle, hsl(var(--primary) / 0.15) 0%, hsl(var(--accent) / 0.08) 50%, transparent 70%)'
-               }} />
+          <div className="w-16 h-16 rounded-full border border-primary/30 animate-ping" />
         </div>
       ))}
     </div>

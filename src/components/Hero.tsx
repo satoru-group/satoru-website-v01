@@ -36,27 +36,27 @@ const Hero = ({ showArrow = false }: HeroProps) => {
         <div className="absolute inset-0 tech-grid opacity-30 dark:opacity-20 pointer-events-none" />
         <div className="absolute inset-0 light-geometric-bg opacity-20 dark:opacity-0 pointer-events-none" />
         
-        {/* AI Particle System - Disabled on mobile for performance */}
-        <div className="particles pointer-events-none hidden sm:block">
-          {[...Array(4)].map((_, i) => (
+        {/* AI Particle System - Reduced for performance */}
+        <div className="particles pointer-events-none hidden lg:block">
+          {[...Array(2)].map((_, i) => (
             <div 
               key={i}
-              className="particle animate-particle-float"
+              className="particle animate-pulse"
               style={{
-                left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 8}s`,
-                animationDuration: `${6 + Math.random() * 4}s`,
-                willChange: 'transform'
+                left: `${25 + i * 50}%`,
+                top: `${30 + i * 20}%`,
+                animationDelay: `${i * 3}s`,
+                animationDuration: '4s'
               }}
             />
           ))}
         </div>
 
-        {/* Matrix Rain Background - Reduced opacity on mobile */}
-        <div className="absolute inset-0 matrix-bg opacity-5 sm:opacity-20 pointer-events-none" />
+        {/* Matrix Rain Background - Disabled on mobile */}
+        <div className="absolute inset-0 matrix-bg opacity-0 lg:opacity-10 pointer-events-none" />
         
-        {/* Scanning Lines - Disabled on mobile */}
-        <div className="absolute inset-0 scan-lines opacity-0 sm:opacity-30 pointer-events-none" />
+        {/* Scanning Lines - Disabled on mobile and tablet */}
+        <div className="absolute inset-0 scan-lines opacity-0 lg:opacity-20 pointer-events-none" />
         
         <div className="max-w-6xl mx-auto w-full lg:flex lg:flex-col lg:justify-center lg:flex-1">
           {/* Mobile Layout - Full content display */}
@@ -72,6 +72,7 @@ const Hero = ({ showArrow = false }: HeroProps) => {
                       src={satoruDecoration} 
                       alt="" 
                       className="w-80 h-80 object-contain"
+                      loading="lazy"
                     />
                   </div>
                   
@@ -95,8 +96,8 @@ const Hero = ({ showArrow = false }: HeroProps) => {
                       src={aiTechnology} 
                       alt="Advanced AI technology interface with holographic displays and neural network visualizations" 
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/20" />
                   </div>
                 </div>
               </div>
@@ -185,27 +186,18 @@ const Hero = ({ showArrow = false }: HeroProps) => {
 
             {/* Right Content - AI Image */}
             <div className="relative order-2 group w-full">
-              <div className="relative overflow-hidden rounded-xl shadow-glow-cyan border-2 border-primary/30 hover:border-primary/50 transition-all duration-500 group-hover:shadow-glow-purple scan-lines">
+              <div className="relative overflow-hidden rounded-xl border-2 border-primary/30 hover:border-primary/40 transition-colors duration-300">
                 <img 
                   src={aiTechnology} 
                   alt="Advanced AI technology interface with holographic displays and neural network visualizations" 
-                  className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:translate-y-[-10%] group-hover:scale-110"
+                  className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
                 />
-                
-                {/* Paper scroll effect overlay */}
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                {/* Scroll shadow effect */}
-                <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-background/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-y-full group-hover:translate-y-0" />
-                
-                {/* AI Circuit overlay */}
-                <div className="absolute inset-0 circuit-bg opacity-20 animate-circuit-flow" />
               </div>
               
-              {/* Floating AI elements */}
-              <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-primary rounded-full animate-digital-pulse opacity-80" />
-              <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-accent rounded-full animate-float-dynamic opacity-60" />
-              <div className="absolute top-1/2 -left-3 w-2 h-2 bg-primary rounded-full animate-digital-pulse opacity-70" />
+              {/* Simplified floating elements */}
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-primary/60 rounded-full animate-pulse" />
+              <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-accent/60 rounded-full animate-pulse" />
             </div>
           </div>
 
