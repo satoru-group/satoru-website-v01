@@ -80,7 +80,7 @@ const Hero = ({ showArrow = false }: HeroProps) => {
                     />
                   </div>
                   
-                  <h1 className="relative z-10 text-2xl sm:text-3xl leading-tight font-bold text-[#27254c] dark:text-foreground text-left pl-1">
+                  <h1 className="relative z-10 text-3xl sm:text-4xl leading-tight font-bold text-[#27254c] dark:text-foreground text-left pl-1">
                     <span className="inline-block">Simplify.</span>
                     <br />
                     <span className="text-[#564a94] dark:text-primary inline-block text-glow">Streamline.</span>
@@ -115,18 +115,18 @@ const Hero = ({ showArrow = false }: HeroProps) => {
             </div>
             
             {/* Mobile: Description text - better spacing and readability */}
-            <div className="data-stream mt-2">
-              <p className="text-sm sm:text-base text-[#1f232f] dark:text-muted-foreground leading-relaxed px-1">
+            <div className="data-stream mt-3">
+              <p className="text-base sm:text-lg text-[#1f232f] dark:text-muted-foreground leading-relaxed px-1">
                 Harness the power of advanced AI technology to transform your business operations and unlock unprecedented growth opportunities.
               </p>
             </div>
 
             {/* Mobile: Buttons - optimized for touch */}
-            <div className="flex flex-col sm:flex-row gap-3 justify-center mt-2 px-1">
-              <Button variant="cta" size="default" className="text-sm font-bold px-6 py-3 hover-lift transition-smooth hover:shadow-glow-primary w-full sm:w-auto min-h-[44px]">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4 px-1">
+              <Button variant="cta" size="lg" className="text-base font-bold px-8 py-4 hover-lift transition-smooth hover:shadow-glow-primary w-full sm:w-auto min-h-[52px]">
                 Book a Consultant
               </Button>
-              <Button variant="outline" size="default" className="text-sm font-bold px-6 py-3 hover-lift holographic w-full sm:w-auto min-h-[44px]">
+              <Button variant="outline" size="lg" className="text-base font-bold px-8 py-4 hover-lift holographic w-full sm:w-auto min-h-[52px]">
                 Learn More
               </Button>
             </div>
@@ -206,17 +206,17 @@ const Hero = ({ showArrow = false }: HeroProps) => {
             </div>
           </div>
 
-          {/* AI Stats Section - Simplified for mobile performance */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4 mb-4 lg:mb-5 px-1 mt-6 lg:mt-0">
+          {/* AI Stats Section - Larger for mobile professional look */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 mb-6 lg:mb-5 px-1 mt-8 lg:mt-0">
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="text-center p-3 lg:p-4 bg-card/30 backdrop-blur-sm rounded-lg border border-primary/10 hover:border-primary/20 transition-colors duration-200"
+                className="text-center p-4 lg:p-4 bg-card/30 backdrop-blur-sm rounded-lg border border-primary/10 hover:border-primary/20 transition-colors duration-200"
               >
-                <div className="text-sm lg:text-xl font-bold text-primary mb-1">
+                <div className="text-lg lg:text-xl font-bold text-primary mb-2">
                   {stat.number}
                 </div>
-                <div className="text-xs text-muted-foreground font-medium leading-tight">
+                <div className="text-sm text-muted-foreground font-medium leading-tight">
                   {stat.label}
                 </div>
               </div>
