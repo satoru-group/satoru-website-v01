@@ -128,6 +128,8 @@ All colors MUST be HSL.
     --glow-primary: 0 0 24px hsl(200 50% 40% / 0.15);
     --glow-accent: 0 0 24px hsl(340 45% 55% / 0.12);
     --glow-ai: 0 0 32px hsl(340 45% 55% / 0.1);
+    --glow-cyan: 0 0 20px hsl(200 50% 40% / 0.2);
+    --glow-purple: 0 0 20px hsl(340 45% 55% / 0.15);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -686,6 +688,14 @@ All colors MUST be HSL.
   
   .shadow-glow-purple {
     box-shadow: var(--glow-purple);
+  }
+  
+  .shadow-glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  
+  .shadow-glow-ai {
+    box-shadow: var(--glow-ai);
   }
   
   .transition-smooth {
