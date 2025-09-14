@@ -96,18 +96,18 @@ const Hero = ({ showArrow = false }: HeroProps) => {
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-2 justify-center lg:justify-start px-2 sm:px-0">
-                <Button variant="cta" size="sm" className="text-xs w-full sm:w-auto px-4 py-2 hover-lift transition-smooth hover:shadow-glow-primary">
+              <div className="flex flex-row gap-2 justify-center lg:justify-start px-2 sm:px-0">
+                <Button variant="cta" size="sm" className="text-xs flex-1 sm:w-auto px-4 py-2 hover-lift transition-smooth hover:shadow-glow-primary">
                   Book a Consultant
                 </Button>
-                <Button variant="outline" size="sm" className="text-xs w-full sm:w-auto px-4 py-2 hover-lift holographic">
+                <Button variant="outline" size="sm" className="text-xs flex-1 sm:w-auto px-4 py-2 hover-lift holographic">
                   Learn More
                 </Button>
               </div>
             </div>
 
             {/* Right Content - AI Image */}
-            <div className="relative order-2 group w-full max-w-xs sm:max-w-sm lg:max-w-none mx-auto">
+            <div className="relative order-2 group w-full mx-auto">
               <div className="relative overflow-hidden rounded-lg lg:rounded-xl shadow-glow-cyan border-2 border-primary/30 hover:border-primary/50 transition-all duration-500 group-hover:shadow-glow-purple scan-lines aspect-square sm:aspect-auto">
                 <img 
                   src={aiTechnology} 
