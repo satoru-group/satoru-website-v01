@@ -43,13 +43,7 @@ const About = () => {
                 
                 <div className="space-y-6 text-lg leading-relaxed">
                   <p className="text-muted-foreground">
-                    Satoru Consulting is an operations and IT consulting firm that helps small and mid-sized businesses streamline workflows, optimize systems, and drive efficiency.
-                  </p>
-                  <p className="text-muted-foreground">
-                    We act as an extension of our clients' teams, providing fractional operations and IT leadership to support growth, scalability, and long-term success.
-                  </p>
-                  <p className="text-muted-foreground">
-                    Our approach is rooted in understanding and clarity, identifying bottlenecks and implementing tailored solutions that empower businesses to simplify, streamline, and succeed.
+                    Satoru Consulting is an operations and IT consulting firm that helps small and mid-sized businesses streamline workflows, optimize systems, and drive efficiency. We act as an extension of our clients' teams, providing fractional operations and IT leadership to support growth, scalability, and long-term success. Our approach is rooted in understanding and clarity, identifying bottlenecks and implementing tailored solutions that empower businesses to simplify, streamline, and succeed.
                   </p>
                 </div>
               </div>
@@ -109,7 +103,7 @@ const About = () => {
                     <h3 className="text-2xl sm:text-3xl font-bold text-foreground">Mission</h3>
                   </div>
                   <p className="text-base sm:text-lg lg:text-lg text-muted-foreground leading-relaxed">
-                    At Satoru Consulting, our mission is to empower your business to achieve sustainable success through strategic operations optimization and innovative technology solutions.
+                    At Satoru Consulting, our mission is to empower your business to achieve sustainable success.
                   </p>
                 </div>
               </div>
@@ -125,7 +119,7 @@ const About = () => {
                     <h3 className="text-2xl sm:text-3xl font-bold text-foreground">Vision</h3>
                   </div>
                   <p className="text-base sm:text-lg lg:text-lg text-muted-foreground leading-relaxed">
-                    To be the trusted force behind business transformation, envisioning a future where clarity powers growth and every business challenge leads to opportunity.
+                    To be the trusted force behind business transformation envisioning a future where clarity powers growth and every business challenge leads to an opportunity through streamlined operations, scalable systems, and expert leadership.
                   </p>
                 </div>
               </div>
