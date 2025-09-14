@@ -29,7 +29,7 @@ const Hero = ({ showArrow = false }: HeroProps) => {
   ];
 
   return (
-    <section className="relative w-full h-full flex flex-col bg-background overflow-hidden pt-[60px] sm:pt-[68px] lg:pt-[72px]">
+    <section className="relative w-full h-full flex flex-col bg-background overflow-hidden pt-[80px] sm:pt-[68px] lg:pt-[72px]">
       {/* Full viewport container accounting for fixed header - exact header height */}
       <div className="flex-1 flex flex-col justify-center px-4 sm:px-6 lg:px-6 py-4 sm:py-6 lg:py-4 min-h-0">
         {/* Consistent Background Patterns */}
