@@ -31,7 +31,7 @@ const Header = () => {
             className={`relative text-sm lg:text-base transition-smooth font-medium hover:shadow-glow-cyan ${
               isActive('/') 
                 ? 'text-primary' 
-                : 'text-foreground hover:text-primary'
+                : 'text-[#27254c] dark:text-foreground hover:text-primary'
             }`}
           >
             Home
@@ -44,7 +44,7 @@ const Header = () => {
             className={`relative text-sm lg:text-base transition-smooth font-medium hover:shadow-glow-cyan ${
               isActive('/about') 
                 ? 'text-primary' 
-                : 'text-muted-foreground hover:text-primary'
+                : 'text-[#27254c] dark:text-muted-foreground hover:text-primary'
             }`}
           >
             About Us
@@ -57,7 +57,7 @@ const Header = () => {
             className={`relative text-sm lg:text-base transition-smooth font-medium hover:shadow-glow-cyan ${
               isActive('/services') 
                 ? 'text-primary' 
-                : 'text-muted-foreground hover:text-primary'
+                : 'text-[#564a94] dark:text-muted-foreground hover:text-primary'
             }`}
           >
             Services
@@ -70,7 +70,7 @@ const Header = () => {
             className={`relative text-sm lg:text-base transition-smooth font-medium hover:shadow-glow-cyan ${
               isActive('/contact') 
                 ? 'text-primary' 
-                : 'text-muted-foreground hover:text-primary'
+                : 'text-[#1f232f] dark:text-muted-foreground hover:text-primary'
             }`}
           >
             Contact
@@ -138,7 +138,7 @@ const Header = () => {
                 className={`relative transition-smooth font-medium py-2 px-4 rounded-lg hover:bg-muted/50 ${
                   isActive('/') 
                     ? 'text-primary bg-muted/30' 
-                    : 'text-foreground hover:text-primary'
+                    : 'text-[#27254c] dark:text-foreground hover:text-primary'
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -152,7 +152,7 @@ const Header = () => {
                 className={`relative transition-smooth font-medium py-2 px-4 rounded-lg hover:bg-muted/50 ${
                   isActive('/about') 
                     ? 'text-primary bg-muted/30' 
-                    : 'text-muted-foreground hover:text-primary'
+                    : 'text-[#27254c] dark:text-muted-foreground hover:text-primary'
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -166,7 +166,7 @@ const Header = () => {
                 className={`relative transition-smooth font-medium py-2 px-4 rounded-lg hover:bg-muted/50 ${
                   isActive('/services') 
                     ? 'text-primary bg-muted/30' 
-                    : 'text-muted-foreground hover:text-primary'
+                    : 'text-[#564a94] dark:text-muted-foreground hover:text-primary'
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -180,7 +180,7 @@ const Header = () => {
                 className={`relative transition-smooth font-medium py-2 px-4 rounded-lg hover:bg-muted/50 ${
                   isActive('/contact') 
                     ? 'text-primary bg-muted/30' 
-                    : 'text-muted-foreground hover:text-primary'
+                    : 'text-[#1f232f] dark:text-muted-foreground hover:text-primary'
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
