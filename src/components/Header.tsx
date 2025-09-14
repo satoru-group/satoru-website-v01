@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useState } from "react";
+import satoruOLogo from "@/assets/satoru-o-logo.png";
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
@@ -17,7 +18,15 @@ const Header = () => {
         <div className="flex items-center">
           <div className="flex flex-col text-center">
             <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent animate-digital-pulse">
-              <span className="inline-block hover:animate-float-subtle">SATORU</span><span className="text-primary glow animate-pulse">.</span>
+              <span className="inline-block hover:animate-float-subtle flex items-center">
+                SAT
+                <img 
+                  src={satoruOLogo} 
+                  alt="O" 
+                  className="inline-block w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 mx-0.5 animate-float-subtle" 
+                />
+                RU
+              </span><span className="text-primary glow animate-pulse">.</span>
             </div>
             <div className="text-xs sm:text-sm text-muted-foreground font-medium tracking-wide data-stream">
               GROUP
